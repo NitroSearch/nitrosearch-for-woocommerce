@@ -1,0 +1,30 @@
+# Secrets — never commit credentials in any form
+.env
+.env.*
+*.pem
+*.key
+*.p12
+auth.json
+secrets.*
+
+# Dependencies / build output
+/vendor/
+/node_modules/
+/dist/
+/build/
+*.zip
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# WordPress dev environments
+.wp-env.json.local
+wp-cli.local.yml
+
+# Logs and local scratch
+*.log
+/tmp/
