@@ -27,7 +27,10 @@ final class Settings
             'search_public_id'  => '',
             'scoped_search_key' => '',
             'collection'        => '',
-            'engine'            => [],
+            'engine_host'       => '',
+            'widget_loader_url' => '',
+            'widget_bundle_url' => '',
+            'selector'          => '',   // optional custom search-input selector
         ];
 
         return array_merge($defaults, get_option(self::OPTION, []));

@@ -51,7 +51,9 @@ final class Client
             'sync_secret'       => $body['sync']['secret'] ?? '',
             'search_public_id'  => $body['search']['public_key_id'] ?? '',
             'scoped_search_key' => $body['search']['scoped_search_key'] ?? '',
-            'engine'            => $body['search']['engine'] ?? [],
+            'engine_host'       => $body['search']['engine']['host'] ?? '',
+            'widget_loader_url' => $body['widget']['loader_url'] ?? '',
+            'widget_bundle_url' => $body['widget']['bundle_url'] ?? '',
         ]);
 
         return ['ok' => true];

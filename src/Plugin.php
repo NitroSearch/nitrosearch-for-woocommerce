@@ -3,6 +3,7 @@
 namespace NitroSearch;
 
 use NitroSearch\Admin\SettingsPage;
+use NitroSearch\Frontend\WidgetLoader;
 use NitroSearch\Sync\Drain;
 use NitroSearch\Sync\Hooks;
 
@@ -19,10 +20,14 @@ final class Plugin
         // The drain action handler is always registered so scheduled work runs.
         Drain::register();
 
-        // Change capture + scheduling only once the store is connected.
+        // Change capture, scheduling, and the storefront widget only once the
+        // store is connected.
         if (Settings::isConnected()) {
             Hooks::register();
-            Drain::schedule();
+            // Schedule on init — Action Scheduler's data store isn't ready during
+            // plugins_loaded, so as_* calls must wait.
+            add_action('init', [Drain::class, 'schedule']);
+            (new WidgetLoader())->register();
         }
     }
 }
