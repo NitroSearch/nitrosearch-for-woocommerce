@@ -1,0 +1,260 @@
+/*
+ * NitroSearch admin styles — scoped to the NitroSearch settings screen only
+ * (enqueued on our page hook). Brings the NitroSearch "blue flame" brand into
+ * wp-admin: a dark flame hero, clean cards, brand-blue actions, and the same
+ * "products indexed" progress bar shoppers' merchants see in the web dashboard.
+ *
+ * Self-contained: no external fonts or requests (system font stack), so the
+ * screen stays fast and privacy-respecting.
+ */
+
+.nitrosearch-admin {
+    --ns-brand: #3b6ef5;
+    --ns-brand-600: #2551e8;
+    --ns-brand-700: #1e3fce;
+    --ns-cyan: #35e3e0;
+    --ns-ink-900: #080b17;
+    --ns-ink-800: #0e1328;
+    --ns-ink-700: #1a2341;
+    --ns-flame: linear-gradient(110deg, #35e3e0 0%, #38a5f6 45%, #5b7cf6 78%, #6366f1 100%);
+    --ns-border: #e2e8f0;
+    --ns-muted: #64748b;
+    --ns-heading: #0f172a;
+
+    max-width: 880px;
+    margin-right: 20px;
+    color: #334155;
+}
+
+/* WP prints an <h1>NitroSearch</h1> at the top of .wrap; our hero replaces it. */
+.nitrosearch-admin > h1:first-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Hero -------------------------------------------------------------------- */
+
+.ns-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 16px 0 24px;
+    padding: 22px 26px;
+    border-radius: 16px;
+    background-color: var(--ns-ink-900);
+    background-image:
+        radial-gradient(80% 140% at 12% 0%, rgba(56, 165, 246, 0.28), transparent 60%),
+        radial-gradient(70% 130% at 100% 120%, rgba(99, 102, 241, 0.30), transparent 55%);
+    box-shadow: 0 12px 34px -14px rgba(37, 81, 232, 0.55);
+}
+
+.ns-hero__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.ns-hero__mark {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+}
+
+.ns-hero__text {
+    min-width: 0;
+}
+
+.ns-hero__wordmark {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.ns-hero__wordmark span {
+    color: #7fb2ff;
+}
+
+.ns-hero__tagline {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #94a7c8;
+}
+
+/* Status pill in the hero */
+.ns-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e2e8f0;
+}
+
+.ns-pill__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #94a3b8;
+}
+
+.ns-pill--ok .ns-pill__dot { background: #34d399; box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.22); }
+.ns-pill--pending .ns-pill__dot { background: #fbbf24; box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.22); }
+
+/* Cards ------------------------------------------------------------------- */
+
+.ns-card {
+    margin: 0 0 20px;
+    padding: 22px 24px;
+    background: #ffffff;
+    border: 1px solid var(--ns-border);
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.ns-card__title {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ns-heading);
+}
+
+.ns-card__intro {
+    margin: 0 0 16px;
+    font-size: 13.5px;
+    color: var(--ns-muted);
+    max-width: 60ch;
+}
+
+.ns-card__intro:last-child { margin-bottom: 0; }
+
+/* Stat tiles -------------------------------------------------------------- */
+
+.ns-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.ns-stat {
+    padding: 14px 16px;
+    border: 1px solid var(--ns-border);
+    border-radius: 11px;
+    background: #f8fafc;
+}
+
+.ns-stat__label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ns-muted);
+}
+
+.ns-stat__value {
+    margin-top: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ns-heading);
+    line-height: 1.2;
+}
+
+.ns-stat__value--error { color: #b91c1c; font-size: 14px; font-weight: 600; }
+
+/* Progress bar (mirrors the web dashboard) */
+.ns-progress {
+    margin-top: 10px;
+    height: 7px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.ns-progress__fill {
+    height: 100%;
+    border-radius: 999px;
+    background-image: var(--ns-flame);
+}
+
+/* Actions ----------------------------------------------------------------- */
+
+.ns-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.ns-actions form { margin: 0; }
+
+/* Brand the primary button within our scope only (never wp-admin globally). */
+.nitrosearch-admin .button-primary {
+    background: var(--ns-brand);
+    border-color: var(--ns-brand-600);
+    box-shadow: 0 1px 0 var(--ns-brand-700);
+    text-shadow: none;
+    border-radius: 8px;
+    padding: 2px 16px;
+    height: auto;
+    line-height: 2.3;
+}
+
+.nitrosearch-admin .button-primary:hover,
+.nitrosearch-admin .button-primary:focus {
+    background: var(--ns-brand-600);
+    border-color: var(--ns-brand-700);
+}
+
+.nitrosearch-admin .button {
+    border-radius: 8px;
+}
+
+/* A claimed/verified inline confirmation row */
+.ns-confirm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+.ns-confirm__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+    background-image: var(--ns-flame);
+    color: #fff;
+}
+
+/* Form fields inside cards keep WP's form-table but tighten spacing. */
+.ns-card .form-table { margin-top: 4px; }
+.ns-card .form-table th { padding-left: 0; }
+
+/* Notices we render inside the wrap keep WP styling but round the corners. */
+.nitrosearch-admin .notice { border-radius: 8px; }
+
+@media (max-width: 600px) {
+    .ns-hero { padding: 18px 20px; }
+    .ns-card { padding: 18px; }
+}

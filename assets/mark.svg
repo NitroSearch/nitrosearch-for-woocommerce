@@ -1,0 +1,11 @@
+<svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NitroSearch">
+    <defs>
+        <linearGradient id="flame" x1="4" y1="6" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#35e3e0"/>
+            <stop offset="0.5" stop-color="#38a5f6"/>
+            <stop offset="1" stop-color="#6366f1"/>
+        </linearGradient>
+    </defs>
+    <path d="M14 5 H34 L45 24 L34 43 H14 L3 24 Z" stroke="url(#flame)" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M17 33 V15 L31 33 V15" stroke="url(#flame)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

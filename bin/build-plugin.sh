@@ -13,7 +13,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 # Files/dirs that ship to users. Anything not listed here is excluded.
-SHIP=(nitrosearch.php readme.txt src)
+SHIP=(nitrosearch.php readme.txt src assets)
 
 VERSION="$(grep -m1 -oE 'Version:[[:space:]]*[0-9]+\.[0-9]+\.[0-9]+' nitrosearch.php | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')"
 if [ -z "${VERSION}" ]; then

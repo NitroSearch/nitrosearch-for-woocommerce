@@ -30,6 +30,14 @@ final class WidgetLoader
         $loaderUrl = (string) (Settings::get('widget_loader_url')
             ?: Settings::apiUrl().'/widget/loader.v1.js');
 
+        // Merchant appearance tokens (only send what was set; the widget supplies
+        // its own defaults for everything else via --ns-* custom properties).
+        $theme = [];
+        $accent = (string) Settings::get('accent_color');
+        if ($accent !== '') {
+            $theme['accent'] = $accent;
+        }
+
         $config = [
             'engine'     => ['host' => (string) Settings::get('engine_host')],
             'collection' => (string) Settings::get('collection'),
@@ -40,8 +48,19 @@ final class WidgetLoader
             'currency'   => function_exists('get_woocommerce_currency') ? get_woocommerce_currency() : 'USD',
             // Free tier shows the badge; paid plans clear it (server decides later).
             'badge'      => true,
-            'theme'      => (object) [],
+            'theme'      => (object) $theme,
+            // Results-page takeover on the product search page (merchant toggle).
+            'results'    => (bool) Settings::get('results_takeover', true),
         ];
+
+        // Add-to-cart endpoint for the results grid. The classic wc-ajax endpoint
+        // (not the Store API) is used deliberately: it writes the WC session cart
+        // the theme's mini-cart and checkout read, and returns mini-cart fragments.
+        if (class_exists('WC_AJAX')) {
+            $config['cart'] = [
+                'add' => esc_url_raw(\WC_AJAX::get_endpoint('add_to_cart')),
+            ];
+        }
 
         $selector = trim((string) Settings::get('selector'));
         if ($selector !== '') {

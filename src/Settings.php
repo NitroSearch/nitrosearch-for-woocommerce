@@ -31,6 +31,12 @@ final class Settings
             'widget_loader_url' => '',
             'widget_bundle_url' => '',
             'selector'          => '',   // optional custom search-input selector
+            'accent_color'      => '',   // optional widget accent colour (hex)
+            'connect_token'     => '',   // optional provisioning token, sent on connect
+            'results_takeover'  => true, // hydrate the product search-results page
+            'verified'          => false, // proof-of-control passed (from /v1/status)
+            'product_limit'     => 0,     // plan cap (from /v1/status)
+            'product_count'     => 0,     // products in the engine so far (from /v1/status)
         ];
 
         return array_merge($defaults, get_option(self::OPTION, []));
@@ -50,6 +56,16 @@ final class Settings
     public static function isConnected(): bool
     {
         return (bool) self::get('connected', false) && self::get('sync_key_id') !== '';
+    }
+
+    /**
+     * Search-ready: connected AND we hold the scoped search key. The store is only
+     * search-ready once it has passed proof-of-control (verification) and we've
+     * fetched its key — connect alone provisions only a shell.
+     */
+    public static function hasSearchKey(): bool
+    {
+        return self::isConnected() && self::get('scoped_search_key') !== '';
     }
 
     /** Stable per-install id, generated once and persisted (used for key binding). */
