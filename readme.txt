@@ -4,7 +4,7 @@ Tags: woocommerce, product search, ajax search, instant search, live search
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.2.3 =
+* Fix: the plugin and author links in the plugin header now point to separate pages, as the plugin directory requires.
+
 = 1.2.2 =
 * Documentation and directory assets refreshed.
 
@@ -129,6 +132,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+Minor plugin-header fix for the WordPress.org directory. No functional changes.
 
 = 1.2.2 =
 Refreshed documentation and directory listing. No functional changes.
