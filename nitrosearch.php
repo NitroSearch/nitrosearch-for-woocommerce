@@ -3,12 +3,12 @@
  * Plugin Name:       NitroSearch for WooCommerce
  * Plugin URI:        https://nitrosearch.io
  * Description:        Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results.
- * Version:           1.2.2
+ * Version:           1.2.3
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
  * Author:            WebDeviant
- * Author URI:        https://nitrosearch.io
+ * Author URI:        https://webdeviant.io
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       nitrosearch
@@ -22,7 +22,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-define('NITROSEARCH_VERSION', '1.2.2');
+define('NITROSEARCH_VERSION', '1.2.3');
 define('NITROSEARCH_FILE', __FILE__);
 define('NITROSEARCH_DIR', plugin_dir_path(__FILE__));
 
