@@ -5,6 +5,17 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.2.0] — 2026-07-25
+
+### Added
+- Sync performance panel on the admin screen — see how quickly your catalogue
+  changes reach your search index (average and most-recent batch speed), how many
+  products have synced, how many batches have been sent, and when the next sync
+  runs.
+- A clear heads-up when your catalogue reaches your plan's product limit, with a
+  prompt to upgrade. Your existing search keeps running — only brand-new products
+  wait until you upgrade.
+
 ## [1.1.0] — 2026-07-21
 
 ### Added
@@ -34,5 +45,6 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
   typo-tolerant product results as customers type. No theme rebuild required.
 - Sync status screen showing what is indexed.
 
+[1.2.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.0
 [1.1.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.1.0
 [1.0.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.0.0
