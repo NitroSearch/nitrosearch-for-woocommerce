@@ -34,6 +34,7 @@ final class Settings
             'accent_color'      => '',   // optional widget accent colour (hex)
             'connect_token'     => '',   // optional provisioning token, sent on connect
             'results_takeover'  => true, // hydrate the product search-results page
+            'show_badge'        => false, // opt-in "Powered by NitroSearch" in the widget (default OFF)
             'verified'          => false, // proof-of-control passed (from /v1/status)
             'product_limit'     => 0,     // plan cap (from /v1/status)
             'product_count'     => 0,     // products in the engine so far (from /v1/status)
