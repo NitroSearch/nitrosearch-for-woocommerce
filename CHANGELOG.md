@@ -5,6 +5,12 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.2.2] — 2026-07-25
+
+### Changed
+- Refreshed the readme for the WordPress.org directory: fuller description, an
+  FAQ and Upgrade Notice, and updated screenshot captions. No functional changes.
+
 ## [1.2.1] — 2026-07-25
 
 ### Added
@@ -56,6 +62,7 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
   typo-tolerant product results as customers type. No theme rebuild required.
 - Sync status screen showing what is indexed.
 
+[1.2.2]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.2
 [1.2.1]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.1
 [1.2.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.0
 [1.1.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.1.0
