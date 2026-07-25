@@ -64,16 +64,38 @@ final class Drain
             $items[] = ['op' => $op, 'version' => (int) $row->version, 'data' => $data];
         }
 
+        $startedAt = microtime(true);
         $result = Client::ingestBatch($items);
+        $elapsedMs = (int) round((microtime(true) - $startedAt) * 1000);
 
         if ($result['ok']) {
             foreach ($rows as $row) {
                 Outbox::complete((int) $row->id, (int) $row->version);
             }
+            self::recordBatchPerformance($elapsedMs, count($items));
             Settings::update(['last_sync' => current_time('mysql', true), 'last_error' => '']);
         } else {
             Outbox::release($ids);   // leave them pending for the next tick
             Settings::update(['last_error' => 'HTTP '.($result['code'] ?? 0).' '.($result['error'] ?? '')]);
         }
+    }
+
+    /**
+     * Roll the just-drained batch into the local sync-performance stats shown on the
+     * admin screen: the round-trip of this batch, a smoothed average, and running
+     * totals. `avg_batch_ms` is an exponential moving average (weighting the latest
+     * batch ~30%) so it tracks recent performance without storing a history.
+     */
+    private static function recordBatchPerformance(int $elapsedMs, int $items): void
+    {
+        $prevAvg = (int) Settings::get('avg_batch_ms', 0);
+        $avg = $prevAvg > 0 ? (int) round(($prevAvg * 0.7) + ($elapsedMs * 0.3)) : $elapsedMs;
+
+        Settings::update([
+            'last_batch_ms'      => $elapsedMs,
+            'avg_batch_ms'       => $avg,
+            'sync_batches_total' => (int) Settings::get('sync_batches_total', 0) + 1,
+            'sync_items_total'   => (int) Settings::get('sync_items_total', 0) + $items,
+        ]);
     }
 }

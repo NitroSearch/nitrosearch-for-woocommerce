@@ -37,6 +37,12 @@ final class Settings
             'verified'          => false, // proof-of-control passed (from /v1/status)
             'product_limit'     => 0,     // plan cap (from /v1/status)
             'product_count'     => 0,     // products in the engine so far (from /v1/status)
+            'at_limit'          => false, // catalogue has hit the plan cap (from /v1/status)
+            // Sync performance, measured locally as batches drain (see Sync\Drain).
+            'last_batch_ms'     => 0,     // round-trip of the most recent ingest batch
+            'avg_batch_ms'      => 0,     // smoothed average batch round-trip
+            'sync_batches_total' => 0,    // batches sent since install
+            'sync_items_total'  => 0,     // product changes pushed since install
         ];
 
         return array_merge($defaults, get_option(self::OPTION, []));

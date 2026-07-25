@@ -35,7 +35,14 @@ final class Client
         $response = wp_remote_post(Settings::apiUrl().'/v1/connect', [
             'timeout' => 20,
             'headers' => $headers,
-            'body'    => wp_json_encode(['site_url' => $siteUrl, 'install_id' => $installId]),
+            // Declare the ecommerce platform so the account dashboard shows the right
+            // platform. This is the WooCommerce plugin, so the platform is always
+            // 'woocommerce'.
+            'body'    => wp_json_encode([
+                'site_url'   => $siteUrl,
+                'install_id' => $installId,
+                'platform'   => 'woocommerce',
+            ]),
         ]);
 
         if (is_wp_error($response)) {
@@ -147,6 +154,10 @@ final class Client
             'plan'          => (string) ($body['plan'] ?? ''),
             'product_limit' => (int) ($body['product_limit'] ?? 0),
             'product_count' => (int) ($body['product_count'] ?? 0),
+            // The backend now enforces the plan cap at ingest; `at_limit` tells the
+            // merchant they've hit it so we can prompt an upgrade (older backends
+            // omit it, so it defaults to false).
+            'at_limit'      => (bool) ($body['at_limit'] ?? false),
         ];
         if ($res['ok']) {
             Settings::update([
@@ -154,6 +165,7 @@ final class Client
                 'claimed'       => $status['claimed'],
                 'product_limit' => $status['product_limit'],
                 'product_count' => $status['product_count'],
+                'at_limit'      => $status['at_limit'],
             ]);
         }
 

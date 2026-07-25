@@ -4,7 +4,7 @@ Tags: woocommerce, search, product search, ajax search, instant search
 Requires at least: 6.5
 Tested up to: 6.7
 Requires PHP: 8.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,10 @@ Privacy policy: https://nitrosearch.io/privacy
 3. Open the NitroSearch menu in wp-admin and click "Connect store".
 
 == Changelog ==
+
+= 1.2.0 =
+* New: a Sync performance panel on the admin screen — average and most-recent batch speed, how many products have synced, batches sent, and when the next sync runs.
+* New: a clear heads-up when your catalogue reaches your plan's product limit, with a prompt to upgrade. Your existing search keeps running — only brand-new products wait until you upgrade.
 
 = 1.1.0 =
 * New: filters and a full results page — category, brand, price, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.

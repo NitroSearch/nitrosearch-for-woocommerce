@@ -152,7 +152,14 @@ final class SettingsPage
                 $count = (int) Settings::get('product_count');
                 $limit = (int) Settings::get('product_limit');
                 $pct = $limit > 0 ? min(100, (int) round($count / $limit * 100)) : 0;
+                $atLimit = (bool) Settings::get('at_limit');
                 ?>
+                <?php if ($atLimit) : ?>
+                    <div class="notice notice-warning inline ns-notice"><p>
+                        <strong>You’ve reached your plan’s product limit.</strong>
+                        Your search keeps running for the products already indexed, but new products won’t be added until you upgrade. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
+                    </p></div>
+                <?php endif; ?>
                 <div class="ns-card">
                     <h2 class="ns-card__title">Sync health</h2>
                     <div class="ns-stats">
@@ -193,6 +200,43 @@ final class SettingsPage
                             <?php submit_button('Disconnect', 'delete', 'submit', false); ?>
                         </form>
                     </div>
+                </div>
+
+                <?php
+                $avgMs = (int) Settings::get('avg_batch_ms');
+                $lastMs = (int) Settings::get('last_batch_ms');
+                $itemsTotal = (int) Settings::get('sync_items_total');
+                $batchesTotal = (int) Settings::get('sync_batches_total');
+                $nextDrain = function_exists('as_next_scheduled_action') ? as_next_scheduled_action(Drain::HOOK) : false;
+                $nextLabel = $nextDrain ? human_time_diff(time(), (int) $nextDrain).' from now' : 'On demand';
+                ?>
+                <div class="ns-card">
+                    <h2 class="ns-card__title">Sync performance</h2>
+                    <div class="ns-stats">
+                        <div class="ns-stat">
+                            <div class="ns-stat__label">Avg sync speed</div>
+                            <div class="ns-stat__value"><?php echo $avgMs > 0 ? esc_html(number_format_i18n($avgMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
+                        </div>
+                        <div class="ns-stat">
+                            <div class="ns-stat__label">Last batch</div>
+                            <div class="ns-stat__value"><?php echo $lastMs > 0 ? esc_html(number_format_i18n($lastMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
+                        </div>
+                        <div class="ns-stat">
+                            <div class="ns-stat__label">Products synced</div>
+                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($itemsTotal)); ?></div>
+                        </div>
+                        <div class="ns-stat">
+                            <div class="ns-stat__label">Batches sent</div>
+                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($batchesTotal)); ?></div>
+                        </div>
+                        <div class="ns-stat">
+                            <div class="ns-stat__label">Next sync</div>
+                            <div class="ns-stat__value" style="font-size:14px;font-weight:600;"><?php echo esc_html($nextLabel); ?></div>
+                        </div>
+                    </div>
+                    <p class="ns-card__intro" style="margin-top:12px;margin-bottom:0;">
+                        Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index.
+                    </p>
                 </div>
 
                 <div class="ns-card">
