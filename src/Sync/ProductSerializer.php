@@ -27,7 +27,10 @@ final class ProductSerializer
 
         $data = [
             'id'               => $product->get_id(),
-            'name'             => $product->get_name(),
+            // Strip any HTML from the title (a feed/CSV/REST import can bypass WP's
+            // own sanitisation) so the indexed name is plain text — the search widget
+            // renders it, and untrusted markup must never reach a shopper's browser.
+            'name'             => wp_strip_all_tags((string) $product->get_name()),
             'description'      => wp_strip_all_tags((string) ($product->get_short_description() ?: $product->get_description())),
             'sku'              => (string) $product->get_sku(),
             'brand'            => self::brand($product),
