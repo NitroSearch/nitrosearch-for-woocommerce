@@ -1,6 +1,6 @@
 === NitroSearch for WooCommerce ===
 Contributors: nitrosearch
-Tags: woocommerce, product search, ajax search, instant search, live search
+Tags: woocommerce search, product search, instant search, autocomplete, faceted search
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
@@ -8,7 +8,7 @@ Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Amazon-quality search for WooCommerce — instant, typo-tolerant results served from the cloud, without slowing your store down.
+Instant, typo-tolerant WooCommerce product search served from the cloud — Amazon-quality results with facets, without slowing your store down.
 
 == Description ==
 
