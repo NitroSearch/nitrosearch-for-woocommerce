@@ -2,9 +2,9 @@
 Contributors: webdeviant
 Tags: woocommerce, search, product search, ajax search, instant search
 Requires at least: 6.5
-Tested up to: 6.7
+Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,18 @@ Privacy policy: https://nitrosearch.io/privacy
 2. Install and activate NitroSearch for WooCommerce.
 3. Open the NitroSearch menu in wp-admin and click "Connect store".
 
+== Screenshots ==
+
+1. The NitroSearch admin screen: connection status, live sync health, and sync performance.
+2. Instant, typo-tolerant search enhancing your theme's own search box.
+3. The full results page with category, brand, price and availability filters.
+
 == Changelog ==
+
+= 1.2.1 =
+* New: an optional "Powered by NitroSearch" credit in the search box — off by default; turn it on in Appearance if you'd like to show your support.
+* Compatibility: tested up to WordPress 7.0.
+* Housekeeping: hardened the catalogue-sync database queries.
 
 = 1.2.0 =
 * New: a Sync performance panel on the admin screen — average and most-recent batch speed, how many products have synced, batches sent, and when the next sync runs.

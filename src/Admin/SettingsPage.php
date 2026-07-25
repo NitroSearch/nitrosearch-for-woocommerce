@@ -293,6 +293,17 @@ final class SettingsPage
                                     </label>
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row">Powered-by badge</th>
+                                <td>
+                                    <label>
+                                        <input name="show_badge" id="ns_badge" type="checkbox" value="1"
+                                            <?php checked((bool) Settings::get('show_badge', false)); ?>>
+                                        Show a small &ldquo;Powered by NitroSearch&rdquo; credit in the search box
+                                    </label>
+                                    <p class="description">Off by default. Turn it on to show your support &mdash; thank you!</p>
+                                </td>
+                            </tr>
                         </table>
                         <?php submit_button('Save appearance', 'secondary'); ?>
                     </form>
@@ -389,6 +400,7 @@ final class SettingsPage
             'accent_color' => (string) $accent,
             'selector' => $selector,
             'results_takeover' => isset($_POST['results_takeover']),
+            'show_badge' => isset($_POST['show_badge']),
         ]);
         $this->redirect('Appearance saved.');
     }

@@ -58,7 +58,9 @@ final class Outbox
         $version = self::version();
 
         // Coalescing upsert: newest write wins, row returns to 'pending' so an
-        // edit landing during an in-flight drain is not lost.
+        // edit landing during an in-flight drain is not lost. Direct query on the
+        // plugin's own sync-queue table — no core API, intentionally uncached.
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $wpdb->query($wpdb->prepare(
             "INSERT INTO {$table} (object_type, object_id, op, version, status, updated_at)
              VALUES (%s, %d, %s, %d, 'pending', %s)
@@ -83,14 +85,19 @@ final class Outbox
 
         self::reclaimStale();
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $rows = $wpdb->get_results($wpdb->prepare(
             "SELECT id, object_type, object_id, op, version FROM {$table} WHERE status = 'pending' ORDER BY id ASC LIMIT %d",
             $limit
         ));
 
         if ($rows) {
-            $ids = implode(',', array_map(static fn ($r) => (int) $r->id, $rows));
-            $wpdb->query("UPDATE {$table} SET status = 'claimed' WHERE id IN ({$ids})");
+            // Bind every id via prepare (a %d placeholder each) — never interpolate
+            // the value list. The table name is a fixed, plugin-owned identifier.
+            $ids = array_map(static fn ($r) => (int) $r->id, $rows);
+            $placeholders = implode(',', array_fill(0, count($ids), '%d'));
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+            $wpdb->query($wpdb->prepare("UPDATE {$table} SET status = 'claimed' WHERE id IN ({$placeholders})", ...$ids));
         }
 
         return $rows ?: [];
@@ -104,8 +111,10 @@ final class Outbox
     public static function complete(int $id, int $version): void
     {
         global $wpdb;
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $wpdb->query($wpdb->prepare(
-            "DELETE FROM ".self::table()." WHERE id = %d AND status = 'claimed' AND version = %d",
+            "DELETE FROM {$table} WHERE id = %d AND status = 'claimed' AND version = %d",
             $id,
             $version
         ));
@@ -115,19 +124,27 @@ final class Outbox
     public static function release(array $ids): void
     {
         global $wpdb;
+        $table = self::table();
+        $ids = array_values(array_filter(array_map('intval', $ids)));
         if (! $ids) {
             return;
         }
-        $in = implode(',', array_map('intval', $ids));
-        $wpdb->query("UPDATE ".self::table()." SET status = 'pending' WHERE id IN ({$in})");
+        // Every id is bound via a %d placeholder through prepare; only the fixed
+        // plugin-owned table name and the constant placeholder list are interpolated.
+        $placeholders = implode(',', array_fill(0, count($ids), '%d'));
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+        $wpdb->query($wpdb->prepare("UPDATE {$table} SET status = 'pending' WHERE id IN ({$placeholders})", ...$ids));
     }
 
     /** Rescue rows stuck 'claimed' (a crashed drain) after 5 minutes. */
     private static function reclaimStale(): void
     {
         global $wpdb;
+        $table = self::table();
+        // Fixed maintenance query on the plugin's own queue table; no user input.
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $wpdb->query(
-            "UPDATE ".self::table()." SET status = 'pending'
+            "UPDATE {$table} SET status = 'pending'
              WHERE status = 'claimed' AND updated_at < (UTC_TIMESTAMP() - INTERVAL 5 MINUTE)"
         );
     }
@@ -135,7 +152,8 @@ final class Outbox
     public static function pendingCount(): int
     {
         global $wpdb;
-
-        return (int) $wpdb->get_var("SELECT COUNT(*) FROM ".self::table()." WHERE status = 'pending'");
+        $table = self::table();
+        // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+        return (int) $wpdb->get_var("SELECT COUNT(*) FROM {$table} WHERE status = 'pending'");
     }
 }

@@ -46,8 +46,10 @@ final class WidgetLoader
                 ?: Settings::apiUrl().'/widget/nitrosearch.v1.js'),
             'siteUrl'    => get_site_url(),
             'currency'   => function_exists('get_woocommerce_currency') ? get_woocommerce_currency() : 'USD',
-            // Free tier shows the badge; paid plans clear it (server decides later).
-            'badge'      => true,
+            // "Powered by NitroSearch" is OPT-IN and defaults OFF — a front-end credit
+            // must never show without the site owner's explicit choice (wp.org
+            // guideline 10). Merchants enable it in the plugin's Appearance settings.
+            'badge'      => (bool) Settings::get('show_badge', false),
             'theme'      => (object) $theme,
             // Results-page takeover on the product search page (merchant toggle).
             'results'    => (bool) Settings::get('results_takeover', true),
