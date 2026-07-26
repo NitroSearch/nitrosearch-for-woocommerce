@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.2.3
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,8 +45,8 @@ This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.
 * **Where:** the NitroSearch API and search engine, at `api.nitrosearch.io` and your store's dedicated search endpoint.
 * **Nothing leaves your site until you click Connect.**
 
-Service Terms of Use: [https://nitrosearch.io/terms](https://nitrosearch.io/terms)
-Privacy Policy: [https://nitrosearch.io/privacy](https://nitrosearch.io/privacy)
+Service Terms of Use: [https://nitrosearch.io/legal/terms](https://nitrosearch.io/legal/terms)
+Privacy Policy: [https://nitrosearch.io/legal/privacy](https://nitrosearch.io/legal/privacy)
 
 == Installation ==
 
@@ -101,6 +101,10 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.3.0 =
+* Improved: gentler, faster first-time catalogue sync. Large catalogues now sync in the background in resumable batches instead of all at once, so connecting a big store no longer risks slowing down or timing out your site — and the sync paces itself to leave your storefront responsive for shoppers.
+* Fix: corrected the Terms of Service and Privacy Policy links in the plugin description.
+
 = 1.2.3 =
 * Fix: the plugin and author links in the plugin header now point to separate pages, as the plugin directory requires.
 
@@ -132,6 +136,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.3.0 =
+Gentler, faster first-time sync for large catalogues, plus corrected Terms/Privacy links.
 
 = 1.2.3 =
 Minor plugin-header fix for the WordPress.org directory. No functional changes.

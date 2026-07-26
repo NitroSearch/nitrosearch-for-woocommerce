@@ -5,7 +5,7 @@ namespace NitroSearch\Admin;
 use NitroSearch\Api\Client;
 use NitroSearch\Settings;
 use NitroSearch\Sync\Drain;
-use NitroSearch\Sync\Hooks;
+use NitroSearch\Sync\FullSync;
 use NitroSearch\Sync\Outbox;
 
 if (! defined('ABSPATH')) {
@@ -68,6 +68,7 @@ final class SettingsPage
 
         $connected = Settings::isConnected();
         $ready = Settings::hasSearchKey();
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only admin-notice string, for display only; sanitized, no state change.
         $notice = isset($_GET['ns_notice']) ? sanitize_text_field(wp_unslash($_GET['ns_notice'])) : '';
         $action = admin_url('admin-post.php');
 
@@ -333,6 +334,7 @@ final class SettingsPage
     {
         $this->authorize('nitrosearch_connect');
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() (check_admin_referer) above.
         $token = isset($_POST['connect_token']) ? sanitize_text_field(wp_unslash($_POST['connect_token'])) : '';
         Settings::update(['connect_token' => $token]);
 
@@ -347,9 +349,8 @@ final class SettingsPage
         // pending and the merchant confirms via "Check status".
         Client::verify();
         if (Settings::hasSearchKey()) {
-            $count = Hooks::fullSync();
-            Drain::schedule();
-            $this->redirect("Connected and verified. Queued {$count} products for sync.");
+            $count = FullSync::start();
+            $this->redirect("Connected and verified. Syncing {$count} products in the background.");
         }
         $this->redirect('Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update.');
     }
@@ -373,9 +374,8 @@ final class SettingsPage
         }
 
         if (! $wasReady && Settings::hasSearchKey()) {
-            $count = Hooks::fullSync();
-            Drain::schedule();
-            $this->redirect("Verified! Queued {$count} products for sync.");
+            $count = FullSync::start();
+            $this->redirect("Verified! Syncing {$count} products in the background.");
         }
         if (Settings::hasSearchKey()) {
             $this->redirect((int) Settings::get('product_count').' products indexed · '.(int) Outbox::pendingCount().' pending.');
@@ -386,14 +386,14 @@ final class SettingsPage
     public function handleSync(): void
     {
         $this->authorize('nitrosearch_sync');
-        $count = Hooks::fullSync();
-        Drain::schedule();
-        $this->redirect("Queued {$count} products for sync.");
+        $count = FullSync::start();
+        $this->redirect("Syncing {$count} products in the background.");
     }
 
     public function handleAppearance(): void
     {
         $this->authorize('nitrosearch_appearance');
+        // phpcs:disable WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() (check_admin_referer) above.
         $accent = isset($_POST['accent_color']) ? sanitize_hex_color(wp_unslash($_POST['accent_color'])) : '';
         $selector = isset($_POST['selector']) ? sanitize_text_field(wp_unslash($_POST['selector'])) : '';
         Settings::update([
@@ -402,6 +402,7 @@ final class SettingsPage
             'results_takeover' => isset($_POST['results_takeover']),
             'show_badge' => isset($_POST['show_badge']),
         ]);
+        // phpcs:enable WordPress.Security.NonceVerification.Missing
         $this->redirect('Appearance saved.');
     }
 
@@ -415,6 +416,7 @@ final class SettingsPage
         if (function_exists('as_unschedule_all_actions')) {
             as_unschedule_all_actions(Drain::HOOK);
         }
+        FullSync::cancel();
         $this->redirect('Disconnected.');
     }
 

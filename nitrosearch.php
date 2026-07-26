@@ -3,7 +3,7 @@
  * Plugin Name:       NitroSearch for WooCommerce
  * Plugin URI:        https://nitrosearch.io
  * Description:        Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results.
- * Version:           1.2.3
+ * Version:           1.3.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -22,7 +22,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-define('NITROSEARCH_VERSION', '1.2.3');
+define('NITROSEARCH_VERSION', '1.3.0');
 define('NITROSEARCH_FILE', __FILE__);
 define('NITROSEARCH_DIR', plugin_dir_path(__FILE__));
 
@@ -59,6 +59,9 @@ register_deactivation_hook(__FILE__, function (): void {
     if (function_exists('as_unschedule_all_actions')) {
         as_unschedule_all_actions(\NitroSearch\Sync\Drain::HOOK);
     }
+    // Also clears the `active` flag so a full sync doesn't silently auto-resume on
+    // reactivation with no scheduled chunk.
+    \NitroSearch\Sync\FullSync::cancel();
 });
 
 // Boot once WooCommerce is loaded.

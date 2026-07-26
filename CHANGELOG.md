@@ -5,6 +5,17 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.3.0] — 2026-07-26
+
+### Improved
+- Gentler, faster first-time catalogue sync. Large catalogues now sync in the
+  background in resumable batches instead of all at once, so connecting a big
+  store no longer risks slowing down or timing out the site — and the sync paces
+  itself to leave the storefront responsive for shoppers.
+
+### Fixed
+- Corrected the Terms of Service and Privacy Policy links in the plugin description.
+
 ## [1.2.3] — 2026-07-25
 
 ### Fixed

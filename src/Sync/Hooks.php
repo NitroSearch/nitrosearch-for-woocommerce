@@ -67,20 +67,4 @@ final class Hooks
         }
     }
 
-    /** Enqueue every published product (used on connect / manual full sync). */
-    public static function fullSync(): int
-    {
-        $ids = get_posts([
-            'post_type'   => 'product',
-            'post_status' => 'publish',
-            'fields'      => 'ids',
-            'numberposts' => -1,
-        ]);
-
-        foreach ($ids as $id) {
-            Outbox::enqueue('product', (int) $id, 'upsert');
-        }
-
-        return count($ids);
-    }
 }

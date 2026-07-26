@@ -6,6 +6,7 @@ use NitroSearch\Admin\SettingsPage;
 use NitroSearch\Api\VerifyEndpoint;
 use NitroSearch\Frontend\WidgetLoader;
 use NitroSearch\Sync\Drain;
+use NitroSearch\Sync\FullSync;
 use NitroSearch\Sync\Hooks;
 
 if (! defined('ABSPATH')) {
@@ -18,8 +19,10 @@ final class Plugin
     {
         (new SettingsPage())->register();
 
-        // The drain action handler is always registered so scheduled work runs.
+        // The drain + full-sync chunk handlers are always registered so scheduled
+        // work (including a background full sync) runs even before "connected" gates.
         Drain::register();
+        FullSync::register();
 
         // The loopback verification endpoint is always available so the backend
         // can prove control of the site (the handler no-ops until connected).

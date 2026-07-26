@@ -20,6 +20,18 @@ final class Drain
     public const HOOK = 'nitrosearch_drain';
     public const BATCH = 100;
 
+    /** Rest for ~this fraction of the last batch's own duration before chaining. */
+    private const DUTY_CYCLE = 0.5;
+
+    /** Never hold the Action Scheduler worker sleeping longer than this. */
+    private const MAX_PAUSE_MS = 2000;
+
+    /** Stop chaining back-to-back batches once we're using this share of memory_limit. */
+    private const MEMORY_HEADROOM = 0.75;
+
+    /** Wall-clock ms the most recent batch's ingest round-trip took (self-throttle input). */
+    private static int $lastElapsedMs = 0;
+
     public static function register(): void
     {
         add_action(self::HOOK, [self::class, 'run']);
@@ -40,17 +52,40 @@ final class Drain
             return;
         }
 
+        // Watchdog: if a background full sync stalled (a lost chunk action — Action
+        // Scheduler does not auto-retry), re-arm it. Cheap no-op unless one is active
+        // and unscheduled, so it just makes "resumable" actually resume unattended.
+        FullSync::resumeIfStalled();
+
         // Self-pacing: sync throughput is governed by how fast the outbox drains, not
         // by the fixed 60s heartbeat. When a full batch went through and a backlog
         // remains, chain an IMMEDIATE async follow-up so a large catalogue (a first
-        // full sync) drains back-to-back — turning an ~83h/500k crawl (100 items every
-        // 60s) into minutes — instead of one batch per minute. The chain is linear (one
-        // follow-up per successful full batch), and it self-terminates the moment the
+        // full sync) drains fast — instead of one batch per minute. The chain is linear
+        // (one follow-up per successful full batch) and self-terminates the moment the
         // queue empties, the batch comes back partial, or a send fails (e.g. a 429 rate
         // limit) — after which the 60s heartbeat resumes and only bounds idle latency.
-        if (self::drainOnce() === 'full' && Outbox::pendingCount() > 0) {
-            self::enqueueImmediate();
+        if (self::drainOnce() !== 'full' || Outbox::pendingCount() <= 0) {
+            return;
         }
+
+        // Memory-headroom guard: a batch of wide variable products can hydrate a lot of
+        // WC_Product objects. If this process is already near its PHP memory_limit, do
+        // NOT chain another back-to-back batch — let the 60s heartbeat resume the work
+        // in a FRESH process instead of risking an OOM that kills the drain mid-flight.
+        if (! self::hasMemoryHeadroom()) {
+            return;
+        }
+
+        // Self-throttle (be a polite guest): rest for a slice of the time this batch
+        // itself took before chaining the next one, so a first full sync uses at most
+        // ~half the wall-clock on the MERCHANT's own host rather than pegging it
+        // back-to-back. Adaptive + config-free — a fast host barely pauses, a slow or
+        // loaded one rests more — and capped so we never hold the worker too long. This
+        // governs load locally instead of relying on the backend's 429 (which never
+        // fires on a host slower than the server-side rate ceiling).
+        self::throttle();
+
+        self::enqueueImmediate();
     }
 
     /**
@@ -88,6 +123,7 @@ final class Drain
         $startedAt = microtime(true);
         $result = Client::ingestBatch($items);
         $elapsedMs = (int) round((microtime(true) - $startedAt) * 1000);
+        self::$lastElapsedMs = $elapsedMs;
 
         if (! $result['ok']) {
             Outbox::release($ids);   // leave them pending for the next tick
@@ -108,13 +144,54 @@ final class Drain
     /**
      * Enqueue an immediate one-off drain via Action Scheduler so a backlog keeps
      * draining without waiting for the next 60s heartbeat. A no-op if Action Scheduler
-     * isn't available (the recurring heartbeat still covers it).
+     * isn't available (the recurring heartbeat still covers it). Public so the chunked
+     * full sync can kick a drain as it queues products.
      */
-    private static function enqueueImmediate(): void
+    public static function enqueueImmediate(): void
     {
         if (function_exists('as_enqueue_async_action')) {
             as_enqueue_async_action(self::HOOK, [], 'nitrosearch');
         }
+    }
+
+    /**
+     * Rest for a slice of the last batch's own duration (a ~50% duty cycle), capped, so
+     * back-to-back draining leaves the merchant's host headroom for real shopper traffic.
+     */
+    private static function throttle(): void
+    {
+        $pauseMs = (int) min(self::MAX_PAUSE_MS, round(self::$lastElapsedMs * self::DUTY_CYCLE));
+        if ($pauseMs > 0) {
+            usleep($pauseMs * 1000);
+        }
+    }
+
+    /** True while this process has comfortable headroom below its PHP memory_limit. */
+    private static function hasMemoryHeadroom(): bool
+    {
+        $limit = self::memoryLimitBytes();
+        if ($limit <= 0) {
+            return true; // unlimited (-1) or unparseable → don't block on memory
+        }
+
+        return memory_get_usage(true) < ($limit * self::MEMORY_HEADROOM);
+    }
+
+    /** The process memory_limit in bytes; -1 for unlimited/unknown. */
+    private static function memoryLimitBytes(): int
+    {
+        $raw = trim((string) ini_get('memory_limit'));
+        if ($raw === '' || $raw === '-1') {
+            return -1;
+        }
+        $value = (int) $raw;
+
+        return match (strtolower(substr($raw, -1))) {
+            'g' => $value * 1024 * 1024 * 1024,
+            'm' => $value * 1024 * 1024,
+            'k' => $value * 1024,
+            default => $value,
+        };
     }
 
     /**
