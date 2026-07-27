@@ -39,6 +39,18 @@ every public release carries a clear, meaningful changelog.
    `tags/X.Y.0` as a server-side copy. It refuses to overwrite a tag that already
    exists. Watch the run; a red build means nothing was published.
 
+> **Gotcha — a release event runs the workflow file *from the tag*, not from
+> `main`.** So a fix to the workflow only takes effect for releases tagged
+> *after* it lands; tagging first and fixing the workflow afterwards means the
+> release still runs the old file. If you have just changed the workflow, either
+> re-tag or publish that one release with the manual trigger (which does use
+> `main`'s copy). The guards and listing assets are unaffected — those are
+> checked out from the default branch on purpose.
+>
+> The failure mode is safe: every guard and the build run before Subversion is
+> even installed, so a workflow that breaks on an old tag stops without touching
+> the directory.
+
 ## The directory listing assets
 
 The images on the wordpress.org page — screenshots, banners, icons — live in
