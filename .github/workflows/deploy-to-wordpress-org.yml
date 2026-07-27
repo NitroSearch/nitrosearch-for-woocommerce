@@ -167,8 +167,10 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          svn ls "$SVN_URL/tags/$VERSION" >/dev/null
-          PUBLISHED="$(svn cat "$SVN_URL/trunk/readme.txt" | grep -m1 'Stable tag:' | tr -d '\r')"
+          # --non-interactive is required: without it svn tries to prompt on a
+          # headless runner and exits 1, failing the check after a good publish.
+          svn ls --non-interactive "$SVN_URL/tags/$VERSION" >/dev/null
+          PUBLISHED="$(svn cat --non-interactive "$SVN_URL/trunk/readme.txt" | grep -m1 'Stable tag:' | tr -d '\r')"
           echo "tags/$VERSION exists; trunk says: $PUBLISHED"
           echo "Listing: https://wordpress.org/plugins/$PLUGIN_SLUG (indexing can lag up to 72h)"
 
