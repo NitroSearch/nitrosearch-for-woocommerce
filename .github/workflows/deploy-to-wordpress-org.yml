@@ -45,10 +45,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the released tag
+      # Two checkouts, deliberately. `release/` is the code we publish — exactly
+      # what was tagged. `current/` supplies the guards and the listing images,
+      # so policy and presentation are whatever they are today rather than
+      # whatever they were when the tag was cut. Publishing an older tag then
+      # still gets the newest safety checks, and cannot strip the listing page
+      # of images that tag never contained.
+      - name: Check out the released tag — the code being published
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.release.tag_name || inputs.tag }}
+          path: release
+
+      - name: Check out the current branch — guards and listing assets
+        uses: actions/checkout@v4
+        with:
+          path: current
 
       - name: Resolve and validate the version
         id: version
@@ -65,9 +77,13 @@ jobs:
           echo "Publishing ${RAW_TAG#v}"
 
       - name: Pre-release guards
-        run: bin/preflight-release.sh "${{ steps.version.outputs.version }}"
+        env:
+          PREFLIGHT_ROOT: ${{ github.workspace }}/release
+          PREFLIGHT_ASSETS_DIR: ${{ github.workspace }}/current/.wordpress-org
+        run: current/bin/preflight-release.sh "${{ steps.version.outputs.version }}"
 
       - name: Build the shipping tree
+        working-directory: release
         run: |
           set -euo pipefail
           bin/build-plugin.sh
@@ -100,9 +116,11 @@ jobs:
           svn up --set-depth infinity -q svn/trunk svn/assets
 
           # trunk = exactly what ships; assets = the directory listing images,
-          # which deliberately never enter the download.
-          rsync -a --delete --exclude '.svn' "build/nitrosearch/" svn/trunk/
-          rsync -a --delete --exclude '.svn' ".wordpress-org/" svn/assets/
+          # which deliberately never enter the download. Both syncs use --delete,
+          # so the guards having verified the asset source is non-empty is what
+          # stands between a republish and a listing page stripped of images.
+          rsync -a --delete --exclude '.svn' "release/build/nitrosearch/" svn/trunk/
+          rsync -a --delete --exclude '.svn' "current/.wordpress-org/" svn/assets/
 
           cd svn
           svn add --force trunk assets >/dev/null

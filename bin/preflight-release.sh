@@ -10,7 +10,13 @@
 #
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# The tree being checked. CI points this at a checkout of the tag being
+# published, while running this script from the current branch — so the newest
+# guards apply to whatever we publish, rather than being frozen at tag time.
+ROOT="${PREFLIGHT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+# Listing images are presentation, not versioned code, so CI takes them from the
+# current branch even when publishing an older tag.
+ASSETS_DIR="${PREFLIGHT_ASSETS_DIR:-$ROOT/.wordpress-org}"
 cd "$ROOT"
 
 EXPECTED="${1:-}"
@@ -87,19 +93,22 @@ fi
 # The directory renders caption N against screenshot-N.png; a mismatch shows
 # blank frames or drops captions.
 CAPTIONS="$(awk '/^== Screenshots ==$/{f=1;next} /^== /{f=0} f && /^[0-9]+\./' readme.txt | wc -l | tr -d ' ')"
-SHOTS="$(find .wordpress-org -maxdepth 1 -name 'screenshot-*.png' 2>/dev/null | wc -l | tr -d ' ')"
+SHOTS="$(find "$ASSETS_DIR" -maxdepth 1 -name 'screenshot-*.png' 2>/dev/null | wc -l | tr -d ' ')"
 if [ "$CAPTIONS" = "$SHOTS" ]; then
   pass "$CAPTIONS screenshot captions, $SHOTS images"
 else
-  fail "$CAPTIONS screenshot captions but $SHOTS images in .wordpress-org/"
+  fail "$CAPTIONS screenshot captions but $SHOTS images in $ASSETS_DIR"
 fi
 
-# --- 6. Package hygiene -----------------------------------------------------
-# The listing images must never ride along in the download.
-if [ -d .wordpress-org ]; then
-  pass ".wordpress-org/ present (listing images, never packaged)"
+# --- 6. Listing assets ------------------------------------------------------
+# Publishing syncs this directory over the live one with --delete. An empty or
+# missing source would silently strip every image from the directory page, so
+# refuse rather than publish a listing with no icon, banner or screenshots.
+ASSET_COUNT="$(find "$ASSETS_DIR" -maxdepth 1 -type f 2>/dev/null | wc -l | tr -d ' ')"
+if [ "$ASSET_COUNT" -gt 0 ]; then
+  pass "$ASSET_COUNT listing assets present (never packaged into the download)"
 else
-  fail ".wordpress-org/ missing — the directory listing would lose its images"
+  fail "no listing assets in $ASSETS_DIR — publishing would strip the directory page"
 fi
 
 # --- 7. Syntax --------------------------------------------------------------
