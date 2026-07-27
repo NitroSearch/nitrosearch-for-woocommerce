@@ -21,7 +21,7 @@ Install the plugin, connect your store, and from that moment every search your c
 * **Instant & typo-tolerant** — results appear as your customer types, and "runing shoes" still finds your running shoes.
 * **It won't slow your store down** — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score.
 * **Filters, facets & a full results page** — category, brand, price, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
-* **Sync you can trust** — reliable background sync with active health checks and nightly reconciliation keep our copy of your catalogue accurate, with a live sync-status screen so you can see exactly what's indexed. No more "force re-index" guessing games.
+* **Sync you can trust** — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise.
 * **Honest, simple pricing** — a genuinely free tier, every plan gets every feature, and you only ever pay for catalogue size. No per-search fees, no surprise bills.
 * **Set-up in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
 
@@ -29,12 +29,12 @@ Install the plugin, connect your store, and from that moment every search your c
 
 NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:
 
-1. **Keeps our copy of your catalogue fresh.** As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced, retried, and reconciled nightly so nothing drifts out of sync.
+1. **Keeps our copy of your catalogue fresh.** As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands.
 2. **Answers searches, instantly.** When a shopper searches, the widget talks *directly* to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load.
 
 = Free to start =
 
-The free tier works the moment you install the plugin — up to 100 products, with every feature included. A NitroSearch account is optional; create one to manage your plan, see search analytics, and upgrade from your dashboard. Learn more at [nitrosearch.io](https://nitrosearch.io).
+The free tier works the moment you install the plugin — up to 100 products, with every feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at [nitrosearch.io](https://nitrosearch.io).
 
 == External services ==
 
@@ -42,6 +42,7 @@ This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.
 
 * **What is sent, and when:** When you click **"Connect store"**, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen.
 * **Search queries:** Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results.
+* **Scripts loaded onto your storefront:** once connected, the plugin loads the search widget's JavaScript from `api.nitrosearch.io` (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect.
 * **Where:** the NitroSearch API and search engine, at `api.nitrosearch.io` and your store's dedicated search endpoint.
 * **Nothing leaves your site until you click Connect.**
 
@@ -63,7 +64,7 @@ Yes. The free tier covers up to 100 products with every feature included, foreve
 
 = Do I need to create an account? =
 
-No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan, view search analytics, and upgrade.
+No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan and upgrade.
 
 = Will it slow my store down? =
 
@@ -79,7 +80,7 @@ Nothing until you click **Connect**. After that, your product catalogue is sent 
 
 = How does it stay in sync with my catalogue? =
 
-The plugin keeps a local change-queue, drains it reliably in the background (so it keeps working even on low-traffic sites and behind aggressive caching), and NitroSearch reconciles the whole catalogue nightly to auto-repair any drift. A live sync-status screen shows exactly what's indexed.
+The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap.
 
 = Is WooCommerce required? =
 
@@ -123,7 +124,7 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 = 1.1.0 =
 * New: filters and a full results page — category, brand, price, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
 * New: appearance settings — set an accent colour for prices, highlights and selected filters, and optionally point the widget at your theme's search box.
-* New: "Manage / Upgrade" — link your store to a NitroSearch account to manage your plan and view analytics, without re-indexing or losing your search.
+* New: "Manage / Upgrade" — link your store to a NitroSearch account to manage your plan, without re-indexing or losing your search.
 * Improved: a refreshed, clearer admin screen showing connection status and live sync health.
 * Improved: faster, more accessible instant-search dropdown, with full keyboard navigation and recent searches.
 * Improved: more reliable and more secure catalogue sync, with clearer connection and verification status.

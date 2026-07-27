@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://nitrosearch.io">nitrosearch.io</a> &nbsp;·&nbsp;
   <a href="https://nitrosearch.io/pricing">Pricing</a> &nbsp;·&nbsp;
-  <a href="https://nitrosearch.io/privacy">Privacy</a> &nbsp;·&nbsp;
+  <a href="https://nitrosearch.io/legal/privacy">Privacy</a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
@@ -31,9 +31,8 @@ never in the search path.
   it never clashes with your theme or drags down your speed score. No theme rebuild required.
 - **Filters, facets & a full results page** — category, brand, price, on-sale and in-stock facets, a
   complete results grid with pagination, and add-to-cart right from the results.
-- **Sync you can trust** — an outbox, active health checks and nightly reconciliation keep our copy of
-  your catalogue correct even when WordPress's change signals fail, with a live "in sync" screen to prove
-  it.
+- **Sync you can trust** — an outbox that coalesces every change, signed and versioned updates so nothing
+  lands out of order, and retries until each one sticks — with a live "in sync" screen to prove it.
 - **No search load on your own server** — the work your WordPress host physically can't do, done for you.
 - **Honest, simple pricing** — a genuinely free tier, every plan gets every feature, and you only pay for
   catalogue size. Cancel yourself in one click.
@@ -49,7 +48,7 @@ your product data (names, descriptions, SKUs, prices, stock, categories, attribu
 permalinks) is sent to NitroSearch to be indexed, and product changes are sent as they happen.
 
 A NitroSearch account is optional to get started (the free tier works on install) and lets you manage your
-plan, see search analytics, and upgrade from your dashboard.
+plan and upgrade from your dashboard.
 
 ## Requirements
 
