@@ -247,12 +247,12 @@ final class SettingsPage
                             <span class="ns-confirm__check" aria-hidden="true">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
                             </span>
-                            <span>This store is claimed to a NitroSearch account. Manage your plan, settings and analytics from your NitroSearch dashboard.</span>
+                            <span>This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard.</span>
                         </div>
                     <?php else : ?>
                         <p class="ns-card__intro">
-                            You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it,
-                            see search analytics, or upgrade — your index and search stay exactly as they are.
+                            You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it
+                            or upgrade — your index and search stay exactly as they are.
                         </p>
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_claim'); ?>

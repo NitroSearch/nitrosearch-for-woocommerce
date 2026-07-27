@@ -57,9 +57,13 @@ jobs:
           ref: ${{ github.event.release.tag_name || inputs.tag }}
           path: release
 
-      - name: Check out the current branch — guards and listing assets
+      # `ref:` is REQUIRED here. Without it checkout defaults to github.ref, which
+      # on a release event is the tag itself — both checkouts would land on the
+      # tag and the split above would silently do nothing.
+      - name: Check out the default branch — guards and listing assets
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.repository.default_branch }}
           path: current
 
       - name: Resolve and validate the version
@@ -67,12 +71,17 @@ jobs:
         env:
           # Via env, never inlined into the script — a tag name is untrusted input.
           RAW_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        shell: bash
         run: |
           set -euo pipefail
-          case "$RAW_TAG" in
-            v[0-9]*.[0-9]*.[0-9]*) ;;
-            *) echo "::error::Refusing to publish '$RAW_TAG' — expected vX.Y.Z"; exit 1 ;;
-          esac
+          # An ANCHORED regex, not a glob. `case v[0-9]*.[0-9]*.[0-9]*` accepts
+          # `v1.0.0$(id)` and `v9.9.9;whoami` — both legal git tag names — and the
+          # derived value is used by later steps in a job that holds the SVN
+          # password. Match the whole string or refuse.
+          if [[ ! "$RAW_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Refusing to publish '$RAW_TAG' — expected exactly vX.Y.Z"
+            exit 1
+          fi
           echo "version=${RAW_TAG#v}" >> "$GITHUB_OUTPUT"
           echo "Publishing ${RAW_TAG#v}"
 
@@ -80,17 +89,20 @@ jobs:
         env:
           PREFLIGHT_ROOT: ${{ github.workspace }}/release
           PREFLIGHT_ASSETS_DIR: ${{ github.workspace }}/current/.wordpress-org
-        run: current/bin/preflight-release.sh "${{ steps.version.outputs.version }}"
+          VERSION: ${{ steps.version.outputs.version }}
+        run: current/bin/preflight-release.sh "$VERSION"
 
       - name: Build the shipping tree
         working-directory: release
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
           bin/build-plugin.sh
           # Unpack the allowlisted zip — publishing the same artifact users
           # download means the package can never drift from the release.
           mkdir -p build
-          unzip -q "dist/nitrosearch-${{ steps.version.outputs.version }}.zip" -d build
+          unzip -q "dist/nitrosearch-${VERSION}.zip" -d build
 
       - name: Install Subversion
         run: |
@@ -101,13 +113,15 @@ jobs:
           svn --version --quiet
 
       - name: Refuse to overwrite an existing tag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          if svn ls "$SVN_URL/tags/${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
-            echo "::error::tags/${{ steps.version.outputs.version }} is already published. Cut a new version instead."
+          if svn ls "$SVN_URL/tags/$VERSION" >/dev/null 2>&1; then
+            echo "::error::tags/$VERSION is already published. Cut a new version instead."
             exit 1
           fi
-          echo "tags/${{ steps.version.outputs.version }} is free"
+          echo "tags/$VERSION is free"
 
       - name: Sync trunk and listing assets
         run: |
@@ -133,9 +147,9 @@ jobs:
         if: ${{ github.event_name == 'release' || inputs.dry_run == false }}
         env:
           SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          VERSION="${{ steps.version.outputs.version }}"
           AUTH=(--username "$SVN_USER" --password "$SVN_PASSWORD" --non-interactive --no-auth-cache)
 
           cd svn
@@ -146,9 +160,10 @@ jobs:
 
       - name: Confirm it went live
         if: ${{ github.event_name == 'release' || inputs.dry_run == false }}
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          VERSION="${{ steps.version.outputs.version }}"
           svn ls "$SVN_URL/tags/$VERSION" >/dev/null
           PUBLISHED="$(svn cat "$SVN_URL/trunk/readme.txt" | grep -m1 'Stable tag:' | tr -d '\r')"
           echo "tags/$VERSION exists; trunk says: $PUBLISHED"

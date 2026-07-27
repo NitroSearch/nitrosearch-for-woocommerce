@@ -8,7 +8,7 @@
 #
 set -euo pipefail
 
-SLUG="nitrosearch"
+SLUG="nitrosearch-for-woocommerce"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 

@@ -54,13 +54,22 @@ fi
 # that also labels it as future work — otherwise the listing promises something
 # the plugin does not do. Retire a term here when the feature actually ships.
 UNBUILT='nightly|reconcil|health.?check|analytic|merchandis|personalis|personaliz|a/b test'
-ROADMAP_MARKER='roadmap|coming soon|planned|not yet|in design|we.re building'
+# A line is allowed to name an unbuilt feature if it also labels it as future work
+# OR explicitly disclaims it — a changelog entry saying "X isn't built yet" is the
+# opposite of marketing X, and honest corrections must not trip their own guard.
+ROADMAP_MARKER='roadmap|coming soon|planned|not yet|in design|we.re building|isn.t built|is not built|aren.t built|doesn.t exist|no longer'
 
-OFFENDERS="$(grep -inE "$UNBUILT" readme.txt | grep -viE "$ROADMAP_MARKER" || true)"
+# Scan EVERY user-visible surface, not just the listing. The first version of
+# this check looked at readme.txt alone, and a "see search analytics" promise
+# shipped to production in the admin screen underneath it — the readme was
+# corrected while the UI kept saying it. Anything a merchant can read counts.
+CLAIM_SURFACES="readme.txt README.md $(find src -name '*.php' 2>/dev/null | tr '\n' ' ')"
+# shellcheck disable=SC2086
+OFFENDERS="$(grep -inE "$UNBUILT" $CLAIM_SURFACES 2>/dev/null | grep -viE "$ROADMAP_MARKER" || true)"
 if [ -z "$OFFENDERS" ]; then
-  pass "readme.txt claims nothing unbuilt in present tense"
+  pass "no unbuilt feature marketed in present tense (readme, README, src/)"
 else
-  fail "readme.txt markets unbuilt features without a roadmap label:"
+  fail "unbuilt features marketed without a roadmap label:"
   printf '       %s\n' "$OFFENDERS"
 fi
 
