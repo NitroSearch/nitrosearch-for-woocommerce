@@ -96,13 +96,16 @@ jobs:
         working-directory: release
         env:
           VERSION: ${{ steps.version.outputs.version }}
+          PLUGIN_SLUG: ${{ env.PLUGIN_SLUG }}
         run: |
           set -euo pipefail
           bin/build-plugin.sh
           # Unpack the allowlisted zip — publishing the same artifact users
           # download means the package can never drift from the release.
           mkdir -p build
-          unzip -q "dist/nitrosearch-${VERSION}.zip" -d build
+          # Name derives from the slug, so the packaging slug and this step can never
+          # disagree the way they did when the slug changed.
+          unzip -q "dist/${PLUGIN_SLUG}-${VERSION}.zip" -d build
 
       - name: Install Subversion
         run: |
@@ -133,7 +136,7 @@ jobs:
           # which deliberately never enter the download. Both syncs use --delete,
           # so the guards having verified the asset source is non-empty is what
           # stands between a republish and a listing page stripped of images.
-          rsync -a --delete --exclude '.svn' "release/build/nitrosearch/" svn/trunk/
+          rsync -a --delete --exclude '.svn' "release/build/${PLUGIN_SLUG}/" svn/trunk/
           rsync -a --delete --exclude '.svn' "current/.wordpress-org/" svn/assets/
 
           cd svn
