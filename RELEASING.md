@@ -19,21 +19,46 @@ every public release carries a clear, meaningful changelog.
    - `Version:` header in `nitrosearch.php`
    - `NITROSEARCH_VERSION` constant in `nitrosearch.php`
    - `Stable tag:` in `readme.txt`
-3. **Commit** — `Release vX.Y.0`.
-4. **Build the distributable** — `bin/build-plugin.sh` → `dist/nitrosearch-X.Y.0.zip`
+3. **Run the guards** — `bin/preflight-release.sh X.Y.0`. This is the same script
+   CI runs before anything reaches the directory, so a failure here is a failure
+   there. It checks version consistency across all three declarations, that the
+   readme markets nothing unbuilt in present tense, that no legal link 404s, that
+   the changelog and screenshot captions are complete, and that PHP parses.
+4. **Commit** — `Release vX.Y.0`.
+5. **Build the distributable** — `bin/build-plugin.sh` → `dist/nitrosearch-X.Y.0.zip`
    (a clean tree containing only shipping files). Inspect the printed file list.
-5. **Tag & GitHub release:**
+6. **Tag & GitHub release:**
    ```bash
    git tag -a vX.Y.0 -m "vX.Y.0"
    git push origin main --follow-tags
    gh release create vX.Y.0 --title "vX.Y.0" --notes "…" dist/nitrosearch-X.Y.0.zip
    ```
-6. **wordpress.org** (once the plugin is listed) — copy the shipping files to the
-   SVN `trunk`, tag `tags/X.Y.0`, and set the `Stable tag`.
+7. **wordpress.org — automatic.** Publishing the GitHub release triggers
+   `.github/workflows/deploy-to-wordpress-org.yml`, which re-runs the guards,
+   rebuilds from the allowlist, syncs `trunk` and the listing assets, and creates
+   `tags/X.Y.0` as a server-side copy. It refuses to overwrite a tag that already
+   exists. Watch the run; a red build means nothing was published.
+
+## The directory listing assets
+
+The images on the wordpress.org page — screenshots, banners, icons — live in
+`.wordpress-org/`. They are **not** part of the plugin: `bin/build-plugin.sh`
+packages an explicit allowlist (`nitrosearch.php readme.txt src assets`), so a
+dotfile directory can never end up in the download. The plugin's own runtime
+`assets/` (admin CSS and brand mark) is a different thing and *does* ship.
+
+Screenshot captions in `readme.txt` are matched to `screenshot-N.png` by number,
+so the two must stay in step — the guards check the counts agree.
+
+## Publishing by hand
+
+Only needed if the workflow is unavailable. Use the manual trigger first
+(**Actions → Deploy to WordPress.org → Run workflow**, leaving *dry run* ticked)
+to see exactly what would change without committing anything.
 
 ## Pre-push checklist
 
 - `git remote -v` — confirm this is the plugin repo.
 - `git diff` — only plugin code + `readme.txt` / `CHANGELOG.md`.
-- The three version numbers match.
+- `bin/preflight-release.sh X.Y.0` passes.
 - `bin/build-plugin.sh` output lists **only** shipping files (no dev files).

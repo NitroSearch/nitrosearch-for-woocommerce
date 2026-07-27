@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="flame" x1="60" y1="80" x2="440" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#35e3e0"/>
+      <stop offset="0.5" stop-color="#38a5f6"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <!-- opaque navy square; wp.org may crop to a circle, so the hex sits well inside -->
+  <rect width="512" height="512" fill="#080b17"/>
+  <!-- plugin brand mark (elongated-hex frame + N), from plugin/assets/mark.svg, scaled ×9 -->
+  <g transform="translate(40,40) scale(9)">
+    <path d="M14 5 H34 L45 24 L34 43 H14 L3 24 Z" fill="none" stroke="url(#flame)" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M17 33 V15 L31 33 V15" fill="none" stroke="url(#flame)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
