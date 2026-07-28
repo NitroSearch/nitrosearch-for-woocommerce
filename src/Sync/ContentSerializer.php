@@ -94,7 +94,7 @@ final class ContentSerializer
 
         // Respect an SEO plugin's noindex — if the site tells search engines to
         // ignore a page, it should not surface in the site's own search either.
-        if (self::isNoIndex($post->ID)) {
+        if (self::isNoIndex($post->ID, $post->post_type)) {
             return false;
         }
 
@@ -112,15 +112,56 @@ final class ContentSerializer
         return (bool) apply_filters('nitrosearch_content_is_searchable', true, $post->ID, $post);
     }
 
-    /** Yoast and Rank Math both store a per-post noindex flag; honour either. */
-    private static function isNoIndex(int $postId): bool
+    /**
+     * Whether the site has asked for this item to be kept out of search.
+     *
+     * Checking per-post meta alone is not enough, and the gap is a common
+     * configuration rather than an edge case: Yoast's *Search Appearance → Content
+     * Types → Show Posts in search results? → No* stores a POST-TYPE-level flag and
+     * writes no per-post meta whatsoever, so a per-post-only check sees nothing and
+     * indexes the lot. Rank Math has the same shape. So this looks at three levels —
+     * per post, per post type, and the whole site.
+     *
+     * Yoast's per-post value is tri-state: '1' noindex, '2' explicitly index, '0' or
+     * absent means "follow the type default". A '2' therefore has to override a
+     * type-level noindex, or enabling one page out of a hidden type would not work.
+     *
+     * Only Yoast and Rank Math are understood. The merchant-facing copy is scoped to
+     * match rather than promising every SEO plugin.
+     */
+    private static function isNoIndex(int $postId, string $postType): bool
     {
-        if (get_post_meta($postId, '_yoast_wpseo_meta-robots-noindex', true) === '1') {
+        $yoastPost = get_post_meta($postId, '_yoast_wpseo_meta-robots-noindex', true);
+
+        if ($yoastPost === '1') {
+            return true;   // explicitly noindexed
+        }
+
+        if ($yoastPost === '2') {
+            return false;  // explicitly indexed — overrides any broader default
+        }
+
+        // "Discourage search engines from indexing this site" (Settings → Reading).
+        // Cast rather than compare strictly: WordPress normalises this option to an
+        // INTEGER 0, so `=== '0'` silently never matches. Verified against a real
+        // install — it is the kind of thing that reads correct and does nothing.
+        if ((string) get_option('blog_public', '1') === '0') {
             return true;
         }
 
-        $rankMath = get_post_meta($postId, 'rank_math_robots', true);
-        if (is_array($rankMath) && in_array('noindex', $rankMath, true)) {
+        $yoastTitles = (array) get_option('wpseo_titles', []);
+        if (! empty($yoastTitles['noindex-'.$postType])) {
+            return true;
+        }
+
+        $rankMathPost = get_post_meta($postId, 'rank_math_robots', true);
+        if (is_array($rankMathPost) && in_array('noindex', $rankMathPost, true)) {
+            return true;
+        }
+
+        $rankMathTitles = (array) get_option('rank_math_titles', []);
+        if (($rankMathTitles['pt_'.$postType.'_custom_robots'] ?? '') === 'on'
+            && in_array('noindex', (array) ($rankMathTitles['pt_'.$postType.'_robots'] ?? []), true)) {
             return true;
         }
 

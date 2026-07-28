@@ -146,16 +146,34 @@ final class FullSync
         return array_merge(['product'], Settings::indexedContentTypes());
     }
 
+    /**
+     * The next phase to walk after this one, or null when the run is genuinely done.
+     *
+     * Positioned against the CANONICAL order, not the enabled list, because the
+     * merchant can change the enabled list mid-run. Looking up the current phase in
+     * the live list meant that unticking Pages while the page phase was in flight
+     * made array_search fail, which read as "no phases left" and finished the run —
+     * silently skipping posts, with no error and no hint on the admin screen.
+     */
     private static function nextPhase(string $current): ?string
     {
-        $phases = self::phases();
-        $at = array_search($current, $phases, true);
+        $canonical = array_merge(['product'], Settings::SUPPORTED_CONTENT_TYPES);
+        $enabled = self::phases();
 
+        $at = array_search($current, $canonical, true);
         if ($at === false) {
             return null;
         }
 
-        return $phases[$at + 1] ?? null;
+        // Walk forward to the next type that is still switched on, so a type
+        // disabled mid-run is stepped over rather than ending the whole run.
+        for ($i = $at + 1; $i < count($canonical); $i++) {
+            if (in_array($canonical[$i], $enabled, true)) {
+                return $canonical[$i];
+            }
+        }
+
+        return null;
     }
 
     private static function enterPhase(string $phase): void

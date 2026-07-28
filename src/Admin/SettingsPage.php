@@ -303,7 +303,9 @@ final class SettingsPage
                                         Pages and posts count towards the same allowance as your products, so
                                         switching them off frees it up for your catalogue. Your products always
                                         come first and are never displaced by them. Private,
-                                        password-protected, draft and noindex content is never indexed.
+                                        password-protected and unpublished content is never indexed, and we
+                                        honour <em>noindex</em> set by Yoast SEO or Rank Math (per item, per
+                                        content type, or site-wide).
                                     </p>
                                 </td>
                             </tr>
