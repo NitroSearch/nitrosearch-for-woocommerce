@@ -157,15 +157,15 @@ final class SettingsPage
                 ?>
                 <?php if ($atLimit) : ?>
                     <div class="notice notice-warning inline ns-notice"><p>
-                        <strong>You’ve reached your plan’s product limit.</strong>
-                        Your search keeps running for the products already indexed, but new products won’t be added until you upgrade. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
+                        <strong>You’ve reached your plan’s limit.</strong>
+                        Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
                     </p></div>
                 <?php endif; ?>
                 <div class="ns-card">
                     <h2 class="ns-card__title">Sync health</h2>
                     <div class="ns-stats">
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Products indexed</div>
+                            <div class="ns-stat__label">Search results indexed</div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo esc_html(number_format_i18n($limit)); ?></span></div>
                             <div class="ns-progress"><div class="ns-progress__fill" style="width:<?php echo esc_attr((string) max($pct, 2)); ?>%"></div></div>
                         </div>
@@ -223,7 +223,7 @@ final class SettingsPage
                             <div class="ns-stat__value"><?php echo $lastMs > 0 ? esc_html(number_format_i18n($lastMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Products synced</div>
+                            <div class="ns-stat__label">Items synced</div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($itemsTotal)); ?></div>
                         </div>
                         <div class="ns-stat">
@@ -373,7 +373,7 @@ final class SettingsPage
         Client::verify();
         if (Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Connected and verified. Syncing {$count} products in the background.");
+            $this->redirect("Connected and verified. Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
         }
         $this->redirect('Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update.');
     }
@@ -398,10 +398,10 @@ final class SettingsPage
 
         if (! $wasReady && Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Verified! Syncing {$count} products in the background.");
+            $this->redirect("Verified! Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
         }
         if (Settings::hasSearchKey()) {
-            $this->redirect((int) Settings::get('product_count').' products indexed · '.(int) Outbox::pendingCount().' pending.');
+            $this->redirect((int) Settings::get('product_count').' search results indexed · '.(int) Outbox::pendingCount().' pending.');
         }
         $this->redirect('Still confirming control of your site — please try again in a moment.');
     }
@@ -410,7 +410,7 @@ final class SettingsPage
     {
         $this->authorize('nitrosearch_sync');
         $count = FullSync::start();
-        $this->redirect("Syncing {$count} products in the background.");
+        $this->redirect("Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
     }
 
     public function handleAppearance(): void
