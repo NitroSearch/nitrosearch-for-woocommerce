@@ -108,8 +108,16 @@ final class Drain
             $op = $row->op;
 
             if ($op === 'upsert') {
-                $data = ProductSerializer::serialize((int) $row->object_id);
-                if ($data === null) {          // product vanished — send as a delete
+                // Dispatch on the queued type. A null return means "must not be
+                // indexed" — gone, unpublished, password-protected, excluded by an
+                // SEO plugin or by a membership plugin's filter — and it becomes a
+                // DELETE so anything that stopped being public leaves the index
+                // rather than lingering in it.
+                $data = $row->object_type === 'product'
+                    ? ProductSerializer::serialize((int) $row->object_id)
+                    : ContentSerializer::serialize((int) $row->object_id);
+
+                if ($data === null) {
                     $op = 'delete';
                     $data = ['id' => (int) $row->object_id];
                 }

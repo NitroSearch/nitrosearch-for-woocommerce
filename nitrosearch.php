@@ -53,6 +53,25 @@ add_action('before_woocommerce_init', function (): void {
 
 register_activation_hook(__FILE__, function (): void {
     \NitroSearch\Sync\Outbox::install();
+
+    // Seed pages-and-posts indexing ON for a genuinely NEW install, and leave an
+    // existing one alone. Pages and blog posts consume the same allowance as
+    // products, so switching it on during an upgrade could push a store over its
+    // limit and have its products refused without the owner doing anything. The
+    // marker option distinguishes "never chosen" from "chosen as empty", which the
+    // settings array alone cannot.
+    if (get_option('nitrosearch_content_defaults_seeded') === false) {
+        if (\NitroSearch\Settings::isConnected()) {
+            // Already syncing before this version existed: leave content off and let
+            // the owner opt in from the settings screen.
+            \NitroSearch\Settings::update(['index_content' => []]);
+        } else {
+            \NitroSearch\Settings::update([
+                'index_content' => \NitroSearch\Settings::SUPPORTED_CONTENT_TYPES,
+            ]);
+        }
+        add_option('nitrosearch_content_defaults_seeded', '1');
+    }
 });
 
 register_deactivation_hook(__FILE__, function (): void {

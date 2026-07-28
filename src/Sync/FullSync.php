@@ -2,6 +2,8 @@
 
 namespace NitroSearch\Sync;
 
+use NitroSearch\Settings;
+
 if (! defined('ABSPATH')) {
     exit;
 }
@@ -31,7 +33,7 @@ final class FullSync
 
     public static function register(): void
     {
-        add_action(self::HOOK, [self::class, 'runChunk'], 10, 1);
+        add_action(self::HOOK, [self::class, 'runChunk'], 10, 2);
     }
 
     /**
@@ -48,7 +50,7 @@ final class FullSync
         // a duplicate chain if a chunk is already scheduled (a double-click).
         if ($state['active']) {
             if (! self::hasScheduledChunk()) {
-                self::scheduleChunk($state['cursor']);
+                self::scheduleChunk($state['cursor'], $state['phase']);
             }
             Drain::schedule();
 
@@ -58,13 +60,14 @@ final class FullSync
         $total = self::countPublished();
         update_option(self::OPT, [
             'active' => true,
+            'phase' => 'product',
             'cursor' => 0,
             'total' => $total,
             'started' => current_time('mysql', true),
         ], false);
 
         if (! self::hasScheduledChunk()) {
-            self::scheduleChunk(0);
+            self::scheduleChunk(0, 'product');
         }
         // Start draining in parallel so products begin syncing immediately; the drain
         // governs its own (heavier) host load via its self-throttle.
@@ -81,32 +84,86 @@ final class FullSync
      *
      * @param int $afterId keyset cursor — enqueue published products with ID > this.
      */
-    public static function runChunk($afterId = 0): void
+    public static function runChunk($afterId = 0, $phase = 'product'): void
     {
-        if (! self::state()['active']) {
+        $state = self::state();
+
+        if (! $state['active']) {
             return; // cancelled (disconnected) while the chunk was queued
         }
 
-        $ids = self::pageIds((int) $afterId, self::CHUNK);
+        // Ignore an action left over from a phase we have already moved past: its
+        // cursor belongs to a different id sequence, so paging with it would skip
+        // items in the current phase.
+        if ((string) $phase !== $state['phase']) {
+            return;
+        }
 
-        if (! $ids) {
+        $ids = self::pageIds((int) $afterId, self::CHUNK, $state['phase']);
+
+        if ($ids && count($ids) === self::CHUNK) {
+            Outbox::enqueueMany($state['phase'], $ids, 'upsert');
+            $cursor = (int) max($ids);
+            self::advance($cursor);
+            self::scheduleChunk($cursor, $state['phase']);
+
+            return;
+        }
+
+        if ($ids) {
+            Outbox::enqueueMany($state['phase'], $ids, 'upsert');
+        }
+
+        // This phase is exhausted. Move to the next type, cursor back to zero.
+        $next = self::nextPhase($state['phase']);
+
+        if ($next === null) {
             self::finish();
 
             return;
         }
 
-        Outbox::enqueueMany('product', $ids, 'upsert');
+        self::enterPhase($next);
+        self::scheduleChunk(0, $next);
+    }
 
-        $cursor = (int) max($ids);
-        self::advance($cursor);
+    /**
+     * The order a full sync walks the site: products, THEN content.
+     *
+     * This ordering is load-bearing, not cosmetic. Pages and blog posts consume the
+     * same plan allowance as products, and WordPress ids are chronological — a blog
+     * predates the shop, so paging the whole site by id would enqueue years of posts
+     * before the first product and spend a small store's entire allowance on them.
+     * Syncing products to completion first means the catalogue always claims its
+     * capacity, whatever is left over goes to content, and the merchant never has to
+     * think about it. (The backend enforces the same priority independently, since a
+     * server cannot trust a client to be well behaved.)
+     *
+     * @return array<int, string>
+     */
+    private static function phases(): array
+    {
+        return array_merge(['product'], Settings::indexedContentTypes());
+    }
 
-        if (count($ids) < self::CHUNK) {
-            self::finish();
+    private static function nextPhase(string $current): ?string
+    {
+        $phases = self::phases();
+        $at = array_search($current, $phases, true);
 
-            return;
+        if ($at === false) {
+            return null;
         }
 
-        self::scheduleChunk($cursor);
+        return $phases[$at + 1] ?? null;
+    }
+
+    private static function enterPhase(string $phase): void
+    {
+        $state = self::state();
+        $state['phase'] = $phase;
+        $state['cursor'] = 0;
+        update_option(self::OPT, $state, false);
     }
 
     /** Whether a background full sync is currently running. */
@@ -126,7 +183,8 @@ final class FullSync
         if (! self::state()['active'] || self::hasScheduledChunk()) {
             return;
         }
-        self::scheduleChunk(self::state()['cursor']);
+        $state = self::state();
+        self::scheduleChunk($state['cursor'], $state['phase']);
     }
 
     /** @return array{active:bool,cursor:int,total:int,started:string} */
@@ -139,6 +197,9 @@ final class FullSync
 
         return [
             'active' => ! empty($state['active']),
+            // Which post type this run is currently paging. Products are ALWAYS first
+            // (see phases()); an older state with no phase is a products-only run.
+            'phase' => (string) ($state['phase'] ?? 'product'),
             'cursor' => (int) ($state['cursor'] ?? 0),
             'total' => (int) ($state['total'] ?? 0),
             'started' => (string) ($state['started'] ?? ''),
@@ -176,10 +237,10 @@ final class FullSync
         Drain::enqueueImmediate();
     }
 
-    private static function scheduleChunk(int $afterId): void
+    private static function scheduleChunk(int $afterId, string $phase = 'product'): void
     {
         if (function_exists('as_enqueue_async_action')) {
-            as_enqueue_async_action(self::HOOK, [$afterId], 'nitrosearch');
+            as_enqueue_async_action(self::HOOK, [$afterId, $phase], 'nitrosearch');
 
             return;
         }
@@ -237,7 +298,7 @@ final class FullSync
      *
      * @return array<int,int>
      */
-    private static function pageIds(int $afterId, int $limit): array
+    private static function pageIds(int $afterId, int $limit, string $postType = 'product'): array
     {
         global $wpdb;
 
@@ -248,7 +309,7 @@ final class FullSync
         add_filter('posts_where', $where);
         try {
             $query = new \WP_Query([
-                'post_type' => 'product',
+                'post_type' => $postType,
                 'post_status' => 'publish',
                 'fields' => 'ids',
                 'orderby' => 'ID',

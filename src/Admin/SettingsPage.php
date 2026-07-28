@@ -285,6 +285,29 @@ final class SettingsPage
                                 </td>
                             </tr>
                             <tr>
+                                <th scope="row">What to search</th>
+                                <td>
+                                    <?php $indexed = Settings::indexedContentTypes(); ?>
+                                    <label style="display:block;margin-bottom:4px;">
+                                        <input type="checkbox" checked disabled> Products <span class="description">(always indexed)</span>
+                                    </label>
+                                    <label style="display:block;margin-bottom:4px;">
+                                        <input name="index_content[]" type="checkbox" value="page"
+                                            <?php checked(in_array('page', $indexed, true)); ?>> Pages
+                                    </label>
+                                    <label style="display:block;">
+                                        <input name="index_content[]" type="checkbox" value="post"
+                                            <?php checked(in_array('post', $indexed, true)); ?>> Blog posts
+                                    </label>
+                                    <p class="description">
+                                        Pages and posts count towards the same allowance as your products, so
+                                        switching them off frees it up for your catalogue. Your products always
+                                        come first and are never displaced by them. Private,
+                                        password-protected, draft and noindex content is never indexed.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th scope="row">Search results page</th>
                                 <td>
                                     <label>
@@ -396,13 +419,34 @@ final class SettingsPage
         // phpcs:disable WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() (check_admin_referer) above.
         $accent = isset($_POST['accent_color']) ? sanitize_hex_color(wp_unslash($_POST['accent_color'])) : '';
         $selector = isset($_POST['selector']) ? sanitize_text_field(wp_unslash($_POST['selector'])) : '';
+        // Allowlisted against what this version supports — this value decides what
+        // gets sent to a public search index, so an unexpected entry must not widen
+        // it. Absent (all boxes cleared) correctly means "content off".
+        $submitted = isset($_POST['index_content']) && is_array($_POST['index_content'])
+            ? array_map('sanitize_key', wp_unslash($_POST['index_content']))
+            : [];
+        $content = array_values(array_intersect($submitted, Settings::SUPPORTED_CONTENT_TYPES));
+
+        $wasIndexing = Settings::indexedContentTypes();
+
         Settings::update([
             'accent_color' => (string) $accent,
             'selector' => $selector,
+            'index_content' => $content,
             'results_takeover' => isset($_POST['results_takeover']),
             'show_badge' => isset($_POST['show_badge']),
         ]);
         // phpcs:enable WordPress.Security.NonceVerification.Missing
+
+        // Newly-enabled types are not in the index yet and no hook will fire for
+        // existing content, so a full sync is the only way they appear. It runs in
+        // the background, products first.
+        $newlyEnabled = array_diff($content, $wasIndexing);
+        if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
+            FullSync::start();
+            $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.');
+        }
+
         $this->redirect('Appearance saved.');
     }
 
