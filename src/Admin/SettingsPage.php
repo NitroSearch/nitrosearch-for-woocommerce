@@ -4,6 +4,7 @@ namespace NitroSearch\Admin;
 
 use NitroSearch\Api\Client;
 use NitroSearch\Settings;
+use NitroSearch\Sync\ContentPurge;
 use NitroSearch\Sync\Drain;
 use NitroSearch\Sync\FullSync;
 use NitroSearch\Sync\Outbox;
@@ -440,13 +441,32 @@ final class SettingsPage
         ]);
         // phpcs:enable WordPress.Security.NonceVerification.Missing
 
+        $newlyEnabled = array_values(array_diff($content, $wasIndexing));
+        $newlyDisabled = array_values(array_diff($wasIndexing, $content));
+
+        // Switched OFF means "take these out of my index and give me the allowance
+        // back" — which is what the description above this field promises. Nothing
+        // else will ever do it: the hooks stop tracking a disabled type, so those
+        // documents would otherwise sit in the index forever, still being returned
+        // by the storefront and still consuming the plan.
+        if ($newlyDisabled !== []) {
+            ContentPurge::start($newlyDisabled);
+        }
+
         // Newly-enabled types are not in the index yet and no hook will fire for
-        // existing content, so a full sync is the only way they appear. It runs in
-        // the background, products first.
-        $newlyEnabled = array_diff($content, $wasIndexing);
+        // existing content, so a full sync is the only way they appear. Scoped to
+        // just those types: the catalogue is already indexed, and re-enumerating it
+        // would push the whole store back through the merchant's own host to add a
+        // handful of pages.
         if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
-            FullSync::start();
+            FullSync::start($newlyEnabled);
+        }
+
+        if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
             $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.');
+        }
+        if ($newlyDisabled !== [] && Settings::hasSearchKey()) {
+            $this->redirect('Saved. Removing your '.implode(' and ', $newlyDisabled).'s from your index in the background.');
         }
 
         $this->redirect('Appearance saved.');
@@ -463,6 +483,7 @@ final class SettingsPage
             as_unschedule_all_actions(Drain::HOOK);
         }
         FullSync::cancel();
+        ContentPurge::cancel();
         $this->redirect('Disconnected.');
     }
 
