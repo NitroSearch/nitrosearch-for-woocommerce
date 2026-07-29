@@ -134,10 +134,23 @@ final class Hooks
             return;
         }
 
-        // Enqueued whatever the status: the serializer decides indexability, and its
-        // refusal becomes a delete — so content that has just stopped being public is
-        // actively removed rather than lingering.
-        Outbox::enqueue($type, (int) $postId, $post->post_status === 'publish' ? 'upsert' : 'delete');
+        if ($post->post_status !== 'publish') {
+            // Deliberately nothing. Content LEAVING publish is handled by
+            // onStatusTransition, which is the only hook that knows the previous
+            // status — so queuing a delete here as well only ever fired for items
+            // that were never published in the first place. That cost a wire delete
+            // and a permanent tombstone row, per store, for every abandoned draft and
+            // every click of "Add New Page" (WordPress inserts an auto-draft, which
+            // fires this hook).
+            return;
+        }
+
+        // Published, so index it — and let the serializer have the last word. Its
+        // refusal becomes a delete, which is what removes content that is still
+        // published but has just stopped being public: password-protected, or
+        // noindexed by an SEO plugin. Neither changes post_status, so no transition
+        // fires and this is the only hook that sees it.
+        Outbox::enqueue($type, (int) $postId, 'upsert');
     }
 
     /**
