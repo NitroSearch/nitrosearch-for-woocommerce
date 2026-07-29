@@ -9,24 +9,23 @@ if (! defined('ABSPATH')) {
 }
 
 /**
- * Background, chunked, resumable full-catalogue re-enqueue.
+ * Background, chunked, resumable full-site re-enqueue.
  *
- * A first sync (or a manual "Sync now") must NOT enumerate the whole catalogue in
- * the merchant's admin request. Pulling every product id at once and doing tens of
- * thousands of inline inserts on a large store risks a big memory allocation and
- * blowing past max_execution_time — which on a cheap shared host can fatal the
- * wp-admin page mid-run with no way to resume. Instead we page through published
- * product ids with a KEYSET cursor (WHERE ID > last) via Action Scheduler, enqueue
- * each page in a single multi-row insert, and persist the cursor so a stalled run
- * resumes from where it stopped rather than restarting. The admin request only reads
- * a cached count and schedules the first chunk, so it returns instantly regardless
- * of catalogue size.
+ * A first sync (or a manual "Sync now") must NOT enumerate the whole site in the
+ * merchant's admin request. Pulling every id at once and doing tens of thousands
+ * of inline inserts on a large store risks a big memory allocation and blowing
+ * past max_execution_time — which on a cheap shared host can fatal the wp-admin
+ * page mid-run with no way to resume. Instead we page through published ids with
+ * a KEYSET cursor (WHERE ID > last) via Action Scheduler, enqueue each page in a
+ * single multi-row insert, and persist the cursor so a stalled run resumes from
+ * where it stopped rather than restarting. The admin request only reads a cached
+ * count and schedules the first chunk, so it returns instantly regardless of size.
  */
 final class FullSync
 {
     public const HOOK = 'nitrosearch_full_sync_chunk';
 
-    /** Published product ids enqueued per background chunk (one multi-row insert). */
+    /** Published ids enqueued per background chunk (one multi-row insert). */
     public const CHUNK = 500;
 
     private const OPT = 'nitrosearch_fullsync';
@@ -38,16 +37,26 @@ final class FullSync
 
     /**
      * Begin — or resume — a background full sync. Returns the number of published
-     * products it will queue (a cached count, cheap). The enumeration + enqueue then
+     * items it will queue (a cached count, cheap). The enumeration + enqueue then
      * runs entirely in Action Scheduler, never in this request.
+     *
+     * @param  array<int, string>  $onlyPhases  when given, walk ONLY these types.
+     *                                          Used when a merchant switches a
+     *                                          content type on: the catalogue is
+     *                                          already indexed, and re-enumerating
+     *                                          it would put the entire store back
+     *                                          through the merchant's own host to
+     *                                          add a handful of pages.
      */
-    public static function start(): int
+    public static function start(array $onlyPhases = []): int
     {
         $state = self::state();
 
         // Already running (the merchant clicked twice, or a prior run stalled): resume
         // from the persisted cursor instead of restarting from zero — but don't pile on
-        // a duplicate chain if a chunk is already scheduled (a double-click).
+        // a duplicate chain if a chunk is already scheduled (a double-click). A type
+        // enabled just now is simply not in `done`, so the run in flight picks it up
+        // when the current phase finishes; there is nothing to schedule here.
         if ($state['active']) {
             if (! self::hasScheduledChunk()) {
                 self::scheduleChunk($state['cursor'], $state['phase']);
@@ -57,19 +66,35 @@ final class FullSync
             return $state['total'];
         }
 
-        $total = self::countPublished();
+        // A targeted run starts with every OTHER phase already marked done, so the
+        // walk covers exactly the types asked for and nothing else.
+        $done = $onlyPhases === []
+            ? []
+            : array_values(array_diff(self::canonicalPhases(), $onlyPhases));
+
+        $first = self::pendingPhase($done);
+        if ($first === null) {
+            return 0;   // nothing enabled left to walk
+        }
+
+        // For a whole-site run this is the product count, which is what the admin
+        // notice quotes ("syncing N products, then your pages and posts"); for a
+        // targeted run it is the count of just the types being added.
+        $total = PostPager::countPublished($onlyPhases === [] ? ['product'] : $onlyPhases);
+
         update_option(self::OPT, [
             'active' => true,
-            'phase' => 'product',
+            'phase' => $first,
             'cursor' => 0,
+            'done' => $done,
             'total' => $total,
             'started' => current_time('mysql', true),
         ], false);
 
         if (! self::hasScheduledChunk()) {
-            self::scheduleChunk(0, 'product');
+            self::scheduleChunk(0, $first);
         }
-        // Start draining in parallel so products begin syncing immediately; the drain
+        // Start draining in parallel so items begin syncing immediately; the drain
         // governs its own (heavier) host load via its self-throttle.
         Drain::schedule();
         Drain::enqueueImmediate();
@@ -78,11 +103,12 @@ final class FullSync
     }
 
     /**
-     * Enqueue one keyset page of published product ids, then schedule the next chunk
-     * (or finish). Idempotent: the outbox upsert coalesces, so re-running a chunk
-     * (after a crash, or a double-click resume) never duplicates or loses work.
+     * Enqueue one keyset page of published ids, then schedule the next chunk (or
+     * move to the next type, or finish). Idempotent: the outbox upsert coalesces, so
+     * re-running a chunk (after a crash, or a double-click resume) never duplicates
+     * or loses work.
      *
-     * @param int $afterId keyset cursor — enqueue published products with ID > this.
+     * @param  int  $afterId  keyset cursor — enqueue published items with ID > this.
      */
     public static function runChunk($afterId = 0, $phase = 'product'): void
     {
@@ -99,7 +125,17 @@ final class FullSync
             return;
         }
 
-        $ids = self::pageIds((int) $afterId, self::CHUNK, $state['phase']);
+        // Switched off while this chunk sat in the queue. Enqueuing it anyway is not
+        // unsafe (the serializer refuses a disabled type and the drain turns that into
+        // a delete) but it is a whole pointless round trip through the merchant's host
+        // and ours, and ContentPurge is already removing this type.
+        if (! self::isPhaseEnabled($state['phase'])) {
+            self::completePhase($state['phase']);
+
+            return;
+        }
+
+        $ids = PostPager::publishedIds((int) $afterId, self::CHUNK, $state['phase']);
 
         if ($ids && count($ids) === self::CHUNK) {
             Outbox::enqueueMany($state['phase'], $ids, 'upsert');
@@ -114,21 +150,39 @@ final class FullSync
             Outbox::enqueueMany($state['phase'], $ids, 'upsert');
         }
 
-        // This phase is exhausted. Move to the next type, cursor back to zero.
-        $next = self::nextPhase($state['phase']);
+        self::completePhase($state['phase']);
+    }
+
+    /**
+     * Mark a phase finished and move to the next one still outstanding, or end the
+     * run when there is none.
+     */
+    private static function completePhase(string $phase): void
+    {
+        $state = self::state();
+        $done = $state['done'];
+        if (! in_array($phase, $done, true)) {
+            $done[] = $phase;
+        }
+
+        $next = self::pendingPhase($done);
 
         if ($next === null) {
-            self::finish();
+            self::finish($done);
 
             return;
         }
 
-        self::enterPhase($next);
+        $state['phase'] = $next;
+        $state['cursor'] = 0;
+        $state['done'] = $done;
+        update_option(self::OPT, $state, false);
+
         self::scheduleChunk(0, $next);
     }
 
     /**
-     * The order a full sync walks the site: products, THEN content.
+     * The canonical order a full sync walks the site: products, THEN content.
      *
      * This ordering is load-bearing, not cosmetic. Pages and blog posts consume the
      * same plan allowance as products, and WordPress ids are chronological — a blog
@@ -141,47 +195,39 @@ final class FullSync
      *
      * @return array<int, string>
      */
-    private static function phases(): array
+    private static function canonicalPhases(): array
     {
-        return array_merge(['product'], Settings::indexedContentTypes());
+        return array_merge(['product'], Settings::SUPPORTED_CONTENT_TYPES);
     }
 
     /**
-     * The next phase to walk after this one, or null when the run is genuinely done.
+     * The next type to walk: the first in CANONICAL order that is switched on and
+     * that this run has not already finished.
      *
-     * Positioned against the CANONICAL order, not the enabled list, because the
-     * merchant can change the enabled list mid-run. Looking up the current phase in
-     * the live list meant that unticking Pages while the page phase was in flight
-     * made array_search fail, which read as "no phases left" and finished the run —
-     * silently skipping posts, with no error and no hint on the admin screen.
+     * Driven by a list of completed phases rather than by the position of the current
+     * one, because the enabled list can change mid-run in both directions. Walking
+     * merely forward from the current phase meant a type ticked while a later phase
+     * was in flight was never enumerated — the run reached its end and finished,
+     * silently leaving that content unindexed until the next full sync.
+     *
+     * @param  array<int, string>  $done
      */
-    private static function nextPhase(string $current): ?string
+    private static function pendingPhase(array $done): ?string
     {
-        $canonical = array_merge(['product'], Settings::SUPPORTED_CONTENT_TYPES);
-        $enabled = self::phases();
-
-        $at = array_search($current, $canonical, true);
-        if ($at === false) {
-            return null;
-        }
-
-        // Walk forward to the next type that is still switched on, so a type
-        // disabled mid-run is stepped over rather than ending the whole run.
-        for ($i = $at + 1; $i < count($canonical); $i++) {
-            if (in_array($canonical[$i], $enabled, true)) {
-                return $canonical[$i];
+        foreach (self::canonicalPhases() as $phase) {
+            if (! in_array($phase, $done, true) && self::isPhaseEnabled($phase)) {
+                return $phase;
             }
         }
 
         return null;
     }
 
-    private static function enterPhase(string $phase): void
+    /** Products are always indexed; content types only when the merchant says so. */
+    private static function isPhaseEnabled(string $phase): bool
     {
-        $state = self::state();
-        $state['phase'] = $phase;
-        $state['cursor'] = 0;
-        update_option(self::OPT, $state, false);
+        return $phase === 'product'
+            || in_array($phase, Settings::indexedContentTypes(), true);
     }
 
     /** Whether a background full sync is currently running. */
@@ -205,7 +251,7 @@ final class FullSync
         self::scheduleChunk($state['cursor'], $state['phase']);
     }
 
-    /** @return array{active:bool,cursor:int,total:int,started:string} */
+    /** @return array{active:bool,phase:string,done:array<int,string>,cursor:int,total:int,started:string} */
     public static function state(): array
     {
         $state = get_option(self::OPT, []);
@@ -213,15 +259,33 @@ final class FullSync
             $state = [];
         }
 
+        // Which post type this run is currently paging. Products are ALWAYS first
+        // (see canonicalPhases()); an older state with no phase is a products-only run.
+        $phase = (string) ($state['phase'] ?? 'product');
+
         return [
             'active' => ! empty($state['active']),
-            // Which post type this run is currently paging. Products are ALWAYS first
-            // (see phases()); an older state with no phase is a products-only run.
-            'phase' => (string) ($state['phase'] ?? 'product'),
+            'phase' => $phase,
+            // Phases this run has finished. A run started before this key existed
+            // walked strictly forward, so everything ahead of its current phase is
+            // done by definition — synthesising that keeps an in-flight upgrade from
+            // rewinding to the top of the catalogue.
+            'done' => isset($state['done']) && is_array($state['done'])
+                ? array_values(array_intersect(array_map('strval', $state['done']), self::canonicalPhases()))
+                : self::phasesBefore($phase),
             'cursor' => (int) ($state['cursor'] ?? 0),
             'total' => (int) ($state['total'] ?? 0),
             'started' => (string) ($state['started'] ?? ''),
         ];
+    }
+
+    /** @return array<int, string> */
+    private static function phasesBefore(string $phase): array
+    {
+        $canonical = self::canonicalPhases();
+        $at = array_search($phase, $canonical, true);
+
+        return $at === false ? [] : array_slice($canonical, 0, (int) $at);
     }
 
     /** Stop any in-flight run and clear its scheduled chunks (disconnect/deactivate). */
@@ -244,10 +308,12 @@ final class FullSync
         update_option(self::OPT, $state, false);
     }
 
-    private static function finish(): void
+    /** @param array<int, string> $done */
+    private static function finish(array $done): void
     {
         $state = self::state();
         $state['active'] = false;
+        $state['done'] = $done;
         update_option(self::OPT, $state, false);
 
         // Make sure everything just queued actually ships.
@@ -263,40 +329,70 @@ final class FullSync
             return;
         }
 
-        self::runInlineBounded($afterId);
+        self::runInlineBounded($afterId, $phase);
     }
 
     /**
      * Fallback for a host without Action Scheduler (WooCommerce bundles it, so this is
      * only defensive). Enumerate inline but under a strict TIME BUDGET and WITHOUT
-     * re-entrant scheduling — never recurse/loop through the whole catalogue, which
-     * would reintroduce the very OOM / max_execution_time fatal this class exists to
-     * prevent. A large catalogue simply continues on the merchant's next admin action
-     * (the run stays `active` at the advanced cursor).
+     * re-entrant scheduling — never recurse/loop through the whole site, which would
+     * reintroduce the very OOM / max_execution_time fatal this class exists to
+     * prevent. A large site simply continues on the merchant's next admin action (the
+     * run stays `active` at the advanced cursor and phase).
+     *
+     * It walks the SAME phase sequence as the scheduled path. Written for products
+     * only, it enqueued the catalogue, called finish(), and left every page and post
+     * unindexed with the run reporting itself complete.
      */
-    private static function runInlineBounded(int $afterId): void
+    private static function runInlineBounded(int $afterId, string $phase): void
     {
         $deadline = microtime(true) + 10.0; // ~10s of inline work, then yield
         $cursor = $afterId;
 
         do {
-            if (! self::state()['active']) {
+            $state = self::state();
+            if (! $state['active']) {
                 return;
             }
-            $ids = self::pageIds($cursor, self::CHUNK);
-            if (! $ids) {
-                self::finish();
+
+            if (! self::isPhaseEnabled($phase)) {
+                $ids = [];
+            } else {
+                $ids = PostPager::publishedIds($cursor, self::CHUNK, $phase);
+            }
+
+            if ($ids) {
+                Outbox::enqueueMany($phase, $ids, 'upsert');
+                $cursor = (int) max($ids);
+                self::advance($cursor);
+            }
+
+            if (count($ids) === self::CHUNK) {
+                continue;   // same phase, next page
+            }
+
+            // Phase exhausted. completePhase() advances the persisted state and, with
+            // no Action Scheduler, calls straight back into here for the next type —
+            // so keep going in THIS loop instead, under the same time budget.
+            $done = $state['done'];
+            if (! in_array($phase, $done, true)) {
+                $done[] = $phase;
+            }
+
+            $next = self::pendingPhase($done);
+            if ($next === null) {
+                self::finish($done);
 
                 return;
             }
-            Outbox::enqueueMany('product', $ids, 'upsert');
-            $cursor = (int) max($ids);
-            self::advance($cursor);
-            if (count($ids) < self::CHUNK) {
-                self::finish();
 
-                return;
-            }
+            $state['phase'] = $next;
+            $state['cursor'] = 0;
+            $state['done'] = $done;
+            update_option(self::OPT, $state, false);
+
+            $phase = $next;
+            $cursor = 0;
         } while (microtime(true) < $deadline);
 
         // Budget exhausted: leave `active` at the advanced cursor for a later continue.
@@ -307,52 +403,5 @@ final class FullSync
     {
         return function_exists('as_next_scheduled_action')
             && as_next_scheduled_action(self::HOOK, null, 'nitrosearch') !== false;
-    }
-
-    /**
-     * One keyset page of published product ids after $afterId, ascending. Keyset (not
-     * offset) so it stays O(page) on a huge catalogue and is stable under concurrent
-     * inserts. Ids only — no post/term/meta hydration (that is the drain's job).
-     *
-     * @return array<int,int>
-     */
-    private static function pageIds(int $afterId, int $limit, string $postType = 'product'): array
-    {
-        global $wpdb;
-
-        $where = static function (string $sql) use ($afterId, $wpdb): string {
-            return $sql.$wpdb->prepare(" AND {$wpdb->posts}.ID > %d", $afterId);
-        };
-
-        add_filter('posts_where', $where);
-        try {
-            $query = new \WP_Query([
-                'post_type' => $postType,
-                'post_status' => 'publish',
-                'fields' => 'ids',
-                'orderby' => 'ID',
-                'order' => 'ASC',
-                'posts_per_page' => $limit,
-                'no_found_rows' => true,
-                'cache_results' => false,
-                'update_post_meta_cache' => false,
-                'update_post_term_cache' => false,
-                'suppress_filters' => false,
-            ]);
-        } finally {
-            // ALWAYS detach the cursor filter, even if WP_Query (or a callback it fires)
-            // throws — otherwise the " AND ID > N" clause would leak into every later
-            // post query in the same Action Scheduler worker process (silent corruption).
-            remove_filter('posts_where', $where);
-        }
-
-        return array_map('intval', $query->posts);
-    }
-
-    private static function countPublished(): int
-    {
-        $counts = wp_count_posts('product');
-
-        return (int) ($counts->publish ?? 0);
     }
 }
