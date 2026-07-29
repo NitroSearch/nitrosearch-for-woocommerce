@@ -16,9 +16,40 @@ if (! defined('ABSPATH')) {
  */
 final class WidgetLoader
 {
+    /** Where an opted-in credit points. Kept as a constant so both halves agree. */
+    public const CREDIT_URL = 'https://nitrosearch.io';
+
     public function register(): void
     {
         add_action('wp_enqueue_scripts', [$this, 'inject']);
+        add_action('wp_footer', [$this, 'renderCredit']);
+    }
+
+    /**
+     * The opt-in credit, rendered into the page itself.
+     *
+     * The widget already draws a credit inside its dropdown, but that panel does not
+     * exist until a shopper focuses the search box — verified on a real storefront:
+     * with the credit switched on and before any interaction, the widget is not
+     * mounted and the page contains no reference to us at all. A visitor who never
+     * searches, and every crawler, would therefore never see it.
+     *
+     * So the credit is also emitted server-side, as ordinary HTML, once per page.
+     * Nothing is output unless the merchant has ticked the box: an unrequested
+     * external link on someone else's storefront is not ours to add.
+     */
+    public function renderCredit(): void
+    {
+        if (! Settings::isConnected() || ! Settings::get('show_badge', false)) {
+            return;
+        }
+
+        printf(
+            '<p class="nitrosearch-credit" style="text-align:center;font-size:12px;line-height:1.6;margin:12px 0;opacity:.75;">%s <a href="%s" rel="noopener">%s</a></p>',
+            esc_html__('Search powered by', 'nitrosearch'),
+            esc_url(self::CREDIT_URL),
+            esc_html__('NitroSearch', 'nitrosearch')
+        );
     }
 
     public function inject(): void
@@ -50,6 +81,10 @@ final class WidgetLoader
             // must never show without the site owner's explicit choice (wp.org
             // guideline 10). Merchants enable it in the plugin's Appearance settings.
             'badge'      => (bool) Settings::get('show_badge', false),
+            // Where the in-widget credit links, when the merchant has opted in. Absent
+            // when they have not, so the widget cannot render a link we were not given
+            // permission to place.
+            'badgeUrl'   => Settings::get('show_badge', false) ? self::CREDIT_URL : '',
             'theme'      => (object) $theme,
             // Results-page takeover on the product search page (merchant toggle).
             'results'    => (bool) Settings::get('results_takeover', true),

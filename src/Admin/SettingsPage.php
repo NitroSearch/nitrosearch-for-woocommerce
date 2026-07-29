@@ -331,9 +331,15 @@ final class SettingsPage
                                     <label>
                                         <input name="show_badge" id="ns_badge" type="checkbox" value="1"
                                             <?php checked((bool) Settings::get('show_badge', false)); ?>>
-                                        Show a small &ldquo;Powered by NitroSearch&rdquo; credit in the search box
+                                        Show a small &ldquo;Powered by NitroSearch&rdquo; credit, linking to nitrosearch.io
                                     </label>
-                                    <p class="description">Off by default. Turn it on to show your support &mdash; thank you!</p>
+                                    <p class="description">
+                                        Off by default, and entirely your choice. Turning it on adds a small
+                                        credit in the search box and one line in your site footer, both
+                                        linking to <code>https://nitrosearch.io</code> &mdash; a normal,
+                                        followed link. Nothing is added to your site unless you tick this.
+                                        Thank you if you do.
+                                    </p>
                                 </td>
                             </tr>
                         </table>

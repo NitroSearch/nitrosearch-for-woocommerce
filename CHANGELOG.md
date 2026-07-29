@@ -27,6 +27,10 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
   **off** on an existing install, and on for a brand-new one.
 
 ### Improved
+- The optional "Powered by NitroSearch" credit now links to nitrosearch.io, and
+  appears once in your site footer as well as in the search box — so a visitor who
+  never opens the search box can still see who powers it. Still **off by default**
+  and still entirely your choice; nothing is added to your site unless you tick it.
 - Scheduled products and posts now index the moment they go live. Previously a
   post published on a schedule could sit unindexed until something else happened
   to edit it — WordPress publishes on a path that fires no product CRUD hook.

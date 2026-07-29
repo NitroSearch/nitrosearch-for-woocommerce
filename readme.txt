@@ -24,6 +24,7 @@ Install the plugin, connect your store, and from that moment every search your c
 * **Your whole site, not just the shop** — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and *noindex* content is always left out.
 * **Sync you can trust** — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise.
 * **Honest, simple pricing** — a genuinely free tier, every plan gets every feature, and you only ever pay for catalogue size. No per-search fees, no surprise bills.
+* **Nothing added to your site unless you ask** — the optional "Powered by NitroSearch" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search.
 * **Set-up in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
 
 = How it works =
@@ -89,7 +90,7 @@ Yes. NitroSearch indexes and searches WooCommerce products, so WooCommerce must 
 
 = Does it show a "Powered by NitroSearch" badge on my store? =
 
-Only if you choose to. The credit is **off by default** — you can turn it on in the plugin's **Appearance** settings if you'd like to show your support.
+Only if you choose to. The credit is **off by default**, and nothing is added to your storefront unless you turn it on in the plugin's **Appearance** settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way.
 
 = What happens if I deactivate the plugin? =
 
@@ -104,6 +105,7 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 == Changelog ==
 
 = 1.4.0 =
+* Improved: the optional "Powered by NitroSearch" credit now links to nitrosearch.io and also appears once in your site footer. Still off by default — nothing is added to your site unless you turn it on.
 * New: **search your pages and blog posts too.** Shoppers looking for "delivery times" or "how to care for leather" now find the page that answers them, shown in their own "Pages & posts" section beneath the products — never mixed in with your catalogue. Only titles, a short summary, categories, the featured image and the publish date are indexed; full page content is never copied.
 * New: choose what gets searched under **NitroSearch → Appearance → What to search**. Products are always indexed; pages and blog posts are yours to switch on or off. They share the same allowance as your products, so turning them off frees it up for your catalogue — and when you do, they're removed from your index.
 * Privacy, by default: private, password-protected, draft, scheduled and trashed content is never indexed, and *noindex* set in Yoast SEO or Rank Math is honoured (per item, per content type, or site-wide). Membership and paywall plugins can exclude anything else through the `nitrosearch_content_is_searchable` filter.
