@@ -5,6 +5,19 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.6.0] — 2026-07-29
+
+### Added
+- **A Search analytics card on the NitroSearch screen** — last-30-days searches,
+  zero-result rate, click-through rate, top searches, and the searches that
+  found nothing, with a link to the full dashboards in the NitroSearch account.
+  Paid plans see the numbers; the free tier sees its monthly search count and
+  what upgrading unlocks. Cached in a six-hour transient with a 2-second
+  timeout, so a slow or unreachable backend can never hang wp-admin — the card
+  degrades to "couldn't load" and retries within minutes. Every API-sourced
+  string is escaped on output.
+- "Refresh status" also refreshes the analytics card.
+
 ## [1.5.0] — 2026-07-29
 
 ### Added

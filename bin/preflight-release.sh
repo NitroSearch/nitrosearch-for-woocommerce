@@ -53,11 +53,13 @@ fi
 # We only market what is built. A term from this list may appear ONLY on a line
 # that also labels it as future work — otherwise the listing promises something
 # the plugin does not do. Retire a term here when the feature actually ships.
-UNBUILT='nightly|reconcil|health.?check|analytic|merchandis|personalis|personaliz|a/b test'
+# 'analytic' retired 2026-07-29: search analytics shipped (backend v1.9-v1.10 +
+# plugin 1.5-1.6). What remains unbuilt from that family is guarded explicitly.
+UNBUILT='nightly|reconcil|health.?check|conversion.track|revenue|attribution|merchandis|personalis|personaliz|a/b test'
 # A line is allowed to name an unbuilt feature if it also labels it as future work
 # OR explicitly disclaims it — a changelog entry saying "X isn't built yet" is the
 # opposite of marketing X, and honest corrections must not trip their own guard.
-ROADMAP_MARKER='roadmap|coming soon|planned|not yet|in design|we.re building|isn.t built|is not built|aren.t built|doesn.t exist|no longer'
+ROADMAP_MARKER='roadmap|coming soon|planned|not yet|in design|we.re building|isn.t built|is not built|aren.t built|doesn.t exist|no longer (says|claims|promises|markets)'
 
 # Scan EVERY user-visible surface, not just the listing. The first version of
 # this check looked at readme.txt alone, and a "see search analytics" promise

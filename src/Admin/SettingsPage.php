@@ -292,6 +292,58 @@ final class SettingsPage
                 </div>
 
                 <div class="ns-card">
+                    <h2 class="ns-card__title">Search analytics <span class="ns-muted">last 30 days</span></h2>
+                    <?php $ana = $this->analyticsSummary(); ?>
+                    <?php if ($ana === null) : ?>
+                        <p class="ns-muted">Couldn&#8217;t load analytics just now &mdash; it will retry automatically.</p>
+                    <?php elseif (empty($ana['entitled'])) : ?>
+                        <p>
+                            <strong><?php echo esc_html(number_format_i18n((int) ($ana['teaser']['searches_30d'] ?? 0))); ?> searches</strong>
+                            on your store in the last 30 days. See what shoppers searched for, what they
+                            clicked, and what they looked for and didn&#8217;t find &mdash; included on every
+                            paid plan, from $5.99/mo.
+                        </p>
+                        <p><a class="button button-primary" href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener">Upgrade to unlock</a></p>
+                    <?php elseif (empty($ana['collecting'])) : ?>
+                        <p class="ns-muted">Analytics starts collecting with plugin 1.5.0+ active &mdash; data appears within a few hours of shoppers searching.</p>
+                    <?php else : ?>
+                        <div class="ns-stats">
+                            <div class="ns-stat"><span class="ns-stat__label">Searches</span>
+                                <span class="ns-stat__value"><?php echo esc_html(number_format_i18n((int) ($ana['searches'] ?? 0))); ?></span></div>
+                            <div class="ns-stat"><span class="ns-stat__label">Zero-result rate</span>
+                                <span class="ns-stat__value"><?php echo isset($ana['zero_rate']) && $ana['zero_rate'] !== null ? esc_html(number_format_i18n(((float) $ana['zero_rate']) * 100, 1).'%') : '&#8212;'; ?></span></div>
+                            <div class="ns-stat"><span class="ns-stat__label">Click-through</span>
+                                <span class="ns-stat__value"><?php echo isset($ana['ctr']) && $ana['ctr'] !== null ? esc_html(number_format_i18n(((float) $ana['ctr']) * 100, 1).'%') : '&#8212;'; ?></span></div>
+                        </div>
+                        <?php if (! empty($ana['top_queries']) || ! empty($ana['top_zero'])) : ?>
+                            <div class="ns-columns">
+                                <?php if (! empty($ana['top_queries'])) : ?>
+                                    <div>
+                                        <h3 class="ns-subhead">Top searches</h3>
+                                        <ol class="ns-list">
+                                            <?php foreach (array_slice((array) $ana['top_queries'], 0, 5) as $row) : ?>
+                                                <li><?php echo esc_html((string) ($row['q'] ?? '')); ?> <span class="ns-muted">&times;<?php echo esc_html(number_format_i18n((int) ($row['n'] ?? 0))); ?></span></li>
+                                            <?php endforeach; ?>
+                                        </ol>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if (! empty($ana['top_zero'])) : ?>
+                                    <div>
+                                        <h3 class="ns-subhead">Searched, found nothing</h3>
+                                        <ol class="ns-list">
+                                            <?php foreach (array_slice((array) $ana['top_zero'], 0, 5) as $row) : ?>
+                                                <li><?php echo esc_html((string) ($row['q'] ?? '')); ?> <span class="ns-muted">&times;<?php echo esc_html(number_format_i18n((int) ($row['n'] ?? 0))); ?></span></li>
+                                            <?php endforeach; ?>
+                                        </ol>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <p><a href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener">View full analytics &rarr;</a></p>
+                    <?php endif; ?>
+                </div>
+
+                <div class="ns-card">
                     <h2 class="ns-card__title">Your plan &amp; account</h2>
                     <?php if (Settings::get('claimed')) : ?>
                         <div class="ns-confirm">
@@ -466,6 +518,8 @@ final class SettingsPage
 
         $wasReady = Settings::hasSearchKey();
         $status = Client::status();
+        // A manual refresh should also refresh the analytics card.
+        delete_transient('nitrosearch_analytics_summary');
 
         if ($status['verified'] && ! Settings::hasSearchKey()) {
             Client::fetchSearchKey();
@@ -586,6 +640,43 @@ final class SettingsPage
         ];
         $reason = (string) ($result['error'] ?? '');
         $this->redirect($messages[$reason] ?? ('Could not create a manage link. Please try again.'));
+    }
+
+    /**
+     * The card's data: a signed 30-day summary, cached in a 6-hour transient —
+     * the plugin's FIRST transient, because this is its first render-time
+     * backend read (everything else is poll-and-persist). The remote call is
+     * capped at 2s (Client::analyticsSummary) so wp-admin never hangs; a
+     * failure caches a short negative marker so a down backend is retried in
+     * minutes, not on every page load. Returns null when unavailable.
+     *
+     * @return array<string,mixed>|null
+     */
+    private function analyticsSummary(): ?array
+    {
+        if (! Settings::isConnected()) {
+            return null;
+        }
+
+        $cached = get_transient('nitrosearch_analytics_summary');
+        if ($cached === 'unavailable') {
+            return null;
+        }
+        if (is_array($cached)) {
+            return $cached;
+        }
+
+        $res = Client::analyticsSummary();
+        if (! $res['ok']) {
+            set_transient('nitrosearch_analytics_summary', 'unavailable', 5 * MINUTE_IN_SECONDS);
+
+            return null;
+        }
+
+        $summary = $res['body'];
+        set_transient('nitrosearch_analytics_summary', $summary, 6 * HOUR_IN_SECONDS);
+
+        return $summary;
     }
 
     private function authorize(string $nonce): void

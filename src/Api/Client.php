@@ -206,6 +206,21 @@ final class Client
     }
 
     /**
+     * The 30-day analytics summary for the wp-admin card (docs on the service
+     * side). A 2-second timeout on purpose: this can run during an admin page
+     * render, and a slow backend must never hang wp-admin — the card degrades
+     * to its "couldn't load" state instead.
+     *
+     * @return array{ok:bool,body:array<string,mixed>}
+     */
+    public static function analyticsSummary(): array
+    {
+        $res = self::send('GET', '/v1/analytics/summary', 2);
+
+        return ['ok' => $res['ok'], 'body' => is_array($res['body']) ? $res['body'] : []];
+    }
+
+    /**
      * Mint a single-use "Manage / Upgrade" link so the store owner can attach this
      * free store to a NitroSearch account (or upgrade its plan) without re-indexing.
      * Minted server-side for a verified, still-unclaimed store and returned once as a
@@ -255,7 +270,7 @@ final class Client
      *
      * @return array{ok:bool,code:int,body:mixed,error?:string}
      */
-    private static function send(string $method, string $path): array
+    private static function send(string $method, string $path, int $timeout = 25): array
     {
         $headers = Hmac::headers(
             (string) Settings::get('sync_key_id'),
@@ -269,7 +284,7 @@ final class Client
 
         $response = wp_remote_request(Settings::apiUrl().$path, [
             'method'  => $method,
-            'timeout' => 25,
+            'timeout' => $timeout,
             'headers' => $headers,
         ]);
 

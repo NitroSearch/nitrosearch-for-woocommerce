@@ -258,3 +258,9 @@
     .ns-hero { padding: 18px 20px; }
     .ns-card { padding: 18px; }
 }
+
+/* Search-analytics card (1.6.0) */
+.nitrosearch-admin .ns-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; margin-top: 8px; }
+.nitrosearch-admin .ns-subhead { margin: 8px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; opacity: .7; }
+.nitrosearch-admin .ns-list { margin: 0 0 8px 18px; }
+.nitrosearch-admin .ns-list li { margin-bottom: 2px; }
