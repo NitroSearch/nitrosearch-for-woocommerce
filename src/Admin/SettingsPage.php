@@ -153,8 +153,13 @@ final class SettingsPage
             <?php else :
                 $count = (int) Settings::get('product_count');
                 $limit = (int) Settings::get('product_limit');
-                $pct = $limit > 0 ? min(100, (int) round($count / $limit * 100)) : 0;
-                $atLimit = (bool) Settings::get('at_limit');
+                // An unlimited plan arrives as a sentinel, because the wire field is an
+                // integer and has no way to say "none". Rendered literally it read
+                // "81 / 1,000,000,000" with a progress bar pinned at its 2% floor —
+                // which is not what an Enterprise merchant is paying for.
+                $unlimited = Settings::hasUnlimitedPlan();
+                $pct = $unlimited ? 100 : ($limit > 0 ? min(100, (int) round($count / $limit * 100)) : 0);
+                $atLimit = ! $unlimited && (bool) Settings::get('at_limit');
                 ?>
                 <?php if ($atLimit) : ?>
                     <div class="notice notice-warning inline ns-notice"><p>
@@ -167,7 +172,7 @@ final class SettingsPage
                     <div class="ns-stats">
                         <div class="ns-stat">
                             <div class="ns-stat__label">Search results indexed</div>
-                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo esc_html(number_format_i18n($limit)); ?></span></div>
+                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo $unlimited ? 'Unlimited' : esc_html(number_format_i18n($limit)); ?></span></div>
                             <div class="ns-progress"><div class="ns-progress__fill" style="width:<?php echo esc_attr((string) max($pct, 2)); ?>%"></div></div>
                         </div>
                         <div class="ns-stat">

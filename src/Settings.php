@@ -18,6 +18,18 @@ final class Settings
     /** The only non-product types this version can index. */
     public const SUPPORTED_CONTENT_TYPES = ['page', 'post'];
 
+    /**
+     * The wire sentinel for "no limit" on `product_limit` from GET /v1/status.
+     *
+     * An unlimited entitlement has no numeric cap, but the field is typed as an
+     * integer on the wire, so the backend sends this rather than null — a null
+     * would arrive here as `(int) null` = 0, which reads as a store that may index
+     * nothing at all. Treated as a threshold rather than an equality test so a
+     * future larger sentinel still reads as unlimited instead of rendering as a
+     * ten-digit number.
+     */
+    public const PLAN_UNLIMITED = 1000000000;
+
     /** @return array<string,mixed> */
     public static function all(): array
     {
@@ -94,6 +106,12 @@ final class Settings
     public static function indexesContent(): bool
     {
         return self::indexedContentTypes() !== [];
+    }
+
+    /** Whether this store's plan has no numeric cap (see PLAN_UNLIMITED). */
+    public static function hasUnlimitedPlan(): bool
+    {
+        return (int) self::get('product_limit', 0) >= self::PLAN_UNLIMITED;
     }
 
     public static function isConnected(): bool
