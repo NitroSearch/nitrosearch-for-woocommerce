@@ -120,6 +120,17 @@ final class Drain
                 if ($data === null) {
                     $op = 'delete';
                     $data = ['id' => (int) $row->object_id];
+                } else {
+                    // Always state the type, from the queue row that already knows it.
+                    // The content serializer set it; the product one never did, so a
+                    // product went over the wire with no type at all and the backend
+                    // fell back to "whatever this id was last time". That default is
+                    // the compatibility rule for plugins older than this feature, not
+                    // something a current plugin should be leaning on: it made a
+                    // mistyped row permanent, because no product upsert could ever
+                    // correct it, and the document would sit in the wrong section of
+                    // the dropdown forever.
+                    $data['object_type'] = $row->object_type;
                 }
             } else {
                 $data = ['id' => (int) $row->object_id];
