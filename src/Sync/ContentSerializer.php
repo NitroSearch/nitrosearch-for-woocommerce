@@ -3,6 +3,7 @@
 namespace NitroSearch\Sync;
 
 use NitroSearch\Settings;
+use NitroSearch\Support\Text;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -50,7 +51,7 @@ final class ContentSerializer
         return [
             'id' => $post->ID,
             'object_type' => $post->post_type === 'page' ? 'page' : 'post',
-            'name' => wp_strip_all_tags((string) get_the_title($post)),
+            'name' => Text::plain(get_the_title($post)),
             'excerpt' => self::excerpt($post),
             'categories' => self::terms($post),
             'visible' => true,
@@ -184,7 +185,7 @@ final class ContentSerializer
             $raw = excerpt_remove_blocks($raw);
         }
 
-        $text = wp_strip_all_tags(strip_shortcodes((string) $raw));
+        $text = Text::plain(strip_shortcodes((string) $raw));
         $text = preg_replace('/\s+/u', ' ', $text) ?? '';
 
         // wp_trim_words would cut on a word boundary but has no hard character
@@ -215,6 +216,6 @@ final class ContentSerializer
             }
         }
 
-        return array_values(array_unique(array_map('strval', $names)));
+        return array_values(array_unique(Text::plainList($names)));
     }
 }

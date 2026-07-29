@@ -2,6 +2,8 @@
 
 namespace NitroSearch\Sync;
 
+use NitroSearch\Support\Text;
+
 if (! defined('ABSPATH')) {
     exit;
 }
@@ -27,11 +29,12 @@ final class ProductSerializer
 
         $data = [
             'id'               => $product->get_id(),
-            // Strip any HTML from the title (a feed/CSV/REST import can bypass WP's
-            // own sanitisation) so the indexed name is plain text — the search widget
-            // renders it, and untrusted markup must never reach a shopper's browser.
-            'name'             => wp_strip_all_tags((string) $product->get_name()),
-            'description'      => wp_strip_all_tags((string) ($product->get_short_description() ?: $product->get_description())),
+            // Plain text: markup stripped (a feed/CSV/REST import can bypass WP's own
+            // sanitisation, and untrusted markup must never reach a shopper's browser)
+            // and entities resolved, because WordPress stores "Salt & Pepper" as
+            // "Salt &amp; Pepper" and the widget would render that literally.
+            'name'             => Text::plain($product->get_name()),
+            'description'      => Text::plain($product->get_short_description() ?: $product->get_description()),
             'sku'              => (string) $product->get_sku(),
             'brand'            => self::brand($product),
             'categories'       => self::terms($productId, 'product_cat'),
@@ -82,7 +85,7 @@ final class ProductSerializer
     {
         $terms = wp_get_post_terms($productId, $taxonomy, ['fields' => 'names']);
 
-        return is_wp_error($terms) ? [] : array_values($terms);
+        return is_wp_error($terms) ? [] : Text::plainList($terms);
     }
 
     /** @return array<string,array<int,string>> */
@@ -93,11 +96,11 @@ final class ProductSerializer
             if (! $attribute instanceof \WC_Product_Attribute) {
                 continue;
             }
-            $label = wc_attribute_label($attribute->get_name());
+            $label = Text::plain(wc_attribute_label($attribute->get_name()));
             $values = $attribute->is_taxonomy()
                 ? wc_get_product_terms($product->get_id(), $attribute->get_name(), ['fields' => 'names'])
                 : $attribute->get_options();
-            $values = is_wp_error($values) ? [] : array_values(array_map('strval', $values));
+            $values = is_wp_error($values) ? [] : Text::plainList($values);
             if ($values) {
                 $out[$label] = $values;
             }
