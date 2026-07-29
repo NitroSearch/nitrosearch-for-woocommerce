@@ -170,7 +170,16 @@ jobs:
           # --non-interactive is required: without it svn tries to prompt on a
           # headless runner and exits 1, failing the check after a good publish.
           svn ls --non-interactive "$SVN_URL/tags/$VERSION" >/dev/null
-          PUBLISHED="$(svn cat --non-interactive "$SVN_URL/trunk/readme.txt" | grep -m1 'Stable tag:' | tr -d '\r')"
+          # Read the file to EOF FIRST, then match. Piping `svn cat` straight into
+          # `grep -m1` reports a FAILED RELEASE AFTER A GOOD ONE: grep exits at the
+          # match (line 7 of the readme), closes the pipe, svn cat dies of SIGPIPE
+          # with 141, and `pipefail` fails the step. It passed for 1.3.x only because
+          # the readme was short enough that svn finished writing first; the 1.4.0
+          # changelog pushed it over and it became deterministic — reproduced 5/5.
+          # A red run on a successful publish is worse than useless: the next person
+          # re-runs it against an SVN tag that already exists.
+          README="$(svn cat --non-interactive "$SVN_URL/trunk/readme.txt")"
+          PUBLISHED="$(grep -m1 'Stable tag:' <<<"$README" | tr -d '\r')"
           echo "tags/$VERSION exists; trunk says: $PUBLISHED"
           echo "Listing: https://wordpress.org/plugins/$PLUGIN_SLUG (indexing can lag up to 72h)"
 
