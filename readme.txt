@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Install the plugin, connect your store, and from that moment every search your c
 * **Filters, facets & a full results page** — category, brand, price, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
 * **Your whole site, not just the shop** — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and *noindex* content is always left out.
 * **Sync you can trust** — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise.
-* **Honest, simple pricing** — a genuinely free tier, every plan gets every feature, and you only ever pay for catalogue size. No per-search fees, no surprise bills.
+* **Honest, simple pricing** — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills.
 * **Nothing added to your site unless you ask** — the optional "Powered by NitroSearch" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search.
 * **Set-up in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
 
@@ -36,7 +36,7 @@ NitroSearch is a hosted search service; this plugin is its official WooCommerce 
 
 = Free to start =
 
-The free tier works the moment you install the plugin — up to 100 products, with every feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at [nitrosearch.io](https://nitrosearch.io).
+The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at [nitrosearch.io](https://nitrosearch.io).
 
 == External services ==
 
@@ -45,6 +45,7 @@ This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.
 * **What is sent, and when:** When you click **"Connect store"**, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen.
 * **Search queries:** Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results.
 * **Scripts loaded onto your storefront:** once connected, the plugin loads the search widget's JavaScript from `api.nitrosearch.io` (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect.
+* **Search usage counts:** once connected, the search widget also sends anonymous, cookieless usage events — the query typed, how many results appeared, and clicks on those results — to `api.nitrosearch.io`. They carry no shopper identifiers, no cookies and no IP-based profiles, and raw records are deleted on a rolling schedule. Switch this off any time under **NitroSearch → Appearance → Search usage data**.
 * **Where:** the NitroSearch API and search engine, at `api.nitrosearch.io` and your store's dedicated search endpoint.
 * **Nothing leaves your site until you click Connect.**
 
@@ -62,7 +63,7 @@ Privacy Policy: [https://nitrosearch.io/legal/privacy](https://nitrosearch.io/le
 
 = Is it really free? =
 
-Yes. The free tier covers up to 100 products with every feature included, forever. Paid plans simply raise the catalogue-size limit — you only pay for how many products you index, never per search.
+Yes. The free tier covers up to 100 search results with every search feature included, forever — search itself is never tiered. Paid plans raise the limit (and include extras like the store reporting we're building); you only pay for how much you index, never per search.
 
 = Do I need to create an account? =
 
@@ -103,6 +104,11 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 3. The full search results page — a fast product grid with faceted filtering and pagination.
 
 == Changelog ==
+
+= 1.5.0 =
+* New: anonymous, cookieless **search usage counts**. The widget now tells NitroSearch what was searched, how many results appeared, and what got clicked — with no shopper identifiers, no cookies, and nothing stored in the shopper's browser. It improves result ranking for your store; per-store reporting on your NitroSearch dashboard is on the roadmap. On by default, disclosed in **External services** above, and yours to switch off under **NitroSearch → Appearance → Search usage data**.
+* A one-time notice in wp-admin explains the change and links to the toggle.
+* Honesty pass on this listing: our pricing promise now reads "every **search** feature on every plan" — search itself is never tiered, and the limit counts search results (products, plus any pages and posts you switch on), matching how plans have counted since 1.4.0.
 
 = 1.4.0 =
 * Improved: the optional "Powered by NitroSearch" credit now links to nitrosearch.io and also appears once in your site footer. Still off by default — nothing is added to your site unless you turn it on.
@@ -153,6 +159,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.5.0 =
+Adds anonymous, cookieless search usage counts (no shopper identifiers — improves ranking; reporting is on the roadmap). On by default with a settings toggle under Appearance; details in External services.
 
 = 1.4.0 =
 NitroSearch can now search your pages and blog posts alongside your products, in their own section. Off by default on existing stores — switch it on under Appearance → What to search. Nothing changes until you do.

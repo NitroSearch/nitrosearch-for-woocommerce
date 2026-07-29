@@ -32,6 +32,51 @@ final class SettingsPage
         add_action('admin_post_nitrosearch_disconnect', [$this, 'handleDisconnect']);
         add_action('admin_post_nitrosearch_appearance', [$this, 'handleAppearance']);
         add_action('admin_post_nitrosearch_claim', [$this, 'handleClaim']);
+        add_action('admin_post_nitrosearch_dismiss_usage', [$this, 'handleDismissUsage']);
+        add_action('admin_notices', [$this, 'usageNotice']);
+    }
+
+    /**
+     * One-time notice when the 1.5.x line starts collecting anonymous search
+     * usage counts: default on, plainly described, with the toggle one click
+     * away. Shown until dismissed, on our screen and the plugins screen only —
+     * a merchant who never visits either is not nagged elsewhere.
+     */
+    public function usageNotice(): void
+    {
+        if (! get_option('nitrosearch_usage_notice') || ! current_user_can('manage_woocommerce')) {
+            return;
+        }
+        $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+        if ($screen === null || ! in_array($screen->id, ['plugins', 'toplevel_page_nitrosearch'], true)) {
+            return;
+        }
+        $settingsUrl = admin_url('admin.php?page=nitrosearch');
+        $dismissUrl = wp_nonce_url(admin_url('admin-post.php?action=nitrosearch_dismiss_usage'), 'nitrosearch_dismiss_usage');
+        ?>
+        <div class="notice notice-info">
+            <p>
+                <strong>NitroSearch now measures how your store's search performs</strong> —
+                anonymous, cookieless counts of searches and result clicks, with no shopper
+                identifiers. It helps result ranking improve, and per-store reporting is on
+                the roadmap. Manage it under
+                <a href="<?php echo esc_url($settingsUrl); ?>">NitroSearch &rarr; Appearance</a>.
+                &nbsp;<a href="<?php echo esc_url($dismissUrl); ?>">Dismiss</a>
+            </p>
+        </div>
+        <?php
+    }
+
+    public function handleDismissUsage(): void
+    {
+        if (! current_user_can('manage_woocommerce')) {
+            wp_die('Unauthorized.');
+        }
+        check_admin_referer('nitrosearch_dismiss_usage');
+        delete_option('nitrosearch_usage_notice');
+        update_option('nitrosearch_usage_notice_dismissed', '1', false);
+        wp_safe_redirect(wp_get_referer() ?: admin_url('admin.php?page=nitrosearch'));
+        exit;
     }
 
     public function menu(): void
@@ -326,6 +371,24 @@ final class SettingsPage
                                 </td>
                             </tr>
                             <tr>
+                                <th scope="row">Search usage data</th>
+                                <td>
+                                    <label>
+                                        <input name="share_search_data" id="ns_share_data" type="checkbox" value="1"
+                                            <?php checked((bool) Settings::get('share_search_data', true)); ?>>
+                                        Share anonymous search usage counts with NitroSearch
+                                    </label>
+                                    <p class="description">
+                                        Counts searches, result totals and result clicks on your store's
+                                        search &mdash; cookieless and anonymous, with no shopper
+                                        identifiers, no IP addresses and nothing stored in the shopper's
+                                        browser. Used to improve result ranking; per-store reporting on
+                                        your NitroSearch dashboard is on the roadmap. Untick to stop
+                                        sending immediately.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th scope="row">Powered-by badge</th>
                                 <td>
                                     <label>
@@ -449,6 +512,7 @@ final class SettingsPage
             'index_content' => $content,
             'results_takeover' => isset($_POST['results_takeover']),
             'show_badge' => isset($_POST['show_badge']),
+            'share_search_data' => isset($_POST['share_search_data']),
         ]);
         // phpcs:enable WordPress.Security.NonceVerification.Missing
 

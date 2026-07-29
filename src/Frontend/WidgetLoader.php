@@ -92,7 +92,20 @@ final class WidgetLoader
             // fewer search per keystroke, so a store with content off pays nothing
             // for the feature existing.
             'content'    => Settings::indexesContent(),
+            // Merchant toggle for the anonymous usage beacon. The widget key is
+            // 'analytics' (its wire name; the dashboards it will feed are not yet
+            // released) — false stops all emission client-side.
+            'analytics'  => (bool) Settings::get('share_search_data', true), // wire name; its dashboards are not yet released
         ];
+
+        // The usage-events beacon endpoint + this store's public token. Omitted
+        // entirely until the backend has issued one — the widget no-ops without
+        // it, so an old backend or an unverified store costs nothing.
+        $eventsToken = (string) Settings::get('events_token');
+        $eventsUrl = (string) Settings::get('events_url');
+        if ($eventsToken !== '' && $eventsUrl !== '') {
+            $config['events'] = ['url' => esc_url_raw($eventsUrl), 'token' => $eventsToken];
+        }
 
         // Add-to-cart endpoint for the results grid. The classic wc-ajax endpoint
         // (not the Store API) is used deliberately: it writes the WC session cart

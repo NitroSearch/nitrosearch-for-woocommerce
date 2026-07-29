@@ -68,6 +68,10 @@ final class Client
             'engine_host'       => $body['search']['engine']['host'] ?? '',
             'widget_loader_url' => $body['widget']['loader_url'] ?? '',
             'widget_bundle_url' => $body['widget']['bundle_url'] ?? '',
+            // Usage-events beacon endpoint + this store's public token (absent on
+            // older backends and unverified shells — harmless empties).
+            'events_url'        => $body['events']['url'] ?? '',
+            'events_token'      => $body['events']['token'] ?? '',
         ]);
 
         return ['ok' => true];
@@ -160,13 +164,24 @@ final class Client
             'at_limit'      => (bool) ($body['at_limit'] ?? false),
         ];
         if ($res['ok']) {
-            Settings::update([
+            $update = [
                 'verified'      => $status['verified'],
                 'claimed'       => $status['claimed'],
                 'product_limit' => $status['product_limit'],
                 'product_count' => $status['product_count'],
                 'at_limit'      => $status['at_limit'],
-            ]);
+                // Whether the plan includes the reporting surfaces (not yet released;
+                // additive field — older backends omit it).
+                'analytics_included' => (bool) ($body['analytics_included'] ?? false), // reporting is not yet released
+            ];
+            // The usage-events endpoint + token ride the poll every install already
+            // makes — this is how stores connected before the feature existed pick
+            // theirs up, with no new endpoint and no reconnect.
+            if (! empty($body['events']['token'])) {
+                $update['events_url'] = (string) ($body['events']['url'] ?? '');
+                $update['events_token'] = (string) $body['events']['token'];
+            }
+            Settings::update($update);
         }
 
         return $status;
@@ -222,12 +237,17 @@ final class Client
      */
     private static function storeSearch(array $search): void
     {
-        Settings::update([
+        $update = [
             'scoped_search_key' => (string) ($search['scoped_search_key'] ?? ''),
             'collection'        => (string) ($search['collection'] ?? Settings::get('collection')),
             'engine_host'       => (string) ($search['engine']['host'] ?? ''),
             'search_public_id'  => (string) ($search['public_key_id'] ?? Settings::get('search_public_id')),
-        ]);
+        ];
+        if (! empty($search['events']['token'])) {
+            $update['events_url'] = (string) ($search['events']['url'] ?? '');
+            $update['events_token'] = (string) $search['events']['token'];
+        }
+        Settings::update($update);
     }
 
     /**

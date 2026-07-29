@@ -59,6 +59,14 @@ final class Settings
             // seeded at activation (see Plugin::activate) where "no value yet" is
             // distinguishable from "the merchant turned it off".
             'show_badge'        => false, // opt-in "Powered by NitroSearch" in the widget (default OFF)
+            // Anonymous, cookieless search usage counts (searches, result counts,
+            // clicks) sent to NitroSearch. Default ON, disclosed in the readme's
+            // External-services section and in a one-time notice on upgrade; the
+            // merchant can switch it off below. Carries no shopper identifiers.
+            'share_search_data' => true,
+            'events_url'        => '',    // beacon endpoint (from the backend)
+            'events_token'      => '',    // this store's public events token
+            'analytics_included' => false, // plan includes the reporting surfaces (not yet released)
             'verified'          => false, // proof-of-control passed (from /v1/status)
             'index_content'     => [],    // e.g. ['page','post'] — see the note above
             'product_limit'     => 0,     // plan cap (from /v1/status)

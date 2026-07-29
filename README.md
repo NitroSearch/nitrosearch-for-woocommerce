@@ -34,8 +34,8 @@ never in the search path.
 - **Sync you can trust** — an outbox that coalesces every change, signed and versioned updates so nothing
   lands out of order, and retries until each one sticks — with a live "in sync" screen to prove it.
 - **No search load on your own server** — the work your WordPress host physically can't do, done for you.
-- **Honest, simple pricing** — a genuinely free tier, every plan gets every feature, and you only pay for
-  catalogue size. Cancel yourself in one click.
+- **Honest, simple pricing** — a genuinely free tier, every search feature on every plan (search itself is
+  never tiered), and you only pay for how much you index. Cancel yourself in one click.
 
 ## How it works
 

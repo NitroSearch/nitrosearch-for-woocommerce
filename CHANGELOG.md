@@ -5,6 +5,30 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.5.0] — 2026-07-29
+
+### Added
+- **Anonymous, cookieless search usage counts.** The widget now tells NitroSearch
+  what was searched, how many results appeared, and what got clicked — with no
+  shopper identifiers, no cookies, and nothing stored in the shopper's browser.
+  It improves result ranking; per-store reporting on the NitroSearch dashboard is
+  on the roadmap. On by default, disclosed in the readme's External-services
+  section, and switchable off under **NitroSearch → Appearance → Search usage
+  data**. (Requires a backend that issues the store a usage-events token; on an
+  older backend the widget simply stays silent.)
+- A one-time wp-admin notice explaining the change, shown on the plugin's own
+  screen and the plugins screen until dismissed.
+- On upgrade, the plugin now schedules one background status refresh so new
+  backend-issued settings (the usage-events token among them) arrive without a
+  reconnect — the activation hook does not fire on updates, so version-change
+  detection in wp-admin does this instead.
+
+### Changed
+- Listing honesty pass: the pricing promise now reads "every **search** feature
+  on every plan" — search itself is never tiered — and the free-tier copy counts
+  **search results** (products, plus any pages and posts you switch on), matching
+  how plans have counted since 1.4.0.
+
 ## [1.4.0] — 2026-07-29
 
 ### Added
