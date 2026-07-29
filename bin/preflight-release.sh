@@ -120,6 +120,31 @@ else
   fail "no listing assets in $ASSETS_DIR — publishing would strip the directory page"
 fi
 
+# --- 6b. Every class the code uses actually ships -----------------------------
+# The autoloader maps NitroSearch\Foo\Bar to src/Foo/Bar.php. If a file the code
+# references is missing from the PACKAGE, nothing fails until a merchant's site
+# hits that code path and fatals — and by then it is on wordpress.org, where there
+# is no undo. Checked against the built package rather than the working tree,
+# because the working tree is not what ships.
+MISSING=""
+for CLASS in $(grep -rhoE '^use NitroSearch\\[A-Za-z0-9_\\]+;' nitrosearch.php src \
+               | sed 's/^use NitroSearch\\//; s/;$//' | sort -u); do
+  REL="src/$(printf '%s' "$CLASS" | tr '\\' '/').php"
+  [ -f "$REL" ] || MISSING="$MISSING $REL"
+done
+# Fully-qualified references too (the bootstrap uses \NitroSearch\... directly).
+for CLASS in $(grep -rhoE '\\NitroSearch\\[A-Za-z0-9_\\]+::' nitrosearch.php src \
+               | sed 's/^\\NitroSearch\\//; s/::$//' | sort -u); do
+  REL="src/$(printf '%s' "$CLASS" | tr '\\' '/').php"
+  [ -f "$REL" ] || MISSING="$MISSING $REL"
+done
+
+if [ -n "$MISSING" ]; then
+  fail "referenced class files missing from the package:$MISSING"
+else
+  pass "every referenced NitroSearch class has a file that ships"
+fi
+
 # --- 7. Syntax --------------------------------------------------------------
 if command -v php >/dev/null 2>&1; then
   if find nitrosearch.php src -name '*.php' -exec php -l {} \; 2>&1 | grep -v '^No syntax errors' | grep -q .; then
