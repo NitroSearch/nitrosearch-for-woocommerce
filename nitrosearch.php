@@ -3,7 +3,7 @@
  * Plugin Name:       NitroSearch for WooCommerce
  * Plugin URI:        https://nitrosearch.io
  * Description:        Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results.
- * Version:           1.3.1
+ * Version:           1.4.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -22,7 +22,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-define('NITROSEARCH_VERSION', '1.3.1');
+define('NITROSEARCH_VERSION', '1.4.0');
 define('NITROSEARCH_FILE', __FILE__);
 define('NITROSEARCH_DIR', plugin_dir_path(__FILE__));
 
@@ -53,6 +53,34 @@ add_action('before_woocommerce_init', function (): void {
 
 register_activation_hook(__FILE__, function (): void {
     \NitroSearch\Sync\Outbox::install();
+
+    // Seed pages-and-posts indexing ON for a genuinely NEW install, and leave an
+    // existing one alone. The marker option distinguishes "never activated since
+    // this shipped" from "activated before", which the settings array alone cannot.
+    if (get_option('nitrosearch_content_defaults_seeded') === false) {
+        // Never overwrite a choice the merchant has already made. The activation hook
+        // does NOT fire on a plugin update, so a store that upgraded in place carries
+        // no marker — and seeding on the strength of the missing marker alone wiped
+        // its opt-in the first time the plugin was deactivated and reactivated (a
+        // routine troubleshooting step). The stored settings are the real record: the
+        // key is present the moment anything has been saved.
+        $stored = get_option('nitrosearch_settings');
+
+        if (! is_array($stored) || ! array_key_exists('index_content', $stored)) {
+            \NitroSearch\Settings::update([
+                // Already syncing before this version existed: leave content off and
+                // let the owner opt in from the settings screen. Pages and blog posts
+                // consume the same allowance as products, so switching it on during an
+                // upgrade could push a store over its limit and have its products
+                // refused without the owner doing anything.
+                'index_content' => \NitroSearch\Settings::isConnected()
+                    ? []
+                    : \NitroSearch\Settings::SUPPORTED_CONTENT_TYPES,
+            ]);
+        }
+
+        add_option('nitrosearch_content_defaults_seeded', '1');
+    }
 });
 
 register_deactivation_hook(__FILE__, function (): void {
@@ -62,6 +90,7 @@ register_deactivation_hook(__FILE__, function (): void {
     // Also clears the `active` flag so a full sync doesn't silently auto-resume on
     // reactivation with no scheduled chunk.
     \NitroSearch\Sync\FullSync::cancel();
+    \NitroSearch\Sync\ContentPurge::cancel();
 });
 
 // Boot once WooCommerce is loaded.

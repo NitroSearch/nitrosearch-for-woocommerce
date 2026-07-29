@@ -15,6 +15,9 @@ final class Settings
 {
     private const OPTION = 'nitrosearch_settings';
 
+    /** The only non-product types this version can index. */
+    public const SUPPORTED_CONTENT_TYPES = ['page', 'post'];
+
     /** @return array<string,mixed> */
     public static function all(): array
     {
@@ -34,8 +37,18 @@ final class Settings
             'accent_color'      => '',   // optional widget accent colour (hex)
             'connect_token'     => '',   // optional provisioning token, sent on connect
             'results_takeover'  => true, // hydrate the product search-results page
+            // Which non-product content to index, alongside products. Pages and blog
+            // posts consume the SAME quota as products, so this is a real cost lever
+            // for the merchant, not a cosmetic toggle — hence off unless chosen.
+            //
+            // Defaults to [] here so an EXISTING install never starts consuming its
+            // allowance with blog posts on upgrade, and never has products refused
+            // through no action of its own. A fresh install gets pages and posts on,
+            // seeded at activation (see Plugin::activate) where "no value yet" is
+            // distinguishable from "the merchant turned it off".
             'show_badge'        => false, // opt-in "Powered by NitroSearch" in the widget (default OFF)
             'verified'          => false, // proof-of-control passed (from /v1/status)
+            'index_content'     => [],    // e.g. ['page','post'] — see the note above
             'product_limit'     => 0,     // plan cap (from /v1/status)
             'product_count'     => 0,     // products in the engine so far (from /v1/status)
             'at_limit'          => false, // catalogue has hit the plan cap (from /v1/status)
@@ -58,6 +71,29 @@ final class Settings
     public static function update(array $values): void
     {
         update_option(self::OPTION, array_merge(self::all(), $values));
+    }
+
+    /**
+     * Post types indexed alongside products, filtered to the ones we support.
+     *
+     * Allowlisted rather than passed through: this value ends up deciding what gets
+     * sent to a public search index, so an unexpected entry must not widen it.
+     *
+     * @return array<int, string>
+     */
+    public static function indexedContentTypes(): array
+    {
+        $chosen = self::get('index_content', []);
+
+        return array_values(array_intersect(
+            is_array($chosen) ? array_map('strval', $chosen) : [],
+            self::SUPPORTED_CONTENT_TYPES,
+        ));
+    }
+
+    public static function indexesContent(): bool
+    {
+        return self::indexedContentTypes() !== [];
     }
 
     public static function isConnected(): bool

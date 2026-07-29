@@ -4,6 +4,7 @@ namespace NitroSearch\Admin;
 
 use NitroSearch\Api\Client;
 use NitroSearch\Settings;
+use NitroSearch\Sync\ContentPurge;
 use NitroSearch\Sync\Drain;
 use NitroSearch\Sync\FullSync;
 use NitroSearch\Sync\Outbox;
@@ -157,15 +158,15 @@ final class SettingsPage
                 ?>
                 <?php if ($atLimit) : ?>
                     <div class="notice notice-warning inline ns-notice"><p>
-                        <strong>You’ve reached your plan’s product limit.</strong>
-                        Your search keeps running for the products already indexed, but new products won’t be added until you upgrade. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
+                        <strong>You’ve reached your plan’s limit.</strong>
+                        Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
                     </p></div>
                 <?php endif; ?>
                 <div class="ns-card">
                     <h2 class="ns-card__title">Sync health</h2>
                     <div class="ns-stats">
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Products indexed</div>
+                            <div class="ns-stat__label">Search results indexed</div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo esc_html(number_format_i18n($limit)); ?></span></div>
                             <div class="ns-progress"><div class="ns-progress__fill" style="width:<?php echo esc_attr((string) max($pct, 2)); ?>%"></div></div>
                         </div>
@@ -223,7 +224,7 @@ final class SettingsPage
                             <div class="ns-stat__value"><?php echo $lastMs > 0 ? esc_html(number_format_i18n($lastMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Products synced</div>
+                            <div class="ns-stat__label">Items synced</div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($itemsTotal)); ?></div>
                         </div>
                         <div class="ns-stat">
@@ -282,6 +283,31 @@ final class SettingsPage
                                     <input name="selector" id="ns_selector" type="text" class="regular-text"
                                         placeholder="e.g. input.my-theme-search" value="<?php echo esc_attr((string) Settings::get('selector')); ?>">
                                     <p class="description">Optional CSS selector for your theme's search input. Leave blank to auto-detect.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">What to search</th>
+                                <td>
+                                    <?php $indexed = Settings::indexedContentTypes(); ?>
+                                    <label style="display:block;margin-bottom:4px;">
+                                        <input type="checkbox" checked disabled> Products <span class="description">(always indexed)</span>
+                                    </label>
+                                    <label style="display:block;margin-bottom:4px;">
+                                        <input name="index_content[]" type="checkbox" value="page"
+                                            <?php checked(in_array('page', $indexed, true)); ?>> Pages
+                                    </label>
+                                    <label style="display:block;">
+                                        <input name="index_content[]" type="checkbox" value="post"
+                                            <?php checked(in_array('post', $indexed, true)); ?>> Blog posts
+                                    </label>
+                                    <p class="description">
+                                        Pages and posts count towards the same allowance as your products, so
+                                        switching them off frees it up for your catalogue. Your products always
+                                        come first and are never displaced by them. Private,
+                                        password-protected and unpublished content is never indexed, and we
+                                        honour <em>noindex</em> set by Yoast SEO or Rank Math (per item, per
+                                        content type, or site-wide).
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -350,7 +376,7 @@ final class SettingsPage
         Client::verify();
         if (Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Connected and verified. Syncing {$count} products in the background.");
+            $this->redirect("Connected and verified. Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
         }
         $this->redirect('Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update.');
     }
@@ -375,10 +401,10 @@ final class SettingsPage
 
         if (! $wasReady && Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Verified! Syncing {$count} products in the background.");
+            $this->redirect("Verified! Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
         }
         if (Settings::hasSearchKey()) {
-            $this->redirect((int) Settings::get('product_count').' products indexed · '.(int) Outbox::pendingCount().' pending.');
+            $this->redirect((int) Settings::get('product_count').' search results indexed · '.(int) Outbox::pendingCount().' pending.');
         }
         $this->redirect('Still confirming control of your site — please try again in a moment.');
     }
@@ -387,7 +413,7 @@ final class SettingsPage
     {
         $this->authorize('nitrosearch_sync');
         $count = FullSync::start();
-        $this->redirect("Syncing {$count} products in the background.");
+        $this->redirect("Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
     }
 
     public function handleAppearance(): void
@@ -396,13 +422,53 @@ final class SettingsPage
         // phpcs:disable WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() (check_admin_referer) above.
         $accent = isset($_POST['accent_color']) ? sanitize_hex_color(wp_unslash($_POST['accent_color'])) : '';
         $selector = isset($_POST['selector']) ? sanitize_text_field(wp_unslash($_POST['selector'])) : '';
+        // Allowlisted against what this version supports — this value decides what
+        // gets sent to a public search index, so an unexpected entry must not widen
+        // it. Absent (all boxes cleared) correctly means "content off".
+        $submitted = isset($_POST['index_content']) && is_array($_POST['index_content'])
+            ? array_map('sanitize_key', wp_unslash($_POST['index_content']))
+            : [];
+        $content = array_values(array_intersect($submitted, Settings::SUPPORTED_CONTENT_TYPES));
+
+        $wasIndexing = Settings::indexedContentTypes();
+
         Settings::update([
             'accent_color' => (string) $accent,
             'selector' => $selector,
+            'index_content' => $content,
             'results_takeover' => isset($_POST['results_takeover']),
             'show_badge' => isset($_POST['show_badge']),
         ]);
         // phpcs:enable WordPress.Security.NonceVerification.Missing
+
+        $newlyEnabled = array_values(array_diff($content, $wasIndexing));
+        $newlyDisabled = array_values(array_diff($wasIndexing, $content));
+
+        // Switched OFF means "take these out of my index and give me the allowance
+        // back" — which is what the description above this field promises. Nothing
+        // else will ever do it: the hooks stop tracking a disabled type, so those
+        // documents would otherwise sit in the index forever, still being returned
+        // by the storefront and still consuming the plan.
+        if ($newlyDisabled !== []) {
+            ContentPurge::start($newlyDisabled);
+        }
+
+        // Newly-enabled types are not in the index yet and no hook will fire for
+        // existing content, so a full sync is the only way they appear. Scoped to
+        // just those types: the catalogue is already indexed, and re-enumerating it
+        // would push the whole store back through the merchant's own host to add a
+        // handful of pages.
+        if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
+            FullSync::start($newlyEnabled);
+        }
+
+        if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
+            $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.');
+        }
+        if ($newlyDisabled !== [] && Settings::hasSearchKey()) {
+            $this->redirect('Saved. Removing your '.implode(' and ', $newlyDisabled).'s from your index in the background.');
+        }
+
         $this->redirect('Appearance saved.');
     }
 
@@ -417,6 +483,7 @@ final class SettingsPage
             as_unschedule_all_actions(Drain::HOOK);
         }
         FullSync::cancel();
+        ContentPurge::cancel();
         $this->redirect('Disconnected.');
     }
 

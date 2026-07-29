@@ -5,6 +5,44 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.4.0] — 2026-07-29
+
+### Added
+- **Search your pages and blog posts too.** Shoppers looking for "delivery times"
+  or "how to care for leather" now find the page that answers them, shown in their
+  own "Pages & posts" section beneath the products — never mixed in with your
+  catalogue. Only titles, a short summary, categories, the featured image and the
+  publish date are indexed; full page content is never copied.
+- **A "What to search" setting** under NitroSearch → Appearance. Products are
+  always indexed; pages and blog posts are yours to switch on or off. They share
+  the same allowance as your products, so turning them off frees it up for your
+  catalogue — and when you do, they are removed from your index.
+- Private, password-protected, draft, scheduled and trashed content is never
+  indexed, and *noindex* set in Yoast SEO or Rank Math is honoured (per item, per
+  content type, or site-wide). Membership and paywall plugins can exclude anything
+  else through the new `nitrosearch_content_is_searchable` filter.
+- Products always claim capacity first. If your plan is full, pages and posts are
+  what gets held back — never your catalogue.
+- Existing stores are unaffected until they opt in: pages and posts start switched
+  **off** on an existing install, and on for a brand-new one.
+
+### Improved
+- Scheduled products and posts now index the moment they go live. Previously a
+  post published on a schedule could sit unindexed until something else happened
+  to edit it — WordPress publishes on a path that fires no product CRUD hook.
+- Switching a content type on no longer re-walks the whole catalogue. The sync
+  enumerates only the newly-enabled types, so adding pages to a large store no
+  longer puts every product back through the store's own host.
+
+### Fixed
+- Starting a new page or post no longer sends a needless removal for something
+  that was never indexed. Every "Add New" click creates an auto-draft, and each
+  one was queuing a delete.
+- Deactivating and reactivating the plugin no longer resets the "What to search"
+  choice on a store that upgraded in place.
+- On a site without Action Scheduler, a full sync indexed products and then
+  stopped, reporting itself complete while pages and posts were never enumerated.
+
 ## [1.3.0] — 2026-07-26
 
 ### Improved

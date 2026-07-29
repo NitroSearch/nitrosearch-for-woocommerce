@@ -53,6 +53,10 @@ final class WidgetLoader
             'theme'      => (object) $theme,
             // Results-page takeover on the product search page (merchant toggle).
             'results'    => (bool) Settings::get('results_takeover', true),
+            // Whether to also query pages/posts. False means the widget sends one
+            // fewer search per keystroke, so a store with content off pays nothing
+            // for the feature existing.
+            'content'    => Settings::indexesContent(),
         ];
 
         // Add-to-cart endpoint for the results grid. The classic wc-ajax endpoint

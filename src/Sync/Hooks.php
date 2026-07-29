@@ -2,6 +2,8 @@
 
 namespace NitroSearch\Sync;
 
+use NitroSearch\Settings;
+
 if (! defined('ABSPATH')) {
     exit;
 }
@@ -24,6 +26,23 @@ final class Hooks
         add_action('wp_trash_post', [self::class, 'maybeDelete']);
         add_action('before_delete_post', [self::class, 'maybeDelete']);
         add_action('untrashed_post', [self::class, 'maybeUpsertPost']);
+
+        // Status transitions, for EVERY type we index including products.
+        //
+        // The Woo CRUD hooks above miss a class of change entirely: a scheduled post
+        // published by WP-Cron goes through wp_publish_post(), which writes
+        // post_status directly and fires no CRUD hook — so a scheduled product could
+        // sit unindexed until an unrelated edit touched it. This also covers the
+        // reverse, where content leaving `publish` must leave a public index promptly
+        // (unpublished, made private, password-protected).
+        add_action('transition_post_status', [self::class, 'onStatusTransition'], 10, 3);
+
+        // Content edits. Products keep their own CRUD hooks; this covers pages and
+        // blog posts, including saves made by the REST API and by importers.
+        add_action('wp_after_insert_post', [self::class, 'onContentSaved'], 10, 4);
+
+        // Term changes alter the facet values we send and fire no save hook.
+        add_action('set_object_terms', [self::class, 'onTermsChanged'], 10, 4);
     }
 
     public static function upsert($productId): void
@@ -55,16 +74,116 @@ final class Hooks
 
     public static function maybeDelete($postId): void
     {
-        if (get_post_type((int) $postId) === 'product') {
-            Outbox::enqueue('product', (int) $postId, 'delete');
+        $type = self::trackedType((int) $postId);
+        if ($type !== null) {
+            Outbox::enqueue($type, (int) $postId, 'delete');
         }
     }
 
     public static function maybeUpsertPost($postId): void
     {
-        if (get_post_type((int) $postId) === 'product') {
-            Outbox::enqueue('product', (int) $postId, 'upsert');
+        $type = self::trackedType((int) $postId);
+        if ($type !== null) {
+            Outbox::enqueue($type, (int) $postId, 'upsert');
         }
     }
 
+    /**
+     * Any move into or out of `publish` for something we track.
+     *
+     * Leaving `publish` enqueues a DELETE, not an upsert: the serializer would
+     * refuse to build a document for it anyway, and a delete takes it out of the
+     * public index straight away rather than leaving it there until something else
+     * happens to touch the item.
+     */
+    public static function onStatusTransition($newStatus, $oldStatus, $post): void
+    {
+        if (! $post instanceof \WP_Post || $newStatus === $oldStatus) {
+            return;
+        }
+
+        $type = self::trackedTypeForPostType($post->post_type);
+        if ($type === null) {
+            return;
+        }
+
+        if ($newStatus === 'publish') {
+            Outbox::enqueue($type, $post->ID, 'upsert');
+        } elseif ($oldStatus === 'publish') {
+            Outbox::enqueue($type, $post->ID, 'delete');
+        }
+    }
+
+    /**
+     * A page or blog post was created or updated.
+     *
+     * `wp_after_insert_post` rather than `save_post`, because it fires after terms
+     * and meta are written — so the document we build is not missing taxonomy values
+     * saved in the same request.
+     */
+    public static function onContentSaved($postId, $post, $update, $postBefore): void
+    {
+        if (! $post instanceof \WP_Post || $post->post_type === 'product') {
+            // Products are covered by the Woo CRUD hooks, which also know about price
+            // and stock; enqueuing here as well would just double the outbox writes.
+            return;
+        }
+
+        $type = self::trackedTypeForPostType($post->post_type);
+        if ($type === null) {
+            return;
+        }
+
+        if ($post->post_status !== 'publish') {
+            // Deliberately nothing. Content LEAVING publish is handled by
+            // onStatusTransition, which is the only hook that knows the previous
+            // status — so queuing a delete here as well only ever fired for items
+            // that were never published in the first place. That cost a wire delete
+            // and a permanent tombstone row, per store, for every abandoned draft and
+            // every click of "Add New Page" (WordPress inserts an auto-draft, which
+            // fires this hook).
+            return;
+        }
+
+        // Published, so index it — and let the serializer have the last word. Its
+        // refusal becomes a delete, which is what removes content that is still
+        // published but has just stopped being public: password-protected, or
+        // noindexed by an SEO plugin. Neither changes post_status, so no transition
+        // fires and this is the only hook that sees it.
+        Outbox::enqueue($type, (int) $postId, 'upsert');
+    }
+
+    /**
+     * Terms changed on an object, so the facet values we last sent are stale. Fires
+     * on bulk category assignment and on importer writes, neither of which triggers
+     * a save hook.
+     */
+    public static function onTermsChanged($objectId, $terms, $ttIds, $taxonomy): void
+    {
+        $type = self::trackedType((int) $objectId);
+        if ($type !== null) {
+            Outbox::enqueue($type, (int) $objectId, 'upsert');
+        }
+    }
+
+    /** The outbox type for a post id, or null when we do not track it. */
+    private static function trackedType(int $postId): ?string
+    {
+        return self::trackedTypeForPostType((string) get_post_type($postId));
+    }
+
+    private static function trackedTypeForPostType(string $postType): ?string
+    {
+        if ($postType === 'product') {
+            return 'product';
+        }
+
+        // Only what the merchant enabled. Checked here as well as in the serializer,
+        // so a disabled type never even reaches the queue.
+        if (in_array($postType, Settings::indexedContentTypes(), true)) {
+            return $postType === 'page' ? 'page' : 'post';
+        }
+
+        return null;
+    }
 }
