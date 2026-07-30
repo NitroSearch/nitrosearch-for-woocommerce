@@ -206,6 +206,49 @@ final class Client
     }
 
     /**
+     * Report a search-attributed order (async, from the scheduled event). The
+     * order id is hashed with the install id before it leaves the site — the
+     * backend only ever sees an opaque, store-scoped reference. Fire-and-
+     * forget: the backend's insert is idempotent, and WP-cron will simply try
+     * again on the next matching order if this one is lost.
+     *
+     * @param  array{order_id:int,value_cents:int,currency:string,occurred_at:string,item_ids:array<int,string>,q:string}  $report
+     */
+    public static function reportOrder(array $report): void
+    {
+        if (! Settings::isConnected() || ! Settings::get('share_search_data', true)) {
+            return;
+        }
+
+        $path = '/v1/orders';
+        $body = wp_json_encode([
+            'order_ref' => hash('sha256', Settings::installId().'|order|'.(int) ($report['order_id'] ?? 0)),
+            'value_cents' => (int) ($report['value_cents'] ?? 0),
+            'currency' => (string) ($report['currency'] ?? 'USD'),
+            'occurred_at' => (string) ($report['occurred_at'] ?? gmdate('c')),
+            'item_ids' => array_values(array_map('strval', (array) ($report['item_ids'] ?? []))),
+            'q' => (string) ($report['q'] ?? ''),
+        ]);
+
+        $headers = Hmac::headers(
+            (string) Settings::get('sync_key_id'),
+            (string) Settings::get('sync_secret'),
+            'POST',
+            $path,
+            $body,
+            (string) Settings::get('site_url', get_site_url()),
+            Settings::installId(),
+        );
+        $headers['Content-Type'] = 'application/json';
+
+        wp_remote_post(Settings::apiUrl().$path, [
+            'timeout' => 10,
+            'headers' => $headers,
+            'body'    => $body,
+        ]);
+    }
+
+    /**
      * The 30-day analytics summary for the wp-admin card (docs on the service
      * side). A 2-second timeout on purpose: this can run during an admin page
      * render, and a slow backend must never hang wp-admin — the card degrades

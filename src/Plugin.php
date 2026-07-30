@@ -34,6 +34,7 @@ final class Plugin
         // store is connected.
         if (Settings::isConnected()) {
             Hooks::register();
+            \NitroSearch\Sync\OrderAttribution::register();
             // Schedule on init — Action Scheduler's data store isn't ready during
             // plugins_loaded, so as_* calls must wait.
             add_action('init', [Drain::class, 'schedule']);

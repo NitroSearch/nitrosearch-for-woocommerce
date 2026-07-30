@@ -5,6 +5,18 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.7.0] — 2026-07-29
+
+### Added
+- **Search-attributed revenue.** When a shopper adds a product to their basket
+  from search results and buys it within 7 days, the plugin reports that
+  order's search-attributed value to NitroSearch, powering the revenue figure
+  in the analytics dashboards. Attribution lives entirely in the store's own
+  WooCommerce session; the order number is hashed with the install id before
+  it leaves the site, no shopper details are ever sent, reporting is async so
+  checkout is never slowed, and the backend insert is idempotent so a retried
+  report can never double-count. Honours the "Search usage data" toggle.
+
 ## [1.6.0] — 2026-07-29
 
 ### Added

@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.6.0
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.7.0 =
+* New: **see the revenue your search drives.** When a shopper adds a product to their basket from search results and goes on to buy it (within 7 days), the plugin reports that order's search-attributed value to NitroSearch — a "Search-attributed revenue" figure appears in your analytics dashboards. Attribution happens entirely inside your store's own session; the order number is hashed before it leaves your site, and no shopper details are ever sent. Respects the same **Search usage data** toggle — switch it off and nothing is reported.
+
 = 1.6.0 =
 * New: a **Search analytics** card on the NitroSearch screen — last-30-days searches, zero-result rate, click-through rate, your top searches, and the searches that found nothing. On paid plans; the free tier sees its monthly search count and what upgrading unlocks. The full dashboards live in your NitroSearch account.
 * The card is cached for six hours and never slows wp-admin — a slow connection simply shows "couldn't load" and retries.
@@ -164,6 +167,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.7.0 =
+Adds search-attributed revenue to your analytics (hashed order reference only, no shopper details; honours the usage-data toggle). No storefront changes.
 
 = 1.6.0 =
 Adds the Search analytics card to the NitroSearch screen (paid plans; free tier sees its search count). No storefront changes.
