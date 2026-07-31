@@ -87,9 +87,39 @@ final class SettingsPage
             'manage_woocommerce',
             'nitrosearch',
             [$this, 'render'],
-            'dashicons-search',
+            self::menuIcon(),
             58
         );
+    }
+
+    /**
+     * The brand mark for the admin menu, as a base64 SVG data URI.
+     *
+     * The encoding matters: WordPress tests for the literal
+     * `data:image/svg+xml;base64,` prefix, and only then marks the icon as an SVG
+     * and lets `svg-painter.js` recolour it for the user's admin colour scheme
+     * (base, hover and current states). A URL-encoded data URI, or a file URL,
+     * silently falls back to a plain <img> that never matches the scheme.
+     *
+     * The painter rewrites `fill` attributes ONLY — it ignores `stroke` and CSS
+     * `style` — so this is a purpose-built filled version of the hero mark rather
+     * than the stroked, gradient-filled artwork used on the settings screen.
+     * `fill="black"` is the correct value to ship: it is what the painter expects
+     * to replace, and it is a sane fallback if the painter never runs.
+     */
+    private static function menuIcon(): string
+    {
+        $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">'
+            // Elongated-hex frame, drawn as a ring (outer path, inner path, even-odd).
+            .'<path fill="black" fill-rule="evenodd" d="M5.6 1.6H14.4L19.3 10L14.4 18.4H5.6L0.7 10Z'
+            .'M6.3 2.8H13.7L17.9 10L13.7 17.2H6.3L2.1 10Z"/>'
+            // The forward-leaning N: two uprights and the diagonal between them.
+            .'<path fill="black" d="M6.5 5.7H7.9V14.3H6.5Z"/>'
+            .'<path fill="black" d="M12.1 5.7H13.5V14.3H12.1Z"/>'
+            .'<path fill="black" d="M6.5 5.7H7.9L13.5 14.3H12.1Z"/>'
+            .'</svg>';
+
+        return 'data:image/svg+xml;base64,'.base64_encode($svg);
     }
 
     /** Load the branded stylesheet on our screen only — never elsewhere in wp-admin. */
@@ -117,6 +147,12 @@ final class SettingsPage
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only admin-notice string, for display only; sanitized, no state change.
         $notice = isset($_GET['ns_notice']) ? sanitize_text_field(wp_unslash($_GET['ns_notice'])) : '';
         $action = admin_url('admin-post.php');
+        // Which tab to show. Anything unrecognised falls back to the dashboard, and
+        // the Design tab is unreachable until the store is search-ready — there is
+        // nothing to style before then.
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view selector; no state change.
+        $tab = isset($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : 'dashboard';
+        $tab = ($tab === 'design' && $ready) ? 'design' : 'dashboard';
 
         if (! $connected) {
             $pillClass = '';
@@ -205,7 +241,21 @@ final class SettingsPage
                 $unlimited = Settings::hasUnlimitedPlan();
                 $pct = $unlimited ? 100 : ($limit > 0 ? min(100, (int) round($count / $limit * 100)) : 0);
                 $atLimit = ! $unlimited && (bool) Settings::get('at_limit');
+                $tabBase = admin_url('admin.php?page=nitrosearch');
                 ?>
+                <nav class="nav-tab-wrapper ns-tabs">
+                    <a href="<?php echo esc_url($tabBase); ?>"
+                        class="nav-tab <?php echo $tab === 'dashboard' ? 'nav-tab-active' : ''; ?>">
+                        <?php esc_html_e('Dashboard', 'nitrosearch'); ?>
+                    </a>
+                    <a href="<?php echo esc_url($tabBase.'&tab=design'); ?>"
+                        class="nav-tab <?php echo $tab === 'design' ? 'nav-tab-active' : ''; ?>">
+                        <?php esc_html_e('Design', 'nitrosearch'); ?>
+                    </a>
+                </nav>
+                <?php if ($tab === 'design') :
+                    $this->renderDesign($action);
+                else : ?>
                 <?php if ($atLimit) : ?>
                     <div class="notice notice-warning inline ns-notice"><p>
                         <strong>You’ve reached your plan’s limit.</strong>
@@ -365,103 +415,281 @@ final class SettingsPage
                     <?php endif; ?>
                 </div>
 
-                <div class="ns-card">
-                    <h2 class="ns-card__title">Appearance</h2>
-                    <form method="post" action="<?php echo esc_url($action); ?>">
-                        <?php wp_nonce_field('nitrosearch_appearance'); ?>
-                        <input type="hidden" name="action" value="nitrosearch_appearance">
-                        <table class="form-table" role="presentation">
-                            <tr>
-                                <th scope="row"><label for="ns_accent">Accent colour</label></th>
-                                <td>
-                                    <input name="accent_color" id="ns_accent" type="text" class="regular-text"
-                                        placeholder="#111827" value="<?php echo esc_attr((string) Settings::get('accent_color')); ?>">
-                                    <p class="description">Hex colour for prices, highlights and selected filters. Leave blank for the default.</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><label for="ns_selector">Search box selector</label></th>
-                                <td>
-                                    <input name="selector" id="ns_selector" type="text" class="regular-text"
-                                        placeholder="e.g. input.my-theme-search" value="<?php echo esc_attr((string) Settings::get('selector')); ?>">
-                                    <p class="description">Optional CSS selector for your theme's search input. Leave blank to auto-detect.</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">What to search</th>
-                                <td>
-                                    <?php $indexed = Settings::indexedContentTypes(); ?>
-                                    <label style="display:block;margin-bottom:4px;">
-                                        <input type="checkbox" checked disabled> Products <span class="description">(always indexed)</span>
-                                    </label>
-                                    <label style="display:block;margin-bottom:4px;">
-                                        <input name="index_content[]" type="checkbox" value="page"
-                                            <?php checked(in_array('page', $indexed, true)); ?>> Pages
-                                    </label>
-                                    <label style="display:block;">
-                                        <input name="index_content[]" type="checkbox" value="post"
-                                            <?php checked(in_array('post', $indexed, true)); ?>> Blog posts
-                                    </label>
-                                    <p class="description">
-                                        Pages and posts count towards the same allowance as your products, so
-                                        switching them off frees it up for your catalogue. Your products always
-                                        come first and are never displaced by them. Private,
-                                        password-protected and unpublished content is never indexed, and we
-                                        honour <em>noindex</em> set by Yoast SEO or Rank Math (per item, per
-                                        content type, or site-wide).
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Search results page</th>
-                                <td>
-                                    <label>
-                                        <input name="results_takeover" id="ns_results" type="checkbox" value="1"
-                                            <?php checked((bool) Settings::get('results_takeover', true)); ?>>
-                                        Enhance the product search results page with NitroSearch results and filters
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Search usage data</th>
-                                <td>
-                                    <label>
-                                        <input name="share_search_data" id="ns_share_data" type="checkbox" value="1"
-                                            <?php checked((bool) Settings::get('share_search_data', true)); ?>>
-                                        Share anonymous search usage counts with NitroSearch
-                                    </label>
-                                    <p class="description">
-                                        Counts searches, result totals and result clicks on your store's
-                                        search &mdash; cookieless and anonymous, with no shopper
-                                        identifiers, no IP addresses and nothing stored in the shopper's
-                                        browser. Used to improve result ranking; per-store reporting on
-                                        your NitroSearch dashboard is on the roadmap. Untick to stop
-                                        sending immediately.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Powered-by badge</th>
-                                <td>
-                                    <label>
-                                        <input name="show_badge" id="ns_badge" type="checkbox" value="1"
-                                            <?php checked((bool) Settings::get('show_badge', false)); ?>>
-                                        Show a small &ldquo;Powered by NitroSearch&rdquo; credit, linking to nitrosearch.io
-                                    </label>
-                                    <p class="description">
-                                        Off by default, and entirely your choice. Turning it on adds a small
-                                        credit in the search box and one line in your site footer, both
-                                        linking to <code>https://nitrosearch.io</code> &mdash; a normal,
-                                        followed link. Nothing is added to your site unless you tick this.
-                                        Thank you if you do.
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                        <?php submit_button('Save appearance', 'secondary'); ?>
-                    </form>
-                </div>
+                <?php endif; ?>
             <?php endif; ?>
+        </div>
+        <?php
+    }
+
+    /**
+     * The Design tab: how the search box looks on the storefront.
+     *
+     * Every control here resolves to a widget design token in Support\Design, so
+     * nothing on this screen enlarges the JavaScript your shoppers download. The
+     * defaults are what a store gets without ever opening this tab, and they are
+     * chosen to look right on a standard WooCommerce theme.
+     */
+    private function renderDesign(string $action): void
+    {
+        $look = (string) Settings::get('design_look', 'roomy');
+        $scheme = (string) Settings::get('design_scheme', 'light');
+        $font = (string) Settings::get('design_font', 'store');
+        $looks = [
+            'roomy'   => ['Roomy', 'Two-line names and a clear picture. The default.'],
+            'compact' => ['Compact', 'Smaller rows, so more products fit before scrolling.'],
+            'images'  => ['Big pictures', 'Larger thumbnails for image-led catalogues.'],
+            'text'    => ['Text only', 'No pictures — good for spares, parts and B2B.'],
+        ];
+        $schemes = [
+            'light'  => ['Light', 'A white panel. Suits most themes.'],
+            'dark'   => ['Dark', 'A dark panel, for dark headers and themes.'],
+            'auto'   => ['Automatic', "Follows each shopper's own device setting."],
+            'custom' => ['Custom', 'Choose your own panel and text colours below.'],
+        ];
+        ?>
+        <div class="ns-card">
+            <h2 class="ns-card__title"><?php esc_html_e('Look', 'nitrosearch'); ?></h2>
+            <form method="post" action="<?php echo esc_url($action); ?>">
+                <?php wp_nonce_field('nitrosearch_appearance'); ?>
+                <input type="hidden" name="action" value="nitrosearch_appearance">
+
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Layout', 'nitrosearch'); ?></th>
+                        <td>
+                            <?php foreach ($looks as $key => $meta) : ?>
+                                <label style="display:block;margin-bottom:6px;">
+                                    <input type="radio" name="design_look" value="<?php echo esc_attr($key); ?>"
+                                        <?php checked($look, $key); ?>>
+                                    <strong><?php echo esc_html($meta[0]); ?></strong>
+                                    <span class="description">&mdash; <?php echo esc_html($meta[1]); ?></span>
+                                </label>
+                            <?php endforeach; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_per_page"><?php esc_html_e('Products shown', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <select name="design_per_page" id="ns_per_page">
+                                <?php foreach ([4, 6, 8, 10, 12] as $n) : ?>
+                                    <option value="<?php echo esc_attr((string) $n); ?>"
+                                        <?php selected((int) Settings::get('design_per_page', 8), $n); ?>>
+                                        <?php echo esc_html((string) $n); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                            <p class="description"><?php esc_html_e('How many products appear in the drop-down as your shopper types.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_filters"><?php esc_html_e('Filters', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <select name="design_filters" id="ns_filters">
+                                <option value="auto" <?php selected((string) Settings::get('design_filters', 'auto'), 'auto'); ?>>
+                                    <?php esc_html_e('Automatic (recommended)', 'nitrosearch'); ?>
+                                </option>
+                                <option value="top" <?php selected((string) Settings::get('design_filters', 'auto'), 'top'); ?>>
+                                    <?php esc_html_e('Always across the top', 'nitrosearch'); ?>
+                                </option>
+                                <option value="off" <?php selected((string) Settings::get('design_filters', 'auto'), 'off'); ?>>
+                                    <?php esc_html_e('Hide in the drop-down', 'nitrosearch'); ?>
+                                </option>
+                            </select>
+                            <p class="description"><?php esc_html_e('In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_width"><?php esc_html_e('Drop-down width', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <select name="design_width" id="ns_width">
+                                <option value="auto" <?php selected((string) Settings::get('design_width', 'auto'), 'auto'); ?>>
+                                    <?php esc_html_e('Automatic (recommended)', 'nitrosearch'); ?>
+                                </option>
+                                <option value="wide" <?php selected((string) Settings::get('design_width', 'auto'), 'wide'); ?>>
+                                    <?php esc_html_e('Wide', 'nitrosearch'); ?>
+                                </option>
+                                <option value="match" <?php selected((string) Settings::get('design_width', 'auto'), 'match'); ?>>
+                                    <?php esc_html_e('Match my search box', 'nitrosearch'); ?>
+                                </option>
+                            </select>
+                            <p class="description"><?php esc_html_e('Automatic gives product names enough room to read, even when your theme\'s search box is narrow. Match my search box keeps it exactly as wide as the box.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h2 class="ns-card__title"><?php esc_html_e('Colours', 'nitrosearch'); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Colour scheme', 'nitrosearch'); ?></th>
+                        <td>
+                            <?php foreach ($schemes as $key => $meta) : ?>
+                                <label style="display:block;margin-bottom:6px;">
+                                    <input type="radio" name="design_scheme" value="<?php echo esc_attr($key); ?>"
+                                        <?php checked($scheme, $key); ?>>
+                                    <strong><?php echo esc_html($meta[0]); ?></strong>
+                                    <span class="description">&mdash; <?php echo esc_html($meta[1]); ?></span>
+                                </label>
+                            <?php endforeach; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_accent"><?php esc_html_e('Accent colour', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <input name="accent_color" id="ns_accent" type="text" class="regular-text"
+                                placeholder="#111827" value="<?php echo esc_attr((string) Settings::get('accent_color')); ?>">
+                            <p class="description"><?php esc_html_e('Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_bg"><?php esc_html_e('Panel background', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <input name="design_bg" id="ns_bg" type="text" class="regular-text"
+                                placeholder="#ffffff" value="<?php echo esc_attr((string) Settings::get('design_bg')); ?>">
+                            <p class="description"><?php esc_html_e('Only used when the colour scheme is set to Custom.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_text"><?php esc_html_e('Text colour', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <input name="design_text" id="ns_text" type="text" class="regular-text"
+                                placeholder="#111827" value="<?php echo esc_attr((string) Settings::get('design_text')); ?>">
+                            <p class="description"><?php esc_html_e('Only used when the colour scheme is set to Custom.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_corners"><?php esc_html_e('Corners', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <select name="design_corners" id="ns_corners">
+                                <option value="rounded" <?php selected((string) Settings::get('design_corners', 'rounded'), 'rounded'); ?>>
+                                    <?php esc_html_e('Rounded', 'nitrosearch'); ?>
+                                </option>
+                                <option value="soft" <?php selected((string) Settings::get('design_corners', 'rounded'), 'soft'); ?>>
+                                    <?php esc_html_e('Slightly rounded', 'nitrosearch'); ?>
+                                </option>
+                                <option value="square" <?php selected((string) Settings::get('design_corners', 'rounded'), 'square'); ?>>
+                                    <?php esc_html_e('Square', 'nitrosearch'); ?>
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ns_font"><?php esc_html_e('Text style', 'nitrosearch'); ?></label></th>
+                        <td>
+                            <select name="design_font" id="ns_font">
+                                <option value="store" <?php selected($font, 'store'); ?>>
+                                    <?php esc_html_e('Match my store', 'nitrosearch'); ?>
+                                </option>
+                                <option value="system" <?php selected($font, 'system'); ?>>
+                                    <?php esc_html_e('System default', 'nitrosearch'); ?>
+                                </option>
+                                <option value="custom" <?php selected($font, 'custom'); ?>>
+                                    <?php esc_html_e('Custom font', 'nitrosearch'); ?>
+                                </option>
+                            </select>
+                            <p class="description"><?php esc_html_e('Match my store borrows the font your theme already uses around the search box.', 'nitrosearch'); ?></p>
+                            <input name="design_font_stack" id="ns_font_stack" type="text" class="regular-text"
+                                style="margin-top:6px;"
+                                placeholder="e.g. Georgia, serif"
+                                value="<?php echo esc_attr((string) Settings::get('design_font_stack')); ?>">
+                            <p class="description"><?php esc_html_e('Only used when Custom font is selected.', 'nitrosearch'); ?></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h2 class="ns-card__title"><?php esc_html_e('What to search', 'nitrosearch'); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Include', 'nitrosearch'); ?></th>
+                        <td>
+                            <?php $indexed = Settings::indexedContentTypes(); ?>
+                            <label style="display:block;margin-bottom:4px;">
+                                <input type="checkbox" checked disabled> <?php esc_html_e('Products', 'nitrosearch'); ?>
+                                <span class="description">(<?php esc_html_e('always indexed', 'nitrosearch'); ?>)</span>
+                            </label>
+                            <label style="display:block;margin-bottom:4px;">
+                                <input name="index_content[]" type="checkbox" value="page"
+                                    <?php checked(in_array('page', $indexed, true)); ?>> <?php esc_html_e('Pages', 'nitrosearch'); ?>
+                            </label>
+                            <label style="display:block;">
+                                <input name="index_content[]" type="checkbox" value="post"
+                                    <?php checked(in_array('post', $indexed, true)); ?>> <?php esc_html_e('Blog posts', 'nitrosearch'); ?>
+                            </label>
+                            <p class="description">
+                                Pages and posts count towards the same allowance as your products, so
+                                switching them off frees it up for your catalogue. Your products always
+                                come first and are never displaced by them. Private,
+                                password-protected and unpublished content is never indexed, and we
+                                honour <em>noindex</em> set by Yoast SEO or Rank Math (per item, per
+                                content type, or site-wide).
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Search results page', 'nitrosearch'); ?></th>
+                        <td>
+                            <label>
+                                <input name="results_takeover" id="ns_results" type="checkbox" value="1"
+                                    <?php checked((bool) Settings::get('results_takeover', true)); ?>>
+                                <?php esc_html_e('Enhance the product search results page with NitroSearch results and filters', 'nitrosearch'); ?>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+
+                <h2 class="ns-card__title"><?php esc_html_e('Privacy &amp; credit', 'nitrosearch'); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Search usage data', 'nitrosearch'); ?></th>
+                        <td>
+                            <label>
+                                <input name="share_search_data" id="ns_share_data" type="checkbox" value="1"
+                                    <?php checked((bool) Settings::get('share_search_data', true)); ?>>
+                                <?php esc_html_e('Share anonymous search usage counts with NitroSearch', 'nitrosearch'); ?>
+                            </label>
+                            <p class="description">
+                                Counts searches, result totals and result clicks on your store's
+                                search &mdash; cookieless and anonymous, with no shopper
+                                identifiers, no IP addresses and nothing stored in the shopper's
+                                browser. Used to improve result ranking and to power your search
+                                analytics. Untick to stop sending immediately.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Powered-by credit', 'nitrosearch'); ?></th>
+                        <td>
+                            <label>
+                                <input name="show_badge" id="ns_badge" type="checkbox" value="1"
+                                    <?php checked((bool) Settings::get('show_badge', false)); ?>>
+                                <?php esc_html_e('Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io', 'nitrosearch'); ?>
+                            </label>
+                            <p class="description">
+                                Off by default, and entirely your choice. Turning it on adds a small
+                                credit in the search box and one line in your site footer, both
+                                linking to <code>https://nitrosearch.io</code> &mdash; a normal,
+                                followed link. Nothing is added to your site unless you tick this.
+                                Thank you if you do.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <details style="margin:12px 0;">
+                    <summary style="cursor:pointer;"><?php esc_html_e('Advanced', 'nitrosearch'); ?></summary>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><label for="ns_selector"><?php esc_html_e('Search box selector', 'nitrosearch'); ?></label></th>
+                            <td>
+                                <input name="selector" id="ns_selector" type="text" class="regular-text"
+                                    placeholder="e.g. input.my-theme-search" value="<?php echo esc_attr((string) Settings::get('selector')); ?>">
+                                <p class="description"><?php esc_html_e("Optional CSS selector for your theme's search input. Leave blank to auto-detect.", 'nitrosearch'); ?></p>
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+
+                <?php submit_button(__('Save design', 'nitrosearch'), 'primary'); ?>
+            </form>
         </div>
         <?php
     }
@@ -560,6 +788,28 @@ final class SettingsPage
 
         $wasIndexing = Settings::indexedContentTypes();
 
+        // Design choices are allowlisted to the values this version understands:
+        // they end up interpolated into the storefront's CSS custom properties, so
+        // a stray value must fall back to the default rather than travel.
+        $choice = static function (string $field, array $allowed, string $default): string {
+            // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() above.
+            $value = isset($_POST[$field]) ? sanitize_key(wp_unslash($_POST[$field])) : '';
+
+            return in_array($value, $allowed, true) ? $value : $default;
+        };
+
+        // A font stack is free text by nature; strip anything that could close the
+        // declaration or smuggle a fetch. The widget re-checks on the way in.
+        $fontStack = isset($_POST['design_font_stack'])
+            ? sanitize_text_field(wp_unslash($_POST['design_font_stack']))
+            : '';
+        if (preg_match('/[{};<>\\\\@]|url\s*\(/i', $fontStack)) {
+            $fontStack = '';
+        }
+
+        $perPage = isset($_POST['design_per_page']) ? (int) $_POST['design_per_page'] : 8;
+        $perPage = max(2, min(20, $perPage));
+
         Settings::update([
             'accent_color' => (string) $accent,
             'selector' => $selector,
@@ -567,6 +817,18 @@ final class SettingsPage
             'results_takeover' => isset($_POST['results_takeover']),
             'show_badge' => isset($_POST['show_badge']),
             'share_search_data' => isset($_POST['share_search_data']),
+            'design_look' => $choice('design_look', ['roomy', 'compact', 'images', 'text'], 'roomy'),
+            'design_scheme' => $choice('design_scheme', ['light', 'dark', 'auto', 'custom'], 'light'),
+            'design_corners' => $choice('design_corners', ['rounded', 'soft', 'square'], 'rounded'),
+            'design_font' => $choice('design_font', ['store', 'system', 'custom'], 'store'),
+            'design_width' => $choice('design_width', ['auto', 'wide', 'match'], 'auto'),
+            'design_filters' => $choice('design_filters', ['auto', 'top', 'off'], 'auto'),
+            'design_font_stack' => $fontStack,
+            'design_per_page' => $perPage,
+            // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() above.
+            'design_bg' => isset($_POST['design_bg']) ? (string) sanitize_hex_color(wp_unslash($_POST['design_bg'])) : '',
+            // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce + capability verified in authorize() above.
+            'design_text' => isset($_POST['design_text']) ? (string) sanitize_hex_color(wp_unslash($_POST['design_text'])) : '',
         ]);
         // phpcs:enable WordPress.Security.NonceVerification.Missing
 
@@ -592,13 +854,13 @@ final class SettingsPage
         }
 
         if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
-            $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.');
+            $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.', 'design');
         }
         if ($newlyDisabled !== [] && Settings::hasSearchKey()) {
-            $this->redirect('Saved. Removing your '.implode(' and ', $newlyDisabled).'s from your index in the background.');
+            $this->redirect('Saved. Removing your '.implode(' and ', $newlyDisabled).'s from your index in the background.', 'design');
         }
 
-        $this->redirect('Appearance saved.');
+        $this->redirect('Design saved.', 'design');
     }
 
     public function handleDisconnect(): void
@@ -687,12 +949,13 @@ final class SettingsPage
         check_admin_referer($nonce);
     }
 
-    private function redirect(string $notice): void
+    private function redirect(string $notice, string $tab = ''): void
     {
-        wp_safe_redirect(add_query_arg(
-            ['page' => 'nitrosearch', 'ns_notice' => rawurlencode($notice)],
-            admin_url('admin.php')
-        ));
+        $args = ['page' => 'nitrosearch', 'ns_notice' => rawurlencode($notice)];
+        if ($tab !== '') {
+            $args['tab'] = $tab;
+        }
+        wp_safe_redirect(add_query_arg($args, admin_url('admin.php')));
         exit;
     }
 }

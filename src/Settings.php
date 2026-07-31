@@ -47,6 +47,21 @@ final class Settings
             'widget_bundle_url' => '',
             'selector'          => '',   // optional custom search-input selector
             'accent_color'      => '',   // optional widget accent colour (hex)
+            // ---- Design (see Admin\Appearance) -------------------------------
+            // Named looks and colour schemes rather than loose CSS: the plugin
+            // resolves each to the widget's --ns-* tokens, so the shared widget
+            // bundle never learns preset names and a new preset costs the
+            // storefront nothing. Empty string means "the widget's own default".
+            'design_look'       => 'roomy',  // roomy | compact | images | text
+            'design_scheme'     => 'light',  // light | dark | auto | custom
+            'design_bg'         => '',       // panel background (custom scheme only)
+            'design_text'       => '',       // body text colour (custom scheme only)
+            'design_corners'    => 'rounded',// rounded | soft | square
+            'design_font'       => 'store',  // store | system | custom
+            'design_font_stack' => '',       // used when design_font = custom
+            'design_width'      => 'auto',   // auto | wide | match
+            'design_per_page'   => 8,        // products listed in the dropdown
+            'design_filters'    => 'auto',   // auto | top | off
             'connect_token'     => '',   // optional provisioning token, sent on connect
             'results_takeover'  => true, // hydrate the product search-results page
             // Which non-product content to index, alongside products. Pages and blog

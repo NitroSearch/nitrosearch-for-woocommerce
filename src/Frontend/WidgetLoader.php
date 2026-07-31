@@ -3,6 +3,7 @@
 namespace NitroSearch\Frontend;
 
 use NitroSearch\Settings;
+use NitroSearch\Support\Design;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -61,13 +62,11 @@ final class WidgetLoader
         $loaderUrl = (string) (Settings::get('widget_loader_url')
             ?: Settings::apiUrl().'/widget/loader.v1.js');
 
-        // Merchant appearance tokens (only send what was set; the widget supplies
-        // its own defaults for everything else via --ns-* custom properties).
-        $theme = [];
-        $accent = (string) Settings::get('accent_color');
-        if ($accent !== '') {
-            $theme['accent'] = $accent;
-        }
+        // Merchant appearance tokens (only what differs from the widget's own
+        // defaults; Design resolves the named Look/Colour choices to --ns-* values
+        // here so the shared bundle never carries preset names).
+        $theme = Design::theme();
+        $layout = Design::layout();
 
         $config = [
             'engine'     => ['host' => (string) Settings::get('engine_host')],
@@ -86,6 +85,9 @@ final class WidgetLoader
             // permission to place.
             'badgeUrl'   => Settings::get('show_badge', false) ? self::CREDIT_URL : '',
             'theme'      => (object) $theme,
+            // Layout behaviour the widget decides in JS rather than CSS (panel
+            // width rule, how many products to list, whether filters get a rail).
+            'layout'     => (object) $layout,
             // Results-page takeover on the product search page (merchant toggle).
             'results'    => (bool) Settings::get('results_takeover', true),
             // Whether to also query pages/posts. False means the widget sends one
