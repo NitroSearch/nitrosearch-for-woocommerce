@@ -12,6 +12,7 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       nitrosearch
+ * Domain Path:       /languages
  *
  * WC requires at least: 9.0
  *
@@ -42,6 +43,14 @@ spl_autoload_register(function (string $class): void {
     if (is_readable($path)) {
         require $path;
     }
+});
+
+// Bundled translations from languages/. wordpress.org language packs, once a
+// locale reaches them, load from wp-content/languages/plugins/ and win over
+// these — bundling covers every locale we ship until then. On init, not
+// plugins_loaded: WordPress 6.7+ warns on any earlier load.
+add_action('init', function (): void {
+    load_plugin_textdomain('nitrosearch', false, dirname(plugin_basename(__FILE__)).'/languages');
 });
 
 // HPOS compatibility (orders are only ever read via CRUD).

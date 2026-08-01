@@ -5,6 +5,33 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.8.0] — 2026-07-31
+
+### Added
+- **A Design tab.** Choose a layout — Roomy, Compact, Big pictures or Text
+  only — a colour scheme (Light, Dark, Automatic to follow each shopper's
+  device, or custom colours), corner style, and the font. Set how many
+  products appear, where the filters go, and how wide the drop-down opens.
+  Every choice resolves to design tokens on the store's own site; none of it
+  enlarges what shoppers download.
+- The NitroSearch mark now appears in the wp-admin menu, and follows the
+  admin colour scheme.
+
+### Fixed
+- **Product names were cut off mid-word.** The drop-down was never allowed to
+  be wider than the theme's search box, so on a narrow header the filters
+  column left almost no room for names. It now opens wide enough to read,
+  names wrap to two lines instead of truncating, and the filters move above
+  the results when the panel is genuinely tight.
+- The search box now uses **the store's font.** It was falling back to the
+  browser's default serif on every site, because the widget renders in an
+  isolated shadow root that inherits nothing from the page.
+- Pale accent colours (yellows, light pastels) rendered white text on top of
+  themselves. Label text on the accent colour is now automatically black or
+  white, whichever stays readable.
+- With pages and posts switched on, their icons and labels had no
+  background — a colour the stylesheet referenced but never defined.
+
 ## [1.7.0] — 2026-07-29
 
 ### Added
@@ -95,6 +122,13 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
   choice on a store that upgraded in place.
 - On a site without Action Scheduler, a full sync indexed products and then
   stopped, reporting itself complete while pages and posts were never enumerated.
+
+## [1.3.1] — 2026-07-26
+
+### Fixed
+- The plugin screen offered "search analytics" on the NitroSearch dashboard.
+  That feature wasn't built yet, so the wording is corrected — it's on the
+  roadmap, and we'd rather say so than imply otherwise.
 
 ## [1.3.0] — 2026-07-26
 

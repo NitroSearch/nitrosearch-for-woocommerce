@@ -1,0 +1,648 @@
+# Translation of NitroSearch for WooCommerce into Portuguese (Brazil) (pt_BR).
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-01 09:30+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Domain: nitrosearch\n"
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "Busca hospedada ultrarrápida para WooCommerce. Sincroniza seu catálogo com o NitroSearch e substitui a busca padrão do WordPress por resultados instantâneos e tolerantes a erros de digitação."
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>O NitroSearch agora mede o desempenho da busca da sua loja</strong> — contagens anônimas e sem cookies de buscas e de cliques em resultados, sem identificadores de clientes. Isso ajuda a melhorar a classificação dos resultados, e relatórios por loja estão em nosso roadmap."
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "Gerencie isso em %s."
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → Aparência"
+
+msgid "Dismiss"
+msgstr "Dispensar"
+
+msgid "Unauthorized."
+msgstr "Não autorizado."
+
+msgid "Not connected"
+msgstr "Não conectado"
+
+msgid "Confirming control…"
+msgstr "Confirmando controle…"
+
+msgid "Connected & verified"
+msgstr "Conectado e verificado"
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "Busca no nível da Amazon para WooCommerce"
+
+msgid "Connect your store"
+msgstr "Conecte sua loja"
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "Conecte esta loja ao NitroSearch para começar a sincronizar seu catálogo e oferecer uma busca instantânea e tolerante a erros de digitação. Nada sai do seu site até você clicar em Conectar."
+
+msgid "Provisioning token"
+msgstr "Token de provisionamento"
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "Opcional. Necessário apenas se você recebeu um token para conectar esta loja."
+
+msgid "Connect store"
+msgstr "Conectar loja"
+
+msgid "Confirming control of your site…"
+msgstr "Confirmando o controle do seu site…"
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "Estamos confirmando que você controla esta loja antes de construir seu índice de busca. Em produção, isso é automático; se o seu site não estiver acessível a partir dos nossos servidores, pode levar um momento. Seu catálogo sincroniza assim que a confirmação é concluída."
+
+msgid "Check status"
+msgstr "Verificar status"
+
+msgid "Disconnect"
+msgstr "Desconectar"
+
+msgid "Dashboard"
+msgstr "Painel"
+
+msgid "Design"
+msgstr "Design"
+
+msgid "You’ve reached your plan’s limit."
+msgstr "Você atingiu o limite do seu plano."
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "Sua busca continua funcionando para tudo o que já foi indexado, mas novos itens não serão adicionados até você fazer upgrade. Seus produtos sempre têm prioridade, então qualquer item retido é uma página ou um post. Abra %s abaixo para migrar para um plano maior."
+
+msgid "Manage / Upgrade"
+msgstr "Gerenciar / Fazer upgrade"
+
+msgid "Sync health"
+msgstr "Saúde da sincronização"
+
+msgid "Search results indexed"
+msgstr "Resultados de busca indexados"
+
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+msgid "Pending changes"
+msgstr "Alterações pendentes"
+
+msgid "Last sync"
+msgstr "Última sincronização"
+
+msgid "Never"
+msgstr "Nunca"
+
+msgid "Last error"
+msgstr "Último erro"
+
+msgid "Sync all products"
+msgstr "Sincronizar todos os produtos"
+
+msgid "Refresh status"
+msgstr "Atualizar status"
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "Daqui a %s"
+
+msgid "On demand"
+msgstr "Sob demanda"
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "ms"
+
+msgid "Sync performance"
+msgstr "Desempenho da sincronização"
+
+msgid "Avg sync speed"
+msgstr "Velocidade média de sincronização"
+
+msgid "Last batch"
+msgstr "Último lote"
+
+msgid "Items synced"
+msgstr "Itens sincronizados"
+
+msgid "Batches sent"
+msgstr "Lotes enviados"
+
+msgid "Next sync"
+msgstr "Próxima sincronização"
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "As alterações no seu catálogo são agrupadas em lotes e enviadas em segundo plano — estes números mostram com que rapidez elas chegam ao seu índice de busca."
+
+msgid "Search analytics"
+msgstr "Análises de busca"
+
+msgid "last 30 days"
+msgstr "últimos 30 dias"
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "Não foi possível carregar as análises agora — uma nova tentativa será feita automaticamente."
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "<strong>%1$s</strong> na sua loja nos últimos 30 dias. Veja o que os clientes buscaram, no que clicaram e o que procuraram sem encontrar — tudo incluído em todos os planos pagos, a partir de %2$s."
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s busca"
+msgstr[1] "%s buscas"
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/mês"
+
+msgid "Upgrade to unlock"
+msgstr "Faça upgrade para desbloquear"
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "As análises começam a ser coletadas com o plugin 1.5.0+ ativo — os dados aparecem algumas horas depois das primeiras buscas dos clientes."
+
+msgid "Searches"
+msgstr "Buscas"
+
+msgid "Zero-result rate"
+msgstr "Taxa de buscas sem resultado"
+
+msgid "Click-through"
+msgstr "Taxa de cliques"
+
+msgid "Top searches"
+msgstr "Principais buscas"
+
+msgid "Searched, found nothing"
+msgstr "Buscaram e não encontraram nada"
+
+msgid "View full analytics →"
+msgstr "Ver análises completas →"
+
+msgid "Your plan & account"
+msgstr "Seu plano e conta"
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "Esta loja está vinculada a uma conta NitroSearch. Gerencie seu plano e sua cobrança pelo painel do NitroSearch."
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "Você está no plano <strong>Gratuito</strong>. Vincule esta loja a uma conta NitroSearch para gerenciá-la ou fazer upgrade — seu índice e sua busca continuam exatamente como estão."
+
+msgid "Roomy"
+msgstr "Espaçoso"
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "Nomes em duas linhas e uma imagem nítida. O padrão."
+
+msgid "Compact"
+msgstr "Compacto"
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "Linhas menores, para caber mais produtos antes de rolar a tela."
+
+msgid "Big pictures"
+msgstr "Imagens grandes"
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "Miniaturas maiores para catálogos focados em imagens."
+
+msgid "Text only"
+msgstr "Somente texto"
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "Sem imagens — bom para peças de reposição, componentes e B2B."
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "A white panel. Suits most themes."
+msgstr "Um painel branco. Combina com a maioria dos temas."
+
+msgid "Dark"
+msgstr "Escuro"
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "Um painel escuro, para cabeçalhos e temas escuros."
+
+msgid "Automatic"
+msgstr "Automático"
+
+msgid "Follows each shopper's own device setting."
+msgstr "Segue a configuração do dispositivo de cada cliente."
+
+msgid "Custom"
+msgstr "Personalizado"
+
+msgid "Choose your own panel and text colours below."
+msgstr "Escolha abaixo suas próprias cores de painel e de texto."
+
+msgid "Look"
+msgstr "Visual"
+
+msgid "Layout"
+msgstr "Layout"
+
+msgid "Products shown"
+msgstr "Produtos exibidos"
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "Quantos produtos aparecem na lista suspensa enquanto o cliente digita."
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "Automatic (recommended)"
+msgstr "Automático (recomendado)"
+
+msgid "Always across the top"
+msgstr "Sempre no topo"
+
+msgid "Hide in the drop-down"
+msgstr "Ocultar na lista suspensa"
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "Filtros de estoque, promoção, marca e categoria. O modo Automático os coloca em uma coluna lateral quando há espaço, e no topo quando não há."
+
+msgid "Drop-down width"
+msgstr "Largura da lista suspensa"
+
+msgid "Wide"
+msgstr "Larga"
+
+msgid "Match my search box"
+msgstr "Igual à minha caixa de busca"
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "Automático dá aos nomes dos produtos espaço suficiente para leitura, mesmo quando a caixa de busca do seu tema é estreita. Igual à minha caixa de busca mantém a lista exatamente com a mesma largura da caixa."
+
+msgid "Colours"
+msgstr "Cores"
+
+msgid "Colour scheme"
+msgstr "Esquema de cores"
+
+msgid "Accent colour"
+msgstr "Cor de destaque"
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "Usada em preços, destaques e filtros selecionados. Deixe em branco para usar o padrão. O texto sobre ela fica preto ou branco automaticamente, conforme o que permanecer legível."
+
+msgid "Panel background"
+msgstr "Fundo do painel"
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "Usado apenas quando o esquema de cores está definido como Personalizado."
+
+msgid "Text colour"
+msgstr "Cor do texto"
+
+msgid "Corners"
+msgstr "Cantos"
+
+msgid "Rounded"
+msgstr "Arredondados"
+
+msgid "Slightly rounded"
+msgstr "Levemente arredondados"
+
+msgid "Square"
+msgstr "Retos"
+
+msgid "Text style"
+msgstr "Estilo do texto"
+
+msgid "Match my store"
+msgstr "Igual à minha loja"
+
+msgid "System default"
+msgstr "Padrão do sistema"
+
+msgid "Custom font"
+msgstr "Fonte personalizada"
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "Igual à minha loja aproveita a fonte que seu tema já usa ao redor da caixa de busca."
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "ex.: Georgia, serif"
+
+msgid "Only used when Custom font is selected."
+msgstr "Usado apenas quando a opção Fonte personalizada está selecionada."
+
+msgid "What to search"
+msgstr "O que buscar"
+
+msgid "Include"
+msgstr "Incluir"
+
+msgid "Products"
+msgstr "Produtos"
+
+msgid "always indexed"
+msgstr "sempre indexados"
+
+msgid "Pages"
+msgstr "Páginas"
+
+msgid "Blog posts"
+msgstr "Posts do blog"
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "Páginas e posts contam para a mesma cota que seus produtos, então desativá-los libera espaço para o seu catálogo. Seus produtos sempre vêm primeiro e nunca são deslocados por eles. Conteúdo privado, protegido por senha ou não publicado nunca é indexado, e respeitamos o %s definido pelo Yoast SEO ou Rank Math (por item, por tipo de conteúdo ou para o site todo)."
+
+msgid "Search results page"
+msgstr "Página de resultados de busca"
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "Aprimorar a página de resultados de busca de produtos com resultados e filtros do NitroSearch"
+
+msgid "Privacy &amp; credit"
+msgstr "Privacidade e crédito"
+
+msgid "Search usage data"
+msgstr "Dados de uso da busca"
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "Compartilhar contagens anônimas de uso da busca com o NitroSearch"
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Conta buscas, totais de resultados e cliques em resultados na busca da sua loja — sem cookies e de forma anônima, sem identificadores de clientes, sem endereços IP e sem nada armazenado no navegador do cliente. Usado para melhorar a classificação dos resultados e alimentar suas análises de busca. Desmarque para interromper o envio imediatamente."
+
+msgid "Powered-by credit"
+msgstr "Crédito “Com tecnologia NitroSearch”"
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "Exibir um pequeno crédito “Com tecnologia NitroSearch”, com link para nitrosearch.io"
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Desativado por padrão, e a escolha é toda sua. Ao ativar, um pequeno crédito é adicionado na caixa de busca e uma linha no rodapé do seu site, ambos com link para %s — um link normal, seguido pelos buscadores. Nada é adicionado ao seu site a menos que você marque esta opção. Obrigado se você marcar."
+
+msgid "Advanced"
+msgstr "Avançado"
+
+msgid "Search box selector"
+msgstr "Seletor da caixa de busca"
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "ex.: input.my-theme-search"
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "Seletor CSS opcional para o campo de busca do seu tema. Deixe em branco para detectar automaticamente."
+
+msgid "Save design"
+msgstr "Salvar design"
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "Falha ao conectar: %s"
+
+msgid "unknown error"
+msgstr "erro desconhecido"
+
+msgid "Connected and verified."
+msgstr "Conectado e verificado."
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "Conectado. Confirmando o controle do seu site — isso pode levar um momento. Use “Verificar status” abaixo se não atualizar."
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "Sincronizando %s produto em segundo plano; depois, suas páginas e posts."
+msgstr[1] "Sincronizando %s produtos em segundo plano; depois, suas páginas e posts."
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "Sincronizando %s produto em segundo plano."
+msgstr[1] "Sincronizando %s produtos em segundo plano."
+
+msgid "Verified!"
+msgstr "Verificado!"
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "%1$s resultados de busca indexados · %2$s pendentes."
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "Ainda estamos confirmando o controle do seu site — tente novamente em instantes."
+
+msgid "Design saved."
+msgstr "Design salvo."
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "Salvo. Removendo suas páginas e posts do blog do seu índice em segundo plano."
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "Salvo. Removendo suas páginas do seu índice em segundo plano."
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "Salvo. Removendo seus posts do blog do seu índice em segundo plano."
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "Salvo. Indexando suas páginas e posts do blog em segundo plano."
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "Salvo. Indexando suas páginas em segundo plano."
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "Salvo. Indexando seus posts do blog em segundo plano."
+
+msgid "Disconnected."
+msgstr "Desconectado."
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "Esta loja já está vinculada a uma conta NitroSearch."
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "Ainda não conseguimos confirmar o controle do seu site — clique primeiro em “Atualizar status” e depois tente novamente."
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "Seu site precisa ser verificado de novo — clique em “Atualizar status” e depois tente novamente."
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "Muitas tentativas — aguarde um minuto e tente novamente."
+
+msgid "Could not create a manage link. Please try again."
+msgstr "Não foi possível criar um link de gerenciamento. Tente novamente."
+
+msgid "Insufficient permissions."
+msgstr "Permissões insuficientes."
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "Busca com tecnologia %s"
+
+msgid "Refine results"
+msgstr "Refinar resultados"
+
+msgid "Refine"
+msgstr "Refinar"
+
+msgid "In stock"
+msgstr "Em estoque"
+
+msgid "On sale"
+msgstr "Em promoção"
+
+msgid "Brand"
+msgstr "Marca"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "Add to cart"
+msgstr "Adicionar ao carrinho"
+
+msgid "Adding…"
+msgstr "Adicionando…"
+
+msgid "Added ✓"
+msgstr "Adicionado ✓"
+
+msgid "Try again"
+msgstr "Tentar novamente"
+
+msgid "Searching…"
+msgstr "Buscando…"
+
+msgid "Search is unavailable."
+msgstr "A busca está indisponível."
+
+msgid "Search is unavailable right now."
+msgstr "A busca está indisponível no momento."
+
+msgid "No products found."
+msgstr "Nenhum produto encontrado."
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "Nenhum produto encontrado para “%s”."
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "Nada encontrado para “%s”."
+
+msgid "Search products…"
+msgstr "Buscar produtos…"
+
+msgid "Close search"
+msgstr "Fechar busca"
+
+msgid "Product results"
+msgstr "Resultados de produtos"
+
+msgid "Recent searches"
+msgstr "Buscas recentes"
+
+msgid "Clear"
+msgstr "Limpar"
+
+msgid "Start typing to search products…"
+msgstr "Comece a digitar para buscar produtos…"
+
+msgid "Sale"
+msgstr "Promoção"
+
+msgid "Out of stock"
+msgstr "Fora de estoque"
+
+msgid "Pages & posts"
+msgstr "Páginas e posts"
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "Página"
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "Artigo"
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s ms"
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "Com tecnologia %s"
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "Página %1$s de %2$s"
+
+msgid "← Prev"
+msgstr "← Anterior"
+
+msgid "Next →"
+msgstr "Próxima →"
+
+msgctxt "button label"
+msgid "Search"
+msgstr "Buscar"
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "%s produto encontrado."
+msgstr[1] "%s produtos encontrados."
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "Ver %s resultado →"
+msgstr[1] "Ver todos os %s resultados →"
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "%1$s resultado para “%2$s”"
+msgstr[1] "%1$s resultados para “%2$s”"
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s resultado"
+msgstr[1] "%s resultados"
+

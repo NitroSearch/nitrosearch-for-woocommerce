@@ -19,21 +19,36 @@ every public release carries a clear, meaningful changelog.
    - `Version:` header in `nitrosearch.php`
    - `NITROSEARCH_VERSION` constant in `nitrosearch.php`
    - `Stable tag:` in `readme.txt`
-3. **Run the guards** — `bin/preflight-release.sh X.Y.0`. This is the same script
+3. **Translations** — the plugin ships in nine languages (en + es_ES, fr_FR,
+   de_DE, it_IT, nl_NL, pl_PL, pt_PT, pt_BR), and every release must ship them
+   complete:
+   - New or changed **code strings**: `bin/check-i18n.sh --update-pot`, then add
+     the translations to every `languages/nitrosearch-*.po` and recompile
+     (`bin/build-plugin.sh` recompiles; or `msgfmt` + `wp i18n make-php languages`).
+   - Changed **readme copy** (anything above `== Screenshots ==`): update every
+     `translations/readme/*.po` (and its `*-readme.txt` review copy) — the
+     stored `Source-Readme-Hash` ties them to the English readme, and preflight
+     fails while they lag. After release, import the updated readme `.po` files
+     on translate.wordpress.org so the localized directory listings follow.
+   - `bin/check-i18n.sh` verifies all of it (preflight §8 runs it too):
+     POT freshness, zero untranslated/fuzzy entries per locale, compiled
+     `.mo`/`.l10n.php` matching their `.po`, and readme-translation parity.
+4. **Run the guards** — `bin/preflight-release.sh X.Y.0`. This is the same script
    CI runs before anything reaches the directory, so a failure here is a failure
    there. It checks version consistency across all three declarations, that the
    readme markets nothing unbuilt in present tense, that no legal link 404s, that
-   the changelog and screenshot captions are complete, and that PHP parses.
-4. **Commit** — `Release vX.Y.0`.
-5. **Build the distributable** — `bin/build-plugin.sh` → `dist/nitrosearch-X.Y.0.zip`
+   the changelog and screenshot captions are complete, that PHP parses, and that
+   the translations are release-ready (§8, via `bin/check-i18n.sh`).
+5. **Commit** — `Release vX.Y.0`.
+6. **Build the distributable** — `bin/build-plugin.sh` → `dist/nitrosearch-X.Y.0.zip`
    (a clean tree containing only shipping files). Inspect the printed file list.
-6. **Tag & GitHub release:**
+7. **Tag & GitHub release:**
    ```bash
    git tag -a vX.Y.0 -m "vX.Y.0"
    git push origin main --follow-tags
    gh release create vX.Y.0 --title "vX.Y.0" --notes "…" dist/nitrosearch-X.Y.0.zip
    ```
-7. **wordpress.org — automatic.** Publishing the GitHub release triggers
+8. **wordpress.org — automatic.** Publishing the GitHub release triggers
    `.github/workflows/deploy-to-wordpress-org.yml`, which re-runs the guards,
    rebuilds from the allowlist, syncs `trunk` and the listing assets, and creates
    `tags/X.Y.0` as a server-side copy. It refuses to overwrite a tag that already
@@ -55,9 +70,11 @@ every public release carries a clear, meaningful changelog.
 
 The images on the wordpress.org page — screenshots, banners, icons — live in
 `.wordpress-org/`. They are **not** part of the plugin: `bin/build-plugin.sh`
-packages an explicit allowlist (`nitrosearch.php readme.txt src assets`), so a
-dotfile directory can never end up in the download. The plugin's own runtime
-`assets/` (admin CSS and brand mark) is a different thing and *does* ship.
+packages an explicit allowlist (`nitrosearch.php readme.txt src assets languages`),
+so a dotfile directory can never end up in the download. The plugin's own runtime
+`assets/` (admin CSS and brand mark) is a different thing and *does* ship, as do
+the compiled translation catalogs in `languages/`. The readme translations in
+`translations/` feed translate.wordpress.org and are deliberately **not** packaged.
 
 Screenshot captions in `readme.txt` are matched to `screenshot-N.png` by number,
 so the two must stay in step — the guards check the counts agree.

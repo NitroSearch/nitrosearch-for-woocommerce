@@ -146,7 +146,10 @@ final class Drain
 
         if (! $result['ok']) {
             Outbox::release($ids);   // leave them pending for the next tick
-            Settings::update(['last_error' => 'HTTP '.($result['code'] ?? 0).' '.($result['error'] ?? '')]);
+            // Stored, then shown later under the translated "Last error" label —
+            // kept locale-neutral (status + detail) so it can't go stale in the
+            // locale that happened to be active when the sync ran.
+            Settings::update(['last_error' => 'HTTP '.($result['code'] ?? 0).': '.($result['error'] ?? '')]);
 
             return 'error';
         }

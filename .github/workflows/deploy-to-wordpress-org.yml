@@ -85,6 +85,28 @@ jobs:
           echo "version=${RAW_TAG#v}" >> "$GITHUB_OUTPUT"
           echo "Publishing ${RAW_TAG#v}"
 
+      - name: Install translation tooling
+        # gettext + wp-cli power preflight's translation guards (§8) and the
+        # catalog compile inside build-plugin.sh. Installed before preflight so
+        # the guards actually run — without the tools they only note-and-skip.
+        run: |
+          set -euo pipefail
+          if ! command -v msgfmt >/dev/null 2>&1; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+          fi
+          if ! command -v wp >/dev/null 2>&1; then
+            # Pinned to the wp-cli that generated the committed POT (see
+            # X-Generator in languages/nitrosearch.pot) so CI extraction can't
+            # drift from it, and checksummed because this job later holds the
+            # SVN credentials — an unpinned latest-build download has no place
+            # here. Update hash + version together (release .sha512 asset).
+            curl -sSLo wp-cli.phar https://github.com/wp-cli/wp-cli/releases/download/v2.12.0/wp-cli-2.12.0.phar
+            echo "be928f6b8ca1e8dfb9d2f4b75a13aa4aee0896f8a9a0a1c45cd5d2c98605e6172e6d014dda2e27f88c98befc16c040cbb2bd1bfa121510ea5cdf5f6a30fe8832  wp-cli.phar" | sha512sum -c --quiet -
+            sudo install -m 0755 wp-cli.phar /usr/local/bin/wp
+            rm wp-cli.phar
+          fi
+          wp --version
+
       - name: Pre-release guards
         env:
           PREFLIGHT_ROOT: ${{ github.workspace }}/release

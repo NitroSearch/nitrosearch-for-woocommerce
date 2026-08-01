@@ -8,95 +8,95 @@ Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Instant, typo-tolerant WooCommerce product search served from the cloud — Amazon-quality results with facets, without slowing your store down.
+Busca instantânea e tolerante a erros de digitação para WooCommerce, na nuvem — resultados no nível da Amazon e filtros, sem deixar sua loja lenta.
 
 == Description ==
 
-**Your shoppers can't buy what they can't find.** WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours.
+**Seus clientes não podem comprar o que não conseguem encontrar.** A busca nativa do WooCommerce é lenta, não perdoa erros de digitação e sofre com catálogos grandes — e quem busca e não encontra nada simplesmente vai embora. O NitroSearch a substitui por uma busca rápida, tolerante e no nível da Amazon, que roda nos nossos servidores, não nos seus.
 
-Install the plugin, connect your store, and from that moment every search your customers type is answered in **around a tenth of a second** — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store.
+Instale o plugin, conecte sua loja e, a partir desse momento, cada busca digitada pelos seus clientes é respondida em **cerca de um décimo de segundo** — mesmo com erros de digitação — direto do nosso motor de busca. Sem reconstruir o tema. Sem carga de busca na sua hospedagem WordPress. Sem deixar sua loja lenta.
 
-= Why store owners switch to NitroSearch =
+= Por que lojistas migram para o NitroSearch =
 
-* **Instant & typo-tolerant** — results appear as your customer types, and "runing shoes" still finds your running shoes.
-* **It won't slow your store down** — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score.
-* **Filters, facets & a full results page** — category, brand, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
-* **Your whole site, not just the shop** — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and *noindex* content is always left out.
-* **Sync you can trust** — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise.
-* **Honest, simple pricing** — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills.
-* **See what shoppers actually search for** — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found *nothing* (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever.
-* **Nothing added to your site unless you ask** — the optional "Powered by NitroSearch" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search.
-* **Set-up in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
+* **Instantânea e tolerante a erros de digitação** — os resultados aparecem enquanto o cliente digita, e “tenis de corida” ainda encontra seus tênis de corrida.
+* **Não vai deixar sua loja lenta** — a busca acontece diretamente entre o navegador do cliente e o nosso motor, então seu servidor WordPress nunca fica no caminho da busca. O widget na página é levíssimo e isolado no próprio shadow DOM, então nunca briga com seu tema nem com sua nota de velocidade.
+* **Filtros, facetas e uma página de resultados completa** — facetas de categoria, marca, promoção e estoque, uma grade de resultados completa com paginação e adição ao carrinho direto dos resultados.
+* **Seu site inteiro, não só a loja** — opcionalmente, indexe também suas páginas e posts do blog, exibidos em uma seção própria abaixo dos produtos, para que seu catálogo nunca fique soterrado. O conteúdo completo das páginas nunca é copiado, e conteúdo privado, protegido por senha ou *noindex* fica sempre de fora.
+* **Sincronização em que você pode confiar** — o plugin mantém sua própria fila de alterações e tenta de novo até cada alteração chegar, com cada atualização assinada e versionada para que nada chegue fora de ordem. Uma tela de status de sincronização ao vivo mostra exatamente o que está indexado — confiança é algo que você pode conferir, não só uma promessa.
+* **Preços honestos e simples** — um plano gratuito de verdade, todos os recursos de busca em todos os planos (a busca em si nunca é limitada por plano) e preços que escalam apenas com o tamanho do catálogo. Sem tarifas por busca, sem surpresas na fatura.
+* **Veja o que os clientes realmente buscam** — todos os planos pagos incluem análises de busca: principais buscas, o que foi clicado e adicionado ao carrinho e as buscas que não encontraram *nada* (uma lista pronta de demanda que você ainda não tem em estoque). Um resumo fica direto no wp-admin; os painéis completos ficam na sua conta NitroSearch. Sem cookies e sem identificadores de clientes — nunca.
+* **Nada é adicionado ao seu site sem você pedir** — o crédito opcional “Com tecnologia NitroSearch” vem desativado por padrão. Ative-o e um pequeno crédito com link é adicionado; deixe desativado e sua loja não ganha nada além da busca.
+* **Configuração em minutos** — aprimora automaticamente a caixa de busca *existente* do seu tema. Sem shortcodes, sem editar templates, sem reconstruir nada.
 
-= How it works =
+= Como funciona =
 
-NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:
+O NitroSearch é um serviço de busca hospedado; este plugin é seu conector oficial para WooCommerce. Ele faz duas coisas, e uma nunca atrapalha a outra:
 
-1. **Keeps our copy of your catalogue fresh.** As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands.
-2. **Answers searches, instantly.** When a shopper searches, the widget talks *directly* to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load.
+1. **Mantém a nossa cópia do seu catálogo atualizada.** Conforme produtos, preços e estoque mudam, o plugin envia as atualizações ao NitroSearch discretamente, em segundo plano — agrupadas em uma fila local de alterações, assinadas e reenviadas até cada alteração chegar.
+2. **Responde às buscas, instantaneamente.** Quando um cliente busca, o widget fala *diretamente* com o nosso motor usando uma chave somente de busca, restrita aos produtos públicos da sua loja — nunca passa pelo seu servidor WordPress, e é por isso que continua rápido mesmo sob carga.
 
-= Free to start =
+= Gratuito para começar =
 
-The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at [nitrosearch.io](https://nitrosearch.io).
+O plano gratuito funciona no momento em que você instala o plugin — até 100 resultados de busca, com todos os recursos de busca incluídos. Uma conta NitroSearch é opcional; crie uma para gerenciar seu plano e fazer upgrade pelo seu painel. Saiba mais em [nitrosearch.io](https://nitrosearch.io).
 
-== External services ==
+== Serviços externos ==
 
-This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.io](https://nitrosearch.io)) to index your catalogue and serve search results. This is the core purpose of the plugin.
+Este plugin se conecta ao **serviço de busca hospedado NitroSearch** ([nitrosearch.io](https://nitrosearch.io)) para indexar seu catálogo e servir os resultados de busca. Esse é o propósito central do plugin.
 
-* **What is sent, and when:** When you click **"Connect store"**, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen.
-* **Search queries:** Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results.
-* **Scripts loaded onto your storefront:** once connected, the plugin loads the search widget's JavaScript from `api.nitrosearch.io` (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect.
-* **Search usage counts:** once connected, the search widget also sends anonymous, cookieless usage events — the query typed, how many results appeared, and clicks on those results — to `api.nitrosearch.io`. They carry no shopper identifiers, no cookies and no IP-based profiles, and raw records are deleted on a rolling schedule. Switch this off any time under **NitroSearch → Appearance → Search usage data**.
-* **Where:** the NitroSearch API and search engine, at `api.nitrosearch.io` and your store's dedicated search endpoint.
-* **Nothing leaves your site until you click Connect.**
+* **O que é enviado, e quando:** quando você clica em **“Conectar loja”**, o plugin registra seu site no NitroSearch (a URL do site e um identificador de instalação gerado aleatoriamente). Depois de conectar, os dados dos seus produtos — nomes, descrições, SKUs, preços, situação de estoque, categorias, atributos, imagens e links permanentes — são enviados para serem indexados para a busca. As alterações de produtos são enviadas conforme acontecem.
+* **Consultas de busca:** depois de conectado, as consultas de busca dos clientes são enviadas do navegador deles diretamente ao motor do NitroSearch para retornar os resultados.
+* **Scripts carregados na sua loja:** depois de conectado, o plugin carrega o JavaScript do widget de busca a partir de `api.nitrosearch.io` (um pequeno carregador, mais o próprio widget na primeira intenção de busca) para que os resultados possam ser renderizados no navegador do cliente. Nada é carregado antes de você conectar.
+* **Contagens de uso da busca:** depois de conectado, o widget de busca também envia eventos de uso anônimos e sem cookies — a consulta digitada, quantos resultados apareceram e os cliques nesses resultados — para `api.nitrosearch.io`. Eles não carregam identificadores de clientes, cookies nem perfis baseados em IP, e os registros brutos são excluídos em um ciclo contínuo. Desative isso a qualquer momento em **NitroSearch → Aparência → Dados de uso da busca**.
+* **Onde:** a API e o motor de busca do NitroSearch, em `api.nitrosearch.io` e no endpoint de busca dedicado da sua loja.
+* **Nada sai do seu site até você clicar em Conectar.**
 
-Service Terms of Use: [https://nitrosearch.io/legal/terms](https://nitrosearch.io/legal/terms)
-Privacy Policy: [https://nitrosearch.io/legal/privacy](https://nitrosearch.io/legal/privacy)
+Termos de Uso do serviço: [https://nitrosearch.io/legal/terms](https://nitrosearch.io/legal/terms)
+Política de Privacidade: [https://nitrosearch.io/legal/privacy](https://nitrosearch.io/legal/privacy)
 
 == Installation ==
 
-1. Install and activate **WooCommerce**.
-2. Install and activate **NitroSearch for WooCommerce** (from Plugins → Add New, or upload the ZIP).
-3. Open the **NitroSearch** menu in wp-admin and click **"Connect store"**.
-4. That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically.
+1. Instale e ative o **WooCommerce**.
+2. Instale e ative o **NitroSearch for WooCommerce** (em Plugins → Adicionar novo plugin, ou envie o arquivo ZIP).
+3. Abra o menu **NitroSearch** no wp-admin e clique em **“Conectar loja”**.
+4. Pronto — seu catálogo começa a sincronizar, e a caixa de busca do seu tema é aprimorada automaticamente.
 
 == Frequently Asked Questions ==
 
-= Is it really free? =
+= É gratuito mesmo? =
 
-Yes. The free tier covers up to 100 search results with every search feature included, forever — search itself is never tiered. Paid plans raise the limit (and include extras like the store reporting we're building); you only pay for how much you index, never per search.
+Sim. O plano gratuito cobre até 100 resultados de busca com todos os recursos de busca incluídos, para sempre — a busca em si nunca é limitada por plano. Os planos pagos aumentam o limite (e incluem extras, como os relatórios por loja que estamos construindo); você paga apenas pelo quanto indexa, nunca por busca.
 
-= Do I need to create an account? =
+= Preciso criar uma conta? =
 
-No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan and upgrade.
+Nenhuma conta é necessária para usar o plano gratuito — instale, conecte, pronto. A conta é opcional e permite gerenciar seu plano e fazer upgrade.
 
-= Will it slow my store down? =
+= Vai deixar minha loja lenta? =
 
-No — that's the point. Searches run directly between the shopper's browser and our engine, so your WordPress/WooCommerce server never does the search work. The on-page widget is tiny and loads only when a shopper starts searching.
+Não — essa é justamente a questão. As buscas acontecem diretamente entre o navegador do cliente e o nosso motor, então seu servidor WordPress/WooCommerce nunca faz o trabalho de busca. O widget na página é minúsculo e só carrega quando um cliente começa a buscar.
 
-= Do I have to change my theme or add a shortcode? =
+= Preciso alterar meu tema ou adicionar um shortcode? =
 
-No. NitroSearch enhances your theme's *existing* search box in place. There's nothing to rebuild. (If your theme uses an unusual search field, you can point NitroSearch at it with an optional CSS selector in the Appearance settings.)
+Não. O NitroSearch aprimora a caixa de busca *existente* do seu tema, no lugar onde ela está. Não há nada para reconstruir. (Se o seu tema usa um campo de busca fora do comum, você pode apontar o NitroSearch para ele com um seletor CSS opcional nas configurações de Aparência.)
 
-= What data leaves my site, and when? =
+= Quais dados saem do meu site, e quando? =
 
-Nothing until you click **Connect**. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the **External services** section above for the full list, plus links to our Terms and Privacy Policy.
+Nada até você clicar em **Conectar**. Depois disso, seu catálogo de produtos é enviado ao NitroSearch para ser indexado, e as atualizações são enviadas conforme os produtos mudam. Veja a seção **Serviços externos** acima para a lista completa, com links para nossos Termos e nossa Política de Privacidade.
 
-= How does it stay in sync with my catalogue? =
+= Como ele se mantém sincronizado com meu catálogo? =
 
-The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap.
+O plugin mantém uma fila local de alterações e a esvazia de forma confiável em segundo plano — assim continua funcionando mesmo em sites de pouco tráfego e atrás de cache agressivo — controlando o próprio ritmo para deixar sua loja responsiva para os clientes. Cada atualização é assinada e carrega uma versão, então as alterações não podem chegar fora de ordem. Uma tela de status de sincronização ao vivo mostra exatamente o que está indexado. O reparo automático noturno de divergências está em nosso roadmap.
 
-= Is WooCommerce required? =
+= O WooCommerce é obrigatório? =
 
-Yes. NitroSearch indexes and searches WooCommerce products, so WooCommerce must be installed and active. It's compatible with WooCommerce High-Performance Order Storage (HPOS).
+Sim. O NitroSearch indexa e busca produtos do WooCommerce, então o WooCommerce precisa estar instalado e ativo. É compatível com o armazenamento de pedidos de alta performance do WooCommerce (HPOS).
 
-= Does it show a "Powered by NitroSearch" badge on my store? =
+= Ele exibe um selo “Com tecnologia NitroSearch” na minha loja? =
 
-Only if you choose to. The credit is **off by default**, and nothing is added to your storefront unless you turn it on in the plugin's **Appearance** settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way.
+Só se você quiser. O crédito vem **desativado por padrão**, e nada é adicionado à sua loja a menos que você o ative nas configurações de **Aparência** do plugin. Se ativar, ele aparece como um pequeno crédito com link na caixa de busca e uma linha no rodapé do site, ambos apontando para nitrosearch.io. Obrigado se você ativar — mas o plugin funciona exatamente igual de qualquer forma.
 
-= What happens if I deactivate the plugin? =
+= O que acontece se eu desativar o plugin? =
 
-Your store falls back to its normal WooCommerce search. Your data on NitroSearch is managed from your account; you can disconnect at any time from the plugin screen.
+Sua loja volta a usar a busca normal do WooCommerce. Seus dados no NitroSearch são gerenciados pela sua conta; você pode desconectar a qualquer momento pela tela do plugin.
 
 == Screenshots ==
 

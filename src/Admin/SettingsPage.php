@@ -56,12 +56,15 @@ final class SettingsPage
         ?>
         <div class="notice notice-info">
             <p>
-                <strong>NitroSearch now measures how your store's search performs</strong> —
-                anonymous, cookieless counts of searches and result clicks, with no shopper
-                identifiers. It helps result ranking improve, and per-store reporting is on
-                the roadmap. Manage it under
-                <a href="<?php echo esc_url($settingsUrl); ?>">NitroSearch &rarr; Appearance</a>.
-                &nbsp;<a href="<?php echo esc_url($dismissUrl); ?>">Dismiss</a>
+                <?php echo wp_kses(__("<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap.", 'nitrosearch'), ['strong' => []]); ?>
+                <?php
+                printf(
+                    /* translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance". */
+                    esc_html__('Manage it under %s.', 'nitrosearch'),
+                    '<a href="'.esc_url($settingsUrl).'">'.esc_html__('NitroSearch → Appearance', 'nitrosearch').'</a>'
+                );
+                ?>
+                &nbsp;<a href="<?php echo esc_url($dismissUrl); ?>"><?php esc_html_e('Dismiss', 'nitrosearch'); ?></a>
             </p>
         </div>
         <?php
@@ -70,7 +73,7 @@ final class SettingsPage
     public function handleDismissUsage(): void
     {
         if (! current_user_can('manage_woocommerce')) {
-            wp_die('Unauthorized.');
+            wp_die(esc_html__('Unauthorized.', 'nitrosearch'));
         }
         check_admin_referer('nitrosearch_dismiss_usage');
         delete_option('nitrosearch_usage_notice');
@@ -156,13 +159,13 @@ final class SettingsPage
 
         if (! $connected) {
             $pillClass = '';
-            $pillText = 'Not connected';
+            $pillText = __('Not connected', 'nitrosearch');
         } elseif (! $ready) {
             $pillClass = 'ns-pill--pending';
-            $pillText = 'Confirming control…';
+            $pillText = __('Confirming control…', 'nitrosearch');
         } else {
             $pillClass = 'ns-pill--ok';
-            $pillText = 'Connected & verified';
+            $pillText = __('Connected & verified', 'nitrosearch');
         }
         ?>
         <div class="wrap nitrosearch-admin">
@@ -173,7 +176,7 @@ final class SettingsPage
                     <?php echo self::markSvg(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static trusted SVG ?>
                     <div class="ns-hero__text">
                         <p class="ns-hero__wordmark">Nitro<span>Search</span></p>
-                        <p class="ns-hero__tagline">Amazon-quality search for WooCommerce</p>
+                        <p class="ns-hero__tagline"><?php esc_html_e('Amazon-quality search for WooCommerce', 'nitrosearch'); ?></p>
                     </div>
                 </div>
                 <span class="ns-pill <?php echo esc_attr($pillClass); ?>">
@@ -187,47 +190,43 @@ final class SettingsPage
 
             <?php if (! $connected) : ?>
                 <div class="ns-card">
-                    <h2 class="ns-card__title">Connect your store</h2>
+                    <h2 class="ns-card__title"><?php esc_html_e('Connect your store', 'nitrosearch'); ?></h2>
                     <p class="ns-card__intro">
-                        Connect this store to NitroSearch to start syncing your catalogue and serving instant,
-                        typo-tolerant search. Nothing leaves your site until you click Connect.
+                        <?php esc_html_e('Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect.', 'nitrosearch'); ?>
                     </p>
                     <form method="post" action="<?php echo esc_url($action); ?>">
                         <?php wp_nonce_field('nitrosearch_connect'); ?>
                         <input type="hidden" name="action" value="nitrosearch_connect">
                         <table class="form-table" role="presentation">
                             <tr>
-                                <th scope="row"><label for="ns_connect_token">Provisioning token</label></th>
+                                <th scope="row"><label for="ns_connect_token"><?php esc_html_e('Provisioning token', 'nitrosearch'); ?></label></th>
                                 <td>
                                     <input name="connect_token" id="ns_connect_token" type="text"
                                         class="regular-text" autocomplete="off"
                                         value="<?php echo esc_attr((string) Settings::get('connect_token')); ?>">
-                                    <p class="description">Optional. Only needed if you were given a token to connect this store.</p>
+                                    <p class="description"><?php esc_html_e('Optional. Only needed if you were given a token to connect this store.', 'nitrosearch'); ?></p>
                                 </td>
                             </tr>
                         </table>
-                        <?php submit_button('Connect store', 'primary'); ?>
+                        <?php submit_button(__('Connect store', 'nitrosearch'), 'primary'); ?>
                     </form>
                 </div>
             <?php elseif (! $ready) : ?>
                 <div class="ns-card">
                     <div class="notice notice-warning inline"><p>
-                        <strong>Confirming control of your site…</strong>
-                        We’re verifying that you control this store before building your search
-                        index. In production this is automatic; if your site isn’t reachable
-                        from our servers it can take a moment. Your catalogue syncs as soon as
-                        it’s confirmed.
+                        <strong><?php esc_html_e('Confirming control of your site…', 'nitrosearch'); ?></strong>
+                        <?php esc_html_e('We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed.', 'nitrosearch'); ?>
                     </p></div>
                     <div class="ns-actions">
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_refresh'); ?>
                             <input type="hidden" name="action" value="nitrosearch_refresh">
-                            <?php submit_button('Check status', 'primary', 'submit', false); ?>
+                            <?php submit_button(__('Check status', 'nitrosearch'), 'primary', 'submit', false); ?>
                         </form>
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_disconnect'); ?>
                             <input type="hidden" name="action" value="nitrosearch_disconnect">
-                            <?php submit_button('Disconnect', 'delete', 'submit', false); ?>
+                            <?php submit_button(__('Disconnect', 'nitrosearch'), 'delete', 'submit', false); ?>
                         </form>
                     </div>
                 </div>
@@ -258,29 +257,43 @@ final class SettingsPage
                 else : ?>
                 <?php if ($atLimit) : ?>
                     <div class="notice notice-warning inline ns-notice"><p>
-                        <strong>You’ve reached your plan’s limit.</strong>
-                        Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open <em>Manage / Upgrade</em> below to move to a bigger plan.
+                        <strong><?php esc_html_e('You’ve reached your plan’s limit.', 'nitrosearch'); ?></strong>
+                        <?php
+                        printf(
+                            /* translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button. */
+                            esc_html__('Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan.', 'nitrosearch'),
+                            '<em>'.esc_html__('Manage / Upgrade', 'nitrosearch').'</em>'
+                        );
+                        ?>
                     </p></div>
                 <?php endif; ?>
                 <div class="ns-card">
-                    <h2 class="ns-card__title">Sync health</h2>
+                    <h2 class="ns-card__title"><?php esc_html_e('Sync health', 'nitrosearch'); ?></h2>
                     <div class="ns-stats">
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Search results indexed</div>
-                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo $unlimited ? 'Unlimited' : esc_html(number_format_i18n($limit)); ?></span></div>
+                            <div class="ns-stat__label"><?php esc_html_e('Search results indexed', 'nitrosearch'); ?></div>
+                            <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($count)); ?> <span style="color:#94a3b8;font-weight:500;">/ <?php echo $unlimited ? esc_html__('Unlimited', 'nitrosearch') : esc_html(number_format_i18n($limit)); ?></span></div>
                             <div class="ns-progress"><div class="ns-progress__fill" style="width:<?php echo esc_attr((string) max($pct, 2)); ?>%"></div></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Pending changes</div>
+                            <div class="ns-stat__label"><?php esc_html_e('Pending changes', 'nitrosearch'); ?></div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n((int) Outbox::pendingCount())); ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Last sync</div>
-                            <div class="ns-stat__value" style="font-size:14px;font-weight:600;"><?php echo esc_html((string) (Settings::get('last_sync') ?: 'Never')); ?></div>
+                            <div class="ns-stat__label"><?php esc_html_e('Last sync', 'nitrosearch'); ?></div>
+                            <?php
+                            // Stored as UTC (Drain writes current_time('mysql', true));
+                            // shown in the site's own timezone, date format and language.
+                            $lastSyncUtc = (string) Settings::get('last_sync');
+                            $lastSyncLabel = $lastSyncUtc !== ''
+                                ? (string) wp_date(get_option('date_format').' '.get_option('time_format'), strtotime($lastSyncUtc.' +00:00'))
+                                : __('Never', 'nitrosearch');
+                            ?>
+                            <div class="ns-stat__value" style="font-size:14px;font-weight:600;"><?php echo esc_html($lastSyncLabel); ?></div>
                         </div>
                         <?php if (Settings::get('last_error')) : ?>
                             <div class="ns-stat">
-                                <div class="ns-stat__label">Last error</div>
+                                <div class="ns-stat__label"><?php esc_html_e('Last error', 'nitrosearch'); ?></div>
                                 <div class="ns-stat__value ns-stat__value--error"><?php echo esc_html((string) Settings::get('last_error')); ?></div>
                             </div>
                         <?php endif; ?>
@@ -289,17 +302,17 @@ final class SettingsPage
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_sync'); ?>
                             <input type="hidden" name="action" value="nitrosearch_sync">
-                            <?php submit_button('Sync all products', 'primary', 'submit', false); ?>
+                            <?php submit_button(__('Sync all products', 'nitrosearch'), 'primary', 'submit', false); ?>
                         </form>
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_refresh'); ?>
                             <input type="hidden" name="action" value="nitrosearch_refresh">
-                            <?php submit_button('Refresh status', 'secondary', 'submit', false); ?>
+                            <?php submit_button(__('Refresh status', 'nitrosearch'), 'secondary', 'submit', false); ?>
                         </form>
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_disconnect'); ?>
                             <input type="hidden" name="action" value="nitrosearch_disconnect">
-                            <?php submit_button('Disconnect', 'delete', 'submit', false); ?>
+                            <?php submit_button(__('Disconnect', 'nitrosearch'), 'delete', 'submit', false); ?>
                         </form>
                     </div>
                 </div>
@@ -310,66 +323,83 @@ final class SettingsPage
                 $itemsTotal = (int) Settings::get('sync_items_total');
                 $batchesTotal = (int) Settings::get('sync_batches_total');
                 $nextDrain = function_exists('as_next_scheduled_action') ? as_next_scheduled_action(Drain::HOOK) : false;
-                $nextLabel = $nextDrain ? human_time_diff(time(), (int) $nextDrain).' from now' : 'On demand';
+                $nextLabel = $nextDrain
+                    /* translators: %s: a human-readable time interval, e.g. "4 mins". */
+                    ? sprintf(__('%s from now', 'nitrosearch'), human_time_diff(time(), (int) $nextDrain))
+                    : __('On demand', 'nitrosearch');
+                $msUnit = ' <span style="color:#94a3b8;font-weight:500;">'.esc_html(_x('ms', 'unit: milliseconds', 'nitrosearch')).'</span>';
                 ?>
                 <div class="ns-card">
-                    <h2 class="ns-card__title">Sync performance</h2>
+                    <h2 class="ns-card__title"><?php esc_html_e('Sync performance', 'nitrosearch'); ?></h2>
                     <div class="ns-stats">
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Avg sync speed</div>
-                            <div class="ns-stat__value"><?php echo $avgMs > 0 ? esc_html(number_format_i18n($avgMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
+                            <div class="ns-stat__label"><?php esc_html_e('Avg sync speed', 'nitrosearch'); ?></div>
+                            <div class="ns-stat__value"><?php echo $avgMs > 0 ? esc_html(number_format_i18n($avgMs)).$msUnit : '—'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- both halves escaped above ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Last batch</div>
-                            <div class="ns-stat__value"><?php echo $lastMs > 0 ? esc_html(number_format_i18n($lastMs)).' <span style="color:#94a3b8;font-weight:500;">ms</span>' : '—'; ?></div>
+                            <div class="ns-stat__label"><?php esc_html_e('Last batch', 'nitrosearch'); ?></div>
+                            <div class="ns-stat__value"><?php echo $lastMs > 0 ? esc_html(number_format_i18n($lastMs)).$msUnit : '—'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- both halves escaped above ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Items synced</div>
+                            <div class="ns-stat__label"><?php esc_html_e('Items synced', 'nitrosearch'); ?></div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($itemsTotal)); ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Batches sent</div>
+                            <div class="ns-stat__label"><?php esc_html_e('Batches sent', 'nitrosearch'); ?></div>
                             <div class="ns-stat__value"><?php echo esc_html(number_format_i18n($batchesTotal)); ?></div>
                         </div>
                         <div class="ns-stat">
-                            <div class="ns-stat__label">Next sync</div>
+                            <div class="ns-stat__label"><?php esc_html_e('Next sync', 'nitrosearch'); ?></div>
                             <div class="ns-stat__value" style="font-size:14px;font-weight:600;"><?php echo esc_html($nextLabel); ?></div>
                         </div>
                     </div>
                     <p class="ns-card__intro" style="margin-top:12px;margin-bottom:0;">
-                        Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index.
+                        <?php esc_html_e('Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index.', 'nitrosearch'); ?>
                     </p>
                 </div>
 
                 <div class="ns-card">
-                    <h2 class="ns-card__title">Search analytics <span class="ns-muted">last 30 days</span></h2>
+                    <h2 class="ns-card__title"><?php esc_html_e('Search analytics', 'nitrosearch'); ?> <span class="ns-muted"><?php esc_html_e('last 30 days', 'nitrosearch'); ?></span></h2>
                     <?php $ana = $this->analyticsSummary(); ?>
                     <?php if ($ana === null) : ?>
-                        <p class="ns-muted">Couldn&#8217;t load analytics just now &mdash; it will retry automatically.</p>
+                        <p class="ns-muted"><?php esc_html_e('Couldn’t load analytics just now — it will retry automatically.', 'nitrosearch'); ?></p>
                     <?php elseif (empty($ana['entitled'])) : ?>
                         <p>
-                            <strong><?php echo esc_html(number_format_i18n((int) ($ana['teaser']['searches_30d'] ?? 0))); ?> searches</strong>
-                            on your store in the last 30 days. See what shoppers searched for, what they
-                            clicked, and what they looked for and didn&#8217;t find &mdash; included on every
-                            paid plan, from $5.99/mo.
+                            <?php
+                            $teaserCount = (int) ($ana['teaser']['searches_30d'] ?? 0);
+                            printf(
+                                /* translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars). */
+                                wp_kses(__('<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s.', 'nitrosearch'), ['strong' => []]),
+                                esc_html(sprintf(
+                                    /* translators: %s: number of searches. */
+                                    _n('%s search', '%s searches', $teaserCount, 'nitrosearch'),
+                                    number_format_i18n($teaserCount)
+                                )),
+                                esc_html(sprintf(
+                                    /* translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month. */
+                                    __('%s/mo', 'nitrosearch'),
+                                    '$5.99'
+                                ))
+                            );
+                            ?>
                         </p>
-                        <p><a class="button button-primary" href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener">Upgrade to unlock</a></p>
+                        <p><a class="button button-primary" href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener"><?php esc_html_e('Upgrade to unlock', 'nitrosearch'); ?></a></p>
                     <?php elseif (empty($ana['collecting'])) : ?>
-                        <p class="ns-muted">Analytics starts collecting with plugin 1.5.0+ active &mdash; data appears within a few hours of shoppers searching.</p>
+                        <p class="ns-muted"><?php esc_html_e('Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching.', 'nitrosearch'); ?></p>
                     <?php else : ?>
                         <div class="ns-stats">
-                            <div class="ns-stat"><span class="ns-stat__label">Searches</span>
+                            <div class="ns-stat"><span class="ns-stat__label"><?php esc_html_e('Searches', 'nitrosearch'); ?></span>
                                 <span class="ns-stat__value"><?php echo esc_html(number_format_i18n((int) ($ana['searches'] ?? 0))); ?></span></div>
-                            <div class="ns-stat"><span class="ns-stat__label">Zero-result rate</span>
+                            <div class="ns-stat"><span class="ns-stat__label"><?php esc_html_e('Zero-result rate', 'nitrosearch'); ?></span>
                                 <span class="ns-stat__value"><?php echo isset($ana['zero_rate']) && $ana['zero_rate'] !== null ? esc_html(number_format_i18n(((float) $ana['zero_rate']) * 100, 1).'%') : '&#8212;'; ?></span></div>
-                            <div class="ns-stat"><span class="ns-stat__label">Click-through</span>
+                            <div class="ns-stat"><span class="ns-stat__label"><?php esc_html_e('Click-through', 'nitrosearch'); ?></span>
                                 <span class="ns-stat__value"><?php echo isset($ana['ctr']) && $ana['ctr'] !== null ? esc_html(number_format_i18n(((float) $ana['ctr']) * 100, 1).'%') : '&#8212;'; ?></span></div>
                         </div>
                         <?php if (! empty($ana['top_queries']) || ! empty($ana['top_zero'])) : ?>
                             <div class="ns-columns">
                                 <?php if (! empty($ana['top_queries'])) : ?>
                                     <div>
-                                        <h3 class="ns-subhead">Top searches</h3>
+                                        <h3 class="ns-subhead"><?php esc_html_e('Top searches', 'nitrosearch'); ?></h3>
                                         <ol class="ns-list">
                                             <?php foreach (array_slice((array) $ana['top_queries'], 0, 5) as $row) : ?>
                                                 <li><?php echo esc_html((string) ($row['q'] ?? '')); ?> <span class="ns-muted">&times;<?php echo esc_html(number_format_i18n((int) ($row['n'] ?? 0))); ?></span></li>
@@ -379,7 +409,7 @@ final class SettingsPage
                                 <?php endif; ?>
                                 <?php if (! empty($ana['top_zero'])) : ?>
                                     <div>
-                                        <h3 class="ns-subhead">Searched, found nothing</h3>
+                                        <h3 class="ns-subhead"><?php esc_html_e('Searched, found nothing', 'nitrosearch'); ?></h3>
                                         <ol class="ns-list">
                                             <?php foreach (array_slice((array) $ana['top_zero'], 0, 5) as $row) : ?>
                                                 <li><?php echo esc_html((string) ($row['q'] ?? '')); ?> <span class="ns-muted">&times;<?php echo esc_html(number_format_i18n((int) ($row['n'] ?? 0))); ?></span></li>
@@ -389,28 +419,27 @@ final class SettingsPage
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
-                        <p><a href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener">View full analytics &rarr;</a></p>
+                        <p><a href="<?php echo esc_url((string) (($ana['portal_url'] ?? '') ?: 'https://app.nitrosearch.io')); ?>" target="_blank" rel="noopener"><?php esc_html_e('View full analytics →', 'nitrosearch'); ?></a></p>
                     <?php endif; ?>
                 </div>
 
                 <div class="ns-card">
-                    <h2 class="ns-card__title">Your plan &amp; account</h2>
+                    <h2 class="ns-card__title"><?php esc_html_e('Your plan & account', 'nitrosearch'); ?></h2>
                     <?php if (Settings::get('claimed')) : ?>
                         <div class="ns-confirm">
                             <span class="ns-confirm__check" aria-hidden="true">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
                             </span>
-                            <span>This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard.</span>
+                            <span><?php esc_html_e('This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard.', 'nitrosearch'); ?></span>
                         </div>
                     <?php else : ?>
                         <p class="ns-card__intro">
-                            You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it
-                            or upgrade — your index and search stay exactly as they are.
+                            <?php echo wp_kses(__("You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are.", 'nitrosearch'), ['strong' => []]); ?>
                         </p>
                         <form method="post" action="<?php echo esc_url($action); ?>">
                             <?php wp_nonce_field('nitrosearch_claim'); ?>
                             <input type="hidden" name="action" value="nitrosearch_claim">
-                            <?php submit_button('Manage / Upgrade', 'primary', 'submit', false); ?>
+                            <?php submit_button(__('Manage / Upgrade', 'nitrosearch'), 'primary', 'submit', false); ?>
                         </form>
                     <?php endif; ?>
                 </div>
@@ -435,16 +464,16 @@ final class SettingsPage
         $scheme = (string) Settings::get('design_scheme', 'light');
         $font = (string) Settings::get('design_font', 'store');
         $looks = [
-            'roomy'   => ['Roomy', 'Two-line names and a clear picture. The default.'],
-            'compact' => ['Compact', 'Smaller rows, so more products fit before scrolling.'],
-            'images'  => ['Big pictures', 'Larger thumbnails for image-led catalogues.'],
-            'text'    => ['Text only', 'No pictures — good for spares, parts and B2B.'],
+            'roomy'   => [__('Roomy', 'nitrosearch'), __('Two-line names and a clear picture. The default.', 'nitrosearch')],
+            'compact' => [__('Compact', 'nitrosearch'), __('Smaller rows, so more products fit before scrolling.', 'nitrosearch')],
+            'images'  => [__('Big pictures', 'nitrosearch'), __('Larger thumbnails for image-led catalogues.', 'nitrosearch')],
+            'text'    => [__('Text only', 'nitrosearch'), __('No pictures — good for spares, parts and B2B.', 'nitrosearch')],
         ];
         $schemes = [
-            'light'  => ['Light', 'A white panel. Suits most themes.'],
-            'dark'   => ['Dark', 'A dark panel, for dark headers and themes.'],
-            'auto'   => ['Automatic', "Follows each shopper's own device setting."],
-            'custom' => ['Custom', 'Choose your own panel and text colours below.'],
+            'light'  => [__('Light', 'nitrosearch'), __('A white panel. Suits most themes.', 'nitrosearch')],
+            'dark'   => [__('Dark', 'nitrosearch'), __('A dark panel, for dark headers and themes.', 'nitrosearch')],
+            'auto'   => [__('Automatic', 'nitrosearch'), __("Follows each shopper's own device setting.", 'nitrosearch')],
+            'custom' => [__('Custom', 'nitrosearch'), __('Choose your own panel and text colours below.', 'nitrosearch')],
         ];
         ?>
         <div class="ns-card">
@@ -589,7 +618,7 @@ final class SettingsPage
                             <p class="description"><?php esc_html_e('Match my store borrows the font your theme already uses around the search box.', 'nitrosearch'); ?></p>
                             <input name="design_font_stack" id="ns_font_stack" type="text" class="regular-text"
                                 style="margin-top:6px;"
-                                placeholder="e.g. Georgia, serif"
+                                placeholder="<?php echo esc_attr_x('e.g. Georgia, serif', 'example font stack', 'nitrosearch'); ?>"
                                 value="<?php echo esc_attr((string) Settings::get('design_font_stack')); ?>">
                             <p class="description"><?php esc_html_e('Only used when Custom font is selected.', 'nitrosearch'); ?></p>
                         </td>
@@ -615,12 +644,13 @@ final class SettingsPage
                                     <?php checked(in_array('post', $indexed, true)); ?>> <?php esc_html_e('Blog posts', 'nitrosearch'); ?>
                             </label>
                             <p class="description">
-                                Pages and posts count towards the same allowance as your products, so
-                                switching them off frees it up for your catalogue. Your products always
-                                come first and are never displaced by them. Private,
-                                password-protected and unpublished content is never indexed, and we
-                                honour <em>noindex</em> set by Yoast SEO or Rank Math (per item, per
-                                content type, or site-wide).
+                                <?php
+                                printf(
+                                    /* translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it. */
+                                    esc_html__('Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide).', 'nitrosearch'),
+                                    '<em>noindex</em>'
+                                );
+                                ?>
                             </p>
                         </td>
                     </tr>
@@ -647,11 +677,7 @@ final class SettingsPage
                                 <?php esc_html_e('Share anonymous search usage counts with NitroSearch', 'nitrosearch'); ?>
                             </label>
                             <p class="description">
-                                Counts searches, result totals and result clicks on your store's
-                                search &mdash; cookieless and anonymous, with no shopper
-                                identifiers, no IP addresses and nothing stored in the shopper's
-                                browser. Used to improve result ranking and to power your search
-                                analytics. Untick to stop sending immediately.
+                                <?php esc_html_e("Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately.", 'nitrosearch'); ?>
                             </p>
                         </td>
                     </tr>
@@ -664,11 +690,13 @@ final class SettingsPage
                                 <?php esc_html_e('Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io', 'nitrosearch'); ?>
                             </label>
                             <p class="description">
-                                Off by default, and entirely your choice. Turning it on adds a small
-                                credit in the search box and one line in your site footer, both
-                                linking to <code>https://nitrosearch.io</code> &mdash; a normal,
-                                followed link. Nothing is added to your site unless you tick this.
-                                Thank you if you do.
+                                <?php
+                                printf(
+                                    /* translators: %s: the URL https://nitrosearch.io, wrapped in <code>. */
+                                    esc_html__('Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do.', 'nitrosearch'),
+                                    '<code>https://nitrosearch.io</code>'
+                                );
+                                ?>
                             </p>
                         </td>
                     </tr>
@@ -681,7 +709,7 @@ final class SettingsPage
                             <th scope="row"><label for="ns_selector"><?php esc_html_e('Search box selector', 'nitrosearch'); ?></label></th>
                             <td>
                                 <input name="selector" id="ns_selector" type="text" class="regular-text"
-                                    placeholder="e.g. input.my-theme-search" value="<?php echo esc_attr((string) Settings::get('selector')); ?>">
+                                    placeholder="<?php echo esc_attr_x('e.g. input.my-theme-search', 'example CSS selector', 'nitrosearch'); ?>" value="<?php echo esc_attr((string) Settings::get('selector')); ?>">
                                 <p class="description"><?php esc_html_e("Optional CSS selector for your theme's search input. Leave blank to auto-detect.", 'nitrosearch'); ?></p>
                             </td>
                         </tr>
@@ -720,7 +748,11 @@ final class SettingsPage
 
         $result = Client::connect();
         if (! $result['ok']) {
-            $this->redirect('Connect failed: '.($result['error'] ?? 'unknown error'));
+            $this->redirect(sprintf(
+                /* translators: %s: the error detail returned by the server. */
+                __('Connect failed: %s', 'nitrosearch'),
+                (string) (($result['error'] ?? '') ?: __('unknown error', 'nitrosearch'))
+            ));
         }
 
         // Connect provisions only a shell. Prove control before syncing: in
@@ -730,9 +762,30 @@ final class SettingsPage
         Client::verify();
         if (Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Connected and verified. Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
+            $this->redirect(__('Connected and verified.', 'nitrosearch').' '.$this->syncStartedNotice($count));
         }
-        $this->redirect('Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update.');
+        $this->redirect(__('Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update.', 'nitrosearch'));
+    }
+
+    /**
+     * "Syncing N products…" as one complete, translatable sentence per variant —
+     * never assembled from fragments, so every language can order it naturally.
+     */
+    private function syncStartedNotice(int $count): string
+    {
+        if (Settings::indexesContent()) {
+            return sprintf(
+                /* translators: %s: number of products. */
+                _n('Syncing %s product in the background, then your pages and posts.', 'Syncing %s products in the background, then your pages and posts.', $count, 'nitrosearch'),
+                number_format_i18n($count)
+            );
+        }
+
+        return sprintf(
+            /* translators: %s: number of products. */
+            _n('Syncing %s product in the background.', 'Syncing %s products in the background.', $count, 'nitrosearch'),
+            number_format_i18n($count)
+        );
     }
 
     /**
@@ -757,19 +810,24 @@ final class SettingsPage
 
         if (! $wasReady && Settings::hasSearchKey()) {
             $count = FullSync::start();
-            $this->redirect("Verified! Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
+            $this->redirect(__('Verified!', 'nitrosearch').' '.$this->syncStartedNotice($count));
         }
         if (Settings::hasSearchKey()) {
-            $this->redirect((int) Settings::get('product_count').' search results indexed · '.(int) Outbox::pendingCount().' pending.');
+            $this->redirect(sprintf(
+                /* translators: 1: number of items in the search index, 2: number of changes waiting to sync. */
+                __('%1$s search results indexed · %2$s pending.', 'nitrosearch'),
+                number_format_i18n((int) Settings::get('product_count')),
+                number_format_i18n((int) Outbox::pendingCount())
+            ));
         }
-        $this->redirect('Still confirming control of your site — please try again in a moment.');
+        $this->redirect(__('Still confirming control of your site — please try again in a moment.', 'nitrosearch'));
     }
 
     public function handleSync(): void
     {
         $this->authorize('nitrosearch_sync');
         $count = FullSync::start();
-        $this->redirect("Syncing {$count} products in the background".(Settings::indexesContent() ? ", then your pages and posts." : "."));
+        $this->redirect($this->syncStartedNotice($count));
     }
 
     public function handleAppearance(): void
@@ -854,13 +912,44 @@ final class SettingsPage
         }
 
         if ($newlyEnabled !== [] && Settings::hasSearchKey()) {
-            $this->redirect('Saved. Indexing your '.implode(' and ', $newlyEnabled).'s in the background.', 'design');
+            $this->redirect($this->contentChangeNotice($newlyEnabled, false), 'design');
         }
         if ($newlyDisabled !== [] && Settings::hasSearchKey()) {
-            $this->redirect('Saved. Removing your '.implode(' and ', $newlyDisabled).'s from your index in the background.', 'design');
+            $this->redirect($this->contentChangeNotice($newlyDisabled, true), 'design');
         }
 
-        $this->redirect('Design saved.', 'design');
+        $this->redirect(__('Design saved.', 'nitrosearch'), 'design');
+    }
+
+    /**
+     * The "Saved. Indexing/Removing…" notice as complete sentences per content
+     * type — the wire slugs ('page', 'post') are never shown to a person, and
+     * no language is asked to pluralize by appending letters.
+     *
+     * @param array<int,string> $types
+     */
+    private function contentChangeNotice(array $types, bool $removing): string
+    {
+        $pages = in_array('page', $types, true);
+        $posts = in_array('post', $types, true);
+
+        if ($removing) {
+            if ($pages && $posts) {
+                return __('Saved. Removing your pages and blog posts from your index in the background.', 'nitrosearch');
+            }
+
+            return $pages
+                ? __('Saved. Removing your pages from your index in the background.', 'nitrosearch')
+                : __('Saved. Removing your blog posts from your index in the background.', 'nitrosearch');
+        }
+
+        if ($pages && $posts) {
+            return __('Saved. Indexing your pages and blog posts in the background.', 'nitrosearch');
+        }
+
+        return $pages
+            ? __('Saved. Indexing your pages in the background.', 'nitrosearch')
+            : __('Saved. Indexing your blog posts in the background.', 'nitrosearch');
     }
 
     public function handleDisconnect(): void
@@ -875,7 +964,7 @@ final class SettingsPage
         }
         FullSync::cancel();
         ContentPurge::cancel();
-        $this->redirect('Disconnected.');
+        $this->redirect(__('Disconnected.', 'nitrosearch'));
     }
 
     /**
@@ -895,13 +984,15 @@ final class SettingsPage
         }
 
         $messages = [
-            'already_claimed'   => 'This store is already claimed to a NitroSearch account.',
-            'not_verified'      => 'We couldn’t confirm control of your site yet — click "Refresh status" first, then try again.',
-            'reverify_required' => 'Your site needs re-checking — click "Refresh status", then try again.',
-            'rate_limited'      => 'Too many attempts — please wait a minute and try again.',
+            'already_claimed'   => __('This store is already claimed to a NitroSearch account.', 'nitrosearch'),
+            /* translators: "Refresh status" is the button of that name on this screen — translate it the same way. */
+            'not_verified'      => __('We couldn’t confirm control of your site yet — click "Refresh status" first, then try again.', 'nitrosearch'),
+            /* translators: "Refresh status" is the button of that name on this screen — translate it the same way. */
+            'reverify_required' => __('Your site needs re-checking — click "Refresh status", then try again.', 'nitrosearch'),
+            'rate_limited'      => __('Too many attempts — please wait a minute and try again.', 'nitrosearch'),
         ];
         $reason = (string) ($result['error'] ?? '');
-        $this->redirect($messages[$reason] ?? ('Could not create a manage link. Please try again.'));
+        $this->redirect($messages[$reason] ?? __('Could not create a manage link. Please try again.', 'nitrosearch'));
     }
 
     /**
@@ -944,7 +1035,7 @@ final class SettingsPage
     private function authorize(string $nonce): void
     {
         if (! current_user_can('manage_woocommerce')) {
-            wp_die('Insufficient permissions.');
+            wp_die(esc_html__('Insufficient permissions.', 'nitrosearch'));
         }
         check_admin_referer($nonce);
     }

@@ -17,6 +17,10 @@ ROOT="${PREFLIGHT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
 # Listing images are presentation, not versioned code, so CI takes them from the
 # current branch even when publishing an older tag.
 ASSETS_DIR="${PREFLIGHT_ASSETS_DIR:-$ROOT/.wordpress-org}"
+# Resolve our own directory BEFORE the cd: CI invokes this script by a relative
+# path (current/bin/...) while ROOT points at the release checkout, so a
+# post-cd "$(dirname "$0")" would resolve into the wrong tree.
+SELF_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
 EXPECTED="${1:-}"
@@ -156,6 +160,18 @@ if command -v php >/dev/null 2>&1; then
   fi
 else
   echo "  --   php not available, skipping lint"
+fi
+
+# --- 8. Translations ----------------------------------------------------------
+# Nine languages ship with every release. A new string without its nine
+# translations, a stale compiled catalog, or a readme edit that left the eight
+# translated listings behind would all publish silently — merchants would just
+# see mixed-language screens. Delegated to bin/check-i18n.sh (which also has
+# the canonical --update-pot command and a --selftest).
+if "$SELF_DIR/check-i18n.sh" | sed 's/^/  /'; then
+  pass "translation guards (see above)"
+else
+  fail "translation guards failed — see bin/check-i18n.sh output above"
 fi
 
 echo

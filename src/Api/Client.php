@@ -53,7 +53,10 @@ final class Client
         $body = json_decode(wp_remote_retrieve_body($response), true);
 
         if ($code !== 201 || ! is_array($body)) {
-            return ['ok' => false, 'error' => "Connect failed (HTTP {$code}): ".wp_remote_retrieve_body($response)];
+            // Locale-neutral diagnostic detail: the admin screen wraps it in a
+            // translated "Connect failed: %s" (which also made the old
+            // "Connect failed (HTTP …)" prefix here read twice).
+            return ['ok' => false, 'error' => "HTTP {$code}: ".wp_remote_retrieve_body($response)];
         }
 
         Settings::update([

@@ -46,11 +46,101 @@ final class WidgetLoader
         }
 
         printf(
-            '<p class="nitrosearch-credit" style="text-align:center;font-size:12px;line-height:1.6;margin:12px 0;opacity:.75;">%s <a href="%s" rel="noopener">%s</a></p>',
-            esc_html__('Search powered by', 'nitrosearch'),
-            esc_url(self::CREDIT_URL),
-            esc_html__('NitroSearch', 'nitrosearch')
+            '<p class="nitrosearch-credit" style="text-align:center;font-size:12px;line-height:1.6;margin:12px 0;opacity:.75;">%s</p>',
+            sprintf(
+                /* translators: %s: the linked brand name "NitroSearch". */
+                esc_html__('Search powered by %s', 'nitrosearch'),
+                '<a href="'.esc_url(self::CREDIT_URL).'" rel="noopener">NitroSearch</a>'
+            )
         );
+    }
+
+    /**
+     * The storefront widget's own UI strings, resolved through the plugin's
+     * translation stack. The widget bundle is one shared file for every store,
+     * so it carries no locales — the plugin hands it the store's language the
+     * same way Design hands it the store's colours. Keys are the widget's label
+     * contract; the widget falls back to its built-in English for any it does
+     * not receive, so either side can ship first.
+     *
+     * Plural strings are sent as CLDR category maps (one/few/many/other) built
+     * from ordinary _n() calls at representative counts — 1, 2 and 5 select the
+     * right gettext plural form in every locale we ship — and the widget picks
+     * a category with Intl.PluralRules at render time, when it knows the count.
+     *
+     * @return array<string,string|array<string,string>>
+     */
+    private static function widgetLabels(): array
+    {
+        return [
+            'refine_results'    => __('Refine results', 'nitrosearch'),
+            'refine'            => __('Refine', 'nitrosearch'),
+            'in_stock'          => __('In stock', 'nitrosearch'),
+            'on_sale'           => __('On sale', 'nitrosearch'),
+            'brand'             => __('Brand', 'nitrosearch'),
+            'category'          => __('Category', 'nitrosearch'),
+            'view'              => __('View', 'nitrosearch'),
+            'add_to_cart'       => __('Add to cart', 'nitrosearch'),
+            'adding'            => __('Adding…', 'nitrosearch'),
+            'added'             => __('Added ✓', 'nitrosearch'),
+            'try_again'         => __('Try again', 'nitrosearch'),
+            'searching'         => __('Searching…', 'nitrosearch'),
+            'unavailable_brief' => __('Search is unavailable.', 'nitrosearch'),
+            'unavailable'       => __('Search is unavailable right now.', 'nitrosearch'),
+            'no_products'       => __('No products found.', 'nitrosearch'),
+            /* translators: %s: the shopper's search term. */
+            'no_products_for'   => __('No products found for “%s”.', 'nitrosearch'),
+            /* translators: %s: the shopper's search term. */
+            'nothing_found'     => __('Nothing found for “%s”.', 'nitrosearch'),
+            'placeholder'       => __('Search products…', 'nitrosearch'),
+            'close_search'      => __('Close search', 'nitrosearch'),
+            'product_results'   => __('Product results', 'nitrosearch'),
+            'recent_searches'   => __('Recent searches', 'nitrosearch'),
+            'clear'             => __('Clear', 'nitrosearch'),
+            'start_typing'      => __('Start typing to search products…', 'nitrosearch'),
+            'sale'              => __('Sale', 'nitrosearch'),
+            'out_of_stock'      => __('Out of stock', 'nitrosearch'),
+            'pages_posts'       => __('Pages & posts', 'nitrosearch'),
+            'page'              => _x('Page', 'a website page, shown on a search result', 'nitrosearch'),
+            'article'           => _x('Article', 'a blog post, shown on a search result', 'nitrosearch'),
+            /* translators: %s: the search round-trip time in milliseconds. */
+            'ms'                => _x('%s ms', 'unit: milliseconds', 'nitrosearch'),
+            /* translators: %s: the brand name "NitroSearch". */
+            'powered_by'        => sprintf(__('Powered by %s', 'nitrosearch'), 'NitroSearch'),
+            /* translators: 1: current page number, 2: total number of pages. */
+            'page_of'           => __('Page %1$s of %2$s', 'nitrosearch'),
+            'prev'              => __('← Prev', 'nitrosearch'),
+            'next'              => __('Next →', 'nitrosearch'),
+            'search'            => _x('Search', 'button label', 'nitrosearch'),
+            'products_found'    => [
+                /* translators: %s: number of products found (screen-reader announcement). */
+                'one'   => _n('%s product found.', '%s products found.', 1, 'nitrosearch'),
+                'few'   => _n('%s product found.', '%s products found.', 2, 'nitrosearch'),
+                'many'  => _n('%s product found.', '%s products found.', 5, 'nitrosearch'),
+                'other' => _n('%s product found.', '%s products found.', 5, 'nitrosearch'),
+            ],
+            'see_all'           => [
+                /* translators: %s: total number of results. */
+                'one'   => _n('See all %s result →', 'See all %s results →', 1, 'nitrosearch'),
+                'few'   => _n('See all %s result →', 'See all %s results →', 2, 'nitrosearch'),
+                'many'  => _n('See all %s result →', 'See all %s results →', 5, 'nitrosearch'),
+                'other' => _n('See all %s result →', 'See all %s results →', 5, 'nitrosearch'),
+            ],
+            'results_for'       => [
+                /* translators: 1: number of results, 2: the shopper's search term. */
+                'one'   => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 1, 'nitrosearch'),
+                'few'   => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 2, 'nitrosearch'),
+                'many'  => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 5, 'nitrosearch'),
+                'other' => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 5, 'nitrosearch'),
+            ],
+            'results_count'     => [
+                /* translators: %s: number of results. */
+                'one'   => _n('%s result', '%s results', 1, 'nitrosearch'),
+                'few'   => _n('%s result', '%s results', 2, 'nitrosearch'),
+                'many'  => _n('%s result', '%s results', 5, 'nitrosearch'),
+                'other' => _n('%s result', '%s results', 5, 'nitrosearch'),
+            ],
+        ];
     }
 
     public function inject(): void
@@ -121,6 +211,22 @@ final class WidgetLoader
         $selector = trim((string) Settings::get('selector'));
         if ($selector !== '') {
             $config['selector'] = $selector;
+        }
+
+        // The widget's UI strings in the store's language, plus the locale its
+        // plural rules key off (BCP 47, per request so multilingual plugins that
+        // switch the locale per page are honoured). English stores send neither:
+        // the widget's built-in strings are already English, so their pages stay
+        // exactly as before this existed. The probe also keeps a locale we have
+        // NO catalog for on the widget's built-in English (and English plural
+        // rules) — sending untranslated English maps with, say, Russian plural
+        // selection would render "21 product found." The probe string is in
+        // every shipped catalog, and the __() call triggers WordPress's
+        // just-in-time textdomain load, so future language packs count too.
+        $locale = determine_locale();
+        if (strpos($locale, 'en') !== 0 && __('Search products…', 'nitrosearch') !== 'Search products…') {
+            $config['locale'] = str_replace('_', '-', $locale);
+            $config['labels'] = self::widgetLabels();
         }
 
         // Register a no-src handle so we can attach the inline config + loader.
