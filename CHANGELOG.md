@@ -5,6 +5,28 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.9.0] — 2026-08-01
+
+### Added
+- **NitroSearch in your language.** The plugin now ships fully translated into
+  Spanish, French, German, Italian, Dutch, Polish, and Portuguese — both
+  European and Brazilian. That covers the settings screens, every message the
+  plugin shows, and the search box shoppers use, right down to its
+  screen-reader announcements. The site's language setting decides
+  automatically; English stores are completely unchanged.
+- The storefront search box picks up its translation from the site's
+  language — plural rules and all — once the store's NitroSearch service
+  updates. Nothing to configure.
+
+### Fixed
+- The "Last sync" time now shows in the site's own timezone and date format.
+  It was shown as a raw UTC timestamp.
+- A failed connection no longer says "Connect failed" twice in the same
+  message.
+- Corrected in the directory listing: the filter list previously mentioned a
+  price filter. The filters offered are category, brand, on-sale and
+  in-stock.
+
 ## [1.8.0] — 2026-07-31
 
 ### Added
