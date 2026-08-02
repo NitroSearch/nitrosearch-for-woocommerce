@@ -802,9 +802,13 @@ final class SettingsPage
         // A manual refresh should also refresh the analytics card.
         delete_transient('nitrosearch_analytics_summary');
 
-        if ($status['verified'] && ! Settings::hasSearchKey()) {
+        if ($status['verified']) {
+            // Always re-fetch, not only when the key is missing: a manual refresh
+            // is the merchant's one recovery action when the stored key has gone
+            // stale (rotated or expired service-side), and a fresh fetch is
+            // harmless when the key was fine.
             Client::fetchSearchKey();
-        } elseif (! $status['verified']) {
+        } else {
             Client::verify(); // retry the loopback in case the site is now reachable
         }
 

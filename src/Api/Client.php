@@ -137,6 +137,13 @@ final class Client
         }
         $body = is_array($res['body']) ? $res['body'] : [];
         $verified = (bool) ($body['verification']['verified'] ?? false);
+        if ($verified) {
+            // Persist the flag the rest of the plugin trusts (the daily config
+            // refresh gates on it) — previously only the status poll wrote it,
+            // so a fresh install that verified here kept a stale false until
+            // the next manual status check.
+            Settings::update(['verified' => true]);
+        }
         if ($verified && isset($body['search']) && is_array($body['search'])) {
             self::storeSearch($body['search']);
         }
@@ -166,7 +173,10 @@ final class Client
             // omit it, so it defaults to false).
             'at_limit'      => (bool) ($body['at_limit'] ?? false),
         ];
-        if ($res['ok']) {
+        // Persist only when the decoded body actually looks like a status
+        // response: a 200 with an undecodable/foreign body (proxy or WAF
+        // interference) must not flatten real stored state to defaults.
+        if ($res['ok'] && $body !== [] && array_key_exists('verified', $body)) {
             $update = [
                 'verified'      => $status['verified'],
                 'claimed'       => $status['claimed'],
@@ -203,7 +213,16 @@ final class Client
         if (! $res['ok']) {
             return ['ok' => false, 'error' => 'HTTP '.$res['code']];
         }
-        self::storeSearch(is_array($res['body']) ? $res['body'] : []);
+
+        // A 200 whose body did not decode to the expected shape (proxy/WAF
+        // interference, injected notice output) must never touch stored state:
+        // blanking a working key here kills storefront search until the next
+        // refresh. A stale-but-valid key always beats no key.
+        $body = $res['body'];
+        if (! is_array($body) || ! is_string($body['scoped_search_key'] ?? null) || $body['scoped_search_key'] === '') {
+            return ['ok' => false, 'error' => 'malformed response body'];
+        }
+        self::storeSearch($body);
 
         return ['ok' => true];
     }
@@ -292,21 +311,41 @@ final class Client
     }
 
     /**
-     * Persist a search block: {scoped_search_key, collection, engine:{host}, public_key_id?}.
+     * Persist a search block: {scoped_search_key, collection, engine:{host}, public_key_id?, widget?}.
+     *
+     * Defence in depth for the unattended refresh path: a partial or mangled
+     * block must never blank a working value. The key gates the whole persist;
+     * every other field falls back to its stored value when absent — the widget
+     * has NO fallback for an empty engine_host, so blanking it would break
+     * storefront search even with a valid key.
      *
      * @param  array<string,mixed>  $search
      */
     private static function storeSearch(array $search): void
     {
+        $key = $search['scoped_search_key'] ?? null;
+        if (! is_string($key) || $key === '') {
+            return;
+        }
+
         $update = [
-            'scoped_search_key' => (string) ($search['scoped_search_key'] ?? ''),
-            'collection'        => (string) ($search['collection'] ?? Settings::get('collection')),
-            'engine_host'       => (string) ($search['engine']['host'] ?? ''),
-            'search_public_id'  => (string) ($search['public_key_id'] ?? Settings::get('search_public_id')),
+            'scoped_search_key' => $key,
+            'collection'        => (string) (($search['collection'] ?? '') !== '' ? $search['collection'] : Settings::get('collection')),
+            'engine_host'       => (string) (($search['engine']['host'] ?? '') !== '' ? $search['engine']['host'] : Settings::get('engine_host')),
+            'search_public_id'  => (string) (($search['public_key_id'] ?? '') !== '' ? $search['public_key_id'] : Settings::get('search_public_id')),
         ];
         if (! empty($search['events']['token'])) {
             $update['events_url'] = (string) ($search['events']['url'] ?? '');
             $update['events_token'] = (string) $search['events']['token'];
+        }
+        // Widget asset URLs ride the search-key response on newer backends so a
+        // relocated bundle reaches long-running installs; absence (an older
+        // backend) leaves the stored URLs untouched.
+        if (! empty($search['widget']['loader_url'])) {
+            $update['widget_loader_url'] = (string) $search['widget']['loader_url'];
+        }
+        if (! empty($search['widget']['bundle_url'])) {
+            $update['widget_bundle_url'] = (string) $search['widget']['bundle_url'];
         }
         Settings::update($update);
     }

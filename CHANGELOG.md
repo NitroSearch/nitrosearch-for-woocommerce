@@ -5,6 +5,23 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [1.10.0] — 2026-08-02
+
+### Added
+- **Your search connection now renews itself.** The plugin quietly refreshes
+  its search credentials about once a day, so search keeps working even on
+  stores whose settings screen is never opened. Previously the credentials
+  were fetched once at setup and could eventually lapse on a long-untouched
+  store.
+
+### Changed
+- Sturdier against bad replies: a malformed response from the service (for
+  example, a hosting proxy interfering) can no longer clear a working search
+  connection. If a reply looks wrong, the plugin keeps what it has and tries
+  again the next day.
+- The **Check status** button now also refreshes the search credentials every
+  time, giving you a one-click fix if search ever stops responding.
+
 ## [1.9.0] — 2026-08-01
 
 ### Added

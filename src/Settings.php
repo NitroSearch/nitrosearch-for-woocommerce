@@ -87,6 +87,11 @@ final class Settings
             'product_limit'     => 0,     // plan cap (from /v1/status)
             'product_count'     => 0,     // products in the engine so far (from /v1/status)
             'at_limit'          => false, // catalogue has hit the plan cap (from /v1/status)
+            // When the daily config refresh last ran (unix ts) — the scoped search
+            // key embeds an expiry, so a connected store re-fetches it (plus the
+            // widget asset URLs) roughly once a day off the drain heartbeat
+            // (see Sync\ConfigRefresh). 0 = never.
+            'config_refreshed_at' => 0,
             // Sync performance, measured locally as batches drain (see Sync\Drain).
             'last_batch_ms'     => 0,     // round-trip of the most recent ingest batch
             'avg_batch_ms'      => 0,     // smoothed average batch round-trip

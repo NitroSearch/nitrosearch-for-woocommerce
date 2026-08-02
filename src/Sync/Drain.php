@@ -57,6 +57,10 @@ final class Drain
         // and unscheduled, so it just makes "resumable" actually resume unattended.
         FullSync::resumeIfStalled();
 
+        // Daily config refresh (search key + widget URLs) — a cheap timestamp
+        // check on every heartbeat, one small request a day when due.
+        ConfigRefresh::maybeRun();
+
         // Self-pacing: sync throughput is governed by how fast the outbox drains, not
         // by the fixed 60s heartbeat. When a full batch went through and a backlog
         // remains, chain an IMMEDIATE async follow-up so a large catalogue (a first
