@@ -261,9 +261,9 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
   typo-tolerant product results as customers type. No theme rebuild required.
 - Sync status screen showing what is indexed.
 
-[1.2.3]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.3
-[1.2.2]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.2
-[1.2.1]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.1
-[1.2.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.2.0
-[1.1.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.1.0
-[1.0.0]: https://github.com/webdeviant/NitroSearchWP/releases/tag/v1.0.0
+[1.2.3]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.2.3
+[1.2.2]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.2.2
+[1.2.1]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.2.1
+[1.2.0]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.2.0
+[1.1.0]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.1.0
+[1.0.0]: https://github.com/NitroSearch/nitrosearch-for-woocommerce/releases/tag/v1.0.0
