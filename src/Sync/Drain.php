@@ -61,6 +61,10 @@ final class Drain
         // check on every heartbeat, one small request a day when due.
         ConfigRefresh::maybeRun();
 
+        // Periodic status check (every few minutes when due) — keeps plan/limit/count
+        // current and is how the service asks this store to send its catalogue again.
+        ResyncCheck::maybeRun();
+
         // Self-pacing: sync throughput is governed by how fast the outbox drains, not
         // by the fixed 60s heartbeat. When a full batch went through and a backlog
         // remains, chain an IMMEDIATE async follow-up so a large catalogue (a first

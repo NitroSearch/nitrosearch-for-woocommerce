@@ -172,6 +172,11 @@ final class Client
             // merchant they've hit it so we can prompt an upgrade (older backends
             // omit it, so it defaults to false).
             'at_limit'      => (bool) ($body['at_limit'] ?? false),
+            // Present ONLY while the service is asking this store to send its whole
+            // catalogue again (see Sync\ResyncCheck). Absent on every ordinary
+            // response and on any backend that predates it — absence is the signal,
+            // so there is nothing to compare against when it is missing.
+            'resync'        => is_array($body['resync'] ?? null) ? $body['resync'] : null,
         ];
         // Persist only when the decoded body actually looks like a status
         // response: a 200 with an undecodable/foreign body (proxy or WAF
@@ -355,6 +360,57 @@ final class Client
      *
      * @return array{ok:bool,code:int,body:mixed,error?:string}
      */
+    /**
+     * Confirm that a requested full re-sync has STARTED.
+     *
+     * The token comes from the `resync` block on GET /v1/status and is echoed back
+     * verbatim; it tells the service which request is being answered, so a
+     * confirmation that arrives late cannot close a newer one.
+     *
+     * It rides the request BODY rather than a query string because the signature
+     * covers the body and not the query — putting it in the URL would leave it
+     * outside the signature and would mean signing a different string from the one
+     * being requested.
+     *
+     * Best-effort by design: the service answers 204 whatever the token turns out to
+     * be, and an unsent confirmation simply leaves the request outstanding for the
+     * next check to retry. Never throws, never blocks the heartbeat.
+     */
+    public static function acknowledgeResync(string $token): bool
+    {
+        if ($token === '') {
+            return false;
+        }
+
+        $path = '/v1/resync/ack';
+        $body = wp_json_encode(['token' => $token]);
+
+        $headers = Hmac::headers(
+            (string) Settings::get('sync_key_id'),
+            (string) Settings::get('sync_secret'),
+            'POST',
+            $path,
+            $body,
+            (string) Settings::get('site_url', get_site_url()),
+            Settings::installId(),
+        );
+        $headers['Content-Type'] = 'application/json';
+
+        $response = wp_remote_post(Settings::apiUrl().$path, [
+            'timeout' => 15,
+            'headers' => $headers,
+            'body'    => $body,
+        ]);
+
+        if (is_wp_error($response)) {
+            return false;
+        }
+
+        $code = (int) wp_remote_retrieve_response_code($response);
+
+        return $code >= 200 && $code < 300;
+    }
+
     private static function send(string $method, string $path, int $timeout = 25): array
     {
         $headers = Hmac::headers(

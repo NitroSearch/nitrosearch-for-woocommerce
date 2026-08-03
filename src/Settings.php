@@ -92,6 +92,16 @@ final class Settings
             // widget asset URLs) roughly once a day off the drain heartbeat
             // (see Sync\ConfigRefresh). 0 = never.
             'config_refreshed_at' => 0,
+            // When the periodic status check last ran (unix ts). Status used to be
+            // fetched only on a version change or a manual "Check status", so a store
+            // could run for months without learning that its plan, limit or indexed
+            // count had moved — and could not be told to re-send its catalogue at all
+            // (see Sync\ResyncCheck). 0 = never.
+            'status_checked_at' => 0,
+            // The last re-sync request this store has acted on. Compared against the
+            // token the service sends so a single request starts exactly one full
+            // sync, however many times it is seen before the confirmation lands.
+            'resync_token_done' => '',
             // Sync performance, measured locally as batches drain (see Sync\Drain).
             'last_batch_ms'     => 0,     // round-trip of the most recent ingest batch
             'avg_batch_ms'      => 0,     // smoothed average batch round-trip

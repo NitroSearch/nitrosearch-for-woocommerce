@@ -5,6 +5,24 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [Unreleased]
+
+### Added
+- **The service can now ask your store to re-send its catalogue.** Products are
+  sent as they change, and until now nothing could ask for them again. If an item
+  could not be used when it arrived — one your store's data made unreadable, or one
+  that would have taken you past your plan's limit — it simply never appeared in
+  search, and nothing on either side knew to try again. The service can now request
+  a fresh full sync, and the plugin acts on it automatically: it starts the same
+  chunked, resumable sync as the **Sync now** button, and confirms it. A request is
+  acted on exactly once, so a store is never put through its catalogue twice for the
+  same reason.
+- **The plugin now checks in periodically.** Previously it only asked the service
+  for its status when the plugin was updated or you pressed **Check status**, which
+  meant a store could run for months without noticing that its plan, its product
+  limit, or its indexed count had changed. It now checks every few minutes as part
+  of the existing sync heartbeat — one small request, no extra scheduled task.
+
 ## [1.10.0] — 2026-08-02
 
 ### Added
