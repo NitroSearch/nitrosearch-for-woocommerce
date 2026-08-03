@@ -224,8 +224,21 @@ final class WidgetLoader
         // every shipped catalog, and the __() call triggers WordPress's
         // just-in-time textdomain load, so future language packs count too.
         $locale = determine_locale();
+
+        // The LOCALE always goes, even for English stores and for languages we have no
+        // catalog for. It is not only a translation switch: the search box formats
+        // prices with it, so withholding it left a US store's dollars and a British
+        // store's pounds formatted identically, and any store outside the shipped
+        // catalogs falling back to generic English number conventions. Sending it costs
+        // one short string and cannot make anything worse — a widget that does not
+        // recognise the locale falls back on its own.
+        $config['locale'] = str_replace('_', '-', $locale);
+
+        // The LABELS stay gated on the probe below. Sending untranslated English maps
+        // with, say, Russian plural selection would render "21 product found." The probe
+        // string is in every shipped catalog, and the __() call triggers WordPress's
+        // just-in-time textdomain load, so future language packs count too.
         if (strpos($locale, 'en') !== 0 && __('Search products…', 'nitrosearch') !== 'Search products…') {
-            $config['locale'] = str_replace('_', '-', $locale);
             $config['labels'] = self::widgetLabels();
         }
 

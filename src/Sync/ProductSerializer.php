@@ -2,6 +2,7 @@
 
 namespace NitroSearch\Sync;
 
+use NitroSearch\Support\Money;
 use NitroSearch\Support\Text;
 
 if (! defined('ABSPATH')) {
@@ -41,6 +42,13 @@ final class ProductSerializer
             'attributes'       => self::attributes($product),
             'price'            => self::minor($product->get_price()),
             'currency'         => get_woocommerce_currency(),
+            // How many decimal places the prices above were scaled by. The service and
+            // the shopper-facing search box both divide by THIS, not by whatever the
+            // currency normally implies — older versions of this plugin scaled every
+            // currency by 100, and reading those as true smallest-units would show a
+            // ¥1,000 product as ¥100,000. Stating it removes the guess entirely, and
+            // lets the two sides update in either order.
+            'price_exponent'   => Money::exponent(get_woocommerce_currency()),
             'in_stock'         => $product->is_in_stock(),
             'on_sale'          => $product->is_on_sale(),
             'visible'          => $searchable,
@@ -56,14 +64,16 @@ final class ProductSerializer
         return $data;
     }
 
-    /** Convert a decimal-string price to integer minor units, or null if empty. */
+    /**
+     * Convert a decimal-string price to a whole number of the currency's smallest
+     * unit, or null if no price is set.
+     *
+     * The currency matters: this multiplied by 100 for everything, which sent yen at a
+     * hundred times its value and Kuwaiti dinars at a tenth. See Support\Money.
+     */
     private static function minor(mixed $price): ?int
     {
-        if ($price === '' || $price === null) {
-            return null;
-        }
-
-        return (int) round(((float) $price) * 100);
+        return Money::toMinorUnits($price, get_woocommerce_currency());
     }
 
     private static function brand(\WC_Product $product): string
