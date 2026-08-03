@@ -127,7 +127,12 @@ final class Drain
 
                 if ($data === null) {
                     $op = 'delete';
-                    $data = ['id' => (int) $row->object_id];
+                    // State the type on deletes too. The service identifies an object by
+                    // type AND id, so a bare id is ambiguous the moment a store has two
+                    // objects numbered the same — which WordPress never does, but the
+                    // service also serves platforms that do. It costs one field and it
+                    // removes a guess.
+                    $data = ['id' => (int) $row->object_id, 'object_type' => $row->object_type];
                 } else {
                     // Always state the type, from the queue row that already knows it.
                     // The content serializer set it; the product one never did, so a
@@ -141,7 +146,9 @@ final class Drain
                     $data['object_type'] = $row->object_type;
                 }
             } else {
-                $data = ['id' => (int) $row->object_id];
+                // Same reasoning as above: the queue row already knows the type, so
+                // there is no reason to make the service infer it.
+                $data = ['id' => (int) $row->object_id, 'object_type' => $row->object_type];
             }
 
             $items[] = ['op' => $op, 'version' => (int) $row->version, 'data' => $data];
