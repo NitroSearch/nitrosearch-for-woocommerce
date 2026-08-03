@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.10.0
+Stable tag: 1.11.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,10 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.11.0 =
+* New: **the service can ask your store to send its catalogue again.** Products are sent as they change, and until now nothing could ask for them a second time. If an item could not be used when it arrived — one your store's data made unreadable, or one that would have taken you past your plan's limit — it simply never appeared in search, and nothing knew to try again. Now the service can ask, and your store answers on its own: it starts the same sync as the **Sync now** button, in the background, and confirms it. Each request is acted on once, so your store is never put through its catalogue twice for the same reason.
+* The plugin now checks in every few minutes instead of only when it is updated or when you press **Check status**. That means your plan, your product limit and your indexed count stay current on their own — previously a store could run for months showing figures that had since changed. It rides the sync schedule that already exists, so there is no extra background task and no extra load on your site.
+
 = 1.10.0 =
 * New: **your search connection now renews itself.** The plugin quietly refreshes its search credentials about once a day, so search keeps working even on stores whose settings screen is never opened. Previously the credentials were fetched once at setup and could eventually lapse on a long-untouched store.
 * Sturdier against bad replies: a malformed response from the service (for example, a hosting proxy interfering) can no longer clear a working search connection. If a reply looks wrong, the plugin keeps what it has and tries again the next day.
@@ -187,6 +191,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.11.0 =
+Your store can now be asked to re-send its catalogue when something did not make it into search, and it answers automatically. It also keeps your plan and product figures up to date on their own. No settings to change.
 
 = 1.9.0 =
 Now fully translated into Spanish, French, German, Italian, Dutch, Polish, and Portuguese (European and Brazilian) — the settings screens and the shopper-facing search box. English stores unchanged. Also corrects the listing's filter list.

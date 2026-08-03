@@ -5,23 +5,22 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
-## [Unreleased]
+## [1.11.0] — 2026-08-03
 
 ### Added
-- **The service can now ask your store to re-send its catalogue.** Products are
-  sent as they change, and until now nothing could ask for them again. If an item
+- **The service can ask your store to send its catalogue again.** Products are sent
+  as they change, and until now nothing could ask for them a second time. If an item
   could not be used when it arrived — one your store's data made unreadable, or one
   that would have taken you past your plan's limit — it simply never appeared in
-  search, and nothing on either side knew to try again. The service can now request
-  a fresh full sync, and the plugin acts on it automatically: it starts the same
-  chunked, resumable sync as the **Sync now** button, and confirms it. A request is
-  acted on exactly once, so a store is never put through its catalogue twice for the
-  same reason.
-- **The plugin now checks in periodically.** Previously it only asked the service
-  for its status when the plugin was updated or you pressed **Check status**, which
-  meant a store could run for months without noticing that its plan, its product
-  limit, or its indexed count had changed. It now checks every few minutes as part
-  of the existing sync heartbeat — one small request, no extra scheduled task.
+  search, and nothing knew to try again. Now the service can ask, and your store
+  answers on its own: it starts the same sync as the **Sync now** button, in the
+  background, and confirms it. Each request is acted on once, so your store is never
+  put through its catalogue twice for the same reason.
+- **The plugin now checks in every few minutes** instead of only when it is updated
+  or when you press **Check status**. That means your plan, your product limit and
+  your indexed count stay current on their own — previously a store could run for
+  months showing figures that had since changed. It rides the sync schedule that
+  already exists, so there is no extra background task and no extra load on your site.
 
 ## [1.10.0] — 2026-08-02
 
