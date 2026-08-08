@@ -1,0 +1,850 @@
+# Translation of NitroSearch for WooCommerce into Ukrainian (uk).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "Блискавичний хмарний пошук для WooCommerce. Синхронізує ваш каталог із NitroSearch і замінює типовий пошук WordPress миттєвими результатами, стійкими до одруків."
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch тепер вимірює, як працює пошук у вашому магазині</strong> — анонімні підрахунки пошуків і кліків за результатами, без файлів cookie та без ідентифікаторів покупців. Це допомагає покращувати ранжування результатів, а звіти для кожного магазину вже в планах."
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "Керуйте цим у розділі %s."
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → Зовнішній вигляд"
+
+
+msgid "Dismiss"
+msgstr "Приховати"
+
+
+msgid "Unauthorized."
+msgstr "Не авторизовано."
+
+
+msgid "Not connected"
+msgstr "Не під’єднано"
+
+
+msgid "Confirming control…"
+msgstr "Підтверджуємо контроль…"
+
+
+msgid "Connected & verified"
+msgstr "Під’єднано й перевірено"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "Пошук рівня Amazon для WooCommerce"
+
+
+msgid "Connect your store"
+msgstr "Під’єднайте свій магазин"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "Під’єднайте цей магазин до NitroSearch, щоб почати синхронізацію каталогу й отримати миттєвий пошук, стійкий до одруків. Ніщо не залишає ваш сайт, доки ви не натиснете «Під’єднати»."
+
+
+msgid "Provisioning token"
+msgstr "Токен під’єднання"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "Необов’язково. Потрібен, лише якщо вам видали токен для під’єднання цього магазину."
+
+
+msgid "Connect store"
+msgstr "Під’єднати магазин"
+
+
+msgid "Confirming control of your site…"
+msgstr "Підтверджуємо контроль над вашим сайтом…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "Ми перевіряємо, що ви контролюєте цей магазин, перш ніж будувати ваш пошуковий індекс. На робочому сайті це відбувається автоматично; якщо ваш сайт недоступний з наших серверів, це може забрати хвилину. Каталог синхронізується одразу після підтвердження."
+
+
+msgid "Check status"
+msgstr "Перевірити стан"
+
+
+msgid "Disconnect"
+msgstr "Від’єднати"
+
+
+msgid "Dashboard"
+msgstr "Майстерня"
+
+
+msgid "Design"
+msgstr "Дизайн"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "Ви досягли ліміту свого тарифного плану."
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "Пошук і далі працює для всього, що вже проіндексовано, але нові елементи не додаватимуться, доки ви не підвищите план. Ваші товари завжди в пріоритеті, тож якщо щось і затрималося, то це сторінка або запис. Відкрийте %s нижче, щоб перейти на більший план."
+
+
+msgid "Manage / Upgrade"
+msgstr "Керувати / Підвищити план"
+
+
+msgid "Sync health"
+msgstr "Стан синхронізації"
+
+
+msgid "Search results indexed"
+msgstr "Проіндексовано результатів пошуку"
+
+
+msgid "Unlimited"
+msgstr "Без обмежень"
+
+
+msgid "Pending changes"
+msgstr "Зміни в черзі"
+
+
+msgid "Last sync"
+msgstr "Остання синхронізація"
+
+
+msgid "Never"
+msgstr "Ніколи"
+
+
+msgid "Last error"
+msgstr "Остання помилка"
+
+
+msgid "Sync all products"
+msgstr "Синхронізувати всі товари"
+
+
+msgid "Refresh status"
+msgstr "Оновити стан"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "через %s"
+
+
+msgid "On demand"
+msgstr "За запитом"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "мс"
+
+
+msgid "Sync performance"
+msgstr "Продуктивність синхронізації"
+
+
+msgid "Avg sync speed"
+msgstr "Середня швидкість синхронізації"
+
+
+msgid "Last batch"
+msgstr "Останній пакет"
+
+
+msgid "Items synced"
+msgstr "Синхронізовано елементів"
+
+
+msgid "Batches sent"
+msgstr "Надіслано пакетів"
+
+
+msgid "Next sync"
+msgstr "Наступна синхронізація"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "Зміни у вашому каталозі групуються в пакети й надсилаються у фоновому режимі — ці цифри показують, як швидко вони потрапляють до вашого пошукового індексу."
+
+
+msgid "Search analytics"
+msgstr "Аналітика пошуку"
+
+
+msgid "last 30 days"
+msgstr "останні 30 днів"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "Не вдалося завантажити аналітику просто зараз — спроба повториться автоматично."
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "<strong>%1$s</strong> у вашому магазині за останні 30 днів. Дізнайтеся, що шукали покупці, на що вони клікали і що шукали, але не знайшли — доступно на кожному платному плані, від %2$s."
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s пошуковий запит"
+msgstr[1] "%s пошукові запити"
+msgstr[2] "%s пошукових запитів"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/міс."
+
+
+msgid "Upgrade to unlock"
+msgstr "Підвищіть план, щоб відкрити"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "Аналітика збирається, коли активний плагін версії 1.5.0+ — дані з’являються протягом кількох годин після того, як покупці почнуть шукати."
+
+
+msgid "Searches"
+msgstr "Пошукові запити"
+
+
+msgid "Zero-result rate"
+msgstr "Частка запитів без результатів"
+
+
+msgid "Click-through"
+msgstr "Клікабельність"
+
+
+msgid "Top searches"
+msgstr "Найпопулярніші запити"
+
+
+msgid "Searched, found nothing"
+msgstr "Шукали, але не знайшли"
+
+
+msgid "View full analytics →"
+msgstr "Переглянути повну аналітику →"
+
+
+msgid "Your plan & account"
+msgstr "Ваш план і обліковий запис"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "Цей магазин прив’язано до облікового запису NitroSearch. Керуйте своїм планом і оплатою з панелі керування NitroSearch."
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "Ви на плані <strong>Безкоштовний</strong>. Прив’яжіть цей магазин до облікового запису NitroSearch, щоб керувати ним або підвищити план — ваш індекс і пошук залишаться такими, як є."
+
+
+msgid "Roomy"
+msgstr "Просторий"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "Назви у два рядки та чітке зображення. Типовий варіант."
+
+
+msgid "Compact"
+msgstr "Компактний"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "Менші рядки — більше товарів видно без прокручування."
+
+
+msgid "Big pictures"
+msgstr "Великі зображення"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "Більші мініатюри для каталогів, де головне — зображення."
+
+
+msgid "Text only"
+msgstr "Лише текст"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "Без зображень — добре для запчастин, деталей і B2B."
+
+
+msgid "Light"
+msgstr "Світла"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "Біла панель. Пасує більшості тем."
+
+
+msgid "Dark"
+msgstr "Темна"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "Темна панель — для темних шапок і тем."
+
+
+msgid "Automatic"
+msgstr "Автоматично"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "Відповідає налаштуванню пристрою кожного покупця."
+
+
+msgid "Custom"
+msgstr "Власна"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "Виберіть власні кольори панелі й тексту нижче."
+
+
+msgid "Look"
+msgstr "Вигляд"
+
+
+msgid "Layout"
+msgstr "Макет"
+
+
+msgid "Products shown"
+msgstr "Кількість товарів"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "Скільки товарів з’являється в розкривному списку, поки покупець вводить запит."
+
+
+msgid "Filters"
+msgstr "Фільтри"
+
+
+msgid "Automatic (recommended)"
+msgstr "Автоматично (рекомендовано)"
+
+
+msgid "Always across the top"
+msgstr "Завжди вгорі"
+
+
+msgid "Hide in the drop-down"
+msgstr "Приховати в розкривному списку"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "Фільтри «В наявності», «Зі знижкою», за брендом і категорією. «Автоматично» розміщує їх у бічній колонці, коли є місце, і вгорі, коли місця немає."
+
+
+msgid "Drop-down width"
+msgstr "Ширина розкривного списку"
+
+
+msgid "Wide"
+msgstr "Широкий"
+
+
+msgid "Match my search box"
+msgstr "Як моє поле пошуку"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "«Автоматично» дає назвам товарів достатньо місця для читання, навіть якщо поле пошуку вашої теми вузьке. «Як моє поле пошуку» тримає список точно такої ширини, як саме поле."
+
+
+msgid "Colours"
+msgstr "Кольори"
+
+
+msgid "Colour scheme"
+msgstr "Кольорова схема"
+
+
+msgid "Accent colour"
+msgstr "Акцентний колір"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "Використовується для цін, підсвічування та вибраних фільтрів. Залиште порожнім, щоб застосувати типовий колір. Текст поверх нього автоматично стає чорним або білим — залежно від того, що краще читається."
+
+
+msgid "Panel background"
+msgstr "Фон панелі"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "Використовується, лише коли кольорову схему встановлено на «Власна»."
+
+
+msgid "Text colour"
+msgstr "Колір тексту"
+
+
+msgid "Corners"
+msgstr "Кути"
+
+
+msgid "Rounded"
+msgstr "Заокруглені"
+
+
+msgid "Slightly rounded"
+msgstr "Трохи заокруглені"
+
+
+msgid "Square"
+msgstr "Прямі"
+
+
+msgid "Text style"
+msgstr "Стиль тексту"
+
+
+msgid "Match my store"
+msgstr "Як у моєму магазині"
+
+
+msgid "System default"
+msgstr "Системний шрифт"
+
+
+msgid "Custom font"
+msgstr "Власний шрифт"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "«Як у моєму магазині» запозичує шрифт, який ваша тема вже використовує навколо поля пошуку."
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "напр. Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "Використовується, лише коли вибрано «Власний шрифт»."
+
+
+msgid "What to search"
+msgstr "Що шукати"
+
+
+msgid "Include"
+msgstr "Включати"
+
+
+msgid "Products"
+msgstr "Товари"
+
+
+msgid "always indexed"
+msgstr "індексуються завжди"
+
+
+msgid "Pages"
+msgstr "Сторінки"
+
+
+msgid "Blog posts"
+msgstr "Записи блогу"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "Сторінки й записи рахуються в той самий ліміт, що й ваші товари, тож їх вимкнення звільняє місце для каталогу. Ваші товари завжди на першому місці й ніколи ними не витісняються. Приватний, захищений паролем і неопублікований вміст ніколи не індексується, а ще ми поважаємо %s, встановлений через Yoast SEO або Rank Math (для окремого елемента, типу вмісту або всього сайту)."
+
+
+msgid "Search results page"
+msgstr "Сторінка результатів пошуку"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "Покращити сторінку результатів пошуку товарів результатами й фільтрами NitroSearch"
+
+
+msgid "Privacy &amp; credit"
+msgstr "Приватність і згадка"
+
+
+msgid "Search usage data"
+msgstr "Дані про використання пошуку"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "Ділитися з NitroSearch анонімними підрахунками використання пошуку"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Підраховує пошуки, кількість результатів і кліки за результатами в пошуку вашого магазину — анонімно й без файлів cookie, без ідентифікаторів покупців, без IP-адрес і без збереження будь-чого в браузері покупця. Використовується, щоб покращувати ранжування результатів і живити вашу аналітику пошуку. Зніміть позначку, щоб негайно припинити надсилання."
+
+
+msgid "Powered-by credit"
+msgstr "Згадка «Працює на NitroSearch»"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "Показувати невелику згадку «Працює на NitroSearch» з посиланням на nitrosearch.io"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Типово вимкнено, і вибір цілком за вами. Якщо ввімкнути, у полі пошуку з’явиться невелика згадка, а в підвалі сайту — один рядок, обидва з посиланням на %s — звичайним посиланням, без nofollow. Ніщо не додається на ваш сайт, доки ви не поставите цю позначку. Дякуємо, якщо поставите."
+
+
+msgid "Advanced"
+msgstr "Додатково"
+
+
+msgid "Search box selector"
+msgstr "Селектор поля пошуку"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "напр. input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "Необов’язковий CSS-селектор поля пошуку вашої теми. Залиште порожнім для автовизначення."
+
+
+msgid "Save design"
+msgstr "Зберегти дизайн"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "Не вдалося під’єднатися: %s"
+
+
+msgid "unknown error"
+msgstr "невідома помилка"
+
+
+msgid "Connected and verified."
+msgstr "Під’єднано й перевірено."
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "Під’єднано. Підтверджуємо контроль над вашим сайтом — це може тривати хвилину. Скористайтеся кнопкою «Перевірити стан» нижче, якщо стан не оновлюється."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "Синхронізуємо %s товар у фоновому режимі, потім ваші сторінки й записи."
+msgstr[1] "Синхронізуємо %s товари у фоновому режимі, потім ваші сторінки й записи."
+msgstr[2] "Синхронізуємо %s товарів у фоновому режимі, потім ваші сторінки й записи."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "Синхронізуємо %s товар у фоновому режимі."
+msgstr[1] "Синхронізуємо %s товари у фоновому режимі."
+msgstr[2] "Синхронізуємо %s товарів у фоновому режимі."
+
+
+msgid "Verified!"
+msgstr "Перевірено!"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "Проіндексовано результатів пошуку: %1$s · у черзі: %2$s."
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "Усе ще підтверджуємо контроль над вашим сайтом — спробуйте ще раз за мить."
+
+
+msgid "Design saved."
+msgstr "Дизайн збережено."
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "Збережено. Вилучаємо ваші сторінки та записи блогу з індексу у фоновому режимі."
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "Збережено. Вилучаємо ваші сторінки з індексу у фоновому режимі."
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "Збережено. Вилучаємо ваші записи блогу з індексу у фоновому режимі."
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "Збережено. Індексуємо ваші сторінки та записи блогу у фоновому режимі."
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "Збережено. Індексуємо ваші сторінки у фоновому режимі."
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "Збережено. Індексуємо ваші записи блогу у фоновому режимі."
+
+
+msgid "Disconnected."
+msgstr "Від’єднано."
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "Цей магазин уже прив’язано до облікового запису NitroSearch."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "Ми ще не змогли підтвердити контроль над вашим сайтом — спочатку натисніть «Оновити стан», а потім спробуйте ще раз."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "Ваш сайт потребує повторної перевірки — натисніть «Оновити стан», а потім спробуйте ще раз."
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "Забагато спроб — зачекайте хвилину та спробуйте ще раз."
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "Не вдалося створити посилання для керування. Спробуйте ще раз."
+
+
+msgid "Insufficient permissions."
+msgstr "Недостатньо прав."
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "Пошук працює на %s"
+
+
+msgid "Refine results"
+msgstr "Уточнити результати"
+
+
+msgid "Refine"
+msgstr "Уточнити"
+
+
+msgid "In stock"
+msgstr "В наявності"
+
+
+msgid "On sale"
+msgstr "Зі знижкою"
+
+
+msgid "Brand"
+msgstr "Бренд"
+
+
+msgid "Category"
+msgstr "Категорія"
+
+
+msgid "View"
+msgstr "Переглянути"
+
+
+msgid "Add to cart"
+msgstr "Додати в кошик"
+
+
+msgid "Adding…"
+msgstr "Додаємо…"
+
+
+msgid "Added ✓"
+msgstr "Додано ✓"
+
+
+msgid "Try again"
+msgstr "Спробувати ще раз"
+
+
+msgid "Searching…"
+msgstr "Шукаємо…"
+
+
+msgid "Search is unavailable."
+msgstr "Пошук недоступний."
+
+
+msgid "Search is unavailable right now."
+msgstr "Пошук зараз недоступний."
+
+
+msgid "No products found."
+msgstr "Товарів не знайдено."
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "За запитом «%s» товарів не знайдено."
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "За запитом «%s» нічого не знайдено."
+
+
+msgid "Search products…"
+msgstr "Шукати товари…"
+
+
+msgid "Close search"
+msgstr "Закрити пошук"
+
+
+msgid "Product results"
+msgstr "Знайдені товари"
+
+
+msgid "Recent searches"
+msgstr "Нещодавні запити"
+
+
+msgid "Clear"
+msgstr "Очистити"
+
+
+msgid "Start typing to search products…"
+msgstr "Почніть вводити, щоб шукати товари…"
+
+
+msgid "Sale"
+msgstr "Розпродаж"
+
+
+msgid "Out of stock"
+msgstr "Немає в наявності"
+
+
+msgid "Pages & posts"
+msgstr "Сторінки й записи"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "Сторінка"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "Стаття"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s мс"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "Працює на %s"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "Сторінка %1$s з %2$s"
+
+
+msgid "← Prev"
+msgstr "← Назад"
+
+
+msgid "Next →"
+msgstr "Далі →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "Пошук"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "Знайдено %s товар."
+msgstr[1] "Знайдено %s товари."
+msgstr[2] "Знайдено %s товарів."
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "Переглянути %s результат →"
+msgstr[1] "Переглянути всі %s результати →"
+msgstr[2] "Переглянути всі %s результатів →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "%1$s результат за запитом «%2$s»"
+msgstr[1] "%1$s результати за запитом «%2$s»"
+msgstr[2] "%1$s результатів за запитом «%2$s»"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s результат"
+msgstr[1] "%s результати"
+msgstr[2] "%s результатів"

@@ -1,0 +1,850 @@
+# Translation of NitroSearch for WooCommerce into Czech (cs_CZ).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Czech\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "Bleskově rychlé hostované vyhledávání pro WooCommerce. Synchronizuje váš katalog do NitroSearch a nahrazuje výchozí vyhledávání WordPressu okamžitými výsledky odolnými vůči překlepům."
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch nyní měří, jak si vede vyhledávání ve vašem obchodě</strong> — anonymní počty vyhledávání a kliknutí na výsledky, bez cookies a bez identifikátorů zákazníků. Pomáhá to zlepšovat řazení výsledků a přehledy pro jednotlivé obchody máme v plánu."
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "Spravovat to můžete v %s."
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → Vzhled"
+
+
+msgid "Dismiss"
+msgstr "Skrýt"
+
+
+msgid "Unauthorized."
+msgstr "Neoprávněný přístup."
+
+
+msgid "Not connected"
+msgstr "Nepřipojeno"
+
+
+msgid "Confirming control…"
+msgstr "Ověřujeme kontrolu…"
+
+
+msgid "Connected & verified"
+msgstr "Připojeno a ověřeno"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "Vyhledávání pro WooCommerce v kvalitě Amazonu"
+
+
+msgid "Connect your store"
+msgstr "Připojte svůj obchod"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "Připojte tento obchod ke službě NitroSearch a začněte synchronizovat svůj katalog a nabízet okamžité vyhledávání odolné vůči překlepům. Dokud nekliknete na Připojit, váš web nic neodesílá."
+
+
+msgid "Provisioning token"
+msgstr "Zřizovací token"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "Volitelné. Potřeba jen v případě, že jste k připojení tohoto obchodu dostali token."
+
+
+msgid "Connect store"
+msgstr "Připojit obchod"
+
+
+msgid "Confirming control of your site…"
+msgstr "Ověřujeme kontrolu nad vaším webem…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "Před sestavením vyhledávacího indexu ověřujeme, že tento obchod skutečně spravujete. V produkčním prostředí je to automatické; pokud váš web není z našich serverů dostupný, může to chvíli trvat. Jakmile je kontrola potvrzena, katalog se začne synchronizovat."
+
+
+msgid "Check status"
+msgstr "Zkontrolovat stav"
+
+
+msgid "Disconnect"
+msgstr "Odpojit"
+
+
+msgid "Dashboard"
+msgstr "Nástěnka"
+
+
+msgid "Design"
+msgstr "Design"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "Dosáhli jste limitu svého tarifu."
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "Vyhledávání dál běží pro vše, co už je zaindexované, ale nové položky se nepřidají, dokud nepřejdete na vyšší tarif. Vaše produkty mají vždy přednost, takže pozdržená položka je vždy jen stránka nebo příspěvek. Na větší tarif přejdete přes %s níže."
+
+
+msgid "Manage / Upgrade"
+msgstr "Spravovat / Upgradovat"
+
+
+msgid "Sync health"
+msgstr "Stav synchronizace"
+
+
+msgid "Search results indexed"
+msgstr "Zaindexované výsledky vyhledávání"
+
+
+msgid "Unlimited"
+msgstr "Neomezeno"
+
+
+msgid "Pending changes"
+msgstr "Čekající změny"
+
+
+msgid "Last sync"
+msgstr "Poslední synchronizace"
+
+
+msgid "Never"
+msgstr "Nikdy"
+
+
+msgid "Last error"
+msgstr "Poslední chyba"
+
+
+msgid "Sync all products"
+msgstr "Synchronizovat všechny produkty"
+
+
+msgid "Refresh status"
+msgstr "Obnovit stav"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "za %s"
+
+
+msgid "On demand"
+msgstr "Na vyžádání"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "ms"
+
+
+msgid "Sync performance"
+msgstr "Výkon synchronizace"
+
+
+msgid "Avg sync speed"
+msgstr "Průměrná rychlost synchronizace"
+
+
+msgid "Last batch"
+msgstr "Poslední dávka"
+
+
+msgid "Items synced"
+msgstr "Synchronizované položky"
+
+
+msgid "Batches sent"
+msgstr "Odeslané dávky"
+
+
+msgid "Next sync"
+msgstr "Další synchronizace"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "Změny v katalogu se sdružují do dávek a odesílají na pozadí — tato čísla ukazují, jak rychle se dostanou do vašeho vyhledávacího indexu."
+
+
+msgid "Search analytics"
+msgstr "Analytika vyhledávání"
+
+
+msgid "last 30 days"
+msgstr "posledních 30 dní"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "Analytiku se teď nepodařilo načíst — pokus se automaticky zopakuje."
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "<strong>%1$s</strong> ve vašem obchodě za posledních 30 dní. Podívejte se, co zákazníci hledali, na co klikali a co hledali a nenašli — součást každého placeného tarifu už od %2$s."
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s vyhledávání"
+msgstr[1] "%s vyhledávání"
+msgstr[2] "%s vyhledávání"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/měs."
+
+
+msgid "Upgrade to unlock"
+msgstr "Odemkněte vyšším tarifem"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "Analytika začíná sbírat data s aktivním pluginem verze 1.5.0 nebo novější — údaje se objeví do několika hodin poté, co zákazníci začnou vyhledávat."
+
+
+msgid "Searches"
+msgstr "Vyhledávání"
+
+
+msgid "Zero-result rate"
+msgstr "Podíl vyhledávání bez výsledků"
+
+
+msgid "Click-through"
+msgstr "Míra prokliku"
+
+
+msgid "Top searches"
+msgstr "Nejčastější vyhledávání"
+
+
+msgid "Searched, found nothing"
+msgstr "Hledali a nenašli"
+
+
+msgid "View full analytics →"
+msgstr "Zobrazit kompletní analytiku →"
+
+
+msgid "Your plan & account"
+msgstr "Váš tarif a účet"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "Tento obchod je přiřazen k účtu NitroSearch. Tarif a fakturaci spravujete ze své nástěnky NitroSearch."
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "Používáte <strong>bezplatný</strong> tarif. Přiřaďte tento obchod k účtu NitroSearch, abyste jej mohli spravovat nebo přejít na vyšší tarif — váš index i vyhledávání zůstanou přesně tak, jak jsou."
+
+
+msgid "Roomy"
+msgstr "Vzdušný"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "Názvy na dva řádky a přehledný obrázek. Výchozí volba."
+
+
+msgid "Compact"
+msgstr "Kompaktní"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "Menší řádky, takže se bez posouvání vejde více produktů."
+
+
+msgid "Big pictures"
+msgstr "Velké obrázky"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "Větší náhledy pro katalogy postavené na obrázcích."
+
+
+msgid "Text only"
+msgstr "Pouze text"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "Bez obrázků — vhodné pro náhradní díly, součástky a B2B."
+
+
+msgid "Light"
+msgstr "Světlý"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "Bílý panel. Hodí se k většině šablon."
+
+
+msgid "Dark"
+msgstr "Tmavý"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "Tmavý panel pro tmavá záhlaví a šablony."
+
+
+msgid "Automatic"
+msgstr "Automaticky"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "Řídí se nastavením zařízení každého zákazníka."
+
+
+msgid "Custom"
+msgstr "Vlastní"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "Níže si zvolte vlastní barvy panelu a textu."
+
+
+msgid "Look"
+msgstr "Styl"
+
+
+msgid "Layout"
+msgstr "Rozvržení"
+
+
+msgid "Products shown"
+msgstr "Počet zobrazených produktů"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "Kolik produktů se v našeptávači zobrazí, když zákazník píše."
+
+
+msgid "Filters"
+msgstr "Filtry"
+
+
+msgid "Automatic (recommended)"
+msgstr "Automaticky (doporučeno)"
+
+
+msgid "Always across the top"
+msgstr "Vždy nahoře"
+
+
+msgid "Hide in the drop-down"
+msgstr "Skrýt v našeptávači"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "Filtry podle dostupnosti skladem, slevy, značky a kategorie. Volba Automaticky je umístí do bočního sloupce, když je dost místa, a nahoru přes celou šířku, když není."
+
+
+msgid "Drop-down width"
+msgstr "Šířka našeptávače"
+
+
+msgid "Wide"
+msgstr "Široký"
+
+
+msgid "Match my search box"
+msgstr "Podle mého vyhledávacího pole"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "Volba Automaticky dává názvům produktů dost místa, i když je vyhledávací pole vaší šablony úzké. Volba Podle mého vyhledávacího pole ponechá našeptávač přesně tak široký jako pole."
+
+
+msgid "Colours"
+msgstr "Barvy"
+
+
+msgid "Colour scheme"
+msgstr "Barevné schéma"
+
+
+msgid "Accent colour"
+msgstr "Barva zvýraznění"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "Používá se pro ceny, zvýraznění a vybrané filtry. Pro výchozí barvu ponechte prázdné. Text na ní se automaticky nastaví na černou, nebo bílou — podle toho, která zůstane čitelná."
+
+
+msgid "Panel background"
+msgstr "Pozadí panelu"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "Použije se jen tehdy, když je barevné schéma nastaveno na Vlastní."
+
+
+msgid "Text colour"
+msgstr "Barva textu"
+
+
+msgid "Corners"
+msgstr "Rohy"
+
+
+msgid "Rounded"
+msgstr "Zaoblené"
+
+
+msgid "Slightly rounded"
+msgstr "Mírně zaoblené"
+
+
+msgid "Square"
+msgstr "Hranaté"
+
+
+msgid "Text style"
+msgstr "Styl písma"
+
+
+msgid "Match my store"
+msgstr "Podle mého obchodu"
+
+
+msgid "System default"
+msgstr "Systémové písmo"
+
+
+msgid "Custom font"
+msgstr "Vlastní písmo"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "Volba Podle mého obchodu převezme písmo, které vaše šablona už používá v okolí vyhledávacího pole."
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "např. Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "Použije se jen tehdy, když je vybráno Vlastní písmo."
+
+
+msgid "What to search"
+msgstr "Co prohledávat"
+
+
+msgid "Include"
+msgstr "Zahrnout"
+
+
+msgid "Products"
+msgstr "Produkty"
+
+
+msgid "always indexed"
+msgstr "indexují se vždy"
+
+
+msgid "Pages"
+msgstr "Stránky"
+
+
+msgid "Blog posts"
+msgstr "Příspěvky na blogu"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "Stránky a příspěvky se počítají do stejného limitu jako vaše produkty, takže jejich vypnutím limit uvolníte pro svůj katalog. Vaše produkty jsou vždy na prvním místě a stránky ani příspěvky je nikdy nevytlačí. Soukromý, heslem chráněný a nepublikovaný obsah se nikdy neindexuje a respektujeme %s nastavené přes Yoast SEO nebo Rank Math (u jednotlivé položky, typu obsahu i pro celý web)."
+
+
+msgid "Search results page"
+msgstr "Stránka výsledků vyhledávání"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "Vylepšit stránku výsledků vyhledávání produktů o výsledky a filtry NitroSearch"
+
+
+msgid "Privacy &amp; credit"
+msgstr "Soukromí a zmínka o NitroSearch"
+
+
+msgid "Search usage data"
+msgstr "Údaje o používání vyhledávání"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "Sdílet s NitroSearch anonymní počty použití vyhledávání"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Počítá vyhledávání, počty výsledků a kliknutí na výsledky ve vyhledávání vašeho obchodu — bez cookies a anonymně, bez identifikátorů zákazníků, bez IP adres a bez ukládání čehokoli v prohlížeči zákazníka. Slouží ke zlepšování řazení výsledků a jako podklad pro vaši analytiku vyhledávání. Odškrtnutím pole odesílání okamžitě zastavíte."
+
+
+msgid "Powered-by credit"
+msgstr "Zmínka „Používá NitroSearch“"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "Zobrazit drobnou zmínku „Používá NitroSearch“ s odkazem na nitrosearch.io"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Ve výchozím stavu vypnuto a je to zcela na vás. Po zapnutí přibude drobná zmínka ve vyhledávacím poli a jeden řádek v patičce webu, obojí s běžným, sledovaným odkazem na %s. Dokud toto pole nezaškrtnete, na váš web se nic nepřidá. A pokud je zaškrtnete, děkujeme."
+
+
+msgid "Advanced"
+msgstr "Pokročilé"
+
+
+msgid "Search box selector"
+msgstr "Selektor vyhledávacího pole"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "např. input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "Volitelný CSS selektor vyhledávacího pole vaší šablony. Pro automatickou detekci ponechte prázdné."
+
+
+msgid "Save design"
+msgstr "Uložit design"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "Připojení se nezdařilo: %s"
+
+
+msgid "unknown error"
+msgstr "neznámá chyba"
+
+
+msgid "Connected and verified."
+msgstr "Připojeno a ověřeno."
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "Připojeno. Ověřujeme kontrolu nad vaším webem — může to chvíli trvat. Pokud se stav neaktualizuje, použijte níže „Zkontrolovat stav“."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "Na pozadí se synchronizuje %s produkt, poté vaše stránky a příspěvky."
+msgstr[1] "Na pozadí se synchronizují %s produkty, poté vaše stránky a příspěvky."
+msgstr[2] "Na pozadí se synchronizuje %s produktů, poté vaše stránky a příspěvky."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "Na pozadí se synchronizuje %s produkt."
+msgstr[1] "Na pozadí se synchronizují %s produkty."
+msgstr[2] "Na pozadí se synchronizuje %s produktů."
+
+
+msgid "Verified!"
+msgstr "Ověřeno!"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "Zaindexované výsledky vyhledávání: %1$s · čekající změny: %2$s."
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "Stále ověřujeme kontrolu nad vaším webem — zkuste to prosím za chvíli znovu."
+
+
+msgid "Design saved."
+msgstr "Design uložen."
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "Uloženo. Vaše stránky a příspěvky na blogu se na pozadí odebírají z indexu."
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "Uloženo. Vaše stránky se na pozadí odebírají z indexu."
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "Uloženo. Vaše příspěvky na blogu se na pozadí odebírají z indexu."
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "Uloženo. Vaše stránky a příspěvky na blogu se na pozadí indexují."
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "Uloženo. Vaše stránky se na pozadí indexují."
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "Uloženo. Vaše příspěvky na blogu se na pozadí indexují."
+
+
+msgid "Disconnected."
+msgstr "Odpojeno."
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "Tento obchod už je přiřazen k účtu NitroSearch."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "Kontrolu nad vaším webem se zatím nepodařilo ověřit — klikněte nejprve na „Obnovit stav“ a pak to zkuste znovu."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "Váš web je potřeba znovu prověřit — klikněte na „Obnovit stav“ a pak to zkuste znovu."
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "Příliš mnoho pokusů — počkejte prosím minutu a zkuste to znovu."
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "Odkaz pro správu se nepodařilo vytvořit. Zkuste to prosím znovu."
+
+
+msgid "Insufficient permissions."
+msgstr "Nedostatečná oprávnění."
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "Vyhledávání zajišťuje %s"
+
+
+msgid "Refine results"
+msgstr "Upřesnit výsledky"
+
+
+msgid "Refine"
+msgstr "Upřesnit"
+
+
+msgid "In stock"
+msgstr "Skladem"
+
+
+msgid "On sale"
+msgstr "Ve slevě"
+
+
+msgid "Brand"
+msgstr "Značka"
+
+
+msgid "Category"
+msgstr "Kategorie"
+
+
+msgid "View"
+msgstr "Zobrazit"
+
+
+msgid "Add to cart"
+msgstr "Přidat do košíku"
+
+
+msgid "Adding…"
+msgstr "Přidávání…"
+
+
+msgid "Added ✓"
+msgstr "Přidáno ✓"
+
+
+msgid "Try again"
+msgstr "Zkusit znovu"
+
+
+msgid "Searching…"
+msgstr "Vyhledávání…"
+
+
+msgid "Search is unavailable."
+msgstr "Vyhledávání není k dispozici."
+
+
+msgid "Search is unavailable right now."
+msgstr "Vyhledávání teď není k dispozici."
+
+
+msgid "No products found."
+msgstr "Nebyly nalezeny žádné produkty."
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "Pro „%s“ nebyly nalezeny žádné produkty."
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "Pro „%s“ nebylo nic nalezeno."
+
+
+msgid "Search products…"
+msgstr "Hledat produkty…"
+
+
+msgid "Close search"
+msgstr "Zavřít vyhledávání"
+
+
+msgid "Product results"
+msgstr "Nalezené produkty"
+
+
+msgid "Recent searches"
+msgstr "Nedávno hledané"
+
+
+msgid "Clear"
+msgstr "Vymazat"
+
+
+msgid "Start typing to search products…"
+msgstr "Začněte psát a vyhledejte produkty…"
+
+
+msgid "Sale"
+msgstr "Sleva"
+
+
+msgid "Out of stock"
+msgstr "Není skladem"
+
+
+msgid "Pages & posts"
+msgstr "Stránky a příspěvky"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "Stránka"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "Článek"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s ms"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "Používá %s"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "Stránka %1$s z %2$s"
+
+
+msgid "← Prev"
+msgstr "← Předchozí"
+
+
+msgid "Next →"
+msgstr "Další →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "Hledat"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "Nalezen %s produkt."
+msgstr[1] "Nalezeny %s produkty."
+msgstr[2] "Nalezeno %s produktů."
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "Zobrazit %s výsledek →"
+msgstr[1] "Zobrazit všechny %s výsledky →"
+msgstr[2] "Zobrazit všech %s výsledků →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "%1$s výsledek pro „%2$s“"
+msgstr[1] "%1$s výsledky pro „%2$s“"
+msgstr[2] "%1$s výsledků pro „%2$s“"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s výsledek"
+msgstr[1] "%s výsledky"
+msgstr[2] "%s výsledků"

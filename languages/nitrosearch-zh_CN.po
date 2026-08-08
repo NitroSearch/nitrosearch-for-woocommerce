@@ -1,0 +1,836 @@
+# Translation of NitroSearch for WooCommerce into Chinese (China) (zh_CN).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "为 WooCommerce 打造的极速托管搜索。将您的商品目录同步到 NitroSearch，并以即时、拼写容错的搜索结果取代默认的 WordPress 搜索。"
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch 现在会统计您商店的搜索表现</strong>——匿名、无 Cookie 的搜索次数与结果点击统计，不含任何顾客身份信息。它有助于改进结果排序，商店级报表功能也已列入开发计划。"
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "您可以在%s中进行管理。"
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → 外观"
+
+
+msgid "Dismiss"
+msgstr "忽略"
+
+
+msgid "Unauthorized."
+msgstr "未经授权。"
+
+
+msgid "Not connected"
+msgstr "未连接"
+
+
+msgid "Confirming control…"
+msgstr "正在确认控制权…"
+
+
+msgid "Connected & verified"
+msgstr "已连接并验证"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "为 WooCommerce 带来媲美 Amazon 品质的搜索"
+
+
+msgid "Connect your store"
+msgstr "连接您的商店"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "将此商店连接到 NitroSearch，即可开始同步商品目录并提供即时、拼写容错的搜索。在您点击“连接商店”之前，任何数据都不会离开您的站点。"
+
+
+msgid "Provisioning token"
+msgstr "配置令牌"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "可选。仅当您获得了用于连接此商店的令牌时才需要填写。"
+
+
+msgid "Connect store"
+msgstr "连接商店"
+
+
+msgid "Confirming control of your site…"
+msgstr "正在确认您对站点的控制权…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "在构建搜索索引之前，我们会先验证您对这家商店的控制权。在正式环境中这一步是自动完成的；如果我们的服务器无法访问您的站点，可能需要稍等片刻。确认完成后，您的商品目录会立即开始同步。"
+
+
+msgid "Check status"
+msgstr "检查状态"
+
+
+msgid "Disconnect"
+msgstr "断开连接"
+
+
+msgid "Dashboard"
+msgstr "仪表盘"
+
+
+msgid "Design"
+msgstr "设计"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "您已达到套餐限额。"
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "已索引的内容仍可正常搜索，但在升级之前不会再添加新内容。您的商品始终优先，因此被暂缓的只会是页面或文章。点击下方的%s即可升级到更大的套餐。"
+
+
+msgid "Manage / Upgrade"
+msgstr "管理/升级"
+
+
+msgid "Sync health"
+msgstr "同步状况"
+
+
+msgid "Search results indexed"
+msgstr "已索引的搜索结果"
+
+
+msgid "Unlimited"
+msgstr "无限制"
+
+
+msgid "Pending changes"
+msgstr "待同步更改"
+
+
+msgid "Last sync"
+msgstr "上次同步"
+
+
+msgid "Never"
+msgstr "从未"
+
+
+msgid "Last error"
+msgstr "最近错误"
+
+
+msgid "Sync all products"
+msgstr "同步所有商品"
+
+
+msgid "Refresh status"
+msgstr "刷新状态"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "%s后"
+
+
+msgid "On demand"
+msgstr "按需"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "毫秒"
+
+
+msgid "Sync performance"
+msgstr "同步性能"
+
+
+msgid "Avg sync speed"
+msgstr "平均同步速度"
+
+
+msgid "Last batch"
+msgstr "最近批次"
+
+
+msgid "Items synced"
+msgstr "已同步条目"
+
+
+msgid "Batches sent"
+msgstr "已发送批次"
+
+
+msgid "Next sync"
+msgstr "下次同步"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "商品目录的更改会分批在后台推送——这些数据显示更改到达搜索索引的速度。"
+
+
+msgid "Search analytics"
+msgstr "搜索分析"
+
+
+msgid "last 30 days"
+msgstr "最近 30 天"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "暂时无法加载分析数据——稍后会自动重试。"
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "最近 30 天内，您的商店共产生<strong>%1$s</strong>。查看顾客搜索了什么、点击了什么，以及搜索后未能找到的内容——所有付费套餐均包含此功能，%2$s起。"
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s次搜索"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/月"
+
+
+msgid "Upgrade to unlock"
+msgstr "升级解锁"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "启用插件 1.5.0 及以上版本后才会开始收集分析数据——顾客搜索后数小时内即会显示。"
+
+
+msgid "Searches"
+msgstr "搜索次数"
+
+
+msgid "Zero-result rate"
+msgstr "零结果率"
+
+
+msgid "Click-through"
+msgstr "点击率"
+
+
+msgid "Top searches"
+msgstr "热门搜索"
+
+
+msgid "Searched, found nothing"
+msgstr "搜索后无结果"
+
+
+msgid "View full analytics →"
+msgstr "查看完整分析 →"
+
+
+msgid "Your plan & account"
+msgstr "您的套餐与账户"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "此商店已绑定到一个 NitroSearch 账户。请在您的 NitroSearch 仪表盘中管理套餐和账单。"
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "您目前使用的是<strong>免费</strong>套餐。将此商店绑定到 NitroSearch 账户即可管理或升级——您的索引和搜索会保持原样，不受影响。"
+
+
+msgid "Roomy"
+msgstr "宽松"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "两行商品名称，搭配清晰的图片。默认布局。"
+
+
+msgid "Compact"
+msgstr "紧凑"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "行距更小，无需滚动即可看到更多商品。"
+
+
+msgid "Big pictures"
+msgstr "大图"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "更大的缩略图，适合以图片为主的商品目录。"
+
+
+msgid "Text only"
+msgstr "纯文本"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "不显示图片——适合备件、配件和 B2B 场景。"
+
+
+msgid "Light"
+msgstr "浅色"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "白色面板，适合大多数主题。"
+
+
+msgid "Dark"
+msgstr "深色"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "深色面板，适合深色页眉和主题。"
+
+
+msgid "Automatic"
+msgstr "自动"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "跟随每位顾客设备自身的设置。"
+
+
+msgid "Custom"
+msgstr "自定义"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "在下方自选面板和文字颜色。"
+
+
+msgid "Look"
+msgstr "样式"
+
+
+msgid "Layout"
+msgstr "布局"
+
+
+msgid "Products shown"
+msgstr "显示商品数量"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "顾客输入时，下拉框中显示的商品数量。"
+
+
+msgid "Filters"
+msgstr "筛选器"
+
+
+msgid "Automatic (recommended)"
+msgstr "自动（推荐）"
+
+
+msgid "Always across the top"
+msgstr "始终横排在顶部"
+
+
+msgid "Hide in the drop-down"
+msgstr "在下拉框中隐藏"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "有货、促销、品牌和分类筛选器。选择“自动”时，空间充足就显示在侧栏，空间不足则横排在顶部。"
+
+
+msgid "Drop-down width"
+msgstr "下拉框宽度"
+
+
+msgid "Wide"
+msgstr "宽"
+
+
+msgid "Match my search box"
+msgstr "与我的搜索框一致"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "“自动”会给商品名称留出足够的阅读空间，即使您主题的搜索框较窄。“与我的搜索框一致”则让下拉框与搜索框保持完全同宽。"
+
+
+msgid "Colours"
+msgstr "颜色"
+
+
+msgid "Colour scheme"
+msgstr "配色方案"
+
+
+msgid "Accent colour"
+msgstr "强调色"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "用于价格、高亮和已选中的筛选器。留空即使用默认值。其上的文字会自动设为黑色或白色，以保持清晰可读为准。"
+
+
+msgid "Panel background"
+msgstr "面板背景"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "仅在配色方案设为“自定义”时使用。"
+
+
+msgid "Text colour"
+msgstr "文字颜色"
+
+
+msgid "Corners"
+msgstr "边角"
+
+
+msgid "Rounded"
+msgstr "圆角"
+
+
+msgid "Slightly rounded"
+msgstr "微圆角"
+
+
+msgid "Square"
+msgstr "直角"
+
+
+msgid "Text style"
+msgstr "文字样式"
+
+
+msgid "Match my store"
+msgstr "与我的商店一致"
+
+
+msgid "System default"
+msgstr "系统默认"
+
+
+msgid "Custom font"
+msgstr "自定义字体"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "“与我的商店一致”会借用您的主题在搜索框周围已经使用的字体。"
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "例如：Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "仅在选择“自定义字体”时使用。"
+
+
+msgid "What to search"
+msgstr "搜索范围"
+
+
+msgid "Include"
+msgstr "包含"
+
+
+msgid "Products"
+msgstr "商品"
+
+
+msgid "always indexed"
+msgstr "始终编入索引"
+
+
+msgid "Pages"
+msgstr "页面"
+
+
+msgid "Blog posts"
+msgstr "博客文章"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "页面和文章与商品共用同一份额度，因此关闭它们可以把额度腾给您的商品目录。您的商品始终优先，绝不会被它们挤占。私密、受密码保护和未发布的内容一律不会被索引，我们也会遵循 Yoast SEO 或 Rank Math 设置的%s（无论是针对单个条目、某类内容还是全站）。"
+
+
+msgid "Search results page"
+msgstr "搜索结果页面"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "用 NitroSearch 的结果和筛选器增强商品搜索结果页面"
+
+
+msgid "Privacy &amp; credit"
+msgstr "隐私与署名"
+
+
+msgid "Search usage data"
+msgstr "搜索使用数据"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "与 NitroSearch 共享匿名搜索使用统计"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "统计您商店搜索功能的搜索次数、结果总数和结果点击——无 Cookie 且完全匿名，不含顾客身份信息、不含 IP 地址，也不在顾客浏览器中存储任何内容。这些数据用于改进结果排序，并为您的搜索分析提供支持。取消勾选即会立即停止发送。"
+
+
+msgid "Powered-by credit"
+msgstr "技术支持署名"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "显示一处小小的“由 NitroSearch 提供技术支持”署名，链接到 nitrosearch.io"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "默认关闭，是否开启完全由您决定。开启后，会在搜索框中添加一处小署名，并在站点页脚添加一行文字，均链接到%s——一个正常的、不带 nofollow 的链接。除非您勾选此项，否则不会向您的站点添加任何内容。若您愿意开启，我们深表感谢。"
+
+
+msgid "Advanced"
+msgstr "高级"
+
+
+msgid "Search box selector"
+msgstr "搜索框选择器"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "例如：input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "可选的 CSS 选择器，用于指定主题的搜索输入框。留空则自动检测。"
+
+
+msgid "Save design"
+msgstr "保存设计"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "连接失败：%s"
+
+
+msgid "unknown error"
+msgstr "未知错误"
+
+
+msgid "Connected and verified."
+msgstr "已连接并完成验证。"
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "已连接。正在确认您对站点的控制权——这可能需要片刻。如果状态没有更新，请使用下方的“检查状态”。"
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "正在后台同步%s个商品，随后将同步您的页面和文章。"
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "正在后台同步%s个商品。"
+
+
+msgid "Verified!"
+msgstr "验证成功！"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "已索引%1$s条搜索结果 · %2$s条待同步。"
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "仍在确认您对站点的控制权——请稍后再试。"
+
+
+msgid "Design saved."
+msgstr "设计已保存。"
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "已保存。正在后台从索引中移除您的页面和博客文章。"
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "已保存。正在后台从索引中移除您的页面。"
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "已保存。正在后台从索引中移除您的博客文章。"
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "已保存。正在后台为您的页面和博客文章建立索引。"
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "已保存。正在后台为您的页面建立索引。"
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "已保存。正在后台为您的博客文章建立索引。"
+
+
+msgid "Disconnected."
+msgstr "已断开连接。"
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "此商店已绑定到一个 NitroSearch 账户。"
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "尚未能确认您对站点的控制权——请先点击“刷新状态”，然后重试。"
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "您的站点需要重新检查——请点击“刷新状态”，然后重试。"
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "尝试次数过多——请等待一分钟后再试。"
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "无法创建管理链接。请重试。"
+
+
+msgid "Insufficient permissions."
+msgstr "权限不足。"
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "搜索由%s提供技术支持"
+
+
+msgid "Refine results"
+msgstr "筛选结果"
+
+
+msgid "Refine"
+msgstr "筛选"
+
+
+msgid "In stock"
+msgstr "有货"
+
+
+msgid "On sale"
+msgstr "促销"
+
+
+msgid "Brand"
+msgstr "品牌"
+
+
+msgid "Category"
+msgstr "分类"
+
+
+msgid "View"
+msgstr "查看"
+
+
+msgid "Add to cart"
+msgstr "加入购物车"
+
+
+msgid "Adding…"
+msgstr "正在加入…"
+
+
+msgid "Added ✓"
+msgstr "已加入 ✓"
+
+
+msgid "Try again"
+msgstr "重试"
+
+
+msgid "Searching…"
+msgstr "正在搜索…"
+
+
+msgid "Search is unavailable."
+msgstr "搜索不可用。"
+
+
+msgid "Search is unavailable right now."
+msgstr "搜索目前不可用。"
+
+
+msgid "No products found."
+msgstr "未找到相关商品。"
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "未找到与“%s”相关的商品。"
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "未找到与“%s”相关的内容。"
+
+
+msgid "Search products…"
+msgstr "搜索商品…"
+
+
+msgid "Close search"
+msgstr "关闭搜索"
+
+
+msgid "Product results"
+msgstr "商品结果"
+
+
+msgid "Recent searches"
+msgstr "最近搜索"
+
+
+msgid "Clear"
+msgstr "清除"
+
+
+msgid "Start typing to search products…"
+msgstr "开始输入即可搜索商品…"
+
+
+msgid "Sale"
+msgstr "特价"
+
+
+msgid "Out of stock"
+msgstr "缺货"
+
+
+msgid "Pages & posts"
+msgstr "页面与文章"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "页面"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "文章"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s毫秒"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "由%s提供技术支持"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "第%1$s页，共%2$s页"
+
+
+msgid "← Prev"
+msgstr "← 上一页"
+
+
+msgid "Next →"
+msgstr "下一页 →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "搜索"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "已找到%s个商品。"
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "查看全部%s条结果 →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "找到%1$s条与“%2$s”相关的结果"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s条结果"

@@ -1,0 +1,222 @@
+# Translation of the NitroSearch for WooCommerce readme into Indonesian (id_ID).
+
+# msgids are in translate.wordpress.org's own form (markdown rendered to HTML),
+
+# so this file imports 1:1 against the Stable Readme originals.
+
+# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce readme\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+
+msgid "Instant, typo-tolerant WooCommerce product search served from the cloud — Amazon-quality results with facets, without slowing your store down."
+msgstr "Pencarian produk WooCommerce instan dan toleran salah ketik dari cloud — hasil sekelas Amazon dengan faset, tanpa memperlambat toko Anda."
+
+
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+msgid "Yes. The free tier covers up to 100 search results with every search feature included, forever — search itself is never tiered. Paid plans raise the limit (and include extras like the store reporting we're building); you only pay for how much you index, never per search."
+msgstr "Ya. Paket gratis mencakup hingga 100 hasil pencarian dengan semua fitur pencarian disertakan, selamanya — pencarian itu sendiri tidak pernah dibedakan antarpaket. Paket berbayar menaikkan batasnya (dan menyertakan fitur ekstra seperti pelaporan toko yang sedang kami bangun); Anda hanya membayar berdasarkan seberapa banyak yang Anda indeks, tidak pernah per pencarian."
+
+
+msgid "<strong>Search usage counts:</strong> once connected, the search widget also sends anonymous, cookieless usage events — the query typed, how many results appeared, and clicks on those results — to <code>api.nitrosearch.io</code>. They carry no shopper identifiers, no cookies and no IP-based profiles, and raw records are deleted on a rolling schedule. Switch this off any time under <strong>NitroSearch → Appearance → Search usage data</strong>."
+msgstr "<strong>Hitungan penggunaan pencarian:</strong> setelah terhubung, widget pencarian juga mengirimkan peristiwa penggunaan yang anonim dan tanpa cookie — kueri yang diketik, berapa banyak hasil yang muncul, dan klik pada hasil tersebut — ke <code>api.nitrosearch.io</code>. Data ini tidak membawa identitas pembeli, tanpa cookie, dan tanpa profil berbasis IP, dan catatan mentahnya dihapus secara berkala. Nonaktifkan kapan saja di <strong>NitroSearch → Tampilan → Data penggunaan pencarian</strong>."
+
+
+msgid "<strong>See what shoppers actually search for</strong> — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found <em>nothing</em> (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever."
+msgstr "<strong>Lihat apa yang sebenarnya dicari pembeli</strong> — setiap paket berbayar menyertakan analitik pencarian: kueri teratas, apa yang diklik dan ditambahkan ke keranjang, serta pencarian yang tidak menemukan <em>apa pun</em> (daftar siap pakai berisi permintaan yang belum Anda sediakan). Ringkasannya tersedia langsung di wp-admin; dasbor lengkapnya ada di akun NitroSearch Anda. Tanpa cookie, tanpa identitas pembeli — selamanya."
+
+
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgstr "<strong>Harga jujur dan sederhana</strong> — paket gratis yang benar-benar gratis, semua fitur pencarian di setiap paket (pencarian itu sendiri tidak pernah dibedakan antarpaket), dan harga yang hanya bertambah mengikuti ukuran katalog. Tanpa biaya per pencarian, tanpa tagihan tak terduga."
+
+
+msgid "Only if you choose to. The credit is <strong>off by default</strong>, and nothing is added to your storefront unless you turn it on in the plugin's <strong>Appearance</strong> settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way."
+msgstr "Hanya jika Anda memilihnya. Kredit ini <strong>nonaktif secara bawaan</strong>, dan tidak ada yang ditambahkan ke etalase Anda kecuali Anda mengaktifkannya di pengaturan <strong>Tampilan</strong> plugin. Jika diaktifkan, kredit muncul sebagai tautan kecil di kotak pencarian dan satu baris di footer situs Anda, keduanya mengarah ke nitrosearch.io. Terima kasih jika Anda mengaktifkannya — tetapi plugin bekerja sama persis dengan atau tanpanya."
+
+
+msgid "<strong>Nothing added to your site unless you ask</strong> — the optional \"Powered by NitroSearch\" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search."
+msgstr "<strong>Tidak ada yang ditambahkan ke situs Anda kecuali Anda memintanya</strong> — kredit opsional \"Didukung oleh NitroSearch\" nonaktif secara bawaan. Aktifkan, dan sebuah kredit kecil bertaut akan ditambahkan; biarkan nonaktif, dan etalase Anda tidak mendapat apa pun selain pencarian."
+
+
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgstr "<strong>Seluruh situs Anda, bukan hanya toko</strong> — jika mau, indeks juga halaman dan pos blog Anda, yang ditampilkan di bagian tersendiri di bawah produk sehingga katalog Anda tidak pernah tenggelam. Isi lengkap halaman tidak pernah disalin, dan konten privat, yang dilindungi kata sandi, serta <em>noindex</em> selalu dikecualikan."
+
+
+msgid "Your store falls back to its normal WooCommerce search. Your data on NitroSearch is managed from your account; you can disconnect at any time from the plugin screen."
+msgstr "Toko Anda kembali menggunakan pencarian WooCommerce biasa. Data Anda di NitroSearch dikelola dari akun Anda; Anda dapat memutuskan sambungan kapan saja dari layar plugin."
+
+
+msgid "Yes. NitroSearch indexes and searches WooCommerce products, so WooCommerce must be installed and active. It's compatible with WooCommerce High-Performance Order Storage (HPOS)."
+msgstr "Ya. NitroSearch mengindeks dan mencari produk WooCommerce, jadi WooCommerce harus terpasang dan aktif. Plugin ini kompatibel dengan WooCommerce High-Performance Order Storage (HPOS)."
+
+
+msgid "The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap."
+msgstr "Plugin menyimpan antrean perubahan lokal dan mengalirkannya secara andal di latar belakang — sehingga tetap bekerja bahkan di situs bertrafik rendah dan di balik caching yang agresif — sambil mengatur temponya sendiri agar etalase Anda tetap responsif bagi pembeli. Setiap pembaruan ditandatangani dan membawa nomor versi, sehingga perubahan tidak dapat tiba dalam urutan yang salah. Layar status sinkronisasi waktu nyata menunjukkan persis apa yang terindeks. Perbaikan otomatis atas penyimpangan data (drift) setiap malam ada dalam rencana pengembangan kami."
+
+
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgstr "Tidak ada sampai Anda mengeklik <strong>Hubungkan</strong>. Setelah itu, katalog produk Anda dikirim ke NitroSearch untuk diindeks, dan pembaruan dikirim saat produk berubah. Lihat bagian <strong>Layanan eksternal</strong> di atas untuk daftar lengkapnya, beserta tautan ke Ketentuan Layanan dan Kebijakan Privasi kami."
+
+
+msgid "No. NitroSearch enhances your theme's <em>existing</em> search box in place. There's nothing to rebuild. (If your theme uses an unusual search field, you can point NitroSearch at it with an optional CSS selector in the Appearance settings.)"
+msgstr "Tidak. NitroSearch menyempurnakan kotak pencarian tema Anda yang <em>sudah ada</em>, langsung di tempatnya. Tidak ada yang perlu dibangun ulang. (Jika tema Anda menggunakan kolom pencarian yang tidak lazim, Anda dapat mengarahkan NitroSearch ke sana lewat selektor CSS opsional di pengaturan Tampilan.)"
+
+
+msgid "No — that's the point. Searches run directly between the shopper's browser and our engine, so your WordPress/WooCommerce server never does the search work. The on-page widget is tiny and loads only when a shopper starts searching."
+msgstr "Tidak — justru itu intinya. Pencarian berjalan langsung antara peramban pembeli dan mesin kami, sehingga server WordPress/WooCommerce Anda tidak pernah mengerjakan pencarian. Widget di halaman berukuran sangat kecil dan hanya dimuat saat pembeli mulai mencari."
+
+
+msgid "No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan and upgrade."
+msgstr "Tidak perlu akun untuk menggunakan paket gratis — pasang, hubungkan, selesai. Akun bersifat opsional dan memungkinkan Anda mengelola paket serta meningkatkannya."
+
+
+msgid "What happens if I deactivate the plugin?"
+msgstr "Apa yang terjadi jika saya menonaktifkan plugin?"
+
+
+msgid "Does it show a \"Powered by NitroSearch\" badge on my store?"
+msgstr "Apakah plugin menampilkan lencana \"Didukung oleh NitroSearch\" di toko saya?"
+
+
+msgid "Is WooCommerce required?"
+msgstr "Apakah WooCommerce diperlukan?"
+
+
+msgid "How does it stay in sync with my catalogue?"
+msgstr "Bagaimana NitroSearch tetap sinkron dengan katalog saya?"
+
+
+msgid "What data leaves my site, and when?"
+msgstr "Data apa yang keluar dari situs saya, dan kapan?"
+
+
+msgid "Do I have to change my theme or add a shortcode?"
+msgstr "Apakah saya harus mengubah tema atau menambahkan shortcode?"
+
+
+msgid "Will it slow my store down?"
+msgstr "Apakah ini akan memperlambat toko saya?"
+
+
+msgid "Do I need to create an account?"
+msgstr "Apakah saya perlu membuat akun?"
+
+
+msgid "Is it really free?"
+msgstr "Apakah benar-benar gratis?"
+
+
+msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgstr "Selesai — katalog Anda mulai tersinkron, dan kotak pencarian tema Anda ditingkatkan secara otomatis."
+
+
+msgid "Open the <strong>NitroSearch</strong> menu in wp-admin and click <strong>\"Connect store\"</strong>."
+msgstr "Buka menu <strong>NitroSearch</strong> di wp-admin dan klik <strong>\"Hubungkan toko\"</strong>."
+
+
+msgid "Install and activate <strong>NitroSearch for WooCommerce</strong> (from Plugins → Add New, or upload the ZIP)."
+msgstr "Pasang dan aktifkan <strong>NitroSearch for WooCommerce</strong> (dari Plugin → Tambah Baru, atau unggah berkas ZIP-nya)."
+
+
+msgid "Install and activate <strong>WooCommerce</strong>."
+msgstr "Pasang dan aktifkan <strong>WooCommerce</strong>."
+
+
+msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPrivacy Policy: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+msgstr "Ketentuan Penggunaan Layanan: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nKebijakan Privasi: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+
+
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgstr "Plugin ini terhubung ke <strong>layanan pencarian NitroSearch yang di-hosting</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) untuk mengindeks katalog Anda dan menyajikan hasil pencarian. Inilah tujuan inti plugin ini."
+
+
+msgid "The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
+msgstr "Paket gratis langsung bekerja begitu Anda memasang plugin — hingga 100 hasil pencarian, dengan semua fitur pencarian disertakan. Akun NitroSearch bersifat opsional; buat akun untuk mengelola paket dan meningkatkannya dari dasbor Anda. Pelajari lebih lanjut di <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
+
+
+msgid "NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:"
+msgstr "NitroSearch adalah layanan pencarian yang di-hosting; plugin ini adalah konektor WooCommerce resminya. Plugin ini melakukan dua hal, dan keduanya tidak pernah saling mengganggu:"
+
+
+msgid "Install the plugin, connect your store, and from that moment every search your customers type is answered in <strong>around a tenth of a second</strong> — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store."
+msgstr "Pasang plugin, hubungkan toko Anda, dan sejak saat itu setiap pencarian yang diketik pelanggan dijawab dalam <strong>sekitar sepersepuluh detik</strong> — termasuk yang salah ketik — langsung dari mesin kami. Tanpa membangun ulang tema. Tanpa beban pencarian di host WordPress Anda. Tanpa memperlambat toko Anda."
+
+
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgstr "<strong>Pembeli tidak bisa membeli apa yang tidak mereka temukan.</strong> Pencarian bawaan WooCommerce lambat, tidak mengenali salah ketik, dan kewalahan pada katalog besar — sehingga pelanggan yang mencari dan tidak menemukan apa-apa akan langsung pergi. NitroSearch menggantikannya dengan pencarian cepat, toleran salah ketik, dan sekelas Amazon yang berjalan di server kami, bukan server Anda."
+
+
+msgid "<strong>Nothing leaves your site until you click Connect.</strong>"
+msgstr "<strong>Tidak ada data yang keluar dari situs Anda sampai Anda mengeklik Hubungkan.</strong>"
+
+
+msgid "<strong>Where:</strong> the NitroSearch API and search engine, at <code>api.nitrosearch.io</code> and your store's dedicated search endpoint."
+msgstr "<strong>Ke mana:</strong> API dan mesin pencarian NitroSearch, di <code>api.nitrosearch.io</code> dan endpoint pencarian khusus milik toko Anda."
+
+
+msgid "<strong>Scripts loaded onto your storefront:</strong> once connected, the plugin loads the search widget's JavaScript from <code>api.nitrosearch.io</code> (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect."
+msgstr "<strong>Skrip yang dimuat ke etalase Anda:</strong> setelah terhubung, plugin memuat JavaScript widget pencarian dari <code>api.nitrosearch.io</code> (sebuah loader kecil, ditambah widget itu sendiri saat pembeli pertama kali berniat mencari) agar hasil dapat ditampilkan di peramban pembeli. Tidak ada yang dimuat sebelum Anda terhubung."
+
+
+msgid "<strong>Search queries:</strong> Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results."
+msgstr "<strong>Kueri pencarian:</strong> Setelah terhubung, kueri pencarian pembeli dikirim dari peramban mereka langsung ke mesin NitroSearch untuk mengembalikan hasil."
+
+
+msgid "<strong>What is sent, and when:</strong> When you click <strong>\"Connect store\"</strong>, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen."
+msgstr "<strong>Apa yang dikirim, dan kapan:</strong> Saat Anda mengeklik <strong>\"Hubungkan toko\"</strong>, plugin mendaftarkan situs Anda ke NitroSearch (URL situs Anda dan sebuah pengenal pemasangan yang dibuat secara acak). Setelah terhubung, data produk Anda — nama, deskripsi, SKU, harga, status stok, kategori, atribut, gambar, dan permalink — dikirim agar dapat diindeks untuk pencarian. Perubahan produk dikirim begitu terjadi."
+
+
+msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, the widget talks <em>directly</em> to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load."
+msgstr "<strong>Menjawab pencarian, seketika.</strong> Saat pembeli mencari, widget berkomunikasi <em>langsung</em> dengan mesin kami menggunakan kunci khusus-pencarian yang cakupannya terbatas pada produk publik toko Anda — tidak pernah melalui server WordPress Anda, itulah mengapa pencarian tetap cepat bahkan saat beban tinggi."
+
+
+msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgstr "<strong>Menjaga salinan katalog Anda di tempat kami tetap segar.</strong> Saat produk, harga, dan stok berubah, plugin diam-diam mengirimkan pembaruan ke NitroSearch di latar belakang — digabungkan ke dalam antrean perubahan lokal, ditandatangani, dan dicoba ulang hingga setiap perubahan tiba."
+
+
+msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgstr "<strong>Siap dalam hitungan menit</strong> — menyempurnakan kotak pencarian tema Anda yang <em>sudah ada</em> secara otomatis. Tanpa shortcode, tanpa menyunting templat, tanpa membangun ulang."
+
+
+msgid "<strong>Sync you can trust</strong> — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise."
+msgstr "<strong>Sinkronisasi yang dapat Anda percaya</strong> — plugin menyimpan antrean perubahannya sendiri dan mencoba ulang hingga setiap perubahan tiba, setiap pembaruan ditandatangani dan diberi versi sehingga tidak ada yang datang dalam urutan yang salah. Layar status sinkronisasi waktu nyata menunjukkan persis apa yang terindeks, jadi kepercayaan menjadi sesuatu yang bisa Anda periksa, bukan sekadar janji."
+
+
+msgid "<strong>Filters, facets &amp; a full results page</strong> — category, brand, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results."
+msgstr "<strong>Filter, faset &amp; halaman hasil lengkap</strong> — faset kategori, merek, sedang diskon, dan stok tersedia, kisi hasil lengkap dengan penomoran halaman, serta tombol tambahkan ke keranjang langsung dari hasil."
+
+
+msgid "<strong>It won't slow your store down</strong> — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score."
+msgstr "<strong>Tidak akan memperlambat toko Anda</strong> — pencarian berjalan langsung antara peramban pembeli dan mesin kami, sehingga server WordPress Anda tidak pernah berada di jalur pencarian. Widget di halaman sangat ringan dan terbungkus dalam shadow DOM-nya sendiri, sehingga tidak pernah berbenturan dengan tema ataupun skor kecepatan Anda."
+
+
+msgid "<strong>Instant &amp; typo-tolerant</strong> — results appear as your customer types, and \"runing shoes\" still finds your running shoes."
+msgstr "<strong>Instan &amp; toleran salah ketik</strong> — hasil muncul saat pelanggan Anda mengetik, dan \"spatu lari\" tetap menemukan sepatu lari Anda."
+
+
+msgid "External services"
+msgstr "Layanan eksternal"
+
+
+msgid "Free to start"
+msgstr "Gratis untuk memulai"
+
+
+msgid "How it works"
+msgstr "Cara kerjanya"
+
+
+msgid "Why store owners switch to NitroSearch"
+msgstr "Mengapa pemilik toko beralih ke NitroSearch"

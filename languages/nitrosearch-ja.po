@@ -1,0 +1,836 @@
+# Translation of NitroSearch for WooCommerce into Japanese (ja).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "WooCommerce のための超高速ホスティング型検索。カタログを NitroSearch に同期し、WordPress の標準検索を、タイプミスにも強い即時の検索結果に置き換えます。"
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch がストアの検索パフォーマンスの計測を始めました</strong> — 検索数と結果クリック数を、匿名かつ Cookie を使わずにカウントするもので、買い物客を識別する情報は含まれません。検索結果のランキング改善に役立ち、ストアごとのレポート機能もロードマップに載っています。"
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "%s から管理できます。"
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → 外観"
+
+
+msgid "Dismiss"
+msgstr "非表示にする"
+
+
+msgid "Unauthorized."
+msgstr "認証に失敗しました。"
+
+
+msgid "Not connected"
+msgstr "未接続"
+
+
+msgid "Confirming control…"
+msgstr "所有権を確認中…"
+
+
+msgid "Connected & verified"
+msgstr "接続・確認済み"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "WooCommerce のための Amazon 品質の検索"
+
+
+msgid "Connect your store"
+msgstr "ストアを接続しましょう"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "このストアを NitroSearch に接続すると、カタログの同期が始まり、タイプミスにも強い即時検索を提供できるようになります。「ストアを接続」をクリックするまで、サイトから外部に送信されるものは何もありません。"
+
+
+msgid "Provisioning token"
+msgstr "プロビジョニングトークン"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "任意です。このストアを接続するためのトークンを渡されている場合にのみ入力してください。"
+
+
+msgid "Connect store"
+msgstr "ストアを接続"
+
+
+msgid "Confirming control of your site…"
+msgstr "サイトの所有権を確認しています…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "検索インデックスを構築する前に、このストアがご自身の管理下にあることを確認しています。本番環境ではこの確認は自動で行われますが、当社のサーバーからサイトに到達できない場合は少し時間がかかることがあります。確認が済みしだい、カタログの同期が始まります。"
+
+
+msgid "Check status"
+msgstr "ステータスを確認"
+
+
+msgid "Disconnect"
+msgstr "接続を解除"
+
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+
+msgid "Design"
+msgstr "デザイン"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "プランの上限に達しました。"
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "インデックス済みのものについては検索は引き続き動作しますが、アップグレードするまで新しいアイテムは追加されません。商品は常に最優先されるため、追加を保留されるのは固定ページか投稿だけです。より大きなプランへ移行するには、下の「%s」を開いてください。"
+
+
+msgid "Manage / Upgrade"
+msgstr "管理 / アップグレード"
+
+
+msgid "Sync health"
+msgstr "同期の状態"
+
+
+msgid "Search results indexed"
+msgstr "インデックス済みの検索対象"
+
+
+msgid "Unlimited"
+msgstr "無制限"
+
+
+msgid "Pending changes"
+msgstr "同期待ちの変更"
+
+
+msgid "Last sync"
+msgstr "前回の同期"
+
+
+msgid "Never"
+msgstr "まだありません"
+
+
+msgid "Last error"
+msgstr "直近のエラー"
+
+
+msgid "Sync all products"
+msgstr "すべての商品を同期"
+
+
+msgid "Refresh status"
+msgstr "ステータスを更新"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "今から%s後"
+
+
+msgid "On demand"
+msgstr "オンデマンド"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "ms"
+
+
+msgid "Sync performance"
+msgstr "同期パフォーマンス"
+
+
+msgid "Avg sync speed"
+msgstr "平均同期速度"
+
+
+msgid "Last batch"
+msgstr "直近のバッチ"
+
+
+msgid "Items synced"
+msgstr "同期済みアイテム"
+
+
+msgid "Batches sent"
+msgstr "送信済みバッチ"
+
+
+msgid "Next sync"
+msgstr "次回の同期"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "カタログへの変更はバッチにまとめられ、バックグラウンドで送信されます。この数値は、変更が検索インデックスに届くまでの速さを表しています。"
+
+
+msgid "Search analytics"
+msgstr "検索アナリティクス"
+
+
+msgid "last 30 days"
+msgstr "過去30日間"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "アナリティクスを読み込めませんでした — 自動的に再試行します。"
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "過去30日間に、あなたのストアで<strong>%1$s</strong>が行われました。買い物客が何を検索し、何をクリックし、何を探して見つけられなかったのかを確認できます。%2$sからのすべての有料プランに含まれています。"
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s件の検索"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/月"
+
+
+msgid "Upgrade to unlock"
+msgstr "アップグレードして利用する"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "アナリティクスの収集は、プラグイン 1.5.0 以降が有効になってから始まります。買い物客が検索してから数時間以内にデータが表示されます。"
+
+
+msgid "Searches"
+msgstr "検索数"
+
+
+msgid "Zero-result rate"
+msgstr "結果0件率"
+
+
+msgid "Click-through"
+msgstr "クリック率"
+
+
+msgid "Top searches"
+msgstr "上位の検索キーワード"
+
+
+msgid "Searched, found nothing"
+msgstr "検索されたが結果0件"
+
+
+msgid "View full analytics →"
+msgstr "アナリティクスの詳細を見る →"
+
+
+msgid "Your plan & account"
+msgstr "プランとアカウント"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "このストアは NitroSearch アカウントに紐付けられています。プランと請求の管理は NitroSearch ダッシュボードから行えます。"
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "現在は<strong>無料</strong>プランをご利用中です。このストアを NitroSearch アカウントに紐付けると、管理やアップグレードが行えます。インデックスと検索は今のまま変わりません。"
+
+
+msgid "Roomy"
+msgstr "ゆったり"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "2行の商品名と見やすい画像。標準の設定です。"
+
+
+msgid "Compact"
+msgstr "コンパクト"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "行が小さくなり、スクロールせずに表示できる商品が増えます。"
+
+
+msgid "Big pictures"
+msgstr "大きな画像"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "画像が主役のカタログに向いた、大きめのサムネイルです。"
+
+
+msgid "Text only"
+msgstr "テキストのみ"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "画像なし。交換部品やパーツ、B2B に向いています。"
+
+
+msgid "Light"
+msgstr "ライト"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "白いパネルです。ほとんどのテーマになじみます。"
+
+
+msgid "Dark"
+msgstr "ダーク"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "暗い色のパネルです。ダークなヘッダーやテーマに向いています。"
+
+
+msgid "Automatic"
+msgstr "自動"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "買い物客それぞれの端末の設定に従います。"
+
+
+msgid "Custom"
+msgstr "カスタム"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "パネルと文字の色を下で自由に選べます。"
+
+
+msgid "Look"
+msgstr "見た目"
+
+
+msgid "Layout"
+msgstr "レイアウト"
+
+
+msgid "Products shown"
+msgstr "表示する商品数"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "買い物客が入力しているあいだ、ドロップダウンに表示する商品の数です。"
+
+
+msgid "Filters"
+msgstr "フィルター"
+
+
+msgid "Automatic (recommended)"
+msgstr "自動 (推奨)"
+
+
+msgid "Always across the top"
+msgstr "常に上部に横一列"
+
+
+msgid "Hide in the drop-down"
+msgstr "ドロップダウンでは表示しない"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "在庫あり・セール中・ブランド・カテゴリーのフィルターです。「自動」では、スペースに余裕があるときはサイドの列に、ないときは上部に横一列で表示します。"
+
+
+msgid "Drop-down width"
+msgstr "ドロップダウンの幅"
+
+
+msgid "Wide"
+msgstr "ワイド"
+
+
+msgid "Match my search box"
+msgstr "検索ボックスに合わせる"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "「自動」なら、テーマの検索ボックスが狭くても、商品名を読み取れるだけの幅を確保します。「検索ボックスに合わせる」は、検索ボックスとまったく同じ幅を保ちます。"
+
+
+msgid "Colours"
+msgstr "色"
+
+
+msgid "Colour scheme"
+msgstr "配色"
+
+
+msgid "Accent colour"
+msgstr "アクセントカラー"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "価格、ハイライト、選択中のフィルターに使われます。空欄のままにすると標準の色になります。その上に載る文字の色は、読みやすさが保たれるよう黒か白が自動的に選ばれます。"
+
+
+msgid "Panel background"
+msgstr "パネルの背景"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "配色を「カスタム」に設定したときにのみ使われます。"
+
+
+msgid "Text colour"
+msgstr "文字色"
+
+
+msgid "Corners"
+msgstr "角の形"
+
+
+msgid "Rounded"
+msgstr "丸い"
+
+
+msgid "Slightly rounded"
+msgstr "やや丸い"
+
+
+msgid "Square"
+msgstr "四角"
+
+
+msgid "Text style"
+msgstr "文字のスタイル"
+
+
+msgid "Match my store"
+msgstr "ストアに合わせる"
+
+
+msgid "System default"
+msgstr "システム標準"
+
+
+msgid "Custom font"
+msgstr "カスタムフォント"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "「ストアに合わせる」では、検索ボックスの周りでテーマがすでに使っているフォントをそのまま利用します。"
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "例: Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "「カスタムフォント」を選んだときにのみ使われます。"
+
+
+msgid "What to search"
+msgstr "検索対象"
+
+
+msgid "Include"
+msgstr "含める"
+
+
+msgid "Products"
+msgstr "商品"
+
+
+msgid "always indexed"
+msgstr "常にインデックスされます"
+
+
+msgid "Pages"
+msgstr "固定ページ"
+
+
+msgid "Blog posts"
+msgstr "ブログ投稿"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "固定ページと投稿は商品と同じ枠にカウントされるため、オフにすると、その分をカタログに使えます。商品は常に最優先で、固定ページや投稿に押しのけられることはありません。非公開・パスワード保護・未公開のコンテンツがインデックスされることはなく、Yoast SEO や Rank Math で設定された%s (アイテム単位、コンテンツタイプ単位、サイト全体) も尊重します。"
+
+
+msgid "Search results page"
+msgstr "検索結果ページ"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "商品検索結果ページを NitroSearch の結果とフィルターで強化する"
+
+
+msgid "Privacy &amp; credit"
+msgstr "プライバシーとクレジット"
+
+
+msgid "Search usage data"
+msgstr "検索利用データ"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "匿名の検索利用カウントを NitroSearch と共有する"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "ストアの検索について、検索数・結果件数・結果クリック数をカウントします。Cookie を使わない匿名のデータで、買い物客を識別する情報や IP アドレスは含まれず、買い物客のブラウザーにも何も保存されません。検索結果のランキング改善と、検索アナリティクスの提供に使われます。チェックを外すと、送信はすぐに停止します。"
+
+
+msgid "Powered-by credit"
+msgstr "「Powered by」クレジット"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "nitrosearch.io にリンクする、小さな「Powered by NitroSearch」クレジットを表示する"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "初期状態ではオフで、オンにするかどうかは完全にあなたの選択です。オンにすると、検索ボックスに小さなクレジット、サイトのフッターに1行が追加されます。どちらも %s への通常のリンク (nofollow なし) です。チェックしない限り、サイトには何も追加されません。オンにしていただけたなら、ありがとうございます。"
+
+
+msgid "Advanced"
+msgstr "高度な設定"
+
+
+msgid "Search box selector"
+msgstr "検索ボックスのセレクター"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "例: input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "テーマの検索入力欄を指定する CSS セレクター (任意)。空欄のままにすると自動検出されます。"
+
+
+msgid "Save design"
+msgstr "デザインを保存"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "接続に失敗しました: %s"
+
+
+msgid "unknown error"
+msgstr "不明なエラー"
+
+
+msgid "Connected and verified."
+msgstr "接続と確認が完了しました。"
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "接続しました。サイトの所有権を確認しています。少し時間がかかることがあります。表示が更新されない場合は、下の「ステータスを確認」をお使いください。"
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "バックグラウンドで%s件の商品を同期しています。完了後、固定ページと投稿を同期します。"
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "バックグラウンドで%s件の商品を同期しています。"
+
+
+msgid "Verified!"
+msgstr "確認できました !"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "インデックス済みの検索対象%1$s件 · 同期待ち%2$s件。"
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "サイトの所有権をまだ確認しています。しばらくしてからもう一度お試しください。"
+
+
+msgid "Design saved."
+msgstr "デザインを保存しました。"
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "保存しました。バックグラウンドで、固定ページとブログ投稿をインデックスから削除しています。"
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "保存しました。バックグラウンドで、固定ページをインデックスから削除しています。"
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "保存しました。バックグラウンドで、ブログ投稿をインデックスから削除しています。"
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "保存しました。バックグラウンドで、固定ページとブログ投稿をインデックスに追加しています。"
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "保存しました。バックグラウンドで、固定ページをインデックスに追加しています。"
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "保存しました。バックグラウンドで、ブログ投稿をインデックスに追加しています。"
+
+
+msgid "Disconnected."
+msgstr "接続を解除しました。"
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "このストアはすでに NitroSearch アカウントに紐付けられています。"
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "サイトの所有権をまだ確認できていません。先に「ステータスを更新」をクリックしてから、もう一度お試しください。"
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "サイトの再確認が必要です。「ステータスを更新」をクリックしてから、もう一度お試しください。"
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "試行回数が多すぎます。1分ほど待ってから、もう一度お試しください。"
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "管理リンクを作成できませんでした。もう一度お試しください。"
+
+
+msgid "Insufficient permissions."
+msgstr "権限が不足しています。"
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "検索は %s が提供しています"
+
+
+msgid "Refine results"
+msgstr "結果を絞り込む"
+
+
+msgid "Refine"
+msgstr "絞り込み"
+
+
+msgid "In stock"
+msgstr "在庫あり"
+
+
+msgid "On sale"
+msgstr "セール中"
+
+
+msgid "Brand"
+msgstr "ブランド"
+
+
+msgid "Category"
+msgstr "カテゴリー"
+
+
+msgid "View"
+msgstr "表示"
+
+
+msgid "Add to cart"
+msgstr "カートに追加"
+
+
+msgid "Adding…"
+msgstr "追加中…"
+
+
+msgid "Added ✓"
+msgstr "追加しました ✓"
+
+
+msgid "Try again"
+msgstr "再試行"
+
+
+msgid "Searching…"
+msgstr "検索中…"
+
+
+msgid "Search is unavailable."
+msgstr "検索は利用できません。"
+
+
+msgid "Search is unavailable right now."
+msgstr "現在、検索を利用できません。"
+
+
+msgid "No products found."
+msgstr "商品が見つかりませんでした。"
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "「%s」に一致する商品は見つかりませんでした。"
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "「%s」に一致するものは見つかりませんでした。"
+
+
+msgid "Search products…"
+msgstr "商品を検索…"
+
+
+msgid "Close search"
+msgstr "検索を閉じる"
+
+
+msgid "Product results"
+msgstr "商品の検索結果"
+
+
+msgid "Recent searches"
+msgstr "最近の検索"
+
+
+msgid "Clear"
+msgstr "クリア"
+
+
+msgid "Start typing to search products…"
+msgstr "文字を入力して商品を検索…"
+
+
+msgid "Sale"
+msgstr "セール"
+
+
+msgid "Out of stock"
+msgstr "在庫切れ"
+
+
+msgid "Pages & posts"
+msgstr "固定ページと投稿"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "固定ページ"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "記事"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s ms"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "Powered by %s"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "%2$sページ中%1$sページ目"
+
+
+msgid "← Prev"
+msgstr "← 前へ"
+
+
+msgid "Next →"
+msgstr "次へ →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "検索"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "%s件の商品が見つかりました。"
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "%s件の結果をすべて見る →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "「%2$s」の検索結果: %1$s件"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s件の結果"

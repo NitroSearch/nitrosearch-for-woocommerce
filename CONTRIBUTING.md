@@ -18,8 +18,10 @@ If the plugin needs to document a server interaction, write the public-facing de
 
 ## Translations
 
-The plugin ships fully translated into es_ES, fr_FR, de_DE, it_IT, nl_NL,
-pl_PL, pt_PT and pt_BR alongside its English source strings.
+The plugin ships fully translated into 22 locales alongside its English source
+strings: es_ES, fr_FR, de_DE, it_IT, nl_NL, pl_PL, pt_PT, pt_BR, ja, tr_TR,
+sv_SE, da_DK, nb_NO, fi, cs_CZ, ro_RO, el, id_ID, vi, ru_RU, uk and zh_CN
+(the authoritative list is `LOCALES` in `bin/check-i18n.sh`).
 
 - Every user-facing string is wrapped in the WordPress i18n functions with the
   `nitrosearch` text domain, with a `translators:` comment wherever there is a

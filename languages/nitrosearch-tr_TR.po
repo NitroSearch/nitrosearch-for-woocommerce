@@ -1,0 +1,843 @@
+# Translation of NitroSearch for WooCommerce into Turkish (tr_TR).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "WooCommerce için son derece hızlı, barındırılan arama. Kataloğunuzu NitroSearch ile eşitler ve varsayılan WordPress aramasını anında görünen, yazım hatalarına toleranslı sonuçlarla değiştirir."
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch artık mağazanızdaki aramanın performansını ölçüyor</strong> — aramaların ve sonuç tıklamalarının anonim, çerezsiz sayımları; müşteri tanımlayıcısı içermez. Bu, sonuç sıralamasının iyileşmesine yardımcı olur; mağaza bazında raporlama da yol haritamızda."
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "Bu ayarı %s ekranından yönetebilirsiniz."
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → Görünüm"
+
+
+msgid "Dismiss"
+msgstr "Yoksay"
+
+
+msgid "Unauthorized."
+msgstr "Yetkisiz erişim."
+
+
+msgid "Not connected"
+msgstr "Bağlı değil"
+
+
+msgid "Confirming control…"
+msgstr "Denetim doğrulanıyor…"
+
+
+msgid "Connected & verified"
+msgstr "Bağlı ve doğrulandı"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "WooCommerce için Amazon kalitesinde arama"
+
+
+msgid "Connect your store"
+msgstr "Mağazanızı bağlayın"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "Kataloğunuzu eşitlemeye ve anında, yazım hatalarına toleranslı arama sunmaya başlamak için bu mağazayı NitroSearch'e bağlayın. Bağlan düğmesine tıklayana kadar sitenizden hiçbir şey gönderilmez."
+
+
+msgid "Provisioning token"
+msgstr "Hazırlama belirteci"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "İsteğe bağlı. Yalnızca bu mağazayı bağlamanız için size bir belirteç verildiyse gereklidir."
+
+
+msgid "Connect store"
+msgstr "Mağazayı bağla"
+
+
+msgid "Confirming control of your site…"
+msgstr "Sitenizin denetimi doğrulanıyor…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "Arama dizininizi oluşturmadan önce bu mağazanın denetiminin sizde olduğunu doğruluyoruz. Üretim ortamında bu işlem otomatiktir; siteniz sunucularımızdan erişilebilir değilse biraz zaman alabilir. Doğrulama tamamlanır tamamlanmaz kataloğunuz eşitlenmeye başlar."
+
+
+msgid "Check status"
+msgstr "Durumu denetle"
+
+
+msgid "Disconnect"
+msgstr "Bağlantıyı kes"
+
+
+msgid "Dashboard"
+msgstr "Panel"
+
+
+msgid "Design"
+msgstr "Tasarım"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "Planınızın sınırına ulaştınız."
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "Aramanız, dizine eklenmiş her şey için çalışmaya devam eder; ancak yükseltme yapana kadar yeni öğeler eklenmez. Ürünleriniz her zaman önceliklidir; bu nedenle bekletilenler yalnızca sayfa ya da yazılardır. Daha büyük bir plana geçmek için aşağıdaki %s seçeneğini açın."
+
+
+msgid "Manage / Upgrade"
+msgstr "Yönet / Yükselt"
+
+
+msgid "Sync health"
+msgstr "Eşitleme sağlığı"
+
+
+msgid "Search results indexed"
+msgstr "Dizine eklenen arama sonuçları"
+
+
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+
+msgid "Pending changes"
+msgstr "Bekleyen değişiklikler"
+
+
+msgid "Last sync"
+msgstr "Son eşitleme"
+
+
+msgid "Never"
+msgstr "Hiçbir zaman"
+
+
+msgid "Last error"
+msgstr "Son hata"
+
+
+msgid "Sync all products"
+msgstr "Tüm ürünleri eşitle"
+
+
+msgid "Refresh status"
+msgstr "Durumu yenile"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "%s sonra"
+
+
+msgid "On demand"
+msgstr "İstek üzerine"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "ms"
+
+
+msgid "Sync performance"
+msgstr "Eşitleme performansı"
+
+
+msgid "Avg sync speed"
+msgstr "Ort. eşitleme hızı"
+
+
+msgid "Last batch"
+msgstr "Son grup"
+
+
+msgid "Items synced"
+msgstr "Eşitlenen öğeler"
+
+
+msgid "Batches sent"
+msgstr "Gönderilen gruplar"
+
+
+msgid "Next sync"
+msgstr "Sonraki eşitleme"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "Kataloğunuzdaki değişiklikler gruplar hâlinde arka planda gönderilir — bu rakamlar, değişikliklerin arama dizininize ne kadar hızlı ulaştığını gösterir."
+
+
+msgid "Search analytics"
+msgstr "Arama analizi"
+
+
+msgid "last 30 days"
+msgstr "son 30 gün"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "Analiz verileri şu anda yüklenemedi — otomatik olarak yeniden denenecek."
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "Son 30 günde mağazanızda <strong>%1$s</strong> yapıldı. Müşterilerin ne aradığını, neye tıkladığını ve arayıp da bulamadıklarını görün — fiyatı %2$s seviyesinden başlayan tüm ücretli planlara dahildir."
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s arama"
+msgstr[1] "%s arama"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/ay"
+
+
+msgid "Upgrade to unlock"
+msgstr "Kilidi açmak için yükseltin"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "Analiz verileri, eklentinin 1.5.0 veya üzeri sürümü etkinken toplanmaya başlar — veriler, müşteriler arama yaptıktan birkaç saat sonra görünür."
+
+
+msgid "Searches"
+msgstr "Aramalar"
+
+
+msgid "Zero-result rate"
+msgstr "Sonuçsuz arama oranı"
+
+
+msgid "Click-through"
+msgstr "Tıklama oranı"
+
+
+msgid "Top searches"
+msgstr "En çok yapılan aramalar"
+
+
+msgid "Searched, found nothing"
+msgstr "Arandı ama bulunamadı"
+
+
+msgid "View full analytics →"
+msgstr "Analizin tamamını görüntüle →"
+
+
+msgid "Your plan & account"
+msgstr "Planınız ve hesabınız"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "Bu mağaza bir NitroSearch hesabına bağlanmış durumda. Planınızı ve faturalandırmanızı NitroSearch panelinizden yönetin."
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "<strong>Ücretsiz</strong> plandasınız. Yönetmek ya da yükseltmek için bu mağazayı bir NitroSearch hesabına bağlayın — dizininiz ve aramanız olduğu gibi kalır."
+
+
+msgid "Roomy"
+msgstr "Ferah"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "İki satırlık adlar ve net bir görsel. Varsayılan seçenek."
+
+
+msgid "Compact"
+msgstr "Kompakt"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "Daha küçük satırlar; kaydırmadan önce daha fazla ürün sığar."
+
+
+msgid "Big pictures"
+msgstr "Büyük görseller"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "Görsel ağırlıklı kataloglar için daha büyük ürün görselleri."
+
+
+msgid "Text only"
+msgstr "Yalnızca metin"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "Görsel yok — yedek parça, aksam ve B2B için uygundur."
+
+
+msgid "Light"
+msgstr "Açık"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "Beyaz bir panel. Çoğu temaya uyar."
+
+
+msgid "Dark"
+msgstr "Koyu"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "Koyu üst kısımlar ve temalar için koyu bir panel."
+
+
+msgid "Automatic"
+msgstr "Otomatik"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "Her müşterinin kendi cihaz ayarını izler."
+
+
+msgid "Custom"
+msgstr "Özel"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "Aşağıdan kendi panel ve metin renklerinizi seçin."
+
+
+msgid "Look"
+msgstr "Genel görünüm"
+
+
+msgid "Layout"
+msgstr "Düzen"
+
+
+msgid "Products shown"
+msgstr "Gösterilecek ürün sayısı"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "Müşteriniz yazarken açılır panelde kaç ürün görüntüleneceğini belirler."
+
+
+msgid "Filters"
+msgstr "Filtreler"
+
+
+msgid "Automatic (recommended)"
+msgstr "Otomatik (önerilen)"
+
+
+msgid "Always across the top"
+msgstr "Her zaman üstte"
+
+
+msgid "Hide in the drop-down"
+msgstr "Açılır panelde gizle"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "Stokta var, indirimde, marka ve kategori filtreleri. Otomatik seçeneği, yer olduğunda filtreleri yan sütuna, olmadığında üst tarafa yerleştirir."
+
+
+msgid "Drop-down width"
+msgstr "Açılır panel genişliği"
+
+
+msgid "Wide"
+msgstr "Geniş"
+
+
+msgid "Match my search box"
+msgstr "Arama kutuma uydur"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "Otomatik seçeneği, temanızın arama kutusu dar olsa bile ürün adlarının rahat okunması için yeterli alan tanır. Arama kutuma uydur seçeneği ise paneli tam olarak kutu genişliğinde tutar."
+
+
+msgid "Colours"
+msgstr "Renkler"
+
+
+msgid "Colour scheme"
+msgstr "Renk düzeni"
+
+
+msgid "Accent colour"
+msgstr "Vurgu rengi"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "Fiyatlar, vurgular ve seçili filtreler için kullanılır. Varsayılan için boş bırakın. Üzerindeki metin, hangisi okunabilir kalıyorsa otomatik olarak siyah veya beyaz yapılır."
+
+
+msgid "Panel background"
+msgstr "Panel arka planı"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "Yalnızca renk düzeni Özel olarak ayarlandığında kullanılır."
+
+
+msgid "Text colour"
+msgstr "Metin rengi"
+
+
+msgid "Corners"
+msgstr "Köşeler"
+
+
+msgid "Rounded"
+msgstr "Yuvarlak"
+
+
+msgid "Slightly rounded"
+msgstr "Hafif yuvarlak"
+
+
+msgid "Square"
+msgstr "Köşeli"
+
+
+msgid "Text style"
+msgstr "Metin stili"
+
+
+msgid "Match my store"
+msgstr "Mağazama uydur"
+
+
+msgid "System default"
+msgstr "Sistem varsayılanı"
+
+
+msgid "Custom font"
+msgstr "Özel yazı tipi"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "Mağazama uydur seçeneği, temanızın arama kutusu çevresinde zaten kullandığı yazı tipini ödünç alır."
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "örn. Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "Yalnızca Özel yazı tipi seçildiğinde kullanılır."
+
+
+msgid "What to search"
+msgstr "Aranacak içerik"
+
+
+msgid "Include"
+msgstr "Dahil et"
+
+
+msgid "Products"
+msgstr "Ürünler"
+
+
+msgid "always indexed"
+msgstr "her zaman dizine eklenir"
+
+
+msgid "Pages"
+msgstr "Sayfalar"
+
+
+msgid "Blog posts"
+msgstr "Blog yazıları"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "Sayfalar ve yazılar, ürünlerinizle aynı kotadan düşer; bu yüzden onları kapatmak kotayı kataloğunuza bırakır. Ürünleriniz her zaman önceliklidir ve onlar tarafından asla geriye itilmez. Özel, parola korumalı ve yayımlanmamış içerik hiçbir zaman dizine eklenmez; Yoast SEO veya Rank Math ile (öğe başına, içerik türü başına veya site genelinde) ayarlanan %s işaretine de uyarız."
+
+
+msgid "Search results page"
+msgstr "Arama sonuçları sayfası"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "Ürün arama sonuçları sayfasını NitroSearch sonuçları ve filtreleriyle geliştir"
+
+
+msgid "Privacy &amp; credit"
+msgstr "Gizlilik ve atıf"
+
+
+msgid "Search usage data"
+msgstr "Arama kullanım verileri"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "Anonim arama kullanım sayılarını NitroSearch ile paylaş"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Mağazanızın aramasındaki aramaları, sonuç sayılarını ve sonuç tıklamalarını sayar — çerezsiz ve anonimdir; müşteri tanımlayıcısı ve IP adresi içermez, müşterinin tarayıcısında hiçbir şey saklanmaz. Sonuç sıralamasını iyileştirmek ve arama analizinizi beslemek için kullanılır. Göndermeyi hemen durdurmak için işareti kaldırın."
+
+
+msgid "Powered-by credit"
+msgstr "“NitroSearch gücüyle” atfı"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "nitrosearch.io bağlantılı küçük bir “NitroSearch gücüyle” atfı göster"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Varsayılan olarak kapalıdır ve tamamen sizin tercihinizdir. Açtığınızda arama kutusuna küçük bir atıf, site alt bilginize de bir satır eklenir; ikisi de %s adresine bağlanan normal, takip edilen (dofollow) bağlantılardır. Siz bu kutuyu işaretlemedikçe sitenize hiçbir şey eklenmez. Açarsanız teşekkür ederiz."
+
+
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+
+msgid "Search box selector"
+msgstr "Arama kutusu seçicisi"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "örn. input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "Temanızın arama girdisi için isteğe bağlı CSS seçicisi. Otomatik algılama için boş bırakın."
+
+
+msgid "Save design"
+msgstr "Tasarımı kaydet"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "Bağlantı başarısız: %s"
+
+
+msgid "unknown error"
+msgstr "bilinmeyen hata"
+
+
+msgid "Connected and verified."
+msgstr "Bağlandı ve doğrulandı."
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "Bağlandı. Sitenizin denetimi doğrulanıyor — bu biraz sürebilir. Güncellenmezse aşağıdaki “Durumu denetle” düğmesini kullanın."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "Arka planda %s ürün eşitleniyor; ardından sayfalarınız ve yazılarınız eşitlenecek."
+msgstr[1] "Arka planda %s ürün eşitleniyor; ardından sayfalarınız ve yazılarınız eşitlenecek."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "Arka planda %s ürün eşitleniyor."
+msgstr[1] "Arka planda %s ürün eşitleniyor."
+
+
+msgid "Verified!"
+msgstr "Doğrulandı!"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "%1$s arama sonucu dizine eklendi · %2$s beklemede."
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "Sitenizin denetimi hâlâ doğrulanıyor — lütfen birazdan yeniden deneyin."
+
+
+msgid "Design saved."
+msgstr "Tasarım kaydedildi."
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "Kaydedildi. Sayfalarınız ve blog yazılarınız arka planda dizininizden kaldırılıyor."
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "Kaydedildi. Sayfalarınız arka planda dizininizden kaldırılıyor."
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "Kaydedildi. Blog yazılarınız arka planda dizininizden kaldırılıyor."
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "Kaydedildi. Sayfalarınız ve blog yazılarınız arka planda dizine ekleniyor."
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "Kaydedildi. Sayfalarınız arka planda dizine ekleniyor."
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "Kaydedildi. Blog yazılarınız arka planda dizine ekleniyor."
+
+
+msgid "Disconnected."
+msgstr "Bağlantı kesildi."
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "Bu mağaza zaten bir NitroSearch hesabına bağlanmış."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "Sitenizin denetimini henüz doğrulayamadık — önce \"Durumu yenile\" düğmesine tıklayın, sonra yeniden deneyin."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "Sitenizin yeniden denetlenmesi gerekiyor — \"Durumu yenile\" düğmesine tıklayın, sonra yeniden deneyin."
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "Çok fazla deneme yapıldı — lütfen bir dakika bekleyip yeniden deneyin."
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "Yönetim bağlantısı oluşturulamadı. Lütfen yeniden deneyin."
+
+
+msgid "Insufficient permissions."
+msgstr "Yeterli izniniz yok."
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "%s gücüyle arama"
+
+
+msgid "Refine results"
+msgstr "Sonuçları daralt"
+
+
+msgid "Refine"
+msgstr "Daralt"
+
+
+msgid "In stock"
+msgstr "Stokta var"
+
+
+msgid "On sale"
+msgstr "İndirimde"
+
+
+msgid "Brand"
+msgstr "Marka"
+
+
+msgid "Category"
+msgstr "Kategori"
+
+
+msgid "View"
+msgstr "Görüntüle"
+
+
+msgid "Add to cart"
+msgstr "Sepete ekle"
+
+
+msgid "Adding…"
+msgstr "Ekleniyor…"
+
+
+msgid "Added ✓"
+msgstr "Eklendi ✓"
+
+
+msgid "Try again"
+msgstr "Yeniden dene"
+
+
+msgid "Searching…"
+msgstr "Aranıyor…"
+
+
+msgid "Search is unavailable."
+msgstr "Arama kullanılamıyor."
+
+
+msgid "Search is unavailable right now."
+msgstr "Arama şu anda kullanılamıyor."
+
+
+msgid "No products found."
+msgstr "Ürün bulunamadı."
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "“%s” için ürün bulunamadı."
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "“%s” için hiçbir şey bulunamadı."
+
+
+msgid "Search products…"
+msgstr "Ürün ara…"
+
+
+msgid "Close search"
+msgstr "Aramayı kapat"
+
+
+msgid "Product results"
+msgstr "Ürün sonuçları"
+
+
+msgid "Recent searches"
+msgstr "Son aramalar"
+
+
+msgid "Clear"
+msgstr "Temizle"
+
+
+msgid "Start typing to search products…"
+msgstr "Ürün aramak için yazmaya başlayın…"
+
+
+msgid "Sale"
+msgstr "İndirim"
+
+
+msgid "Out of stock"
+msgstr "Stokta yok"
+
+
+msgid "Pages & posts"
+msgstr "Sayfalar ve yazılar"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "Sayfa"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "Yazı"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s ms"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "%s gücüyle"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "Sayfa %1$s / %2$s"
+
+
+msgid "← Prev"
+msgstr "← Önceki"
+
+
+msgid "Next →"
+msgstr "Sonraki →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "Ara"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "%s ürün bulundu."
+msgstr[1] "%s ürün bulundu."
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "%s sonucun tamamını gör →"
+msgstr[1] "%s sonucun tamamını gör →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "“%2$s” için %1$s sonuç"
+msgstr[1] "“%2$s” için %1$s sonuç"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s sonuç"
+msgstr[1] "%s sonuç"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# Translation guards. The plugin ships in nine languages, and a release that
-# adds a string without re-translating it would silently ship mixed-language
+# Translation guards. The plugin ships in every locale listed in LOCALES below,
+# and a release that adds a string without re-translating it would silently ship
 # screens to every non-English store — nothing else would fail. So the release
 # is blocked until every catalog is complete and every compiled artifact
 # matches its source.
@@ -15,7 +15,7 @@
 set -euo pipefail
 
 ROOT="${PREFLIGHT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
-LOCALES="es_ES fr_FR de_DE it_IT nl_NL pl_PL pt_PT pt_BR"
+LOCALES="es_ES fr_FR de_DE it_IT nl_NL pl_PL pt_PT pt_BR ja tr_TR sv_SE da_DK nb_NO fi cs_CZ ro_RO el id_ID vi ru_RU uk zh_CN"
 POT="languages/nitrosearch.pot"
 
 FAILED=0

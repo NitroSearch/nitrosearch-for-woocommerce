@@ -163,11 +163,12 @@ else
 fi
 
 # --- 8. Translations ----------------------------------------------------------
-# Nine languages ship with every release. A new string without its nine
-# translations, a stale compiled catalog, or a readme edit that left the eight
-# translated listings behind would all publish silently — merchants would just
-# see mixed-language screens. Delegated to bin/check-i18n.sh (which also has
-# the canonical --update-pot command and a --selftest).
+# Every locale in bin/check-i18n.sh's LOCALES ships with every release. A new
+# string without its translations, a stale compiled catalog, or a readme edit
+# that left the translated listings behind would all publish silently —
+# merchants would just see mixed-language screens. Delegated to
+# bin/check-i18n.sh (which also has the canonical --update-pot command and a
+# --selftest).
 if "$SELF_DIR/check-i18n.sh" | sed 's/^/  /'; then
   pass "translation guards (see above)"
 else

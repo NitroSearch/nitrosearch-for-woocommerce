@@ -1,0 +1,850 @@
+# Translation of NitroSearch for WooCommerce into Romanian (ro_RO).
+
+# This file is distributed under the same license as the plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+"X-Domain: nitrosearch\n"
+
+
+#. Plugin Name of the plugin
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+#. Plugin URI of the plugin
+msgid "https://nitrosearch.io"
+msgstr "https://nitrosearch.io"
+
+
+#. Description of the plugin
+msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
+msgstr "Căutare găzduită ultrarapidă pentru WooCommerce. Sincronizează catalogul cu NitroSearch și înlocuiește căutarea implicită din WordPress cu rezultate instantanee, tolerante la greșeli de tastare."
+
+
+#. Author of the plugin
+msgid "WebDeviant"
+msgstr "WebDeviant"
+
+
+#. Author URI of the plugin
+msgid "https://webdeviant.io"
+msgstr "https://webdeviant.io"
+
+
+msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
+msgstr "<strong>NitroSearch măsoară acum cât de bine funcționează căutarea din magazin</strong> — contorizări anonime, fără cookie-uri, ale căutărilor și ale clicurilor pe rezultate, fără identificatori ai cumpărătorilor. Ajută la îmbunătățirea ordonării rezultatelor, iar rapoartele pentru fiecare magazin sunt în planurile noastre."
+
+
+#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+msgid "Manage it under %s."
+msgstr "Gestionați această opțiune din %s."
+
+
+msgid "NitroSearch → Appearance"
+msgstr "NitroSearch → Aspect"
+
+
+msgid "Dismiss"
+msgstr "Respinge"
+
+
+msgid "Unauthorized."
+msgstr "Neautorizat."
+
+
+msgid "Not connected"
+msgstr "Neconectat"
+
+
+msgid "Confirming control…"
+msgstr "Se confirmă controlul…"
+
+
+msgid "Connected & verified"
+msgstr "Conectat și verificat"
+
+
+msgid "Amazon-quality search for WooCommerce"
+msgstr "Căutare de calitate Amazon pentru WooCommerce"
+
+
+msgid "Connect your store"
+msgstr "Conectați-vă magazinul"
+
+
+msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgstr "Conectați acest magazin la NitroSearch pentru a începe sincronizarea catalogului și a oferi căutare instantanee, tolerantă la greșeli de tastare. Nimic nu părăsește site-ul până când nu dați clic pe Conectează."
+
+
+msgid "Provisioning token"
+msgstr "Token de provizionare"
+
+
+msgid "Optional. Only needed if you were given a token to connect this store."
+msgstr "Opțional. Necesar doar dacă ați primit un token pentru conectarea acestui magazin."
+
+
+msgid "Connect store"
+msgstr "Conectează magazinul"
+
+
+msgid "Confirming control of your site…"
+msgstr "Se confirmă controlul asupra site-ului…"
+
+
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgstr "Verificăm că dețineți controlul asupra acestui magazin înainte de a construi indexul de căutare. În producție, acest pas este automat; dacă site-ul nu poate fi accesat de pe serverele noastre, poate dura puțin. Catalogul se sincronizează imediat ce controlul este confirmat."
+
+
+msgid "Check status"
+msgstr "Verifică starea"
+
+
+msgid "Disconnect"
+msgstr "Deconectează"
+
+
+msgid "Dashboard"
+msgstr "Panou de control"
+
+
+msgid "Design"
+msgstr "Design"
+
+
+msgid "You’ve reached your plan’s limit."
+msgstr "Ați atins limita planului."
+
+
+#. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
+msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
+msgstr "Căutarea funcționează în continuare pentru tot ce este deja indexat, dar elementele noi nu vor fi adăugate până când nu treceți la un plan superior. Produsele au întotdeauna prioritate, așa că tot ce rămâne în așteptare este o pagină sau un articol. Deschideți %s mai jos pentru a trece la un plan mai mare."
+
+
+msgid "Manage / Upgrade"
+msgstr "Gestionare / Upgrade"
+
+
+msgid "Sync health"
+msgstr "Starea sincronizării"
+
+
+msgid "Search results indexed"
+msgstr "Rezultate de căutare indexate"
+
+
+msgid "Unlimited"
+msgstr "Nelimitat"
+
+
+msgid "Pending changes"
+msgstr "Modificări în așteptare"
+
+
+msgid "Last sync"
+msgstr "Ultima sincronizare"
+
+
+msgid "Never"
+msgstr "Niciodată"
+
+
+msgid "Last error"
+msgstr "Ultima eroare"
+
+
+msgid "Sync all products"
+msgstr "Sincronizează toate produsele"
+
+
+msgid "Refresh status"
+msgstr "Reîmprospătează starea"
+
+
+#. translators: %s: a human-readable time interval, e.g. "4 mins".
+msgid "%s from now"
+msgstr "peste %s"
+
+
+msgid "On demand"
+msgstr "La cerere"
+
+
+msgctxt "unit: milliseconds"
+msgid "ms"
+msgstr "ms"
+
+
+msgid "Sync performance"
+msgstr "Performanța sincronizării"
+
+
+msgid "Avg sync speed"
+msgstr "Viteză medie de sincronizare"
+
+
+msgid "Last batch"
+msgstr "Ultimul lot"
+
+
+msgid "Items synced"
+msgstr "Elemente sincronizate"
+
+
+msgid "Batches sent"
+msgstr "Loturi trimise"
+
+
+msgid "Next sync"
+msgstr "Următoarea sincronizare"
+
+
+msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgstr "Modificările din catalog sunt grupate în loturi și trimise în fundal — aceste cifre arată cât de repede ajung în indexul de căutare."
+
+
+msgid "Search analytics"
+msgstr "Statistici de căutare"
+
+
+msgid "last 30 days"
+msgstr "ultimele 30 de zile"
+
+
+msgid "Couldn’t load analytics just now — it will retry automatically."
+msgstr "Nu am putut încărca statisticile acum — se va reîncerca automat."
+
+
+#. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
+msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
+msgstr "<strong>%1$s</strong> în magazin în ultimele 30 de zile. Vedeți ce au căutat cumpărătorii, pe ce au dat clic și ce au căutat fără să găsească — inclus în fiecare plan plătit, de la %2$s."
+
+
+#. translators: %s: number of searches.
+msgid "%s search"
+msgid_plural "%s searches"
+msgstr[0] "%s căutare"
+msgstr[1] "%s căutări"
+msgstr[2] "%s de căutări"
+
+
+#. translators: %s: a price in US dollars, e.g. "$5.99". "mo" is short for month.
+msgid "%s/mo"
+msgstr "%s/lună"
+
+
+msgid "Upgrade to unlock"
+msgstr "Treci la un plan superior pentru a debloca"
+
+
+msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
+msgstr "Statisticile încep să fie colectate cu modulul 1.5.0+ activ — datele apar la câteva ore după ce cumpărătorii încep să caute."
+
+
+msgid "Searches"
+msgstr "Căutări"
+
+
+msgid "Zero-result rate"
+msgstr "Rata căutărilor fără rezultate"
+
+
+msgid "Click-through"
+msgstr "Rată de clic"
+
+
+msgid "Top searches"
+msgstr "Cele mai frecvente căutări"
+
+
+msgid "Searched, found nothing"
+msgstr "Au căutat, nu au găsit nimic"
+
+
+msgid "View full analytics →"
+msgstr "Vezi statisticile complete →"
+
+
+msgid "Your plan & account"
+msgstr "Planul și contul"
+
+
+msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
+msgstr "Acest magazin este revendicat de un cont NitroSearch. Gestionați planul și facturarea din panoul de control NitroSearch."
+
+
+msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
+msgstr "Sunteți pe planul <strong>Gratuit</strong>. Revendicați acest magazin într-un cont NitroSearch pentru a-l gestiona sau a trece la un plan superior — indexul și căutarea rămân exact așa cum sunt."
+
+
+msgid "Roomy"
+msgstr "Aerisit"
+
+
+msgid "Two-line names and a clear picture. The default."
+msgstr "Nume pe două rânduri și o imagine clară. Varianta implicită."
+
+
+msgid "Compact"
+msgstr "Compact"
+
+
+msgid "Smaller rows, so more products fit before scrolling."
+msgstr "Rânduri mai mici, ca să încapă mai multe produse înainte de derulare."
+
+
+msgid "Big pictures"
+msgstr "Imagini mari"
+
+
+msgid "Larger thumbnails for image-led catalogues."
+msgstr "Miniaturi mai mari, pentru cataloagele bazate pe imagini."
+
+
+msgid "Text only"
+msgstr "Doar text"
+
+
+msgid "No pictures — good for spares, parts and B2B."
+msgstr "Fără imagini — potrivit pentru piese de schimb, componente și B2B."
+
+
+msgid "Light"
+msgstr "Luminos"
+
+
+msgid "A white panel. Suits most themes."
+msgstr "Un panou alb. Se potrivește cu majoritatea temelor."
+
+
+msgid "Dark"
+msgstr "Întunecat"
+
+
+msgid "A dark panel, for dark headers and themes."
+msgstr "Un panou întunecat, pentru anteturi și teme închise la culoare."
+
+
+msgid "Automatic"
+msgstr "Automat"
+
+
+msgid "Follows each shopper's own device setting."
+msgstr "Urmează setarea dispozitivului fiecărui cumpărător."
+
+
+msgid "Custom"
+msgstr "Personalizat"
+
+
+msgid "Choose your own panel and text colours below."
+msgstr "Alegeți mai jos propriile culori pentru panou și text."
+
+
+msgid "Look"
+msgstr "Stil vizual"
+
+
+msgid "Layout"
+msgstr "Aranjament"
+
+
+msgid "Products shown"
+msgstr "Produse afișate"
+
+
+msgid "How many products appear in the drop-down as your shopper types."
+msgstr "Câte produse apar în lista derulantă în timp ce cumpărătorul tastează."
+
+
+msgid "Filters"
+msgstr "Filtre"
+
+
+msgid "Automatic (recommended)"
+msgstr "Automat (recomandat)"
+
+
+msgid "Always across the top"
+msgstr "Întotdeauna în partea de sus"
+
+
+msgid "Hide in the drop-down"
+msgstr "Ascunde în lista derulantă"
+
+
+msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
+msgstr "Filtre pentru produse în stoc, la reducere, după marcă și categorie. Varianta Automat le așază într-o coloană laterală când este loc și în partea de sus când nu este."
+
+
+msgid "Drop-down width"
+msgstr "Lățimea listei derulante"
+
+
+msgid "Wide"
+msgstr "Lată"
+
+
+msgid "Match my search box"
+msgstr "La fel ca caseta mea de căutare"
+
+
+msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
+msgstr "Opțiunea „Automat” lasă numelor de produse destul loc ca să poată fi citite, chiar și când caseta de căutare a temei tale este îngustă. „Cât caseta mea de căutare” păstrează lista exact la fel de lată ca și caseta."
+
+
+msgid "Colours"
+msgstr "Culori"
+
+
+msgid "Colour scheme"
+msgstr "Schemă de culori"
+
+
+msgid "Accent colour"
+msgstr "Culoare de accent"
+
+
+msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
+msgstr "Folosită pentru prețuri, evidențieri și filtrele selectate. Lăsați gol pentru varianta implicită. Textul de deasupra devine automat negru sau alb, oricare rămâne lizibil."
+
+
+msgid "Panel background"
+msgstr "Fundalul panoului"
+
+
+msgid "Only used when the colour scheme is set to Custom."
+msgstr "Folosit doar când schema de culori este setată la Personalizat."
+
+
+msgid "Text colour"
+msgstr "Culoarea textului"
+
+
+msgid "Corners"
+msgstr "Colțuri"
+
+
+msgid "Rounded"
+msgstr "Rotunjite"
+
+
+msgid "Slightly rounded"
+msgstr "Ușor rotunjite"
+
+
+msgid "Square"
+msgstr "Drepte"
+
+
+msgid "Text style"
+msgstr "Stilul textului"
+
+
+msgid "Match my store"
+msgstr "La fel ca magazinul meu"
+
+
+msgid "System default"
+msgstr "Fontul implicit al sistemului"
+
+
+msgid "Custom font"
+msgstr "Font personalizat"
+
+
+msgid "Match my store borrows the font your theme already uses around the search box."
+msgstr "La fel ca magazinul meu împrumută fontul pe care tema îl folosește deja în jurul casetei de căutare."
+
+
+msgctxt "example font stack"
+msgid "e.g. Georgia, serif"
+msgstr "de ex. Georgia, serif"
+
+
+msgid "Only used when Custom font is selected."
+msgstr "Folosit doar când este selectat Font personalizat."
+
+
+msgid "What to search"
+msgstr "Ce se caută"
+
+
+msgid "Include"
+msgstr "Include"
+
+
+msgid "Products"
+msgstr "Produse"
+
+
+msgid "always indexed"
+msgstr "indexate întotdeauna"
+
+
+msgid "Pages"
+msgstr "Pagini"
+
+
+msgid "Blog posts"
+msgstr "Articole de blog"
+
+
+#. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
+msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgstr "Paginile și articolele se contorizează în aceeași cotă ca produsele, așa că dezactivarea lor eliberează loc pentru catalog. Produsele sunt întotdeauna pe primul loc și nu sunt niciodată dislocate de acestea. Conținutul privat, protejat cu parolă sau nepublicat nu este indexat niciodată, iar noi respectăm %s setat prin Yoast SEO sau Rank Math (per element, per tip de conținut sau la nivelul întregului site)."
+
+
+msgid "Search results page"
+msgstr "Pagina cu rezultatele căutării"
+
+
+msgid "Enhance the product search results page with NitroSearch results and filters"
+msgstr "Îmbunătățește pagina cu rezultatele căutării de produse folosind rezultatele și filtrele NitroSearch"
+
+
+msgid "Privacy &amp; credit"
+msgstr "Confidențialitate și mențiune"
+
+
+msgid "Search usage data"
+msgstr "Date despre utilizarea căutării"
+
+
+msgid "Share anonymous search usage counts with NitroSearch"
+msgstr "Trimite către NitroSearch contorizări anonime despre utilizarea căutării"
+
+
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Contorizează căutările, numărul de rezultate și clicurile pe rezultate în căutarea din magazin — fără cookie-uri și anonim, fără identificatori ai cumpărătorilor, fără adrese IP și fără nimic stocat în browserul cumpărătorului. Folosite pentru a îmbunătăți ordonarea rezultatelor și pentru statisticile de căutare. Debifați pentru a opri imediat trimiterea."
+
+
+msgid "Powered-by credit"
+msgstr "Mențiunea „Propulsat de”"
+
+
+msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
+msgstr "Afișează o mică mențiune „Propulsat de NitroSearch”, cu legătură către nitrosearch.io"
+
+
+#. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Dezactivată implicit — alegerea vă aparține în întregime. Activarea ei adaugă o mică mențiune în caseta de căutare și un rând în subsolul site-ului, ambele cu legătură către %s — o legătură normală, de tip follow. Nimic nu este adăugat pe site dacă nu bifați această opțiune. Vă mulțumim dacă o faceți."
+
+
+msgid "Advanced"
+msgstr "Avansat"
+
+
+msgid "Search box selector"
+msgstr "Selectorul casetei de căutare"
+
+
+msgctxt "example CSS selector"
+msgid "e.g. input.my-theme-search"
+msgstr "de ex. input.my-theme-search"
+
+
+msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
+msgstr "Selector CSS opțional pentru câmpul de căutare al temei. Lăsați gol pentru detectare automată."
+
+
+msgid "Save design"
+msgstr "Salvează designul"
+
+
+#. translators: %s: the error detail returned by the server.
+msgid "Connect failed: %s"
+msgstr "Conectarea a eșuat: %s"
+
+
+msgid "unknown error"
+msgstr "eroare necunoscută"
+
+
+msgid "Connected and verified."
+msgstr "Conectat și verificat."
+
+
+msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
+msgstr "Conectat. Confirmăm controlul asupra site-ului — poate dura puțin. Folosiți „Verifică starea” mai jos dacă nu se actualizează."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background, then your pages and posts."
+msgid_plural "Syncing %s products in the background, then your pages and posts."
+msgstr[0] "Se sincronizează %s produs în fundal, apoi paginile și articolele."
+msgstr[1] "Se sincronizează %s produse în fundal, apoi paginile și articolele."
+msgstr[2] "Se sincronizează %s de produse în fundal, apoi paginile și articolele."
+
+
+#. translators: %s: number of products.
+msgid "Syncing %s product in the background."
+msgid_plural "Syncing %s products in the background."
+msgstr[0] "Se sincronizează %s produs în fundal."
+msgstr[1] "Se sincronizează %s produse în fundal."
+msgstr[2] "Se sincronizează %s de produse în fundal."
+
+
+msgid "Verified!"
+msgstr "Verificat!"
+
+
+#. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
+msgid "%1$s search results indexed · %2$s pending."
+msgstr "%1$s rezultate de căutare indexate · %2$s în așteptare."
+
+
+msgid "Still confirming control of your site — please try again in a moment."
+msgstr "Încă se confirmă controlul asupra site-ului — reîncercați într-o clipă."
+
+
+msgid "Design saved."
+msgstr "Design salvat."
+
+
+msgid "Saved. Removing your pages and blog posts from your index in the background."
+msgstr "Salvat. Paginile și articolele de blog se elimină din index în fundal."
+
+
+msgid "Saved. Removing your pages from your index in the background."
+msgstr "Salvat. Paginile se elimină din index în fundal."
+
+
+msgid "Saved. Removing your blog posts from your index in the background."
+msgstr "Salvat. Articolele de blog se elimină din index în fundal."
+
+
+msgid "Saved. Indexing your pages and blog posts in the background."
+msgstr "Salvat. Paginile și articolele de blog se indexează în fundal."
+
+
+msgid "Saved. Indexing your pages in the background."
+msgstr "Salvat. Paginile se indexează în fundal."
+
+
+msgid "Saved. Indexing your blog posts in the background."
+msgstr "Salvat. Articolele de blog se indexează în fundal."
+
+
+msgid "Disconnected."
+msgstr "Deconectat."
+
+
+msgid "This store is already claimed to a NitroSearch account."
+msgstr "Acest magazin este deja revendicat de un cont NitroSearch."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
+msgstr "Nu am putut confirma încă controlul asupra site-ului — dați mai întâi clic pe „Reîmprospătează starea”, apoi reîncercați."
+
+
+#. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
+msgid "Your site needs re-checking — click \"Refresh status\", then try again."
+msgstr "Site-ul trebuie verificat din nou — dați clic pe „Reîmprospătează starea”, apoi reîncercați."
+
+
+msgid "Too many attempts — please wait a minute and try again."
+msgstr "Prea multe încercări — așteptați un minut și reîncercați."
+
+
+msgid "Could not create a manage link. Please try again."
+msgstr "Nu am putut crea o legătură de gestionare. Reîncercați."
+
+
+msgid "Insufficient permissions."
+msgstr "Permisiuni insuficiente."
+
+
+#. translators: %s: the linked brand name "NitroSearch".
+msgid "Search powered by %s"
+msgstr "Căutare propulsată de %s"
+
+
+msgid "Refine results"
+msgstr "Rafinează rezultatele"
+
+
+msgid "Refine"
+msgstr "Rafinează"
+
+
+msgid "In stock"
+msgstr "În stoc"
+
+
+msgid "On sale"
+msgstr "La reducere"
+
+
+msgid "Brand"
+msgstr "Marcă"
+
+
+msgid "Category"
+msgstr "Categorie"
+
+
+msgid "View"
+msgstr "Vezi"
+
+
+msgid "Add to cart"
+msgstr "Adaugă în coș"
+
+
+msgid "Adding…"
+msgstr "Se adaugă…"
+
+
+msgid "Added ✓"
+msgstr "Adăugat ✓"
+
+
+msgid "Try again"
+msgstr "Reîncearcă"
+
+
+msgid "Searching…"
+msgstr "Se caută…"
+
+
+msgid "Search is unavailable."
+msgstr "Căutarea este indisponibilă."
+
+
+msgid "Search is unavailable right now."
+msgstr "Căutarea este momentan indisponibilă."
+
+
+msgid "No products found."
+msgstr "Nu s-au găsit produse."
+
+
+#. translators: %s: the shopper's search term.
+msgid "No products found for “%s”."
+msgstr "Nu s-au găsit produse pentru „%s”."
+
+
+#. translators: %s: the shopper's search term.
+msgid "Nothing found for “%s”."
+msgstr "Nu s-a găsit nimic pentru „%s”."
+
+
+msgid "Search products…"
+msgstr "Caută produse…"
+
+
+msgid "Close search"
+msgstr "Închide căutarea"
+
+
+msgid "Product results"
+msgstr "Rezultate pentru produse"
+
+
+msgid "Recent searches"
+msgstr "Căutări recente"
+
+
+msgid "Clear"
+msgstr "Golește"
+
+
+msgid "Start typing to search products…"
+msgstr "Începeți să tastați pentru a căuta produse…"
+
+
+msgid "Sale"
+msgstr "Reducere"
+
+
+msgid "Out of stock"
+msgstr "Stoc epuizat"
+
+
+msgid "Pages & posts"
+msgstr "Pagini și articole"
+
+
+msgctxt "a website page, shown on a search result"
+msgid "Page"
+msgstr "Pagină"
+
+
+msgctxt "a blog post, shown on a search result"
+msgid "Article"
+msgstr "Articol"
+
+
+#. translators: %s: the search round-trip time in milliseconds.
+msgctxt "unit: milliseconds"
+msgid "%s ms"
+msgstr "%s ms"
+
+
+#. translators: %s: the brand name "NitroSearch".
+msgid "Powered by %s"
+msgstr "Propulsat de %s"
+
+
+#. translators: 1: current page number, 2: total number of pages.
+msgid "Page %1$s of %2$s"
+msgstr "Pagina %1$s din %2$s"
+
+
+msgid "← Prev"
+msgstr "← Înapoi"
+
+
+msgid "Next →"
+msgstr "Înainte →"
+
+
+msgctxt "button label"
+msgid "Search"
+msgstr "Caută"
+
+
+#. translators: %s: number of products found (screen-reader announcement).
+msgid "%s product found."
+msgid_plural "%s products found."
+msgstr[0] "S-a găsit %s produs."
+msgstr[1] "S-au găsit %s produse."
+msgstr[2] "S-au găsit %s de produse."
+
+
+#. translators: %s: total number of results.
+msgid "See all %s result →"
+msgid_plural "See all %s results →"
+msgstr[0] "Vezi %s rezultat →"
+msgstr[1] "Vezi toate cele %s rezultate →"
+msgstr[2] "Vezi toate cele %s de rezultate →"
+
+
+#. translators: 1: number of results, 2: the shopper's search term.
+msgid "%1$s result for “%2$s”"
+msgid_plural "%1$s results for “%2$s”"
+msgstr[0] "%1$s rezultat pentru „%2$s”"
+msgstr[1] "%1$s rezultate pentru „%2$s”"
+msgstr[2] "%1$s de rezultate pentru „%2$s”"
+
+
+#. translators: %s: number of results.
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s rezultat"
+msgstr[1] "%s rezultate"
+msgstr[2] "%s de rezultate"

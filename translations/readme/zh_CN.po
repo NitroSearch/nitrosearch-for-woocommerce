@@ -1,0 +1,222 @@
+# Translation of the NitroSearch for WooCommerce readme into Chinese (China) (zh_CN).
+
+# msgids are in translate.wordpress.org's own form (markdown rendered to HTML),
+
+# so this file imports 1:1 against the Stable Readme originals.
+
+# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce readme\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+msgid "Instant, typo-tolerant WooCommerce product search served from the cloud — Amazon-quality results with facets, without slowing your store down."
+msgstr "云端托管的即时、拼写容错 WooCommerce 商品搜索——媲美 Amazon 的结果与多维筛选，绝不拖慢您的商店。"
+
+
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+msgid "Yes. The free tier covers up to 100 search results with every search feature included, forever — search itself is never tiered. Paid plans raise the limit (and include extras like the store reporting we're building); you only pay for how much you index, never per search."
+msgstr "是的。免费版可容纳最多 100 条搜索结果，包含全部搜索功能，永久有效——搜索本身从不分级收费。付费套餐可提高上限（并包含附加内容，例如我们正在开发的商店报表）；您只为索引量付费，绝不按搜索次数计费。"
+
+
+msgid "<strong>Search usage counts:</strong> once connected, the search widget also sends anonymous, cookieless usage events — the query typed, how many results appeared, and clicks on those results — to <code>api.nitrosearch.io</code>. They carry no shopper identifiers, no cookies and no IP-based profiles, and raw records are deleted on a rolling schedule. Switch this off any time under <strong>NitroSearch → Appearance → Search usage data</strong>."
+msgstr "<strong>搜索使用统计：</strong>连接后，搜索组件还会向 <code>api.nitrosearch.io</code> 发送匿名、无 Cookie 的使用事件——输入的搜索词、出现的结果数量，以及对这些结果的点击。这些数据不含顾客身份信息、不含 Cookie，也不建立基于 IP 的画像，原始记录会按滚动周期删除。您可以随时在<strong>NitroSearch → 外观 → 搜索使用数据</strong>下关闭此功能。"
+
+
+msgid "<strong>See what shoppers actually search for</strong> — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found <em>nothing</em> (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever."
+msgstr "<strong>看看顾客究竟在搜索什么</strong>——所有付费套餐均包含搜索分析：热门搜索词、哪些商品被点击并加入购物车，以及那些<em>一无所获</em>的搜索（一份现成的、您尚未备货的需求清单）。摘要就显示在 wp-admin 中；完整仪表盘位于您的 NitroSearch 账户。无 Cookie，不含顾客身份信息——始终如此。"
+
+
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgstr "<strong>诚实、简单的定价</strong>——真正免费的免费版，每个套餐都包含全部搜索功能（搜索本身从不分级收费），价格只随商品目录规模变化。没有按搜索次数的收费，也没有意外账单。"
+
+
+msgid "Only if you choose to. The credit is <strong>off by default</strong>, and nothing is added to your storefront unless you turn it on in the plugin's <strong>Appearance</strong> settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way."
+msgstr "只有您主动选择时才会显示。该署名<strong>默认关闭</strong>，除非您在插件的<strong>外观</strong>设置中开启，否则不会向您的店面添加任何内容。开启后，它会以一处带链接的小署名出现在搜索框中，并在站点页脚显示一行文字，均指向 nitrosearch.io。若您愿意开启，我们深表感谢——但无论开启与否，插件的功能完全相同。"
+
+
+msgid "<strong>Nothing added to your site unless you ask</strong> — the optional \"Powered by NitroSearch\" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search."
+msgstr "<strong>您不主动要求，就不会添加任何内容</strong>——可选的“由 NitroSearch 提供技术支持”署名默认关闭。开启后只会添加一处带链接的小署名；保持关闭，您的店面除搜索外不会多出任何东西。"
+
+
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgstr "<strong>覆盖整个站点，而不只是商店</strong>——可选择将页面和博客文章一并编入索引，它们显示在商品下方的独立区域，绝不会淹没您的商品目录。页面全文从不复制，私密、受密码保护以及带有 <em>noindex</em> 标记的内容始终不会被收录。"
+
+
+msgid "Your store falls back to its normal WooCommerce search. Your data on NitroSearch is managed from your account; you can disconnect at any time from the plugin screen."
+msgstr "您的商店会回退到 WooCommerce 的普通搜索。您在 NitroSearch 上的数据可通过您的账户管理；您随时可以在插件界面中断开连接。"
+
+
+msgid "Yes. NitroSearch indexes and searches WooCommerce products, so WooCommerce must be installed and active. It's compatible with WooCommerce High-Performance Order Storage (HPOS)."
+msgstr "是的。NitroSearch 索引和搜索的是 WooCommerce 商品，因此必须安装并启用 WooCommerce。插件兼容 WooCommerce 高性能订单存储（HPOS）。"
+
+
+msgid "The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap."
+msgstr "插件在本地维护一个变更队列，并在后台可靠地逐步处理——因此即使站点流量很低、前端存在激进的缓存，它也能持续工作——同时自我调节节奏，让店面对顾客始终保持流畅响应。每次更新都经过签名并携带版本号，因此变更不会乱序到达。实时同步状态界面清楚显示已索引的内容。每晚自动偏差修复已列入我们的开发计划。"
+
+
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgstr "在您点击<strong>连接商店</strong>之前，不会发送任何数据。此后，您的商品目录会发送到 NitroSearch 进行索引，商品发生变化时也会发送相应更新。完整清单以及我们的服务条款和隐私政策链接，请参阅上方的<strong>外部服务</strong>部分。"
+
+
+msgid "No. NitroSearch enhances your theme's <em>existing</em> search box in place. There's nothing to rebuild. (If your theme uses an unusual search field, you can point NitroSearch at it with an optional CSS selector in the Appearance settings.)"
+msgstr "不需要。NitroSearch 就地增强您的主题<em>现有</em>的搜索框，无需任何重建。（如果您的主题使用了不常见的搜索输入框，可以在外观设置中通过可选的 CSS 选择器让 NitroSearch 指向它。）"
+
+
+msgid "No — that's the point. Searches run directly between the shopper's browser and our engine, so your WordPress/WooCommerce server never does the search work. The on-page widget is tiny and loads only when a shopper starts searching."
+msgstr "不会——这正是它的意义所在。搜索直接在顾客浏览器与我们的引擎之间进行，您的 WordPress/WooCommerce 服务器完全不承担搜索工作。页面上的搜索组件非常小巧，只有当顾客开始搜索时才会加载。"
+
+
+msgid "No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan and upgrade."
+msgstr "使用免费版无需账户——安装、连接，就这么简单。账户是可选的，可用于管理套餐和升级。"
+
+
+msgid "What happens if I deactivate the plugin?"
+msgstr "如果停用插件会怎样？"
+
+
+msgid "Does it show a \"Powered by NitroSearch\" badge on my store?"
+msgstr "它会在我的商店上显示“由 NitroSearch 提供技术支持”的标识吗？"
+
+
+msgid "Is WooCommerce required?"
+msgstr "必须安装 WooCommerce 吗？"
+
+
+msgid "How does it stay in sync with my catalogue?"
+msgstr "它如何与我的商品目录保持同步？"
+
+
+msgid "What data leaves my site, and when?"
+msgstr "哪些数据会离开我的站点？何时离开？"
+
+
+msgid "Do I have to change my theme or add a shortcode?"
+msgstr "我需要修改主题或添加简码吗？"
+
+
+msgid "Will it slow my store down?"
+msgstr "它会拖慢我的商店吗？"
+
+
+msgid "Do I need to create an account?"
+msgstr "我需要创建账户吗？"
+
+
+msgid "Is it really free?"
+msgstr "它真的免费吗？"
+
+
+msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgstr "就这么简单——您的商品目录开始同步，主题的搜索框会自动升级。"
+
+
+msgid "Open the <strong>NitroSearch</strong> menu in wp-admin and click <strong>\"Connect store\"</strong>."
+msgstr "在 wp-admin 中打开<strong>NitroSearch</strong>菜单，点击<strong>“连接商店”</strong>。"
+
+
+msgid "Install and activate <strong>NitroSearch for WooCommerce</strong> (from Plugins → Add New, or upload the ZIP)."
+msgstr "安装并启用<strong>NitroSearch for WooCommerce</strong>（通过“插件 → 安装插件”，或上传 ZIP 压缩包）。"
+
+
+msgid "Install and activate <strong>WooCommerce</strong>."
+msgstr "安装并启用<strong>WooCommerce</strong>。"
+
+
+msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPrivacy Policy: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+msgstr "服务使用条款：<a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\n隐私政策：<a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+
+
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgstr "本插件会连接到<strong>NitroSearch 托管搜索服务</strong>（<a href=\"https://nitrosearch.io\">nitrosearch.io</a>），以索引您的商品目录并返回搜索结果。这是本插件的核心用途。"
+
+
+msgid "The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
+msgstr "免费版在您安装插件的那一刻即可使用——最多 100 条搜索结果，包含全部搜索功能。NitroSearch 账户是可选的；创建账户后即可在仪表盘中管理套餐并升级。了解更多请访问 <a href=\"https://nitrosearch.io\">nitrosearch.io</a>。"
+
+
+msgid "NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:"
+msgstr "NitroSearch 是一项托管搜索服务；本插件是它的官方 WooCommerce 连接器。它只做两件事，而且两者互不干扰："
+
+
+msgid "Install the plugin, connect your store, and from that moment every search your customers type is answered in <strong>around a tenth of a second</strong> — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store."
+msgstr "安装插件、连接商店，从那一刻起，顾客输入的每一次搜索都由我们的引擎直接应答，<strong>大约十分之一秒</strong>内返回——就算带着拼写错误也一样。无需重建主题。不给您的 WordPress 主机增加任何搜索负载。绝不拖慢您的商店。"
+
+
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgstr "<strong>顾客找不到，就买不成。</strong>WooCommerce 自带的搜索速度慢、无法容忍拼写错误，面对大型商品目录更是力不从心——搜索后一无所获的顾客往往会直接离开。NitroSearch 用快速、宽容、媲美 Amazon 品质的搜索取而代之，而且它运行在我们的服务器上，而不是您的服务器上。"
+
+
+msgid "<strong>Nothing leaves your site until you click Connect.</strong>"
+msgstr "<strong>在您点击“连接商店”之前，任何数据都不会离开您的站点。</strong>"
+
+
+msgid "<strong>Where:</strong> the NitroSearch API and search engine, at <code>api.nitrosearch.io</code> and your store's dedicated search endpoint."
+msgstr "<strong>发送到哪里：</strong>NitroSearch API 与搜索引擎，位于 <code>api.nitrosearch.io</code> 以及您商店专属的搜索端点。"
+
+
+msgid "<strong>Scripts loaded onto your storefront:</strong> once connected, the plugin loads the search widget's JavaScript from <code>api.nitrosearch.io</code> (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect."
+msgstr "<strong>加载到店面的脚本：</strong>连接后，插件会从 <code>api.nitrosearch.io</code> 加载搜索组件的 JavaScript（一个小型加载器，加上在首次出现搜索意图时加载的组件本身），以便在顾客的浏览器中呈现结果。连接之前不会加载任何内容。"
+
+
+msgid "<strong>Search queries:</strong> Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results."
+msgstr "<strong>搜索查询：</strong>连接后，顾客的搜索查询会从其浏览器直接发送到 NitroSearch 引擎以返回结果。"
+
+
+msgid "<strong>What is sent, and when:</strong> When you click <strong>\"Connect store\"</strong>, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen."
+msgstr "<strong>发送什么、何时发送：</strong>当您点击<strong>“连接商店”</strong>时，插件会向 NitroSearch 注册您的站点（您的站点 URL 和一个随机生成的安装标识符）。连接后，您的商品数据——名称、描述、SKU、价格、库存状态、分类、属性、图片和固定链接——会被发送以建立搜索索引。商品发生变化时会随时发送更新。"
+
+
+msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, the widget talks <em>directly</em> to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load."
+msgstr "<strong>即时应答搜索。</strong>顾客搜索时，搜索组件使用一把仅限搜索、仅涵盖您商店公开商品的密钥，<em>直接</em>与我们的引擎通信——从不经过您的 WordPress 服务器，这正是它在高负载下依然快速的原因。"
+
+
+msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgstr "<strong>让我们这边的目录副本保持最新。</strong>当商品、价格和库存发生变化时，插件会在后台安静地把更新发送给 NitroSearch——先汇入本地变更队列、加上签名，并不断重试，直到每一条变更都成功送达。"
+
+
+msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgstr "<strong>几分钟即可完成设置</strong>——自动增强您的主题<em>现有</em>的搜索框。无需简码，无需修改模板，无需重建。"
+
+
+msgid "<strong>Sync you can trust</strong> — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise."
+msgstr "<strong>值得信赖的同步</strong>——插件维护自己的变更队列并不断重试，直到每一条变更都成功送达；每次更新都经过签名并携带版本号，因此不会乱序到达。实时同步状态界面清楚显示已索引的内容——信任是可以亲自查证的，而不只是一句承诺。"
+
+
+msgid "<strong>Filters, facets &amp; a full results page</strong> — category, brand, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results."
+msgstr "<strong>筛选器、多维筛选与完整结果页</strong>——分类、品牌、促销和有货筛选，带分页的完整结果网格，还能直接在结果中加入购物车。"
+
+
+msgid "<strong>It won't slow your store down</strong> — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score."
+msgstr "<strong>它不会拖慢您的商店</strong>——搜索直接在顾客浏览器与我们的引擎之间进行，您的 WordPress 服务器从不处于搜索链路中。页面上的搜索组件轻若无物，并密封在自己的 shadow DOM 中，因此绝不会与您的主题或速度评分发生冲突。"
+
+
+msgid "<strong>Instant &amp; typo-tolerant</strong> — results appear as your customer types, and \"runing shoes\" still finds your running shoes."
+msgstr "<strong>即时、拼写容错</strong>——结果随顾客输入即时出现，输入“蓝芽耳机”，照样能找到您的蓝牙耳机。"
+
+
+msgid "External services"
+msgstr "外部服务"
+
+
+msgid "Free to start"
+msgstr "免费起步"
+
+
+msgid "How it works"
+msgstr "工作原理"
+
+
+msgid "Why store owners switch to NitroSearch"
+msgstr "店主为何改用 NitroSearch"

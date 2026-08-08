@@ -64,9 +64,12 @@ final class WidgetLoader
      * not receive, so either side can ship first.
      *
      * Plural strings are sent as CLDR category maps (one/few/many/other) built
-     * from ordinary _n() calls at representative counts — 1, 2 and 5 select the
-     * right gettext plural form in every locale we ship — and the widget picks
-     * a category with Intl.PluralRules at render time, when it knows the count.
+     * from ordinary _n() calls at representative counts — 1, 2, 5 and 100
+     * select the right gettext plural form in every locale we ship — and the
+     * widget picks a category with Intl.PluralRules at render time, when it
+     * knows the count. 'other' samples at 100, not 5: in Romanian the "few"
+     * form covers 2–19, so a count of 5 would freeze the few-form into the
+     * category that CLDR only selects from 20 upward.
      *
      * @return array<string,string|array<string,string>>
      */
@@ -117,28 +120,28 @@ final class WidgetLoader
                 'one'   => _n('%s product found.', '%s products found.', 1, 'nitrosearch'),
                 'few'   => _n('%s product found.', '%s products found.', 2, 'nitrosearch'),
                 'many'  => _n('%s product found.', '%s products found.', 5, 'nitrosearch'),
-                'other' => _n('%s product found.', '%s products found.', 5, 'nitrosearch'),
+                'other' => _n('%s product found.', '%s products found.', 100, 'nitrosearch'),
             ],
             'see_all'           => [
                 /* translators: %s: total number of results. */
                 'one'   => _n('See all %s result →', 'See all %s results →', 1, 'nitrosearch'),
                 'few'   => _n('See all %s result →', 'See all %s results →', 2, 'nitrosearch'),
                 'many'  => _n('See all %s result →', 'See all %s results →', 5, 'nitrosearch'),
-                'other' => _n('See all %s result →', 'See all %s results →', 5, 'nitrosearch'),
+                'other' => _n('See all %s result →', 'See all %s results →', 100, 'nitrosearch'),
             ],
             'results_for'       => [
                 /* translators: 1: number of results, 2: the shopper's search term. */
                 'one'   => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 1, 'nitrosearch'),
                 'few'   => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 2, 'nitrosearch'),
                 'many'  => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 5, 'nitrosearch'),
-                'other' => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 5, 'nitrosearch'),
+                'other' => _n('%1$s result for “%2$s”', '%1$s results for “%2$s”', 100, 'nitrosearch'),
             ],
             'results_count'     => [
                 /* translators: %s: number of results. */
                 'one'   => _n('%s result', '%s results', 1, 'nitrosearch'),
                 'few'   => _n('%s result', '%s results', 2, 'nitrosearch'),
                 'many'  => _n('%s result', '%s results', 5, 'nitrosearch'),
-                'other' => _n('%s result', '%s results', 5, 'nitrosearch'),
+                'other' => _n('%s result', '%s results', 100, 'nitrosearch'),
             ],
         ];
     }

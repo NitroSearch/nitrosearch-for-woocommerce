@@ -1,0 +1,222 @@
+# Translation of the NitroSearch for WooCommerce readme into Czech (cs_CZ).
+
+# msgids are in translate.wordpress.org's own form (markdown rendered to HTML),
+
+# so this file imports 1:1 against the Stable Readme originals.
+
+# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+
+msgid ""
+msgstr ""
+"Project-Id-Version: NitroSearch for WooCommerce readme\n"
+"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+
+
+msgid "Instant, typo-tolerant WooCommerce product search served from the cloud — Amazon-quality results with facets, without slowing your store down."
+msgstr "Okamžité vyhledávání produktů WooCommerce odolné vůči překlepům, z cloudu — výsledky v kvalitě Amazonu s filtry, bez zpomalení vašeho obchodu."
+
+
+msgid "NitroSearch for WooCommerce"
+msgstr "NitroSearch for WooCommerce"
+
+
+msgid "Yes. The free tier covers up to 100 search results with every search feature included, forever — search itself is never tiered. Paid plans raise the limit (and include extras like the store reporting we're building); you only pay for how much you index, never per search."
+msgstr "Ano. Bezplatná úroveň pokrývá až 100 výsledků vyhledávání, se všemi funkcemi vyhledávání, napořád — samotné vyhledávání nikdy podle tarifu neomezujeme. Placené tarify zvyšují limit (a přidávají navíc třeba přehledy pro obchody, na kterých právě pracujeme); platíte jen za to, kolik toho indexujete, nikdy za jednotlivá vyhledávání."
+
+
+msgid "<strong>Search usage counts:</strong> once connected, the search widget also sends anonymous, cookieless usage events — the query typed, how many results appeared, and clicks on those results — to <code>api.nitrosearch.io</code>. They carry no shopper identifiers, no cookies and no IP-based profiles, and raw records are deleted on a rolling schedule. Switch this off any time under <strong>NitroSearch → Appearance → Search usage data</strong>."
+msgstr "<strong>Počty použití vyhledávání:</strong> po připojení odesílá vyhledávací widget také anonymní události o používání, bez cookies — zadaný dotaz, kolik výsledků se zobrazilo a kliknutí na tyto výsledky — na <code>api.nitrosearch.io</code>. Nenesou žádné identifikátory zákazníků, žádné cookies ani profily podle IP adres a surové záznamy se průběžně mažou. Kdykoli to můžete vypnout v <strong>NitroSearch → Vzhled → Údaje o používání vyhledávání</strong>."
+
+
+msgid "<strong>See what shoppers actually search for</strong> — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found <em>nothing</em> (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever."
+msgstr "<strong>Podívejte se, co zákazníci skutečně hledají</strong> — každý placený tarif zahrnuje analytiku vyhledávání: nejčastější dotazy, na co se klikalo a co putovalo do košíku, a vyhledávání, která nenašla <em>nic</em> (hotový seznam poptávky, kterou zatím nenabízíte). Souhrn najdete přímo ve wp-admin; kompletní přehledy jsou ve vašem účtu NitroSearch. Bez cookies a bez identifikátorů zákazníků — a to vždy."
+
+
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgstr "<strong>Poctivé a jednoduché ceny</strong> — skutečně bezplatná úroveň, všechny funkce vyhledávání v každém tarifu (samotné vyhledávání nikdy podle tarifu neomezujeme) a ceny, které rostou jen s velikostí katalogu. Žádné poplatky za vyhledávání, žádné nečekané účty."
+
+
+msgid "Only if you choose to. The credit is <strong>off by default</strong>, and nothing is added to your storefront unless you turn it on in the plugin's <strong>Appearance</strong> settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way."
+msgstr "Jen pokud se tak rozhodnete. Zmínka je <strong>ve výchozím stavu vypnutá</strong> a na váš obchod se nic nepřidá, dokud ji nezapnete v nastavení pluginu na kartě <strong>Vzhled</strong>. Pokud ji zapnete, zobrazí se jako drobná zmínka s odkazem ve vyhledávacím poli a jako jeden řádek v patičce webu, obojí míří na nitrosearch.io. Děkujeme, pokud ji zapnete — plugin ale funguje v obou případech úplně stejně."
+
+
+msgid "<strong>Nothing added to your site unless you ask</strong> — the optional \"Powered by NitroSearch\" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search."
+msgstr "<strong>Na váš web se nic nepřidá, dokud si to sami nevyžádáte</strong> — volitelná zmínka „Používá NitroSearch“ je ve výchozím stavu vypnutá. Když ji zapnete, přidá se drobná zmínka s odkazem; když ji necháte vypnutou, váš obchod získá jen samotné vyhledávání."
+
+
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgstr "<strong>Celý váš web, nejen obchod</strong> — volitelně můžete indexovat i stránky a příspěvky na blogu; zobrazují se ve vlastní sekci pod produkty, takže váš katalog nikdy nezapadne. Plný obsah stránek se nikdy nekopíruje a soukromý, heslem chráněný a <em>noindex</em> obsah vždy zůstává stranou."
+
+
+msgid "Your store falls back to its normal WooCommerce search. Your data on NitroSearch is managed from your account; you can disconnect at any time from the plugin screen."
+msgstr "Váš obchod se vrátí k běžnému vyhledávání WooCommerce. Vaše data v NitroSearch spravujete ze svého účtu; odpojit se můžete kdykoli z obrazovky pluginu."
+
+
+msgid "Yes. NitroSearch indexes and searches WooCommerce products, so WooCommerce must be installed and active. It's compatible with WooCommerce High-Performance Order Storage (HPOS)."
+msgstr "Ano. NitroSearch indexuje a prohledává produkty WooCommerce, takže WooCommerce musí být nainstalováno a aktivní. Plugin je kompatibilní s WooCommerce High-Performance Order Storage (HPOS)."
+
+
+msgid "The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap."
+msgstr "Plugin si udržuje místní frontu změn a spolehlivě ji odbavuje na pozadí — funguje tedy i na webech s nízkou návštěvností a za agresivní cache — a hlídá si tempo tak, aby obchod zůstal pro zákazníky svižný. Každá aktualizace je podepsaná a nese číslo verze, takže změny nemohou dorazit ve špatném pořadí. Živá obrazovka stavu synchronizace ukazuje přesně, co je zaindexované. Automatickou noční opravu odchylek máme v plánu."
+
+
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgstr "Nic, dokud nekliknete na <strong>Připojit</strong>. Poté se váš katalog produktů odešle do NitroSearch k zaindexování a s každou změnou produktů se odesílají aktualizace. Úplný seznam včetně odkazů na naše podmínky a zásady ochrany osobních údajů najdete výše v sekci <strong>Externí služby</strong>."
+
+
+msgid "No. NitroSearch enhances your theme's <em>existing</em> search box in place. There's nothing to rebuild. (If your theme uses an unusual search field, you can point NitroSearch at it with an optional CSS selector in the Appearance settings.)"
+msgstr "Ne. NitroSearch vylepšuje <em>stávající</em> vyhledávací pole vaší šablony přímo na místě. Nic se nemusí přestavovat. (Pokud vaše šablona používá neobvyklé vyhledávací pole, můžete na něj NitroSearch nasměrovat volitelným CSS selektorem v nastavení na kartě Vzhled.)"
+
+
+msgid "No — that's the point. Searches run directly between the shopper's browser and our engine, so your WordPress/WooCommerce server never does the search work. The on-page widget is tiny and loads only when a shopper starts searching."
+msgstr "Ne — a právě o to jde. Vyhledávání probíhá přímo mezi prohlížečem zákazníka a naším enginem, takže váš server s WordPressem/WooCommerce práci s vyhledáváním nikdy nedělá. Widget na stránce je maličký a načte se, až když zákazník začne vyhledávat."
+
+
+msgid "No account is required to use the free tier — install, connect, done. An account is optional and lets you manage your plan and upgrade."
+msgstr "Pro bezplatnou úroveň účet nepotřebujete — nainstalovat, připojit, hotovo. Účet je volitelný a umožní vám spravovat tarif a přejít na vyšší."
+
+
+msgid "What happens if I deactivate the plugin?"
+msgstr "Co se stane, když plugin deaktivuji?"
+
+
+msgid "Does it show a \"Powered by NitroSearch\" badge on my store?"
+msgstr "Zobrazuje se v mém obchodě odznak „Používá NitroSearch“?"
+
+
+msgid "Is WooCommerce required?"
+msgstr "Je potřeba WooCommerce?"
+
+
+msgid "How does it stay in sync with my catalogue?"
+msgstr "Jak drží krok s mým katalogem?"
+
+
+msgid "What data leaves my site, and when?"
+msgstr "Jaká data opouštějí můj web a kdy?"
+
+
+msgid "Do I have to change my theme or add a shortcode?"
+msgstr "Musím měnit šablonu nebo přidávat shortcode?"
+
+
+msgid "Will it slow my store down?"
+msgstr "Zpomalí mi to obchod?"
+
+
+msgid "Do I need to create an account?"
+msgstr "Musím si vytvořit účet?"
+
+
+msgid "Is it really free?"
+msgstr "Je to opravdu zdarma?"
+
+
+msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgstr "To je vše — katalog se začne synchronizovat a vyhledávací pole vaší šablony se automaticky vylepší."
+
+
+msgid "Open the <strong>NitroSearch</strong> menu in wp-admin and click <strong>\"Connect store\"</strong>."
+msgstr "Otevřete ve wp-admin nabídku <strong>NitroSearch</strong> a klikněte na <strong>„Připojit obchod“</strong>."
+
+
+msgid "Install and activate <strong>NitroSearch for WooCommerce</strong> (from Plugins → Add New, or upload the ZIP)."
+msgstr "Nainstalujte a aktivujte <strong>NitroSearch for WooCommerce</strong> (přes Pluginy → Přidat nový, nebo nahráním souboru ZIP)."
+
+
+msgid "Install and activate <strong>WooCommerce</strong>."
+msgstr "Nainstalujte a aktivujte <strong>WooCommerce</strong>."
+
+
+msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPrivacy Policy: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+msgstr "Podmínky užívání služby: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nZásady ochrany osobních údajů: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
+
+
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgstr "Tento plugin se připojuje k <strong>hostované vyhledávací službě NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>), aby zaindexoval váš katalog a poskytoval výsledky vyhledávání. To je hlavní účel pluginu."
+
+
+msgid "The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
+msgstr "Bezplatná úroveň funguje od chvíle, kdy plugin nainstalujete — až 100 výsledků vyhledávání, se všemi funkcemi vyhledávání. Účet NitroSearch je volitelný; založte si jej, pokud chcete ze své nástěnky spravovat tarif a přecházet na vyšší. Více na <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
+
+
+msgid "NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:"
+msgstr "NitroSearch je hostovaná vyhledávací služba; tento plugin je její oficiální konektor pro WooCommerce. Dělá dvě věci, které si nikdy nepřekážejí:"
+
+
+msgid "Install the plugin, connect your store, and from that moment every search your customers type is answered in <strong>around a tenth of a second</strong> — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store."
+msgstr "Nainstalujte plugin, připojte obchod a od té chvíle dostane každé vyhledávání, které vaši zákazníci napíší, odpověď <strong>zhruba za desetinu sekundy</strong> — i s překlepy — přímo z našeho enginu. Žádná přestavba šablony. Žádná zátěž vyhledáváním na vašem hostingu s WordPressem. Žádné zpomalování obchodu."
+
+
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgstr "<strong>Zákazníci si nekoupí, co nenajdou.</strong> Vestavěné vyhledávání WooCommerce je pomalé, nezvládá překlepy a na velkých katalozích se hroutí — zákazníci, kteří hledají a nic nenajdou, prostě odejdou. NitroSearch ho nahrazuje rychlým, shovívavým vyhledáváním v kvalitě Amazonu, které běží na našich serverech, ne na vašich."
+
+
+msgid "<strong>Nothing leaves your site until you click Connect.</strong>"
+msgstr "<strong>Dokud nekliknete na Připojit, váš web nic neodesílá.</strong>"
+
+
+msgid "<strong>Where:</strong> the NitroSearch API and search engine, at <code>api.nitrosearch.io</code> and your store's dedicated search endpoint."
+msgstr "<strong>Kam:</strong> na API a vyhledávací engine NitroSearch na adrese <code>api.nitrosearch.io</code> a na vyhrazený vyhledávací endpoint vašeho obchodu."
+
+
+msgid "<strong>Scripts loaded onto your storefront:</strong> once connected, the plugin loads the search widget's JavaScript from <code>api.nitrosearch.io</code> (a small loader, plus the widget itself on first search intent) so results can be rendered in the shopper's browser. Nothing is loaded before you connect."
+msgstr "<strong>Skripty načítané do vašeho obchodu:</strong> po připojení načítá plugin JavaScript vyhledávacího widgetu z <code>api.nitrosearch.io</code> (malý zavaděč a při prvním náznaku vyhledávání i samotný widget), aby se výsledky mohly vykreslit v prohlížeči zákazníka. Před připojením se nenačítá nic."
+
+
+msgid "<strong>Search queries:</strong> Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results."
+msgstr "<strong>Vyhledávací dotazy:</strong> Po připojení se vyhledávací dotazy zákazníků odesílají z jejich prohlížeče přímo do enginu NitroSearch, který vrátí výsledky."
+
+
+msgid "<strong>What is sent, and when:</strong> When you click <strong>\"Connect store\"</strong>, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen."
+msgstr "<strong>Co se odesílá a kdy:</strong> Když kliknete na <strong>„Připojit obchod“</strong>, plugin zaregistruje váš web u NitroSearch (URL webu a náhodně vygenerovaný identifikátor instalace). Po připojení se odesílají vaše produktová data — názvy, popisy, SKU, ceny, skladová dostupnost, kategorie, atributy, obrázky a trvalé odkazy — aby je bylo možné zaindexovat pro vyhledávání. Změny produktů se odesílají, jakmile nastanou."
+
+
+msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, the widget talks <em>directly</em> to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load."
+msgstr "<strong>Okamžitě odpovídá na vyhledávání.</strong> Když zákazník vyhledává, komunikuje widget <em>přímo</em> s naším enginem pomocí klíče určeného jen pro vyhledávání a omezeného na veřejné produkty vašeho obchodu — nikdy přes váš server s WordPressem, a proto zůstává vyhledávání rychlé i pod zátěží."
+
+
+msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgstr "<strong>Udržuje naši kopii vašeho katalogu čerstvou.</strong> Jak se mění produkty, ceny a sklad, plugin potichu odesílá aktualizace do NitroSearch na pozadí — sloučené do místní fronty změn, podepsané a opakovaně odesílané, dokud každá změna nedorazí."
+
+
+msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgstr "<strong>Nastavení za pár minut</strong> — automaticky vylepší <em>stávající</em> vyhledávací pole vaší šablony. Žádné shortcody, žádné zásahy do souborů šablony, žádná přestavba."
+
+
+msgid "<strong>Sync you can trust</strong> — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise."
+msgstr "<strong>Synchronizace, které můžete věřit</strong> — plugin si vede vlastní frontu změn a opakuje pokusy, dokud každá změna nedorazí; každá aktualizace je podepsaná a má číslo verze, takže nic nepřijde ve špatném pořadí. Živá obrazovka stavu synchronizace ukazuje přesně, co je zaindexované — důvěru si tak můžete ověřit, není to jen slib."
+
+
+msgid "<strong>Filters, facets &amp; a full results page</strong> — category, brand, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results."
+msgstr "<strong>Filtry, fasety a plnohodnotná stránka výsledků</strong> — filtrování podle kategorie, značky, slevy a skladové dostupnosti, kompletní mřížka výsledků se stránkováním a přidání do košíku přímo z výsledků."
+
+
+msgid "<strong>It won't slow your store down</strong> — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score."
+msgstr "<strong>Váš obchod nezpomalí</strong> — vyhledávání běží přímo mezi prohlížečem zákazníka a naším enginem, takže váš server s WordPressem v cestě vyhledávání vůbec není. Widget na stránce je lehounký a uzavřený ve vlastním shadow DOM, takže se nikdy nepere s vaší šablonou ani s vaším skóre rychlosti."
+
+
+msgid "<strong>Instant &amp; typo-tolerant</strong> — results appear as your customer types, and \"runing shoes\" still finds your running shoes."
+msgstr "<strong>Okamžité a odolné vůči překlepům</strong> — výsledky se objevují už při psaní a „bežecké boty“ pořád najdou vaše běžecké boty."
+
+
+msgid "External services"
+msgstr "Externí služby"
+
+
+msgid "Free to start"
+msgstr "Začněte zdarma"
+
+
+msgid "How it works"
+msgstr "Jak to funguje"
+
+
+msgid "Why store owners switch to NitroSearch"
+msgstr "Proč majitelé obchodů přecházejí na NitroSearch"
