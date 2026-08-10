@@ -355,9 +355,40 @@ final class Client
             return self::orderOutcome(true, $code, '');
         }
 
-        $retry = $code >= 500 || in_array($code, self::ORDER_RETRY_CODES, true);
+        return self::orderOutcome(! self::isOrderRetryable($code), $code, 'HTTP '.$code);
+    }
 
-        return self::orderOutcome(! $retry, $code, 'HTTP '.$code);
+    /**
+     * Is this status "come back and ask again", rather than an answer?
+     *
+     * A NAMED METHOD RATHER THAN AN INLINE EXPRESSION, because the rule is the
+     * thing worth testing and an expression buried inside `reportOrder()` can only
+     * be reached by standing up WordPress and the network. It was inline until
+     * 2026-08-10, which is part of why the rule it replaced — "every 4xx is final"
+     * — survived long enough to throw away a merchant's busiest hour: nothing
+     * could ask it a question without a live shop.
+     *
+     * The sibling connectors expose the same method for the same reason, and the
+     * suites on all of them pin the same set.
+     *
+     * ⚠ STATUS 0 — A TRANSPORT FAILURE — IS RETRYABLE HERE TOO, even though
+     * `reportOrder()` above returns before it can reach this method: the
+     * `is_wp_error()` branch answers a timeout, DNS blip, TLS error or refused
+     * connection directly. It is included anyway because the OTHER TWO CONNECTORS
+     * CLASSIFY IT HERE, and a classifier that disagrees with its siblings on a
+     * value it merely happens never to be handed is a trap with a fuse in it: the
+     * first caller to route a transport failure through this method would have the
+     * order treated as FINAL and deleted, which is the exact defect of 2026-08-10
+     * arriving by a different road. The set is a cross-connector contract, so the
+     * answer must be the same everywhere the question can be asked.
+     *
+     * Found by this plugin's own test suite on its first run.
+     */
+    private static function isOrderRetryable(int $status): bool
+    {
+        return $status === 0
+            || $status >= 500
+            || in_array($status, self::ORDER_RETRY_CODES, true);
     }
 
     /**

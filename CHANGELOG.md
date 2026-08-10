@@ -7,6 +7,27 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+### Added
+
+- **A test suite, and a CI workflow that runs it.** This was the only connector without one — the
+  oldest, the largest fleet, and the only one on wordpress.org. The two workflows it had were a
+  secret scan and the wordpress.org deploy, neither of which reads a line of the PHP it publishes.
+  `tests/run.php` covers the pure, framework-free parts where being wrong is silent and expensive:
+  the HMAC canonicalisation, the proof-of-control hash, the currency exponent table, and the
+  order-report retry classification. 86 assertions on PHP 8.1 through 8.4, plus a lint of every
+  shipped file on every version. No Composer and no PHPUnit, so there is nothing that could reach
+  the archive a merchant downloads.
+
+### Fixed
+
+- **The order-report retry classifier disagreed with the other connectors about a transport
+  failure.** A timeout, DNS blip or refused connection is reported as status 0, and the classifier
+  treated it as FINAL — while PrestaShop and OpenCart both classify it as retryable. The plugin's
+  behaviour was correct today only because a separate branch answers transport errors before the
+  classifier is reached, so nothing was being lost; but the first caller to route a status 0 through
+  it would have had that order deleted, which is the defect of 2026-08-10 arriving by another road.
+  Found by the new suite on its first run.
+
 ## [1.12.0] — 2026-08-10
 
 ### Added

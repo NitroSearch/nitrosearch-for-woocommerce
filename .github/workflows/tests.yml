@@ -1,0 +1,70 @@
+name: Tests
+
+# This plugin had NO test suite until 2026-08-10 — the oldest connector, the
+# largest fleet, the only one on wordpress.org, and the only one of the four with
+# nothing mechanical reading the code it publishes. The two workflows that existed
+# were a secret scan and the wordpress.org deploy; neither reads a line of PHP.
+#
+# THAT GAP HAD A COST. On 2026-08-10 every connector was found to be discarding
+# search-attributed orders on any 4xx, and this one was the worst of the four:
+# `reportOrder()` dropped the HTTP result entirely, so a single fire-and-forget
+# attempt was the whole retry story, and a rate-limited flash sale lost its
+# revenue figures permanently. It was found by reading four implementations
+# against each other while building a fifth — not by anything automatic, because
+# here there was nothing automatic to find it.
+#
+# WHAT THIS CAN AND CANNOT SEE. `tests/run.php` covers the pure, framework-free
+# parts where being wrong is silent and expensive: the HMAC canonicalisation, the
+# proof-of-control hash, the currency exponent table, and the order-report retry
+# classification. It cannot boot WordPress, so the hooks, the outbox, the drain,
+# the serializers' WordPress-facing halves and the admin screen are NOT covered
+# here; the honest verification for those is a real store, which is what
+# RELEASING.md asks a release to describe.
+#
+# PHP VERSIONS ARE A MATRIX because merchants are. The plugin header requires PHP
+# 8.1, and WordPress hosts run everything from there to 8.4 — and that range is
+# not cosmetic: `round()` changed its half-way behaviour in 8.4, which the money
+# case documents.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.2', '8.3', '8.4']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Tests
+        run: php tests/run.php
+
+      # Every shipped file must parse on every version a merchant might run it
+      # on. A parse error in a plugin that auto-updates from wordpress.org is a
+      # white screen on somebody's shop, and the release preflight's own lint
+      # only ever ran on whatever PHP the person cutting the release had.
+      - name: Lint every shipped file
+        run: |
+          set -euo pipefail
+          out="$(find nitrosearch.php src -name '*.php' -exec php -l {} \; 2>&1 | grep -v '^No syntax errors' || true)"
+          if [ -n "$out" ]; then
+            printf '%s\n' "$out"
+            exit 1
+          fi
+          echo "every shipped PHP file parses"
