@@ -51,7 +51,7 @@ readme_hash() { # $1 = readme.txt
 po_incomplete() { # $1 = .po file -> prints the offending line, empty when complete & valid
   local out
   if ! out="$(LC_ALL=C msgfmt --check --statistics -o /dev/null "$1" 2>&1)"; then
-    printf '%s\n' "$out" | head -1
+    printf '%s\n' "$out" | head -1 || true
     return 0
   fi
   printf '%s\n' "$out" | grep -E 'fuzzy|untranslated' || true
