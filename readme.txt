@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.11.0
+Stable tag: 1.12.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,12 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.12.0 =
+* New: **the plugin now speaks 22 languages.** Fourteen more locales join the original eight, covering both the WordPress admin screens and the search panel your shoppers see: Japanese, Turkish, Swedish, Danish, Norwegian, Finnish, Czech, Romanian, Greek, Indonesian, Vietnamese, Russian, Ukrainian and Simplified Chinese. Each was drafted to its own community's conventions and reviewed by a native speaker.
+* Fix: **orders that came from a search are no longer lost when the service is briefly unreachable.** An order was reported once, thirty seconds after checkout, by code that never looked at the answer — so a single timeout, a hiccup on your host, or a moment of rate limiting destroyed that order's revenue figure permanently, with nothing recorded anywhere. The worst case was the one that matters most: during a rush, reports past the service's per-minute limit were all discarded, so your busiest hour reported the least revenue. A report is now retried with widening gaps over about nine hours, and if it still cannot be delivered your store records why instead of forgetting. The figures cannot be double-counted. Nothing about this runs during a shopper's checkout.
+* Fix: **prices are sent with the scale they were measured in, and your store's language always travels with them.** Currencies without two decimal places — yen, dinar — could previously be read at the wrong scale.
+* Fix: **deletions now say what kind of thing was deleted**, so a removed page can no longer be mistaken for a removed product with the same id.
+
 = 1.11.0 =
 * New: **the service can ask your store to send its catalogue again.** Products are sent as they change, and until now nothing could ask for them a second time. If an item could not be used when it arrived — one your store's data made unreadable, or one that would have taken you past your plan's limit — it simply never appeared in search, and nothing knew to try again. Now the service can ask, and your store answers on its own: it starts the same sync as the **Sync now** button, in the background, and confirms it. Each request is acted on once, so your store is never put through its catalogue twice for the same reason.
 * The plugin now checks in every few minutes instead of only when it is updated or when you press **Check status**. That means your plan, your product limit and your indexed count stay current on their own — previously a store could run for months showing figures that had since changed. It rides the sync schedule that already exists, so there is no extra background task and no extra load on your site.
@@ -191,6 +197,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.12.0 =
+Fourteen more languages — 22 in total, covering both the admin screens and the shopper-facing search box. Also fixes a bug where an order that came from a search could go uncounted if the service was briefly unreachable, which most affected the busiest hours. No settings to change.
 
 = 1.11.0 =
 Your store can now be asked to re-send its catalogue when something did not make it into search, and it answers automatically. It also keeps your plan and product figures up to date on their own. No settings to change.

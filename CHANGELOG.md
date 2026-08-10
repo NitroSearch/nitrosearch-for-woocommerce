@@ -7,6 +7,8 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+## [1.12.0] — 2026-08-10
+
 ### Added
 
 - **The plugin now speaks 22 languages.** Fourteen more locales join the original eight, covering
