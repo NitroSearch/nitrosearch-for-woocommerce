@@ -152,9 +152,32 @@ else
 fi
 
 # --- 7. Syntax --------------------------------------------------------------
+#
+# ⚠ THE LINT OUTPUT IS READ INTO A VARIABLE, and that is the whole point of this
+# shape. It used to end `| grep -v '^No syntax errors' | grep -q .`, which under
+# `set -o pipefail` fails OPEN — and fails open in proportion to how broken the
+# tree is, which is the part worth remembering:
+#
+#   `grep -q .` exits the instant it sees its first line, which is to say the
+#   instant a syntax error is found. That closes the pipe. If `grep -v` is still
+#   writing it is killed by SIGPIPE and exits 141, and `pipefail` hands that 141
+#   back as the PIPELINE's status — so `if <non-zero>` is false, the reporting
+#   branch is skipped, and the script prints "PHP syntax clean".
+#
+#   Whether the producer is still writing depends on how much it has to say. ONE
+#   broken file emits three lines, fits the pipe buffer, and IS caught. Measured
+#   on a tree with sixty broken files, this printed "PHP syntax clean" five times
+#   out of five.
+#
+# A release preflight for a plugin that ships to wordpress.org therefore caught a
+# single typo and waved a comprehensively broken tree through. Capturing first
+# removes the pipe and the race with it, and the errors are printed rather than
+# merely counted — the old form never said which file.
 if command -v php >/dev/null 2>&1; then
-  if find nitrosearch.php src -name '*.php' -exec php -l {} \; 2>&1 | grep -v '^No syntax errors' | grep -q .; then
-    fail "PHP syntax errors"
+  lint_out="$(find nitrosearch.php src -name '*.php' -exec php -l {} \; 2>&1 | grep -v '^No syntax errors' || true)"
+  if [ -n "$lint_out" ]; then
+    fail "PHP syntax errors:
+$lint_out"
   else
     pass "PHP syntax clean"
   fi
