@@ -233,18 +233,79 @@ final class Client
     }
 
     /**
-     * Report a search-attributed order (async, from the scheduled event). The
-     * order id is hashed with the install id before it leaves the site — the
-     * backend only ever sees an opaque, store-scoped reference. Fire-and-
-     * forget: the backend's insert is idempotent, and WP-cron will simply try
-     * again on the next matching order if this one is lost.
+     * HTTP statuses that mean "come back and ask again", as opposed to "this is
+     * the answer". Everything from 500 up is retryable too and is tested
+     * separately, and so is a transport failure (which has no status at all).
+     *
+     * @var array<int,int>
+     */
+    private const ORDER_RETRY_CODES = [401, 408, 409, 423, 425, 429];
+
+    /**
+     * Report a search-attributed order on the signed server channel. The order id
+     * is hashed with the install id before it leaves the site — the backend only
+     * ever sees an opaque, store-scoped reference, and no shopper detail is part
+     * of the payload.
+     *
+     * THIS RETURNS AN ANSWER BECAUSE, UNTIL 2026-08-10, IT RETURNED NOTHING.
+     * The method called wp_remote_post() and dropped the result on the floor: no
+     * status code was read, no transport error was noticed, the signature was
+     * `: void`. Its own docblock claimed "WP-cron will simply try again", and
+     * that was never true — the only caller is a wp_schedule_single_event() that
+     * fires exactly once, and a clean return marks that event done. So an order
+     * was reported once, thirty seconds after checkout, and ANY failure destroyed
+     * it permanently with nothing recorded anywhere: one 502 from a proxy, one
+     * DNS blip, one request that ran past the 10-second timeout, one 429.
+     *
+     * THE 429 IS THE ONE THAT MATTERS. This endpoint allows 60 reports a minute
+     * per store, so the failure lands hardest exactly where a merchant is looking:
+     * a flash sale that bursts past a report a second loses every order over the
+     * line, and the busiest hour of the year reports the least revenue. That is
+     * also the hour whose numbers are used to judge whether search is worth
+     * paying for.
+     *
+     * The caller (Sync\OrderAttribution::dispatchReport) acts on the answer:
+     *
+     *   done  → any 2xx, including a 202 that says {accepted:false, reason:
+     *           'disabled'}; and every 4xx not named below — 400/422 (a payload
+     *           that is wrong now will be just as wrong in an hour), 403 (this
+     *           store may not report), 404 (a backend older than the endpoint).
+     *           Retrying these spends the store's own scheduler to be told the
+     *           same thing again.
+     *   retry → 401, 408, 409 (the store is not verified YET), 423 (the account
+     *           is suspended — a state merchants come back from), 425, 429, any
+     *           5xx, and a transport failure (reported as status 0).
+     *
+     * 401 IS RETRYABLE HERE AND WOULD NOT BE ON A CALLER THAT REUSED HEADERS:
+     * Hmac::headers() is built fresh inside this method on every attempt, nonce
+     * included, so the next attempt is a genuinely different signed request
+     * rather than a replay of the one that was just refused.
+     *
+     * IT NEVER RE-DERIVES occurred_at. The timestamp is stamped once, by the
+     * caller, when the order completes, and re-sent byte-identical on every
+     * attempt — the service dedupes on (store, order_ref, occurred_at), so a
+     * timestamp regenerated at send time turns each retry into a SECOND
+     * conversion row for the same order and inflates the merchant's reported
+     * revenue. The old `?? gmdate('c')` fallback on this line was that hazard
+     * sitting one missing array key away, so a report that reaches here without
+     * a timestamp is now refused outright rather than stamped on the way out.
      *
      * @param  array{order_id:int,value_cents:int,currency:string,occurred_at:string,item_ids:array<int,string>,q:string}  $report
+     * @return array{done:bool,retry:bool,status:int,error:string}
      */
-    public static function reportOrder(array $report): void
+    public static function reportOrder(array $report): array
     {
+        // Neither of these is a fault, and neither is worth coming back for: an
+        // unconnected store has no channel to send on, and a merchant who turned
+        // sharing off has already answered. The reply would be identical on every
+        // future attempt, so this is done, not retry.
         if (! Settings::isConnected() || ! Settings::get('share_search_data', true)) {
-            return;
+            return self::orderOutcome(true, 0, 'not reporting');
+        }
+
+        $occurredAt = (string) ($report['occurred_at'] ?? '');
+        if ($occurredAt === '') {
+            return self::orderOutcome(true, 0, 'missing occurred_at');
         }
 
         $path = '/v1/orders';
@@ -252,10 +313,16 @@ final class Client
             'order_ref' => hash('sha256', Settings::installId().'|order|'.(int) ($report['order_id'] ?? 0)),
             'value_cents' => (int) ($report['value_cents'] ?? 0),
             'currency' => (string) ($report['currency'] ?? 'USD'),
-            'occurred_at' => (string) ($report['occurred_at'] ?? gmdate('c')),
+            'occurred_at' => $occurredAt,
             'item_ids' => array_values(array_map('strval', (array) ($report['item_ids'] ?? []))),
             'q' => (string) ($report['q'] ?? ''),
         ]);
+
+        if (! is_string($body)) {
+            // Unencodable payload (malformed UTF-8 in the search term, say). It
+            // will not encode on the next attempt either.
+            return self::orderOutcome(true, 0, 'unencodable payload');
+        }
 
         $headers = Hmac::headers(
             (string) Settings::get('sync_key_id'),
@@ -268,11 +335,41 @@ final class Client
         );
         $headers['Content-Type'] = 'application/json';
 
-        wp_remote_post(Settings::apiUrl().$path, [
+        $response = wp_remote_post(Settings::apiUrl().$path, [
             'timeout' => 10,
             'headers' => $headers,
             'body'    => $body,
         ]);
+
+        if (is_wp_error($response)) {
+            // Timeout, DNS, TLS, refused connection — the request never got an
+            // answer, so nothing is known about whether the order was recorded.
+            // Retrying is safe: the service dedupes on the tuple this payload
+            // carries, and the payload is re-sent unchanged.
+            return self::orderOutcome(false, 0, $response->get_error_message());
+        }
+
+        $code = (int) wp_remote_retrieve_response_code($response);
+
+        if ($code >= 200 && $code < 300) {
+            return self::orderOutcome(true, $code, '');
+        }
+
+        $retry = $code >= 500 || in_array($code, self::ORDER_RETRY_CODES, true);
+
+        return self::orderOutcome(! $retry, $code, 'HTTP '.$code);
+    }
+
+    /**
+     * Build the tri-state reportOrder() answer. `done` and `retry` are always
+     * exact opposites; both are named on the wire so the caller reads what it
+     * means rather than negating a flag.
+     *
+     * @return array{done:bool,retry:bool,status:int,error:string}
+     */
+    private static function orderOutcome(bool $done, int $status, string $error): array
+    {
+        return ['done' => $done, 'retry' => ! $done, 'status' => $status, 'error' => $error];
     }
 
     /**

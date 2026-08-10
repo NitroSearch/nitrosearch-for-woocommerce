@@ -5,6 +5,37 @@ All notable changes to the plugin are documented here. This mirrors the
 keep the two identical. The plugin follows [Semantic Versioning](https://semver.org/).
 Public releases are published to wordpress.org at `X.Y.0` milestones.
 
+## [Unreleased]
+
+### Added
+
+- **The plugin now speaks 22 languages.** Fourteen more locales join the original eight, covering
+  both the WordPress admin screens and the search panel your shoppers see: Japanese, Turkish,
+  Swedish, Danish, Norwegian, Finnish, Czech, Romanian, Greek, Indonesian, Vietnamese, Russian,
+  Ukrainian and Simplified Chinese. Each was drafted to its own community's conventions and reviewed
+  by a native speaker.
+
+### Fixed
+
+- **Orders that came from a search are no longer lost when the service is briefly unreachable.**
+  An order was reported once, thirty seconds after checkout, by code that never looked at the
+  answer — so a single timeout, a 502 from your own host, or a moment of rate limiting destroyed
+  that order's revenue figure permanently, with nothing recorded anywhere. The worst case was the
+  one that matters most: during a burst of sales, reports past the service's per-minute limit were
+  all discarded, so **the busiest hour of the year reported the least revenue**.
+
+  A report is now retried with widening gaps over about nine hours, and if it still cannot be
+  delivered your store records why instead of forgetting. The figures cannot be double-counted:
+  every attempt sends the same timestamp, which is what the service uses to recognise a repeat.
+  Nothing about this runs during a shopper's checkout.
+
+- **Prices are sent with the scale they were measured in, and your store's language always travels
+  with them.** Currencies without two decimal places — yen, dinar — could previously be read at the
+  wrong scale.
+
+- **Deletions now say what kind of thing was deleted**, so a removed page can no longer be mistaken
+  for a removed product with the same id.
+
 ## [1.11.0] — 2026-08-03
 
 ### Added
