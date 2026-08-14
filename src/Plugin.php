@@ -9,6 +9,7 @@ use NitroSearch\Sync\ContentPurge;
 use NitroSearch\Sync\Drain;
 use NitroSearch\Sync\FullSync;
 use NitroSearch\Sync\Hooks;
+use NitroSearch\Sync\Outbox;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -68,6 +69,24 @@ final class Plugin
             return;
         }
         update_option('nitrosearch_version', NITROSEARCH_VERSION, false);
+
+        // ⚠ THE SCHEMA, ON EVERY VERSION CHANGE — and this hook is where it belongs,
+        // because the sentence directly above already says why: the activation hook
+        // does NOT fire on an update. `Outbox::install()` was reachable ONLY from that
+        // activation hook, so every table change this plugin has ever wanted to make
+        // would have reached new installs and no existing ones.
+        //
+        // Nothing has needed a change yet, which is exactly why it went unnoticed: the
+        // hole is invisible until the first time a column is added, and then it is
+        // invisible again, because a queue INSERT naming a missing column fails inside
+        // the write path and the merchant simply stops being indexed with nothing said.
+        // The sibling connectors have all met this: PrestaShop has no upgrade script at
+        // all, and OpenCart shipped a report table that an upgrading shop never got.
+        //
+        // `dbDelta` is idempotent by design — it creates what is missing and ALTERs
+        // what has drifted — so this is safe to run on every version change and does
+        // nothing at all on the common path.
+        Outbox::install();
 
         if (Settings::isConnected() && ! wp_next_scheduled('nitrosearch_refresh_status')) {
             wp_schedule_single_event(time() + 30, 'nitrosearch_refresh_status');
