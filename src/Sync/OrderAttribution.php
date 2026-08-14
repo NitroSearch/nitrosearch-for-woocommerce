@@ -4,6 +4,7 @@ namespace NitroSearch\Sync;
 
 use NitroSearch\Api\Client;
 use NitroSearch\Settings;
+use NitroSearch\Support\Money;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -214,6 +215,22 @@ final class OrderAttribution
         }
 
         $cutoff = time() - self::WINDOW_SECONDS;
+
+        // ⚠ THE ORDER'S OWN CURRENCY, READ ONCE AND USED FOR THE SCALING BELOW.
+        //
+        // This line used to be missing from the sum entirely: the total was scaled by a
+        // hardcoded `* 100`, which is right for pounds and dollars and wrong for about
+        // fifty currencies. **A yen store reported a hundred times its revenue** — the
+        // exact defect that shipped on the Magento module and was fixed there in 1.0.1,
+        // still live here afterwards because only the CATALOGUE serializer was audited.
+        // A KWD store went the other way, at a tenth.
+        //
+        // The payload has always sent `currency` a few lines below, so the wrong number
+        // arrived correctly labelled and the service had no way to tell. Nothing errors,
+        // and the only symptom is a revenue figure that is plausible and wrong by two
+        // orders of magnitude — on the number this product is sold on.
+        $currency = (string) $order->get_currency();
+
         $valueCents = 0;
         $itemIds = [];
         $query = '';
@@ -225,7 +242,13 @@ final class OrderAttribution
             if (! isset($attr[$pid]) || (int) $attr[$pid]['t'] < $cutoff) {
                 continue;
             }
-            $valueCents += (int) round(((float) $item->get_total()) * 100);
+            // NOTE ON TAX, so the next reader does not "fix" it by accident: this is
+            // `get_total()`, which on WooCommerce is EX-TAX, while the other three
+            // connectors send a tax-inclusive figure. That difference is a recorded
+            // decision, not an oversight — changing it silently re-bases every
+            // historical figure for the largest fleet, so it is its own release with
+            // its own merchant communication. Only the SCALING is corrected here.
+            $valueCents += (int) Money::toMinorUnits($item->get_total(), $currency);
             $itemIds[] = $pid;
             if ($query === '' && $attr[$pid]['q'] !== '') {
                 $query = (string) $attr[$pid]['q'];
@@ -267,7 +290,7 @@ final class OrderAttribution
         self::queueReport([
             'order_id' => $orderId,
             'value_cents' => $valueCents,
-            'currency' => (string) $order->get_currency(),
+            'currency' => $currency,
             'occurred_at' => $occurredAt,
             'item_ids' => $itemIds,
             'q' => $query,
