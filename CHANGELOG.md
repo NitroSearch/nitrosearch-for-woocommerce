@@ -9,6 +9,13 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ### Fixed
 
+- **Variable products produced two refine filters where there should be one, and the second was
+  gibberish.** A shirt with a Colour attribute offered shoppers both "Colour" (Blue, Red) and
+  "attribute_pa_colour" (blue, red) — the second built from the variations, in WooCommerce's own
+  internal wording rather than the names you gave the attribute. Every variable product in every
+  catalogue was affected. Variations now describe themselves the same way the product does, so the
+  two merge into the single filter a shopper expects.
+
 - **Search-attributed revenue was scaled by a hundred regardless of currency.** A yen store's
   attributed revenue was reported at **a hundred times** its real value, and a Kuwaiti dinar store at
   a tenth, on every order since attribution shipped. The payload has always carried the currency
