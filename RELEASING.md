@@ -40,14 +40,33 @@ every public release carries a clear, meaningful changelog.
    the changelog and screenshot captions are complete, that PHP parses, and that
    the translations are release-ready (§8, via `bin/check-i18n.sh`).
 5. **Commit** — `Release vX.Y.0`.
-6. **Build the distributable** — `bin/build-plugin.sh` → `dist/nitrosearch-X.Y.0.zip`
+6. **Build the distributable** — `bin/build-plugin.sh` → **`dist/nitrosearch-for-woocommerce-X.Y.0.zip`**
    (a clean tree containing only shipping files). Inspect the printed file list.
-7. **Tag & GitHub release:**
+
+   The archive is named for the directory SLUG, and its single top-level directory is
+   `nitrosearch-for-woocommerce/` — not `nitrosearch/`. This line said the latter until
+   2026-08-15, four months after the build started producing the former.
+7. **Merge, THEN tag — `main` is protected.**
+
+   Since 2026-08-11 this repo requires the `Tests` matrix to pass before anything lands
+   on `main`, so a release goes through a pull request like any other change and
+   `git push origin main --follow-tags` (which this step used to say) fails outright.
+   Tagging the branch commit before merging leaves the tag pointing at a commit that is
+   not on `main` once the merge lands.
+
    ```bash
-   git tag -a vX.Y.0 -m "vX.Y.0"
-   git push origin main --follow-tags
-   gh release create vX.Y.0 --title "vX.Y.0" --notes "…" dist/nitrosearch-X.Y.0.zip
+   gh pr merge <N> --merge --delete-branch
+   git checkout main && git pull
+   git tag -a vX.Y.0 -m "vX.Y.0"          # on main's HEAD, after the merge
+   git push origin vX.Y.0
+   gh release create vX.Y.0 --title "vX.Y.0" --notes "…" \
+       dist/nitrosearch-for-woocommerce-X.Y.0.zip
    ```
+
+   **Run `gh release create` INSIDE this repo.** Never add `--repo`: combined with
+   `--notes-from-tag` it is an invalid flag pair, the command fails without publishing,
+   and a green tag push makes the non-release look like success. Verify with
+   `gh release list`, never with checkmarks.
 8. **wordpress.org — automatic.** Publishing the GitHub release triggers
    `.github/workflows/deploy-to-wordpress-org.yml`, which re-runs the guards,
    rebuilds from the allowlist, syncs `trunk` and the listing assets, and creates

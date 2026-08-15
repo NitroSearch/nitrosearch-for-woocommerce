@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.12.0
+Stable tag: 1.13.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,11 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.13.0 =
+* Fix: **variable products showed two filters where there should be one, and the second was gibberish.** A shirt with a Colour attribute gave shoppers both "Colour" (Blue, Red) and a second filter called "attribute_pa_colour" (blue, red) — the same attribute twice, the duplicate written in WordPress's internal wording instead of the names you chose. Every variable product was affected. Variations now describe themselves the way the product does, so the two become the single filter a shopper expects.
+* Fix: **revenue from search was reported at the wrong scale on stores whose currency has no decimal places, or three.** A yen store's search-attributed revenue was reported at a hundred times its real value, and a Kuwaiti dinar store's at a tenth, on every order. Stores in pounds, euros, dollars and every other two-decimal currency were never affected. Product prices were already correct — this was the revenue figure only.
+* Fix: **database changes now reach stores that update the plugin**, not only new installations. WordPress does not run a plugin's installation step when it is updated, so a future change to the plugin's internal sync table would have quietly reached nobody who already had it.
+
 = 1.12.0 =
 * New: **the plugin now speaks 22 languages.** Fourteen more locales join the original eight, covering both the WordPress admin screens and the search panel your shoppers see: Japanese, Turkish, Swedish, Danish, Norwegian, Finnish, Czech, Romanian, Greek, Indonesian, Vietnamese, Russian, Ukrainian and Simplified Chinese. Each was drafted to its own community's conventions and reviewed by a native speaker.
 * Fix: **orders that came from a search are no longer lost when the service is briefly unreachable.** An order was reported once, thirty seconds after checkout, by code that never looked at the answer — so a single timeout, a hiccup on your host, or a moment of rate limiting destroyed that order's revenue figure permanently, with nothing recorded anywhere. The worst case was the one that matters most: during a rush, reports past the service's per-minute limit were all discarded, so your busiest hour reported the least revenue. A report is now retried with widening gaps over about nine hours, and if it still cannot be delivered your store records why instead of forgetting. The figures cannot be double-counted. Nothing about this runs during a shopper's checkout.
@@ -197,6 +202,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.13.0 =
+Fixes a duplicate, oddly-named filter that appeared alongside the real one on every variable product. Also corrects search revenue reporting for currencies without two decimal places (yen, dinar) — product prices were already right. No settings to change.
 
 = 1.12.0 =
 Fourteen more languages — 22 in total, covering both the admin screens and the shopper-facing search box. Also fixes a bug where an order that came from a search could go uncounted if the service was briefly unreachable, which most affected the busiest hours. No settings to change.
