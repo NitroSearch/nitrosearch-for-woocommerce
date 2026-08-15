@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Vedeți ce caută de fapt cumpărătorii</strong> — fiecare plan plătit include statistici de căutare: cele mai frecvente interogări, ce a primit clicuri și a ajuns în coșuri, plus căutările care nu au găsit <em>nimic</em> (o listă gata făcută cu cererea pe care încă nu o aveți în stoc). Un rezumat se află chiar în wp-admin; tablourile de bord complete sunt în contul NitroSearch. Fără cookie-uri, fără identificatori ai cumpărătorilor — niciodată."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Prețuri oneste și simple</strong> — un nivel cu adevărat gratuit, toate funcțiile de căutare în fiecare plan (căutarea în sine nu este niciodată împărțită pe niveluri) și prețuri care cresc doar odată cu dimensiunea catalogului. Fără taxe per căutare, fără facturi-surpriză."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Nimic adăugat pe site fără să cereți</strong> — mențiunea opțională „Propulsat de NitroSearch” este dezactivată implicit. Dacă o activați, adaugă o mică mențiune cu legătură; dacă o lăsați dezactivată, magazinul nu primește nimic în plus în afară de căutare."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Tot site-ul, nu doar magazinul</strong> — opțional, indexați și paginile și articolele de blog, afișate în propria lor secțiune, sub produse, astfel încât catalogul să nu fie niciodată îngropat. Conținutul complet al paginilor nu este copiat niciodată, iar conținutul privat, protejat cu parolă sau <em>noindex</em> este întotdeauna lăsat deoparte."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Modulul păstrează o coadă locală de modificări și o golește fiabil în fundal — astfel funcționează în continuare chiar și pe site-uri cu trafic redus sau în spatele unui caching agresiv — și își dozează ritmul astfel încât magazinul să rămână receptiv pentru cumpărători. Fiecare actualizare este semnată și poartă o versiune, deci modificările nu pot ajunge în ordine greșită. Un ecran cu starea sincronizării în timp real arată exact ce este indexat. Repararea automată, nocturnă, a abaterilor este în planurile noastre."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Nimic, până când nu dați clic pe <strong>Conectează</strong>. După aceea, catalogul de produse este trimis la NitroSearch pentru a fi indexat, iar actualizările sunt trimise pe măsură ce produsele se schimbă. Vedeți secțiunea <strong>Servicii externe</strong> de mai sus pentru lista completă, plus legături către Termenii de utilizare și Politica de confidențialitate."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Este necesar WooCommerce?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Cum rămâne sincronizat cu catalogul meu?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Este cu adevărat gratuit?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Asta este tot — catalogul începe să se sincronizeze, iar caseta de căutare a temei este îmbunătățită automat."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Termeni de utilizare ai serviciului: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPolitica de confidențialitate: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Acest modul se conectează la <strong>serviciul de căutare găzduit NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) pentru a indexa catalogul și a servi rezultatele căutării. Acesta este scopul principal al modulului."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Instalați modulul, conectați magazinul și, din acel moment, fiecare căutare tastată de clienți primește răspuns în <strong>circa o zecime de secundă</strong> — cu greșeli de tastare cu tot — direct de la motorul nostru. Fără reconstruirea temei. Fără sarcină de căutare pe gazda WordPress. Fără încetinirea magazinului."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Cumpărătorii nu pot cumpăra ce nu găsesc.</strong> Căutarea încorporată din WooCommerce este lentă, ratează greșelile de tastare și cedează la cataloagele mari — așa că clienții care caută și nu găsesc nimic pur și simplu pleacă. NitroSearch o înlocuiește cu o căutare rapidă, îngăduitoare, de calitate Amazon, care rulează pe serverele noastre, nu pe ale dumneavoastră."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Răspunde la căutări, instantaneu.</strong> Când un cumpărător caută, widgetul comunică <em>direct</em> cu motorul nostru, printr-o cheie exclusiv de căutare, limitată la produsele publice ale magazinului — niciodată prin serverul WordPress, motiv pentru care rămâne rapid sub sarcină."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Păstrează proaspătă copia noastră a catalogului.</strong> Pe măsură ce produsele, prețurile și stocul se schimbă, modulul trimite discret actualizările către NitroSearch în fundal — grupate într-o coadă locală de modificări, semnate și reîncercate până când fiecare modificare ajunge la destinație."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Configurare în câteva minute</strong> — îmbunătățește automat caseta de căutare <em>existentă</em> a temei. Fără scurtcoduri, fără modificări de șabloane, fără reconstrucție."
 
 

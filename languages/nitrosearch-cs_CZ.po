@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch nyní měří, jak si vede vyhledávání ve vašem obchodě</strong> — anonymní počty vyhledávání a kliknutí na výsledky, bez cookies a bez identifikátorů zákazníků. Pomáhá to zlepšovat řazení výsledků a přehledy pro jednotlivé obchody máme v plánu."
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Spravovat to můžete v %s."
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "Připojte svůj obchod"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Připojte tento obchod ke službě NitroSearch a začněte synchronizovat svůj katalog a nabízet okamžité vyhledávání odolné vůči překlepům. Dokud nekliknete na Připojit, váš web nic neodesílá."
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "Ověřujeme kontrolu nad vaším webem…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Před sestavením vyhledávacího indexu ověřujeme, že tento obchod skutečně spravujete. V produkčním prostředí je to automatické; pokud váš web není z našich serverů dostupný, může to chvíli trvat. Jakmile je kontrola potvrzena, katalog se začne synchronizovat."
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "Další synchronizace"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Změny v katalogu se sdružují do dávek a odesílají na pozadí — tato čísla ukazují, jak rychle se dostanou do vašeho vyhledávacího indexu."
 
 
@@ -308,7 +308,7 @@ msgid "Big pictures"
 msgstr "Velké obrázky"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Větší náhledy pro katalogy postavené na obrázcích."
 
 
@@ -316,7 +316,7 @@ msgid "Text only"
 msgstr "Pouze text"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Bez obrázků — vhodné pro náhradní díly, součástky a B2B."
 
 
@@ -348,7 +348,7 @@ msgid "Custom"
 msgstr "Vlastní"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Níže si zvolte vlastní barvy panelu a textu."
 
 
@@ -404,15 +404,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "Volba Automaticky dává názvům produktů dost místa, i když je vyhledávací pole vaší šablony úzké. Volba Podle mého vyhledávacího pole ponechá našeptávač přesně tak široký jako pole."
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Barvy"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Barevné schéma"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Barva zvýraznění"
 
 
@@ -424,11 +424,11 @@ msgid "Panel background"
 msgstr "Pozadí panelu"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Použije se jen tehdy, když je barevné schéma nastaveno na Vlastní."
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Barva textu"
 
 
@@ -502,7 +502,7 @@ msgstr "Příspěvky na blogu"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Stránky a příspěvky se počítají do stejného limitu jako vaše produkty, takže jejich vypnutím limit uvolníte pro svůj katalog. Vaše produkty jsou vždy na prvním místě a stránky ani příspěvky je nikdy nevytlačí. Soukromý, heslem chráněný a nepublikovaný obsah se nikdy neindexuje a respektujeme %s nastavené přes Yoast SEO nebo Rank Math (u jednotlivé položky, typu obsahu i pro celý web)."
 
 
@@ -526,7 +526,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Sdílet s NitroSearch anonymní počty použití vyhledávání"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Počítá vyhledávání, počty výsledků a kliknutí na výsledky ve vyhledávání vašeho obchodu — bez cookies a anonymně, bez identifikátorů zákazníků, bez IP adres a bez ukládání čehokoli v prohlížeči zákazníka. Slouží ke zlepšování řazení výsledků a jako podklad pro vaši analytiku vyhledávání. Odškrtnutím pole odesílání okamžitě zastavíte."
 
 
@@ -539,7 +539,7 @@ msgstr "Zobrazit drobnou zmínku „Používá NitroSearch“ s odkazem na nitro
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Ve výchozím stavu vypnuto a je to zcela na vás. Po zapnutí přibude drobná zmínka ve vyhledávacím poli a jeden řádek v patičce webu, obojí s běžným, sledovaným odkazem na %s. Dokud toto pole nezaškrtnete, na váš web se nic nepřidá. A pokud je zaškrtnete, děkujeme."
 
 

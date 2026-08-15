@@ -1,7 +1,7 @@
 # Translation of the NitroSearch for WooCommerce readme into Polish (pl_PL).
 # msgids are in translate.wordpress.org's own form (markdown rendered to HTML),
 # so this file imports 1:1 against the Stable Readme originals.
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 msgid ""
 msgstr ""
 "Project-Id-Version: NitroSearch for WooCommerce readme\n"
@@ -28,7 +28,7 @@ msgstr "<strong>Statystyki korzystania z wyszukiwarki:</strong> po połączeniu 
 msgid "<strong>See what shoppers actually search for</strong> — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found <em>nothing</em> (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever."
 msgstr "<strong>Zobacz, czego naprawdę szukają klienci</strong> — każdy płatny plan zawiera statystyki wyszukiwania: najczęstsze zapytania, co było klikane i dodawane do koszyków oraz wyszukiwania, które nie znalazły <em>niczego</em> (gotowa lista popytu, którego jeszcze nie masz w ofercie). Podsumowanie znajdziesz bezpośrednio w wp-admin, a pełne raporty w Twoim koncie NitroSearch. Bez plików cookie i bez identyfikatorów klientów — nigdy."
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Uczciwe, proste ceny</strong> — naprawdę darmowy plan, wszystkie funkcje wyszukiwania w każdym planie (samo wyszukiwanie nigdy nie jest limitowane pakietami), a cena rośnie wyłącznie z wielkością katalogu. Bez opłat za wyszukiwanie, bez zaskakujących rachunków."
 
 msgid "Only if you choose to. The credit is <strong>off by default</strong>, and nothing is added to your storefront unless you turn it on in the plugin's <strong>Appearance</strong> settings. If you do, it appears as a small linked credit in the search box and one line in your site footer, both pointing to nitrosearch.io. Thank you if you switch it on — but the plugin works identically either way."
@@ -37,7 +37,7 @@ msgstr "Tylko jeśli tak zdecydujesz. Oznaczenie jest <strong>domyślnie wyłąc
 msgid "<strong>Nothing added to your site unless you ask</strong> — the optional \"Powered by NitroSearch\" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search."
 msgstr "<strong>Nic nie jest dodawane do Twojej witryny bez Twojej zgody</strong> — opcjonalne oznaczenie „Działa dzięki NitroSearch” jest domyślnie wyłączone. Włącz je, a pojawi się niewielki podlinkowany dopisek; zostaw wyłączone, a Twój sklep zyska wyłącznie wyszukiwarkę."
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Cała witryna, nie tylko sklep</strong> — opcjonalnie indeksuj także strony i wpisy na blogu; pojawiają się w osobnej sekcji pod produktami, więc Twój katalog nigdy nie schodzi na dalszy plan. Pełna treść stron nigdy nie jest kopiowana, a treści prywatne, chronione hasłem i oznaczone <em>noindex</em> są zawsze pomijane."
 
 msgid "Your store falls back to its normal WooCommerce search. Your data on NitroSearch is managed from your account; you can disconnect at any time from the plugin screen."
@@ -49,7 +49,7 @@ msgstr "Tak. NitroSearch indeksuje i przeszukuje produkty WooCommerce, więc Woo
 msgid "The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap."
 msgstr "Wtyczka prowadzi lokalną kolejkę zmian i niezawodnie opróżnia ją w tle — działa więc nawet na witrynach o małym ruchu i za agresywnym buforowaniem — dawkując pracę tak, aby sklep pozostawał responsywny dla klientów. Każda aktualizacja jest podpisana i ma numer wersji, więc zmiany nie mogą dotrzeć w złej kolejności. Ekran stanu synchronizacji na żywo pokazuje dokładnie, co jest zaindeksowane. Automatyczna nocna naprawa rozbieżności jest w naszych planach."
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Żadne, dopóki nie klikniesz <strong>„Połącz sklep”</strong>. Potem Twój katalog produktów jest wysyłany do NitroSearch w celu zaindeksowania, a aktualizacje są wysyłane wraz ze zmianami produktów. Pełną listę oraz odnośniki do naszych warunków i polityki prywatności znajdziesz w sekcji <strong>Usługi zewnętrzne</strong> powyżej."
 
 msgid "No. NitroSearch enhances your theme's <em>existing</em> search box in place. There's nothing to rebuild. (If your theme uses an unusual search field, you can point NitroSearch at it with an optional CSS selector in the Appearance settings.)"
@@ -70,7 +70,7 @@ msgstr "Czy w moim sklepie pojawia się oznaczenie „Działa dzięki NitroSearc
 msgid "Is WooCommerce required?"
 msgstr "Czy WooCommerce jest wymagany?"
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Jak wyszukiwarka pozostaje zsynchronizowana z moim katalogiem?"
 
 msgid "What data leaves my site, and when?"
@@ -88,7 +88,7 @@ msgstr "Czy muszę zakładać konto?"
 msgid "Is it really free?"
 msgstr "Czy to naprawdę darmowe?"
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "To wszystko — katalog zaczyna się synchronizować, a pole wyszukiwania Twojego motywu zostaje ulepszone automatycznie."
 
 msgid "Open the <strong>NitroSearch</strong> menu in wp-admin and click <strong>\"Connect store\"</strong>."
@@ -103,7 +103,7 @@ msgstr "Zainstaluj i włącz <strong>WooCommerce</strong>."
 msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPrivacy Policy: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 msgstr "Warunki korzystania z usługi: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPolityka prywatności: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Ta wtyczka łączy się z <strong>hostowaną usługą wyszukiwania NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>), aby indeksować Twój katalog i dostarczać wyniki wyszukiwania. To podstawowy cel wtyczki."
 
 msgid "The free tier works the moment you install the plugin — up to 100 search results, with every search feature included. A NitroSearch account is optional; create one to manage your plan and upgrade from your dashboard. Learn more at <a href=\"https://nitrosearch.io\">nitrosearch.io</a>."
@@ -115,7 +115,7 @@ msgstr "NitroSearch to hostowana usługa wyszukiwania, a ta wtyczka jest jej ofi
 msgid "Install the plugin, connect your store, and from that moment every search your customers type is answered in <strong>around a tenth of a second</strong> — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store."
 msgstr "Zainstaluj wtyczkę, połącz sklep i od tej chwili każde wyszukiwanie Twoich klientów otrzymuje odpowiedź w <strong>około jedną dziesiątą sekundy</strong> — razem z literówkami — prosto z naszego silnika. Bez przebudowy motywu. Bez obciążania Twojego hostingu WordPressa wyszukiwaniem. Bez spowalniania sklepu."
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Klienci nie kupią tego, czego nie mogą znaleźć.</strong> Wbudowana wyszukiwarka WooCommerce jest wolna, nie radzi sobie z literówkami i wymięka przy dużych katalogach — klienci, którzy szukają i nic nie znajdują, po prostu wychodzą. NitroSearch zastępuje ją szybką, wyrozumiałą wyszukiwarką na poziomie Amazona, która działa na naszych serwerach, nie na Twoich."
 
 msgid "<strong>Nothing leaves your site until you click Connect.</strong>"
@@ -136,10 +136,10 @@ msgstr "<strong>Co jest wysyłane i kiedy:</strong> gdy klikniesz <strong>„Po�
 msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, the widget talks <em>directly</em> to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load."
 msgstr "<strong>Odpowiada na wyszukiwania — natychmiast.</strong> Gdy klient szuka, widżet komunikuje się <em>bezpośrednio</em> z naszym silnikiem przy użyciu klucza tylko do wyszukiwania, ograniczonego do publicznych produktów Twojego sklepu — nigdy przez Twój serwer WordPressa, dlatego wyszukiwarka pozostaje szybka nawet pod obciążeniem."
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Dba o aktualność naszej kopii Twojego katalogu.</strong> Gdy zmieniają się produkty, ceny i stany magazynowe, wtyczka po cichu wysyła aktualizacje do NitroSearch w tle — scalone w lokalnej kolejce zmian, podpisane i ponawiane, aż każda zmiana dotrze na miejsce."
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Konfiguracja w kilka minut</strong> — automatycznie ulepsza <em>istniejące</em> pole wyszukiwania Twojego motywu. Bez shortcode'ów, bez edycji szablonów, bez przebudowy."
 
 msgid "<strong>Sync you can trust</strong> — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise."

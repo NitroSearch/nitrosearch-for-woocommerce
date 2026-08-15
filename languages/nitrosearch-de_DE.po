@@ -37,7 +37,7 @@ msgstr "https://webdeviant.io"
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
 msgstr "<strong>NitroSearch misst jetzt, wie die Suche deines Shops abschneidet</strong> – anonyme, cookielose Zählungen von Suchanfragen und Ergebnisklicks, ohne Kennungen deiner Kundschaft. Das hilft, das Ranking der Ergebnisse zu verbessern, und Auswertungen pro Shop stehen auf der Roadmap."
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Verwalte das unter %s."
 
@@ -65,7 +65,7 @@ msgstr "Suche auf Amazon-Niveau für WooCommerce"
 msgid "Connect your store"
 msgstr "Verbinde deinen Shop"
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Verbinde diesen Shop mit NitroSearch, um deinen Katalog zu synchronisieren und sofortige, tippfehlertolerante Suche auszuliefern. Nichts verlässt deine Website, bevor du auf „Shop verbinden“ klickst."
 
 msgid "Provisioning token"
@@ -80,7 +80,7 @@ msgstr "Shop verbinden"
 msgid "Confirming control of your site…"
 msgstr "Kontrolle über deine Website wird bestätigt …"
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Wir prüfen gerade, ob du die Kontrolle über diesen Shop hast, bevor wir deinen Suchindex aufbauen. Im Live-Betrieb passiert das automatisch; ist deine Website von unseren Servern aus nicht erreichbar, kann es einen Moment dauern. Dein Katalog wird synchronisiert, sobald das bestätigt ist."
 
 msgid "Check status"
@@ -161,7 +161,7 @@ msgstr "Gesendete Batches"
 msgid "Next sync"
 msgstr "Nächste Synchronisierung"
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Änderungen an deinem Katalog werden gebündelt und im Hintergrund übertragen – diese Zahlen zeigen, wie schnell sie deinen Suchindex erreichen."
 
 msgid "Search analytics"
@@ -235,13 +235,13 @@ msgstr "Kleinere Zeilen, damit mehr Produkte ohne Scrollen sichtbar sind."
 msgid "Big pictures"
 msgstr "Große Bilder"
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Größere Vorschaubilder für bildstarke Kataloge."
 
 msgid "Text only"
 msgstr "Nur Text"
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Keine Bilder – gut für Ersatzteile, Bauteile und B2B."
 
 msgid "Light"
@@ -265,7 +265,7 @@ msgstr "Richtet sich nach der jeweiligen Geräteeinstellung deiner Kundschaft."
 msgid "Custom"
 msgstr "Individuell"
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Wähle unten eigene Farben für Panel und Text."
 
 msgid "Look"
@@ -307,13 +307,13 @@ msgstr "An mein Suchfeld anpassen"
 msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
 msgstr "„Automatisch“ gibt Produktnamen genug Platz zum Lesen, selbst wenn das Suchfeld deines Themes schmal ist. „An mein Suchfeld anpassen“ hält das Dropdown exakt so breit wie das Feld."
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Farben"
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Farbschema"
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Akzentfarbe"
 
 msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
@@ -322,10 +322,10 @@ msgstr "Wird für Preise, Hervorhebungen und ausgewählte Filter verwendet. Leer
 msgid "Panel background"
 msgstr "Panel-Hintergrund"
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Wird nur verwendet, wenn das Farbschema auf „Individuell“ eingestellt ist."
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Textfarbe"
 
 msgid "Corners"
@@ -381,7 +381,7 @@ msgid "Blog posts"
 msgstr "Blogbeiträge"
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Seiten und Beiträge zählen zum selben Kontingent wie deine Produkte – schaltest du sie ab, wird es wieder für deinen Katalog frei. Deine Produkte kommen immer zuerst und werden nie von ihnen verdrängt. Private, passwortgeschützte und unveröffentlichte Inhalte werden nie indexiert, und wir respektieren von Yoast SEO oder Rank Math gesetztes %s (pro Element, pro Inhaltstyp oder websiteweit)."
 
 msgid "Search results page"
@@ -399,7 +399,7 @@ msgstr "Suchnutzungsdaten"
 msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Anonyme Suchnutzungszahlen mit NitroSearch teilen"
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Zählt Suchanfragen, Ergebniszahlen und Ergebnisklicks in der Suche deines Shops – cookielos und anonym, ohne Kennungen deiner Kundschaft, ohne IP-Adressen und ohne dass etwas im Browser gespeichert wird. Wird genutzt, um das Ranking der Ergebnisse zu verbessern und deine Suchanalyse mit Daten zu versorgen. Entferne das Häkchen, um das Senden sofort zu beenden."
 
 msgid "Powered-by credit"
@@ -409,7 +409,7 @@ msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.
 msgstr "Einen kleinen Hinweis „Powered by NitroSearch“ anzeigen, der auf nitrosearch.io verlinkt"
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Standardmäßig aus – und ganz deine Entscheidung. Schaltest du ihn ein, kommt ein kleiner Hinweis in das Suchfeld und eine Zeile in den Footer deiner Website, beide verlinkt auf %s – ein normaler Follow-Link. Deiner Website wird nichts hinzugefügt, solange du hier kein Häkchen setzt. Danke, falls du es tust."
 
 msgid "Advanced"

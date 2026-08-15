@@ -18,10 +18,17 @@ If the plugin needs to document a server interaction, write the public-facing de
 
 ## Translations
 
-The plugin ships fully translated into 22 locales alongside its English source
+The plugin's source strings are **en_US** — wordpress.org treats a plugin's
+source locale as American English, so that is what the msgids are written in
+(catalog, color, honor, labeled). British-convention spelling is delivered as
+a translation like any other, via the `en_GB`/`en_AU`/`en_CA`/`en_NZ`/`en_ZA`
+catalogs.
+
+The plugin ships fully translated into 27 locales alongside its English source
 strings: es_ES, fr_FR, de_DE, it_IT, nl_NL, pl_PL, pt_PT, pt_BR, ja, tr_TR,
-sv_SE, da_DK, nb_NO, fi, cs_CZ, ro_RO, el, id_ID, vi, ru_RU, uk and zh_CN
-(the authoritative list is `LOCALES` in `bin/check-i18n.sh`).
+sv_SE, da_DK, nb_NO, fi, cs_CZ, ro_RO, el, id_ID, vi, ru_RU, uk, zh_CN, and the
+five English variants above (the authoritative list is `LOCALES` in
+`bin/check-i18n.sh`).
 
 - Every user-facing string is wrapped in the WordPress i18n functions with the
   `nitrosearch` text domain, with a `translators:` comment wherever there is a

@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch măsoară acum cât de bine funcționează căutarea din magazin</strong> — contorizări anonime, fără cookie-uri, ale căutărilor și ale clicurilor pe rezultate, fără identificatori ai cumpărătorilor. Ajută la îmbunătățirea ordonării rezultatelor, iar rapoartele pentru fiecare magazin sunt în planurile noastre."
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Gestionați această opțiune din %s."
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "Conectați-vă magazinul"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Conectați acest magazin la NitroSearch pentru a începe sincronizarea catalogului și a oferi căutare instantanee, tolerantă la greșeli de tastare. Nimic nu părăsește site-ul până când nu dați clic pe Conectează."
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "Se confirmă controlul asupra site-ului…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Verificăm că dețineți controlul asupra acestui magazin înainte de a construi indexul de căutare. În producție, acest pas este automat; dacă site-ul nu poate fi accesat de pe serverele noastre, poate dura puțin. Catalogul se sincronizează imediat ce controlul este confirmat."
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "Următoarea sincronizare"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Modificările din catalog sunt grupate în loturi și trimise în fundal — aceste cifre arată cât de repede ajung în indexul de căutare."
 
 
@@ -308,7 +308,7 @@ msgid "Big pictures"
 msgstr "Imagini mari"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Miniaturi mai mari, pentru cataloagele bazate pe imagini."
 
 
@@ -316,7 +316,7 @@ msgid "Text only"
 msgstr "Doar text"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Fără imagini — potrivit pentru piese de schimb, componente și B2B."
 
 
@@ -348,7 +348,7 @@ msgid "Custom"
 msgstr "Personalizat"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Alegeți mai jos propriile culori pentru panou și text."
 
 
@@ -404,15 +404,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "Opțiunea „Automat” lasă numelor de produse destul loc ca să poată fi citite, chiar și când caseta de căutare a temei tale este îngustă. „Cât caseta mea de căutare” păstrează lista exact la fel de lată ca și caseta."
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Culori"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Schemă de culori"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Culoare de accent"
 
 
@@ -424,11 +424,11 @@ msgid "Panel background"
 msgstr "Fundalul panoului"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Folosit doar când schema de culori este setată la Personalizat."
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Culoarea textului"
 
 
@@ -502,7 +502,7 @@ msgstr "Articole de blog"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Paginile și articolele se contorizează în aceeași cotă ca produsele, așa că dezactivarea lor eliberează loc pentru catalog. Produsele sunt întotdeauna pe primul loc și nu sunt niciodată dislocate de acestea. Conținutul privat, protejat cu parolă sau nepublicat nu este indexat niciodată, iar noi respectăm %s setat prin Yoast SEO sau Rank Math (per element, per tip de conținut sau la nivelul întregului site)."
 
 
@@ -526,7 +526,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Trimite către NitroSearch contorizări anonime despre utilizarea căutării"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Contorizează căutările, numărul de rezultate și clicurile pe rezultate în căutarea din magazin — fără cookie-uri și anonim, fără identificatori ai cumpărătorilor, fără adrese IP și fără nimic stocat în browserul cumpărătorului. Folosite pentru a îmbunătăți ordonarea rezultatelor și pentru statisticile de căutare. Debifați pentru a opri imediat trimiterea."
 
 
@@ -539,7 +539,7 @@ msgstr "Afișează o mică mențiune „Propulsat de NitroSearch”, cu legătur
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Dezactivată implicit — alegerea vă aparține în întregime. Activarea ei adaugă o mică mențiune în caseta de căutare și un rând în subsolul site-ului, ambele cu legătură către %s — o legătură normală, de tip follow. Nimic nu este adăugat pe site dacă nu bifați această opțiune. Vă mulțumim dacă o faceți."
 
 

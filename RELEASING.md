@@ -19,9 +19,10 @@ every public release carries a clear, meaningful changelog.
    - `Version:` header in `nitrosearch.php`
    - `NITROSEARCH_VERSION` constant in `nitrosearch.php`
    - `Stable tag:` in `readme.txt`
-3. **Translations** — the plugin ships in 23 languages (English + the 22
-   locales listed in `bin/check-i18n.sh`'s `LOCALES`), and every release must
-   ship them complete:
+3. **Translations** — the plugin ships every locale listed in
+   `bin/check-i18n.sh`'s `LOCALES` (27 today, including the five English
+   variants that carry British-convention spelling; the source strings
+   themselves are en_US), and every release must ship them complete:
    - New or changed **code strings**: `bin/check-i18n.sh --update-pot`, then add
      the translations to every `languages/nitrosearch-*.po` and recompile
      (`bin/build-plugin.sh` recompiles; or `msgfmt` + `wp i18n make-php languages`).

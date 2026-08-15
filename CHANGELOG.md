@@ -7,6 +7,41 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+### Added
+- **English variants: en_GB, en_AU, en_CA, en_NZ and en_ZA.** The plugin's
+  source strings are what wordpress.org serves to en_US, so they are now
+  written in American English (catalog, color, honor, labeled) — they had
+  been British, which meant American merchants, the largest group, read
+  spellings that were not theirs. British-convention spelling is delivered
+  the same way every other language is: as a translation. Merchants on any
+  of the five English variants get it automatically.
+
+- Wording that was British rather than merely spelled British is American in
+  the source too: "Uncheck"/"check" for "Untick"/"tick", "toward", "Setup".
+  The five English variants restore all of it, and en_GB additionally says
+  **"Add to basket"** — WooCommerce's own British translation says Basket, so
+  a UK store previously read "Add to basket" on the product page and "Add to
+  cart" in the search panel on the same screen.
+
+### Changed
+- The 22 existing translations were re-keyed to the new source spellings.
+  Every translation is byte-for-byte the one that was already reviewed —
+  only the English key changed. On wordpress.org, though, a changed source
+  string retires the approved translation attached to the old one, so the
+  localized listings and language packs for Spanish, Dutch and German will
+  show those strings in English until an editor re-approves them.
+- **Translations no longer fall back to English when a language pack is
+  behind.** WordPress loads a wordpress.org pack *instead of* a plugin's own
+  catalog, not on top of it, so any string the pack was missing appeared in
+  English even though the translation was sitting in the download. The plugin
+  now loads its bundled catalog as a second source, so the pack still wins
+  where it has a translation and the bundled one fills the gaps.
+
+### Fixed
+- The listing's changelog and upgrade notices still used British spellings
+  after the description had moved to American, so the same page contradicted
+  itself.
+
 ## [1.13.0] — 2026-08-15
 
 ### Fixed

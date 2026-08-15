@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Podívejte se, co zákazníci skutečně hledají</strong> — každý placený tarif zahrnuje analytiku vyhledávání: nejčastější dotazy, na co se klikalo a co putovalo do košíku, a vyhledávání, která nenašla <em>nic</em> (hotový seznam poptávky, kterou zatím nenabízíte). Souhrn najdete přímo ve wp-admin; kompletní přehledy jsou ve vašem účtu NitroSearch. Bez cookies a bez identifikátorů zákazníků — a to vždy."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Poctivé a jednoduché ceny</strong> — skutečně bezplatná úroveň, všechny funkce vyhledávání v každém tarifu (samotné vyhledávání nikdy podle tarifu neomezujeme) a ceny, které rostou jen s velikostí katalogu. Žádné poplatky za vyhledávání, žádné nečekané účty."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Na váš web se nic nepřidá, dokud si to sami nevyžádáte</strong> — volitelná zmínka „Používá NitroSearch“ je ve výchozím stavu vypnutá. Když ji zapnete, přidá se drobná zmínka s odkazem; když ji necháte vypnutou, váš obchod získá jen samotné vyhledávání."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Celý váš web, nejen obchod</strong> — volitelně můžete indexovat i stránky a příspěvky na blogu; zobrazují se ve vlastní sekci pod produkty, takže váš katalog nikdy nezapadne. Plný obsah stránek se nikdy nekopíruje a soukromý, heslem chráněný a <em>noindex</em> obsah vždy zůstává stranou."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Plugin si udržuje místní frontu změn a spolehlivě ji odbavuje na pozadí — funguje tedy i na webech s nízkou návštěvností a za agresivní cache — a hlídá si tempo tak, aby obchod zůstal pro zákazníky svižný. Každá aktualizace je podepsaná a nese číslo verze, takže změny nemohou dorazit ve špatném pořadí. Živá obrazovka stavu synchronizace ukazuje přesně, co je zaindexované. Automatickou noční opravu odchylek máme v plánu."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Nic, dokud nekliknete na <strong>Připojit</strong>. Poté se váš katalog produktů odešle do NitroSearch k zaindexování a s každou změnou produktů se odesílají aktualizace. Úplný seznam včetně odkazů na naše podmínky a zásady ochrany osobních údajů najdete výše v sekci <strong>Externí služby</strong>."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Je potřeba WooCommerce?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Jak drží krok s mým katalogem?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Je to opravdu zdarma?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "To je vše — katalog se začne synchronizovat a vyhledávací pole vaší šablony se automaticky vylepší."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Podmínky užívání služby: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nZásady ochrany osobních údajů: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Tento plugin se připojuje k <strong>hostované vyhledávací službě NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>), aby zaindexoval váš katalog a poskytoval výsledky vyhledávání. To je hlavní účel pluginu."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Nainstalujte plugin, připojte obchod a od té chvíle dostane každé vyhledávání, které vaši zákazníci napíší, odpověď <strong>zhruba za desetinu sekundy</strong> — i s překlepy — přímo z našeho enginu. Žádná přestavba šablony. Žádná zátěž vyhledáváním na vašem hostingu s WordPressem. Žádné zpomalování obchodu."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Zákazníci si nekoupí, co nenajdou.</strong> Vestavěné vyhledávání WooCommerce je pomalé, nezvládá překlepy a na velkých katalozích se hroutí — zákazníci, kteří hledají a nic nenajdou, prostě odejdou. NitroSearch ho nahrazuje rychlým, shovívavým vyhledáváním v kvalitě Amazonu, které běží na našich serverech, ne na vašich."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Okamžitě odpovídá na vyhledávání.</strong> Když zákazník vyhledává, komunikuje widget <em>přímo</em> s naším enginem pomocí klíče určeného jen pro vyhledávání a omezeného na veřejné produkty vašeho obchodu — nikdy přes váš server s WordPressem, a proto zůstává vyhledávání rychlé i pod zátěží."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Udržuje naši kopii vašeho katalogu čerstvou.</strong> Jak se mění produkty, ceny a sklad, plugin potichu odesílá aktualizace do NitroSearch na pozadí — sloučené do místní fronty změn, podepsané a opakovaně odesílané, dokud každá změna nedorazí."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Nastavení za pár minut</strong> — automaticky vylepší <em>stávající</em> vyhledávací pole vaší šablony. Žádné shortcody, žádné zásahy do souborů šablony, žádná přestavba."
 
 

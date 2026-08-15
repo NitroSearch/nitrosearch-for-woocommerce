@@ -59,7 +59,7 @@ final class SettingsPage
                 <?php echo wp_kses(__("<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap.", 'nitrosearch'), ['strong' => []]); ?>
                 <?php
                 printf(
-                    /* translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance". */
+                    /* translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance". */
                     esc_html__('Manage it under %s.', 'nitrosearch'),
                     '<a href="'.esc_url($settingsUrl).'">'.esc_html__('NitroSearch → Appearance', 'nitrosearch').'</a>'
                 );
@@ -192,7 +192,7 @@ final class SettingsPage
                 <div class="ns-card">
                     <h2 class="ns-card__title"><?php esc_html_e('Connect your store', 'nitrosearch'); ?></h2>
                     <p class="ns-card__intro">
-                        <?php esc_html_e('Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect.', 'nitrosearch'); ?>
+                        <?php esc_html_e('Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect.', 'nitrosearch'); ?>
                     </p>
                     <form method="post" action="<?php echo esc_url($action); ?>">
                         <?php wp_nonce_field('nitrosearch_connect'); ?>
@@ -215,7 +215,7 @@ final class SettingsPage
                 <div class="ns-card">
                     <div class="notice notice-warning inline"><p>
                         <strong><?php esc_html_e('Confirming control of your site…', 'nitrosearch'); ?></strong>
-                        <?php esc_html_e('We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed.', 'nitrosearch'); ?>
+                        <?php esc_html_e('We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed.', 'nitrosearch'); ?>
                     </p></div>
                     <div class="ns-actions">
                         <form method="post" action="<?php echo esc_url($action); ?>">
@@ -354,7 +354,7 @@ final class SettingsPage
                         </div>
                     </div>
                     <p class="ns-card__intro" style="margin-top:12px;margin-bottom:0;">
-                        <?php esc_html_e('Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index.', 'nitrosearch'); ?>
+                        <?php esc_html_e('Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index.', 'nitrosearch'); ?>
                     </p>
                 </div>
 
@@ -466,14 +466,14 @@ final class SettingsPage
         $looks = [
             'roomy'   => [__('Roomy', 'nitrosearch'), __('Two-line names and a clear picture. The default.', 'nitrosearch')],
             'compact' => [__('Compact', 'nitrosearch'), __('Smaller rows, so more products fit before scrolling.', 'nitrosearch')],
-            'images'  => [__('Big pictures', 'nitrosearch'), __('Larger thumbnails for image-led catalogues.', 'nitrosearch')],
-            'text'    => [__('Text only', 'nitrosearch'), __('No pictures — good for spares, parts and B2B.', 'nitrosearch')],
+            'images'  => [__('Big pictures', 'nitrosearch'), __('Larger thumbnails for image-led catalogs.', 'nitrosearch')],
+            'text'    => [__('Text only', 'nitrosearch'), __('No pictures — good for spare parts and B2B.', 'nitrosearch')],
         ];
         $schemes = [
             'light'  => [__('Light', 'nitrosearch'), __('A white panel. Suits most themes.', 'nitrosearch')],
             'dark'   => [__('Dark', 'nitrosearch'), __('A dark panel, for dark headers and themes.', 'nitrosearch')],
             'auto'   => [__('Automatic', 'nitrosearch'), __("Follows each shopper's own device setting.", 'nitrosearch')],
-            'custom' => [__('Custom', 'nitrosearch'), __('Choose your own panel and text colours below.', 'nitrosearch')],
+            'custom' => [__('Custom', 'nitrosearch'), __('Choose your own panel and text colors below.', 'nitrosearch')],
         ];
         ?>
         <div class="ns-card">
@@ -546,10 +546,10 @@ final class SettingsPage
                     </tr>
                 </table>
 
-                <h2 class="ns-card__title"><?php esc_html_e('Colours', 'nitrosearch'); ?></h2>
+                <h2 class="ns-card__title"><?php esc_html_e('Colors', 'nitrosearch'); ?></h2>
                 <table class="form-table" role="presentation">
                     <tr>
-                        <th scope="row"><?php esc_html_e('Colour scheme', 'nitrosearch'); ?></th>
+                        <th scope="row"><?php esc_html_e('Color scheme', 'nitrosearch'); ?></th>
                         <td>
                             <?php foreach ($schemes as $key => $meta) : ?>
                                 <label style="display:block;margin-bottom:6px;">
@@ -562,7 +562,7 @@ final class SettingsPage
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="ns_accent"><?php esc_html_e('Accent colour', 'nitrosearch'); ?></label></th>
+                        <th scope="row"><label for="ns_accent"><?php esc_html_e('Accent color', 'nitrosearch'); ?></label></th>
                         <td>
                             <input name="accent_color" id="ns_accent" type="text" class="regular-text"
                                 placeholder="#111827" value="<?php echo esc_attr((string) Settings::get('accent_color')); ?>">
@@ -574,15 +574,15 @@ final class SettingsPage
                         <td>
                             <input name="design_bg" id="ns_bg" type="text" class="regular-text"
                                 placeholder="#ffffff" value="<?php echo esc_attr((string) Settings::get('design_bg')); ?>">
-                            <p class="description"><?php esc_html_e('Only used when the colour scheme is set to Custom.', 'nitrosearch'); ?></p>
+                            <p class="description"><?php esc_html_e('Only used when the color scheme is set to Custom.', 'nitrosearch'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="ns_text"><?php esc_html_e('Text colour', 'nitrosearch'); ?></label></th>
+                        <th scope="row"><label for="ns_text"><?php esc_html_e('Text color', 'nitrosearch'); ?></label></th>
                         <td>
                             <input name="design_text" id="ns_text" type="text" class="regular-text"
                                 placeholder="#111827" value="<?php echo esc_attr((string) Settings::get('design_text')); ?>">
-                            <p class="description"><?php esc_html_e('Only used when the colour scheme is set to Custom.', 'nitrosearch'); ?></p>
+                            <p class="description"><?php esc_html_e('Only used when the color scheme is set to Custom.', 'nitrosearch'); ?></p>
                         </td>
                     </tr>
                     <tr>
@@ -647,7 +647,7 @@ final class SettingsPage
                                 <?php
                                 printf(
                                     /* translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it. */
-                                    esc_html__('Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide).', 'nitrosearch'),
+                                    esc_html__('Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide).', 'nitrosearch'),
                                     '<em>noindex</em>'
                                 );
                                 ?>
@@ -677,7 +677,7 @@ final class SettingsPage
                                 <?php esc_html_e('Share anonymous search usage counts with NitroSearch', 'nitrosearch'); ?>
                             </label>
                             <p class="description">
-                                <?php esc_html_e("Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately.", 'nitrosearch'); ?>
+                                <?php esc_html_e("Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately.", 'nitrosearch'); ?>
                             </p>
                         </td>
                     </tr>
@@ -693,7 +693,7 @@ final class SettingsPage
                                 <?php
                                 printf(
                                     /* translators: %s: the URL https://nitrosearch.io, wrapped in <code>. */
-                                    esc_html__('Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do.', 'nitrosearch'),
+                                    esc_html__('Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do.', 'nitrosearch'),
                                     '<code>https://nitrosearch.io</code>'
                                 );
                                 ?>

@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch giờ đây đo lường hiệu quả tìm kiếm trên cửa hàng của bạn</strong> — đếm ẩn danh, không dùng cookie số lượt tìm kiếm và lượt nhấp vào kết quả, không có bất kỳ định danh nào của người mua. Dữ liệu này giúp cải thiện thứ hạng kết quả, và báo cáo theo từng cửa hàng đang nằm trong lộ trình phát triển."
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Quản lý tính năng này trong %s."
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "Kết nối cửa hàng của bạn"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Kết nối cửa hàng này với NitroSearch để bắt đầu đồng bộ danh mục sản phẩm và cung cấp tìm kiếm tức thì, chấp nhận lỗi chính tả. Không có dữ liệu nào rời khỏi trang của bạn cho đến khi bạn nhấp vào Kết nối."
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "Đang xác nhận quyền kiểm soát trang của bạn…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Chúng tôi đang xác minh rằng bạn kiểm soát cửa hàng này trước khi xây dựng chỉ mục tìm kiếm. Trong môi trường thực tế, việc này diễn ra tự động; nếu máy chủ của chúng tôi không truy cập được trang của bạn, quá trình có thể mất một lúc. Danh mục sản phẩm sẽ được đồng bộ ngay khi xác nhận xong."
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "Đồng bộ tiếp theo"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Các thay đổi trong danh mục sản phẩm được gom thành lô và đẩy đi trong nền — những con số này cho thấy chúng đến chỉ mục tìm kiếm của bạn nhanh đến mức nào."
 
 
@@ -306,7 +306,7 @@ msgid "Big pictures"
 msgstr "Hình lớn"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Ảnh thu nhỏ lớn hơn, dành cho danh mục thiên về hình ảnh."
 
 
@@ -314,7 +314,7 @@ msgid "Text only"
 msgstr "Chỉ chữ"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Không có hình — phù hợp với phụ tùng, linh kiện và B2B."
 
 
@@ -346,7 +346,7 @@ msgid "Custom"
 msgstr "Tùy chỉnh"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Tự chọn màu nền khung và màu chữ ở bên dưới."
 
 
@@ -402,15 +402,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "Chế độ Tự động cho tên sản phẩm đủ chỗ để đọc, ngay cả khi ô tìm kiếm của giao diện khá hẹp. Khớp với ô tìm kiếm của tôi giữ khung đúng bằng chiều rộng của ô."
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Màu sắc"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Bảng màu"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Màu nhấn"
 
 
@@ -422,11 +422,11 @@ msgid "Panel background"
 msgstr "Màu nền khung"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Chỉ dùng khi bảng màu được đặt là Tùy chỉnh."
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Màu chữ"
 
 
@@ -500,7 +500,7 @@ msgstr "Bài viết"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Trang và bài viết được tính chung hạn mức với sản phẩm của bạn, nên tắt chúng sẽ giải phóng hạn mức cho danh mục sản phẩm. Sản phẩm luôn đứng trước và không bao giờ bị chúng chiếm chỗ. Nội dung riêng tư, được bảo vệ bằng mật khẩu hoặc chưa đăng không bao giờ được lập chỉ mục, và chúng tôi tôn trọng %s do Yoast SEO hoặc Rank Math đặt (theo từng mục, từng loại nội dung, hoặc toàn trang)."
 
 
@@ -524,7 +524,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Chia sẻ số liệu sử dụng tìm kiếm ẩn danh với NitroSearch"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Đếm số lượt tìm kiếm, tổng số kết quả và lượt nhấp vào kết quả trên tìm kiếm của cửa hàng bạn — không dùng cookie và hoàn toàn ẩn danh, không có định danh người mua, không có địa chỉ IP và không lưu gì trong trình duyệt của người mua. Dùng để cải thiện thứ hạng kết quả và cung cấp dữ liệu cho phân tích tìm kiếm của bạn. Bỏ chọn để dừng gửi ngay lập tức."
 
 
@@ -537,7 +537,7 @@ msgstr "Hiển thị dòng ghi công nhỏ “Được cung cấp bởi NitroSea
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Tắt theo mặc định, và hoàn toàn do bạn quyết định. Bật lên sẽ thêm một dòng ghi công nhỏ trong ô tìm kiếm và một dòng ở chân trang, cả hai liên kết đến %s — một liên kết bình thường, dạng dofollow. Không có gì được thêm vào trang của bạn trừ khi bạn đánh dấu chọn. Cảm ơn bạn nếu bạn bật."
 
 

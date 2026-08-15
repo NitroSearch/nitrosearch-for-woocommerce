@@ -37,7 +37,7 @@ msgstr "https://webdeviant.io"
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
 msgstr "<strong>NitroSearch ora misura le prestazioni della ricerca del tuo negozio</strong> — conteggi anonimi e senza cookie delle ricerche e dei clic sui risultati, senza alcun identificatore dei clienti. Servono a migliorare l’ordinamento dei risultati, e i report per singolo negozio sono nella roadmap."
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Puoi gestire questa impostazione da %s."
 
@@ -65,7 +65,7 @@ msgstr "Ricerca di livello Amazon per WooCommerce"
 msgid "Connect your store"
 msgstr "Collega il tuo negozio"
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Collega questo negozio a NitroSearch per iniziare a sincronizzare il catalogo e offrire una ricerca istantanea e tollerante agli errori di battitura. Nulla lascia il tuo sito finché non fai clic su «Collega il negozio»."
 
 msgid "Provisioning token"
@@ -80,7 +80,7 @@ msgstr "Collega il negozio"
 msgid "Confirming control of your site…"
 msgstr "Verifica del controllo del tuo sito…"
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Stiamo verificando che questo negozio sia sotto il tuo controllo prima di costruire il tuo indice di ricerca. In produzione avviene in automatico; se il tuo sito non è raggiungibile dai nostri server, può volerci qualche istante. Il catalogo si sincronizza non appena la verifica è completata."
 
 msgid "Check status"
@@ -161,7 +161,7 @@ msgstr "Batch inviati"
 msgid "Next sync"
 msgstr "Prossima sincronizzazione"
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Le modifiche al tuo catalogo vengono raggruppate e inviate in background — questi numeri mostrano quanto velocemente raggiungono il tuo indice di ricerca."
 
 msgid "Search analytics"
@@ -235,13 +235,13 @@ msgstr "Righe più piccole, così entrano più prodotti prima di scorrere."
 msgid "Big pictures"
 msgstr "Immagini grandi"
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Miniature più grandi per i cataloghi dove contano le immagini."
 
 msgid "Text only"
 msgstr "Solo testo"
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Niente immagini — ideale per ricambi, componenti e B2B."
 
 msgid "Light"
@@ -265,7 +265,7 @@ msgstr "Segue l’impostazione del dispositivo di ciascun cliente."
 msgid "Custom"
 msgstr "Personalizzato"
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Scegli qui sotto i colori del pannello e del testo."
 
 msgid "Look"
@@ -307,13 +307,13 @@ msgstr "Come il campo di ricerca"
 msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
 msgstr "Automatico dà ai nomi dei prodotti lo spazio per essere letti, anche quando il campo di ricerca del tuo tema è stretto. Come il campo di ricerca lo mantiene largo esattamente quanto il campo."
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Colori"
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Schema colori"
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Colore d’accento"
 
 msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
@@ -322,10 +322,10 @@ msgstr "Usato per prezzi, elementi in evidenza e filtri selezionati. Lascia vuot
 msgid "Panel background"
 msgstr "Sfondo del pannello"
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Usato solo quando lo schema colori è impostato su Personalizzato."
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Colore del testo"
 
 msgid "Corners"
@@ -381,7 +381,7 @@ msgid "Blog posts"
 msgstr "Articoli del blog"
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Pagine e articoli contano ai fini dello stesso limite dei tuoi prodotti: se li disattivi, liberi spazio per il tuo catalogo. I tuoi prodotti vengono sempre prima e non vengono mai scalzati da pagine o articoli. I contenuti privati, protetti da password o non pubblicati non vengono mai indicizzati, e rispettiamo il %s impostato con Yoast SEO o Rank Math (per singolo elemento, per tipo di contenuto o per l’intero sito)."
 
 msgid "Search results page"
@@ -399,7 +399,7 @@ msgstr "Dati di utilizzo della ricerca"
 msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Condividi con NitroSearch conteggi anonimi di utilizzo della ricerca"
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Conteggia le ricerche, i totali dei risultati e i clic sui risultati nella ricerca del tuo negozio — senza cookie e in forma anonima, senza identificatori dei clienti, senza indirizzi IP e senza salvare nulla nel browser del cliente. Questi dati servono a migliorare l’ordinamento dei risultati e ad alimentare le tue statistiche di ricerca. Togli la spunta per interrompere subito l’invio."
 
 msgid "Powered-by credit"
@@ -409,7 +409,7 @@ msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.
 msgstr "Mostra un piccolo credito «Powered by NitroSearch» con link a nitrosearch.io"
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Disattivato per impostazione predefinita, e la scelta è solo tua. Attivandolo aggiungi un piccolo credito nel campo di ricerca e una riga nel footer del tuo sito, entrambi con link a %s — un link normale, follow. Nulla viene aggiunto al tuo sito se non metti la spunta. Grazie, se lo fai."
 
 msgid "Advanced"

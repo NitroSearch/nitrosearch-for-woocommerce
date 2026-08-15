@@ -12,7 +12,7 @@ Instant, typo-tolerant WooCommerce product search served from the cloud — Amaz
 
 == Description ==
 
-**Your shoppers can't buy what they can't find.** WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours.
+**Your shoppers can't buy what they can't find.** WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours.
 
 Install the plugin, connect your store, and from that moment every search your customers type is answered in **around a tenth of a second** — typos and all — straight from our engine. No theme rebuild. No search load on your WordPress host. No slowing down your store.
 
@@ -21,18 +21,18 @@ Install the plugin, connect your store, and from that moment every search your c
 * **Instant & typo-tolerant** — results appear as your customer types, and "runing shoes" still finds your running shoes.
 * **It won't slow your store down** — search runs directly between the shopper's browser and our engine, so your WordPress server is never in the search path. The on-page widget is feather-light and sealed in its own shadow DOM, so it never fights your theme or your speed score.
 * **Filters, facets & a full results page** — category, brand, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
-* **Your whole site, not just the shop** — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and *noindex* content is always left out.
+* **Your whole site, not just the shop** — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and *noindex* content is always left out.
 * **Sync you can trust** — the plugin keeps its own change queue and retries until every change lands, each update signed and versioned so nothing arrives out of order. A live sync-status screen shows exactly what's indexed, so trust is something you can check rather than a promise.
-* **Honest, simple pricing** — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills.
+* **Honest, simple pricing** — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills.
 * **See what shoppers actually search for** — every paid plan includes search analytics: top queries, what got clicked and added to carts, and the searches that found *nothing* (a ready-made list of demand you don't stock yet). A summary lives right in wp-admin; the full dashboards are in your NitroSearch account. Cookieless, with no shopper identifiers — ever.
 * **Nothing added to your site unless you ask** — the optional "Powered by NitroSearch" credit is off by default. Turn it on and it adds a small linked credit; leave it off and your storefront gains nothing but the search.
-* **Set-up in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
+* **Setup in minutes** — enhances your theme's *existing* search box automatically. No shortcodes, no template edits, no rebuild.
 
 = How it works =
 
 NitroSearch is a hosted search service; this plugin is its official WooCommerce connector. It does two things, and they never get in each other's way:
 
-1. **Keeps our copy of your catalogue fresh.** As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands.
+1. **Keeps our copy of your catalog fresh.** As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands.
 2. **Answers searches, instantly.** When a shopper searches, the widget talks *directly* to our engine with a search-only key scoped to your store's public products — never through your WordPress server, which is why it stays fast under load.
 
 = Free to start =
@@ -41,7 +41,7 @@ The free tier works the moment you install the plugin — up to 100 search resul
 
 == External services ==
 
-This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.io](https://nitrosearch.io)) to index your catalogue and serve search results. This is the core purpose of the plugin.
+This plugin connects to the **NitroSearch hosted search service** ([nitrosearch.io](https://nitrosearch.io)) to index your catalog and serve search results. This is the core purpose of the plugin.
 
 * **What is sent, and when:** When you click **"Connect store"**, the plugin registers your site with NitroSearch (your site URL and a randomly generated install identifier). After connecting, your product data — names, descriptions, SKUs, prices, stock status, categories, attributes, images and permalinks — is sent so it can be indexed for search. Product changes are sent as they happen.
 * **Search queries:** Once connected, shoppers' search queries are sent from their browser directly to the NitroSearch engine to return results.
@@ -58,7 +58,7 @@ Privacy Policy: [https://nitrosearch.io/legal/privacy](https://nitrosearch.io/le
 1. Install and activate **WooCommerce**.
 2. Install and activate **NitroSearch for WooCommerce** (from Plugins → Add New, or upload the ZIP).
 3. Open the **NitroSearch** menu in wp-admin and click **"Connect store"**.
-4. That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically.
+4. That's it — your catalog begins syncing, and your theme's search box is upgraded automatically.
 
 == Frequently Asked Questions ==
 
@@ -80,9 +80,9 @@ No. NitroSearch enhances your theme's *existing* search box in place. There's no
 
 = What data leaves my site, and when? =
 
-Nothing until you click **Connect**. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the **External services** section above for the full list, plus links to our Terms and Privacy Policy.
+Nothing until you click **Connect**. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the **External services** section above for the full list, plus links to our Terms and Privacy Policy.
 
-= How does it stay in sync with my catalogue? =
+= How does it stay in sync with my catalog? =
 
 The plugin keeps a local change-queue and drains it reliably in the background — so it keeps working even on low-traffic sites and behind aggressive caching — pacing itself to leave your storefront responsive for shoppers. Every update is signed and carries a version, so changes can't land out of order. A live sync-status screen shows exactly what's indexed. Automatic nightly drift-repair is on our roadmap.
 
@@ -107,7 +107,7 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 == Changelog ==
 
 = 1.13.0 =
-* Fix: **variable products showed two filters where there should be one, and the second was gibberish.** A shirt with a Colour attribute gave shoppers both "Colour" (Blue, Red) and a second filter called "attribute_pa_colour" (blue, red) — the same attribute twice, the duplicate written in WordPress's internal wording instead of the names you chose. Every variable product was affected. Variations now describe themselves the way the product does, so the two become the single filter a shopper expects.
+* Fix: **variable products showed two filters where there should be one, and the second was gibberish.** A shirt with a Color attribute gave shoppers both "Color" (Blue, Red) and a second filter called "attribute_pa_colour" (blue, red) — the same attribute twice, the duplicate written in WordPress's internal wording instead of the names you chose. Every variable product was affected. Variations now describe themselves the way the product does, so the two become the single filter a shopper expects.
 * Fix: **revenue from search was reported at the wrong scale on stores whose currency has no decimal places, or three.** A yen store's search-attributed revenue was reported at a hundred times its real value, and a Kuwaiti dinar store's at a tenth, on every order. Stores in pounds, euros, dollars and every other two-decimal currency were never affected. Product prices were already correct — this was the revenue figure only.
 * Fix: **database changes now reach stores that update the plugin**, not only new installations. WordPress does not run a plugin's installation step when it is updated, so a future change to the plugin's internal sync table would have quietly reached nobody who already had it.
 
@@ -118,7 +118,7 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Fix: **deletions now say what kind of thing was deleted**, so a removed page can no longer be mistaken for a removed product with the same id.
 
 = 1.11.0 =
-* New: **the service can ask your store to send its catalogue again.** Products are sent as they change, and until now nothing could ask for them a second time. If an item could not be used when it arrived — one your store's data made unreadable, or one that would have taken you past your plan's limit — it simply never appeared in search, and nothing knew to try again. Now the service can ask, and your store answers on its own: it starts the same sync as the **Sync now** button, in the background, and confirms it. Each request is acted on once, so your store is never put through its catalogue twice for the same reason.
+* New: **the service can ask your store to send its catalog again.** Products are sent as they change, and until now nothing could ask for them a second time. If an item could not be used when it arrived — one your store's data made unreadable, or one that would have taken you past your plan's limit — it simply never appeared in search, and nothing knew to try again. Now the service can ask, and your store answers on its own: it starts the same sync as the **Sync now** button, in the background, and confirms it. Each request is acted on once, so your store is never put through its catalog twice for the same reason.
 * The plugin now checks in every few minutes instead of only when it is updated or when you press **Check status**. That means your plan, your product limit and your indexed count stay current on their own — previously a store could run for months showing figures that had since changed. It rides the sync schedule that already exists, so there is no extra background task and no extra load on your site.
 
 = 1.10.0 =
@@ -134,15 +134,15 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Corrected in this listing: the filter list previously mentioned a price filter. The filters offered are category, brand, on-sale and in-stock.
 
 = 1.8.0 =
-* New: a **Design tab**. Choose a layout — Roomy, Compact, Big pictures or Text only — a colour scheme (Light, Dark, Automatic to follow each shopper's device, or your own colours), corner style, and the font. Set how many products appear, where the filters go, and how wide the drop-down opens. Everything is stored on your own site and applied to the search box; none of it enlarges what your shoppers download.
+* New: a **Design tab**. Choose a layout — Roomy, Compact, Big pictures or Text only — a color scheme (Light, Dark, Automatic to follow each shopper's device, or your own colors), corner style, and the font. Set how many products appear, where the filters go, and how wide the drop-down opens. Everything is stored on your own site and applied to the search box; none of it enlarges what your shoppers download.
 * Fixed: **product names were cut off mid-word.** The drop-down was never allowed to be wider than your theme's search box, so on a narrow header the filters column left almost no room for names. It now opens wide enough to read, names wrap to two lines instead of truncating, and the filters move above the results when the panel is genuinely tight.
 * Fixed: the search box now uses **your store's font**. It was falling back to the browser's default serif on every site, because the widget renders in an isolated shadow root that inherits nothing from the page.
-* Fixed: pale accent colours (yellows, light pastels) rendered white text on top of themselves. Label text on your accent colour is now automatically black or white, whichever stays readable.
-* Fixed: with pages and posts switched on, their icons and labels had no background — a colour the stylesheet referenced but never defined.
-* The NitroSearch mark now appears in the wp-admin menu, and follows your admin colour scheme.
+* Fixed: pale accent colors (yellows, light pastels) rendered white text on top of themselves. Label text on your accent color is now automatically black or white, whichever stays readable.
+* Fixed: with pages and posts switched on, their icons and labels had no background — a color the stylesheet referenced but never defined.
+* The NitroSearch mark now appears in the wp-admin menu, and follows your admin color scheme.
 
 = 1.7.0 =
-* New: **see the revenue your search drives.** When a shopper adds a product to their basket from search results and goes on to buy it (within 7 days), the plugin reports that order's search-attributed value to NitroSearch — a "Search-attributed revenue" figure appears in your analytics dashboards. Attribution happens entirely inside your store's own session; the order number is hashed before it leaves your site, and no shopper details are ever sent. Respects the same **Search usage data** toggle — switch it off and nothing is reported.
+* New: **see the revenue your search drives.** When a shopper adds a product to their cart from search results and goes on to buy it (within 7 days), the plugin reports that order's search-attributed value to NitroSearch — a "Search-attributed revenue" figure appears in your analytics dashboards. Attribution happens entirely inside your store's own session; the order number is hashed before it leaves your site, and no shopper details are ever sent. Respects the same **Search usage data** toggle — switch it off and nothing is reported.
 
 = 1.6.0 =
 * New: a **Search analytics** card on the NitroSearch screen — last-30-days searches, zero-result rate, click-through rate, your top searches, and the searches that found nothing. On paid plans; the free tier sees its monthly search count and what upgrading unlocks. The full dashboards live in your NitroSearch account.
@@ -155,20 +155,20 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 = 1.4.0 =
 * Improved: the optional "Powered by NitroSearch" credit now links to nitrosearch.io and also appears once in your site footer. Still off by default — nothing is added to your site unless you turn it on.
-* New: **search your pages and blog posts too.** Shoppers looking for "delivery times" or "how to care for leather" now find the page that answers them, shown in their own "Pages & posts" section beneath the products — never mixed in with your catalogue. Only titles, a short summary, categories, the featured image and the publish date are indexed; full page content is never copied.
-* New: choose what gets searched under **NitroSearch → Appearance → What to search**. Products are always indexed; pages and blog posts are yours to switch on or off. They share the same allowance as your products, so turning them off frees it up for your catalogue — and when you do, they're removed from your index.
-* Privacy, by default: private, password-protected, draft, scheduled and trashed content is never indexed, and *noindex* set in Yoast SEO or Rank Math is honoured (per item, per content type, or site-wide). Membership and paywall plugins can exclude anything else through the `nitrosearch_content_is_searchable` filter.
-* Your products always come first. If your plan is full, pages and posts are what gets held back — never your catalogue.
+* New: **search your pages and blog posts too.** Shoppers looking for "delivery times" or "how to care for leather" now find the page that answers them, shown in their own "Pages & posts" section beneath the products — never mixed in with your catalog. Only titles, a short summary, categories, the featured image and the publish date are indexed; full page content is never copied.
+* New: choose what gets searched under **NitroSearch → Appearance → What to search**. Products are always indexed; pages and blog posts are yours to switch on or off. They share the same allowance as your products, so turning them off frees it up for your catalog — and when you do, they're removed from your index.
+* Privacy, by default: private, password-protected, draft, scheduled and trashed content is never indexed, and *noindex* set in Yoast SEO or Rank Math is honored (per item, per content type, or site-wide). Membership and paywall plugins can exclude anything else through the `nitrosearch_content_is_searchable` filter.
+* Your products always come first. If your plan is full, pages and posts are what gets held back — never your catalog.
 * Existing stores are unaffected until you opt in: pages and posts start switched **off** on an existing install, and on for a brand-new one.
 * Improved: scheduled products and posts now index the moment they go live. Previously a post published on a schedule could sit unindexed until something else happened to edit it.
-* Improved: switching a content type on no longer re-walks your entire catalogue — only the new content is enumerated, so a big store stays responsive.
+* Improved: switching a content type on no longer re-walks your entire catalog — only the new content is enumerated, so a big store stays responsive.
 * Fix: starting a new page or post no longer sends a needless removal for something that was never indexed.
 
 = 1.3.1 =
 * Fix: the plugin screen offered "search analytics" on your NitroSearch dashboard. That feature isn't built yet, so the wording is corrected — it's on the roadmap, and we'd rather say so than imply otherwise.
 
 = 1.3.0 =
-* Improved: gentler, faster first-time catalogue sync. Large catalogues now sync in the background in resumable batches instead of all at once, so connecting a big store no longer risks slowing down or timing out your site — and the sync paces itself to leave your storefront responsive for shoppers.
+* Improved: gentler, faster first-time catalog sync. Large catalogs now sync in the background in resumable batches instead of all at once, so connecting a big store no longer risks slowing down or timing out your site — and the sync paces itself to leave your storefront responsive for shoppers.
 * Fix: corrected the Terms of Service and Privacy Policy links in the plugin description.
 
 = 1.2.3 =
@@ -180,24 +180,24 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 = 1.2.1 =
 * New: an optional "Powered by NitroSearch" credit in the search box — off by default; turn it on in Appearance if you'd like to show your support.
 * Compatibility: tested up to WordPress 7.0.
-* Housekeeping: hardened the catalogue-sync database queries.
+* Housekeeping: hardened the catalog-sync database queries.
 
 = 1.2.0 =
 * New: a Sync performance panel on the admin screen — average and most-recent batch speed, how many products have synced, batches sent, and when the next sync runs.
-* New: a clear heads-up when your catalogue reaches your plan's product limit, with a prompt to upgrade. Your existing search keeps running — only brand-new products wait until you upgrade.
+* New: a clear heads-up when your catalog reaches your plan's product limit, with a prompt to upgrade. Your existing search keeps running — only brand-new products wait until you upgrade.
 
 = 1.1.0 =
 * New: filters and a full results page — category, brand, price, on-sale and in-stock facets, a complete results grid with pagination, and add-to-cart right from the results.
-* New: appearance settings — set an accent colour for prices, highlights and selected filters, and optionally point the widget at your theme's search box.
+* New: appearance settings — set an accent color for prices, highlights and selected filters, and optionally point the widget at your theme's search box.
 * New: "Manage / Upgrade" — link your store to a NitroSearch account to manage your plan, without re-indexing or losing your search.
 * Improved: a refreshed, clearer admin screen showing connection status and live sync health.
 * Improved: faster, more accessible instant-search dropdown, with full keyboard navigation and recent searches.
-* Improved: more reliable and more secure catalogue sync, with clearer connection and verification status.
+* Improved: more reliable and more secure catalog sync, with clearer connection and verification status.
 
 = 1.0.0 =
 * Initial release.
 * One-click connect: link your store to NitroSearch from the WordPress admin.
-* Automatic catalogue sync — products, prices, stock, categories, and attributes stay in sync as they change, with reliable background processing that keeps working even on low-traffic sites.
+* Automatic catalog sync — products, prices, stock, categories, and attributes stay in sync as they change, with reliable background processing that keeps working even on low-traffic sites.
 * Instant search widget — enhances your theme's existing search box with fast, typo-tolerant product results as customers type. No theme rebuild required.
 * Sync status screen so you can see exactly what is indexed.
 
@@ -210,13 +210,13 @@ Fixes a duplicate, oddly-named filter that appeared alongside the real one on ev
 Fourteen more languages — 22 in total, covering both the admin screens and the shopper-facing search box. Also fixes a bug where an order that came from a search could go uncounted if the service was briefly unreachable, which most affected the busiest hours. No settings to change.
 
 = 1.11.0 =
-Your store can now be asked to re-send its catalogue when something did not make it into search, and it answers automatically. It also keeps your plan and product figures up to date on their own. No settings to change.
+Your store can now be asked to re-send its catalog when something did not make it into search, and it answers automatically. It also keeps your plan and product figures up to date on their own. No settings to change.
 
 = 1.9.0 =
 Now fully translated into Spanish, French, German, Italian, Dutch, Polish, and Portuguese (European and Brazilian) — the settings screens and the shopper-facing search box. English stores unchanged. Also corrects the listing's filter list.
 
 = 1.8.0 =
-Adds a Design tab (layouts, colour schemes, fonts, widths) and fixes the drop-down cutting product names off, the search box ignoring your store's font, and unreadable text on pale accent colours.
+Adds a Design tab (layouts, color schemes, fonts, widths) and fixes the drop-down cutting product names off, the search box ignoring your store's font, and unreadable text on pale accent colors.
 
 = 1.7.0 =
 Adds search-attributed revenue to your analytics (hashed order reference only, no shopper details; honours the usage-data toggle). No storefront changes.
@@ -234,7 +234,7 @@ NitroSearch can now search your pages and blog posts alongside your products, in
 Corrects wording on the plugin screen that offered a search-analytics feature which isn't built yet. No functional changes.
 
 = 1.3.0 =
-Gentler, faster first-time sync for large catalogues, plus corrected Terms/Privacy links.
+Gentler, faster first-time sync for large catalogs, plus corrected Terms/Privacy links.
 
 = 1.2.3 =
 Minor plugin-header fix for the WordPress.org directory. No functional changes.

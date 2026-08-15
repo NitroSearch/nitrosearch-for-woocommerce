@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch がストアの検索パフォーマンスの計測を始めました</strong> — 検索数と結果クリック数を、匿名かつ Cookie を使わずにカウントするもので、買い物客を識別する情報は含まれません。検索結果のランキング改善に役立ち、ストアごとのレポート機能もロードマップに載っています。"
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "%s から管理できます。"
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "ストアを接続しましょう"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "このストアを NitroSearch に接続すると、カタログの同期が始まり、タイプミスにも強い即時検索を提供できるようになります。「ストアを接続」をクリックするまで、サイトから外部に送信されるものは何もありません。"
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "サイトの所有権を確認しています…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "検索インデックスを構築する前に、このストアがご自身の管理下にあることを確認しています。本番環境ではこの確認は自動で行われますが、当社のサーバーからサイトに到達できない場合は少し時間がかかることがあります。確認が済みしだい、カタログの同期が始まります。"
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "次回の同期"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "カタログへの変更はバッチにまとめられ、バックグラウンドで送信されます。この数値は、変更が検索インデックスに届くまでの速さを表しています。"
 
 
@@ -306,7 +306,7 @@ msgid "Big pictures"
 msgstr "大きな画像"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "画像が主役のカタログに向いた、大きめのサムネイルです。"
 
 
@@ -314,7 +314,7 @@ msgid "Text only"
 msgstr "テキストのみ"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "画像なし。交換部品やパーツ、B2B に向いています。"
 
 
@@ -346,7 +346,7 @@ msgid "Custom"
 msgstr "カスタム"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "パネルと文字の色を下で自由に選べます。"
 
 
@@ -402,15 +402,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "「自動」なら、テーマの検索ボックスが狭くても、商品名を読み取れるだけの幅を確保します。「検索ボックスに合わせる」は、検索ボックスとまったく同じ幅を保ちます。"
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "色"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "配色"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "アクセントカラー"
 
 
@@ -422,11 +422,11 @@ msgid "Panel background"
 msgstr "パネルの背景"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "配色を「カスタム」に設定したときにのみ使われます。"
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "文字色"
 
 
@@ -500,7 +500,7 @@ msgstr "ブログ投稿"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "固定ページと投稿は商品と同じ枠にカウントされるため、オフにすると、その分をカタログに使えます。商品は常に最優先で、固定ページや投稿に押しのけられることはありません。非公開・パスワード保護・未公開のコンテンツがインデックスされることはなく、Yoast SEO や Rank Math で設定された%s (アイテム単位、コンテンツタイプ単位、サイト全体) も尊重します。"
 
 
@@ -524,7 +524,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "匿名の検索利用カウントを NitroSearch と共有する"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "ストアの検索について、検索数・結果件数・結果クリック数をカウントします。Cookie を使わない匿名のデータで、買い物客を識別する情報や IP アドレスは含まれず、買い物客のブラウザーにも何も保存されません。検索結果のランキング改善と、検索アナリティクスの提供に使われます。チェックを外すと、送信はすぐに停止します。"
 
 
@@ -537,7 +537,7 @@ msgstr "nitrosearch.io にリンクする、小さな「Powered by NitroSearch�
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "初期状態ではオフで、オンにするかどうかは完全にあなたの選択です。オンにすると、検索ボックスに小さなクレジット、サイトのフッターに1行が追加されます。どちらも %s への通常のリンク (nofollow なし) です。チェックしない限り、サイトには何も追加されません。オンにしていただけたなら、ありがとうございます。"
 
 

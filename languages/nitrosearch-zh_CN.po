@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch 现在会统计您商店的搜索表现</strong>——匿名、无 Cookie 的搜索次数与结果点击统计，不含任何顾客身份信息。它有助于改进结果排序，商店级报表功能也已列入开发计划。"
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "您可以在%s中进行管理。"
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "连接您的商店"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "将此商店连接到 NitroSearch，即可开始同步商品目录并提供即时、拼写容错的搜索。在您点击“连接商店”之前，任何数据都不会离开您的站点。"
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "正在确认您对站点的控制权…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "在构建搜索索引之前，我们会先验证您对这家商店的控制权。在正式环境中这一步是自动完成的；如果我们的服务器无法访问您的站点，可能需要稍等片刻。确认完成后，您的商品目录会立即开始同步。"
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "下次同步"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "商品目录的更改会分批在后台推送——这些数据显示更改到达搜索索引的速度。"
 
 
@@ -306,7 +306,7 @@ msgid "Big pictures"
 msgstr "大图"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "更大的缩略图，适合以图片为主的商品目录。"
 
 
@@ -314,7 +314,7 @@ msgid "Text only"
 msgstr "纯文本"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "不显示图片——适合备件、配件和 B2B 场景。"
 
 
@@ -346,7 +346,7 @@ msgid "Custom"
 msgstr "自定义"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "在下方自选面板和文字颜色。"
 
 
@@ -402,15 +402,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "“自动”会给商品名称留出足够的阅读空间，即使您主题的搜索框较窄。“与我的搜索框一致”则让下拉框与搜索框保持完全同宽。"
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "颜色"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "配色方案"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "强调色"
 
 
@@ -422,11 +422,11 @@ msgid "Panel background"
 msgstr "面板背景"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "仅在配色方案设为“自定义”时使用。"
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "文字颜色"
 
 
@@ -500,7 +500,7 @@ msgstr "博客文章"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "页面和文章与商品共用同一份额度，因此关闭它们可以把额度腾给您的商品目录。您的商品始终优先，绝不会被它们挤占。私密、受密码保护和未发布的内容一律不会被索引，我们也会遵循 Yoast SEO 或 Rank Math 设置的%s（无论是针对单个条目、某类内容还是全站）。"
 
 
@@ -524,7 +524,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "与 NitroSearch 共享匿名搜索使用统计"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "统计您商店搜索功能的搜索次数、结果总数和结果点击——无 Cookie 且完全匿名，不含顾客身份信息、不含 IP 地址，也不在顾客浏览器中存储任何内容。这些数据用于改进结果排序，并为您的搜索分析提供支持。取消勾选即会立即停止发送。"
 
 
@@ -537,7 +537,7 @@ msgstr "显示一处小小的“由 NitroSearch 提供技术支持”署名，�
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "默认关闭，是否开启完全由您决定。开启后，会在搜索框中添加一处小署名，并在站点页脚添加一行文字，均链接到%s——一个正常的、不带 nofollow 的链接。除非您勾选此项，否则不会向您的站点添加任何内容。若您愿意开启，我们深表感谢。"
 
 

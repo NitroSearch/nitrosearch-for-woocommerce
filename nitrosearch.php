@@ -45,12 +45,30 @@ spl_autoload_register(function (string $class): void {
     }
 });
 
-// Bundled translations from languages/. wordpress.org language packs, once a
-// locale reaches them, load from wp-content/languages/plugins/ and win over
-// these — bundling covers every locale we ship until then. On init, not
-// plugins_loaded: WordPress 6.7+ warns on any earlier load.
+// Bundled translations from languages/. On init, not plugins_loaded:
+// WordPress 6.7+ warns on any earlier load.
+//
+// Two loads, deliberately. `load_plugin_textdomain()` tries the wordpress.org
+// language pack in wp-content/languages/plugins/ FIRST and RETURNS THE MOMENT
+// IT LOADS ONE — it never reads the catalog in this zip. So on a store whose
+// pack is behind our release, a string the pack has not caught up on falls
+// back to raw English, not to the complete catalog sitting right here. That is
+// not hypothetical: whenever a source string is re-worded, wordpress.org drops
+// the old translation and the pack ships without it until an editor approves
+// the new one.
+//
+// Loading the bundled catalog as a SECOND file closes that gap. WordPress 6.5+
+// (our floor) keeps several files per text domain and answers from the first
+// one that has the string, so the pack still wins wherever it has a
+// translation and ours only fills the holes.
 add_action('init', function (): void {
     load_plugin_textdomain('nitrosearch', false, dirname(plugin_basename(__FILE__)).'/languages');
+
+    $locale = apply_filters('plugin_locale', determine_locale(), 'nitrosearch');
+    $bundled = NITROSEARCH_DIR.'languages/nitrosearch-'.$locale.'.mo';
+    if (is_readable($bundled)) {
+        load_textdomain('nitrosearch', $bundled, $locale);
+    }
 });
 
 // HPOS compatibility (orders are only ever read via CRUD).

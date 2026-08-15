@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>買い物客が実際に何を検索しているかがわかります</strong> — すべての有料プランに検索アナリティクスが含まれます。上位の検索キーワード、クリックやカート追加につながった検索、そして<em>何も</em>見つからなかった検索 (まだ扱っていない需要のリストがそのまま手に入ります)。概要は wp-admin 内で確認でき、詳細なダッシュボードは NitroSearch アカウントにあります。Cookie を使わず、買い物客を識別する情報は一切含まれません — これはずっと変わりません。"
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>正直でシンプルな料金</strong> — 本当に無料で使える無料プラン、どのプランにも含まれるすべての検索機能 (検索機能そのものにプランによる差はありません)、そしてカタログの規模だけに応じて変わる料金。検索ごとの課金も、想定外の請求もありません。"
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>求めない限り、サイトには何も追加されません</strong> — 任意の「Powered by NitroSearch」クレジットは初期状態でオフです。オンにすると小さなリンク付きクレジットが追加され、オフのままなら、ストアフロントに加わるのは検索だけです。"
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>ショップだけでなく、サイト全体を</strong> — 固定ページとブログ投稿も任意でインデックスできます。商品の下の専用セクションに表示されるため、カタログが埋もれることはありません。ページの全文がコピーされることはなく、非公開・パスワード保護・<em>noindex</em> のコンテンツは常に除外されます。"
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "プラグインはローカルに変更キューを保持し、バックグラウンドで確実に処理します。そのため、アクセスの少ないサイトでも、強力なキャッシュの背後でも動き続けます。また、買い物客のためにストアフロントの応答性が保たれるよう、自らペースを調整します。すべての更新は署名され、バージョンを持つため、変更が順序を乱して反映されることはありません。ライブの同期状況画面で、何がインデックスされているかを正確に確認できます。毎晩の自動ドリフト修復はロードマップに載っています。"
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "「<strong>ストアを接続</strong>」をクリックするまでは、何も送信されません。接続後は、商品カタログがインデックスのために NitroSearch に送信され、商品の変更に応じて更新も送信されます。送信内容の全リストと、利用規約およびプライバシーポリシーへのリンクは、上の<strong>外部サービス</strong>セクションをご覧ください。"
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "WooCommerce は必須ですか ?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "カタログとの同期はどのように保たれますか ?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "本当に無料ですか ?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "これで完了です。カタログの同期が始まり、テーマの検索ボックスが自動的にアップグレードされます。"
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "サービス利用規約: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nプライバシーポリシー: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "このプラグインは、カタログをインデックスして検索結果を提供するために、<strong>NitroSearch ホスティング型検索サービス</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) に接続します。これがこのプラグインの中核となる目的です。"
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "プラグインをインストールしてストアを接続すれば、その瞬間から、お客様が入力するすべての検索に — タイプミスがあっても — 当社のエンジンから直接、<strong>約0.1秒</strong>で応答します。テーマの作り直しは不要です。WordPress ホストに検索の負荷はかかりません。ストアが遅くなることもありません。"
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>見つけられない商品は、買ってもらえません。</strong>WooCommerce 標準の検索は遅く、タイプミスを拾えず、大きなカタログでは音を上げます。検索して何も見つからなかったお客様は、そのまま去ってしまいます。NitroSearch はこれを、あなたのサーバーではなく当社のサーバーで動く、速くて寛容な Amazon 品質の検索に置き換えます。"
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>検索に即座に応答します。</strong>買い物客が検索すると、ウィジェットは、ストアの公開商品だけに範囲を限定した検索専用キーを使って、当社のエンジンと<em>直接</em>通信します。WordPress サーバーを経由することは決してないため、負荷がかかっても速さが保たれます。"
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>当社にあるカタログのコピーを常に最新に保ちます。</strong>商品・価格・在庫が変わると、プラグインはその更新を、バックグラウンドで静かに NitroSearch へ送信します。更新はローカルの変更キューにまとめられ、署名され、すべての変更が反映されるまで再試行されます。"
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>セットアップは数分</strong> — テーマに<em>すでにある</em>検索ボックスを自動的に強化します。ショートコードも、テンプレートの編集も、作り直しも不要です。"
 
 

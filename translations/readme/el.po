@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Δείτε τι πραγματικά αναζητούν οι αγοραστές</strong> — κάθε πρόγραμμα επί πληρωμή περιλαμβάνει αναλυτικά στοιχεία αναζήτησης: κορυφαία ερωτήματα, τι δέχτηκε κλικ και προστέθηκε στο καλάθι, και τις αναζητήσεις που δεν βρήκαν <em>τίποτα</em> (μια έτοιμη λίστα ζήτησης που δεν καλύπτετε ακόμη). Μια σύνοψη βρίσκεται απευθείας στο wp-admin· οι πλήρεις πίνακες είναι στον λογαριασμό σας στο NitroSearch. Χωρίς cookies, χωρίς στοιχεία ταυτοποίησης αγοραστών — ποτέ."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Ειλικρινής, απλή τιμολόγηση</strong> — μια πραγματικά δωρεάν βαθμίδα, όλες οι δυνατότητες αναζήτησης σε κάθε πρόγραμμα (η ίδια η αναζήτηση δεν χωρίζεται ποτέ σε βαθμίδες) και τιμολόγηση που κλιμακώνεται μόνο με το μέγεθος του καταλόγου. Χωρίς χρεώσεις ανά αναζήτηση, χωρίς απρόσμενους λογαριασμούς."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Τίποτα δεν προστίθεται στον ιστότοπό σας αν δεν το ζητήσετε</strong> — η προαιρετική μνεία «Με την τεχνολογία του NitroSearch» είναι απενεργοποιημένη από προεπιλογή. Ενεργοποιήστε την και προστίθεται μια μικρή μνεία με σύνδεσμο· αφήστε την ανενεργή και το κατάστημά σας δεν αποκτά τίποτα άλλο εκτός από την αναζήτηση."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Όλος ο ιστότοπός σας, όχι μόνο το κατάστημα</strong> — ευρετηριάστε προαιρετικά και τις σελίδες και τα άρθρα ιστολογίου σας, που εμφανίζονται σε δική τους ενότητα κάτω από τα προϊόντα, ώστε ο κατάλογός σας να μη χάνεται ποτέ. Το πλήρες περιεχόμενο των σελίδων δεν αντιγράφεται ποτέ, ενώ ιδιωτικό, προστατευμένο με συνθηματικό και <em>noindex</em> περιεχόμενο μένει πάντα εκτός."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Το πρόσθετο διατηρεί τοπική ουρά αλλαγών και την αδειάζει αξιόπιστα στο παρασκήνιο — έτσι συνεχίζει να λειτουργεί ακόμη και σε ιστοτόπους με χαμηλή επισκεψιμότητα ή πίσω από επιθετική προσωρινή αποθήκευση — ρυθμίζοντας τον ρυθμό του ώστε το κατάστημά σας να μένει άμεσα αποκρίσιμο για τους αγοραστές. Κάθε ενημέρωση είναι υπογεγραμμένη και φέρει αριθμό έκδοσης, ώστε οι αλλαγές να μην μπορούν να φτάσουν με λάθος σειρά. Μια ζωντανή οθόνη κατάστασης συγχρονισμού δείχνει ακριβώς τι είναι ευρετηριασμένο. Η αυτόματη νυχτερινή διόρθωση αποκλίσεων βρίσκεται στον σχεδιασμό μας."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Τίποτα, μέχρι να πατήσετε <strong>Σύνδεση</strong>. Μετά από αυτό, ο κατάλογος προϊόντων σας αποστέλλεται στο NitroSearch για ευρετηρίαση, και οι ενημερώσεις αποστέλλονται καθώς αλλάζουν τα προϊόντα. Δείτε την ενότητα <strong>Εξωτερικές υπηρεσίες</strong> παραπάνω για την πλήρη λίστα, μαζί με συνδέσμους προς τους Όρους και την Πολιτική Απορρήτου μας."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Απαιτείται το WooCommerce;"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Πώς παραμένει συγχρονισμένο με τον κατάλογό μου;"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Είναι πραγματικά δωρεάν;"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Αυτό ήταν — ο κατάλογός σας αρχίζει να συγχρονίζεται και το πεδίο αναζήτησης του θέματός σας αναβαθμίζεται αυτόματα."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Όροι Χρήσης της Υπηρεσίας: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nΠολιτική Απορρήτου: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Αυτό το πρόσθετο συνδέεται με τη <strong>φιλοξενούμενη υπηρεσία αναζήτησης NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) για να ευρετηριάζει τον κατάλογό σας και να προσφέρει αποτελέσματα αναζήτησης. Αυτός είναι ο βασικός σκοπός του προσθέτου."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Εγκαταστήστε το πρόσθετο, συνδέστε το κατάστημά σας, και από εκείνη τη στιγμή κάθε αναζήτηση που πληκτρολογούν οι πελάτες σας απαντιέται σε <strong>περίπου ένα δέκατο του δευτερολέπτου</strong> — ακόμη και με ορθογραφικά λάθη — απευθείας από τη μηχανή μας. Χωρίς ανακατασκευή θέματος. Χωρίς φόρτο αναζήτησης στον διακομιστή WordPress σας. Χωρίς επιβράδυνση του καταστήματός σας."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Οι αγοραστές σας δεν μπορούν να αγοράσουν ό,τι δεν μπορούν να βρουν.</strong> Η ενσωματωμένη αναζήτηση του WooCommerce είναι αργή, χάνει τα ορθογραφικά λάθη και λυγίζει στους μεγάλους καταλόγους — οπότε οι πελάτες που ψάχνουν και δεν βρίσκουν τίποτα απλώς φεύγουν. Το NitroSearch την αντικαθιστά με γρήγορη, ανεκτική αναζήτηση ποιότητας Amazon που τρέχει στους δικούς μας διακομιστές, όχι στους δικούς σας."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Απαντά στις αναζητήσεις, αμέσως.</strong> Όταν ένας αγοραστής αναζητά, το widget επικοινωνεί <em>απευθείας</em> με τη μηχανή μας, με ένα κλειδί μόνο για αναζήτηση, περιορισμένο στα δημόσια προϊόντα του καταστήματός σας — ποτέ μέσω του διακομιστή WordPress σας, γι’ αυτό και μένει γρήγορο υπό φόρτο."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Κρατά φρέσκο το αντίγραφο του καταλόγου σας.</strong> Καθώς αλλάζουν προϊόντα, τιμές και αποθέματα, το πρόσθετο στέλνει αθόρυβα τις ενημερώσεις στο NitroSearch στο παρασκήνιο — ομαδοποιημένες σε τοπική ουρά αλλαγών, υπογεγραμμένες, με νέες προσπάθειες μέχρι να φτάσει κάθε αλλαγή."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Έτοιμο σε λίγα λεπτά</strong> — εμπλουτίζει αυτόματα το <em>υπάρχον</em> πεδίο αναζήτησης του θέματός σας. Χωρίς shortcodes, χωρίς αλλαγές σε πρότυπα, χωρίς ανακατασκευή."
 
 

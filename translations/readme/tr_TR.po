@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Müşterilerin gerçekte ne aradığını görün</strong> — her ücretli plan arama analizini içerir: en çok yapılan aramalar, tıklanan ve sepete eklenenler ve <em>hiçbir şey</em> bulamayan aramalar (henüz stoklamadığınız talebin hazır bir listesi). Özet doğrudan wp-admin içindedir; panellerin tamamı NitroSearch hesabınızdadır. Çerezsizdir; müşteri tanımlayıcısı yoktur — hiçbir zaman."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Dürüst, sade fiyatlandırma</strong> — gerçekten ücretsiz bir katman, her planda tüm arama özellikleri (aramanın kendisi hiçbir zaman kademelendirilmez) ve yalnızca katalog boyutuyla ölçeklenen fiyatlandırma. Arama başına ücret yok, sürpriz fatura yok."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Siz istemedikçe sitenize hiçbir şey eklenmez</strong> — isteğe bağlı \"NitroSearch gücüyle\" atfı varsayılan olarak kapalıdır. Açarsanız küçük, bağlantılı bir atıf eklenir; kapalı bırakırsanız mağaza önyüzünüz aramadan başka hiçbir şey kazanmaz."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Yalnızca mağaza değil, tüm siteniz</strong> — dilerseniz sayfalarınızı ve blog yazılarınızı da dizine ekleyin; ürünlerin altında kendi bölümlerinde gösterilirler, böylece kataloğunuz asla gömülmez. Sayfa içeriğinin tamamı hiçbir zaman kopyalanmaz; özel, parola korumalı ve <em>noindex</em> içerik her zaman dışarıda bırakılır."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Eklenti yerel bir değişiklik kuyruğu tutar ve bu kuyruğu arka planda güvenilir biçimde boşaltır — böylece düşük trafikli sitelerde ve agresif önbellekleme arkasında bile çalışmaya devam eder — ve mağaza önyüzünüzün müşterileriniz için hızlı kalması adına kendi temposunu ayarlar. Her güncelleme imzalanır ve bir sürüm taşır; böylece değişiklikler yanlış sırada ulaşamaz. Canlı bir eşitleme durumu ekranı, tam olarak nelerin dizine eklendiğini gösterir. Otomatik gecelik sapma onarımı yol haritamızda."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "<strong>Bağlan</strong> düğmesine tıklayana kadar hiçbir şey. Sonrasında ürün kataloğunuz dizine eklenmek üzere NitroSearch'e gönderilir ve ürünler değiştikçe güncellemeler iletilir. Tam liste ile Kullanım Koşulları ve Gizlilik Politikası bağlantıları için yukarıdaki <strong>Harici hizmetler</strong> bölümüne bakın."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "WooCommerce gerekli mi?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Kataloğumla eşitliği nasıl koruyor?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Gerçekten ücretsiz mi?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Hepsi bu — kataloğunuz eşitlenmeye başlar ve temanızın arama kutusu otomatik olarak yükseltilir."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Hizmet Kullanım Koşulları: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nGizlilik Politikası: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Bu eklenti, kataloğunuzu dizine eklemek ve arama sonuçları sunmak için <strong>NitroSearch barındırılan arama hizmetine</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) bağlanır. Eklentinin temel amacı budur."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Eklentiyi kurun, mağazanızı bağlayın; o andan itibaren müşterilerinizin yazdığı her arama — yazım hataları dahil — doğrudan motorumuzdan <strong>yaklaşık saniyenin onda biri</strong> sürede yanıtlanır. Tema yeniden yapılandırması yok. WordPress sunucunuza arama yükü yok. Mağazanızda yavaşlama yok."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Müşterileriniz bulamadıkları ürünü satın alamaz.</strong> WooCommerce'in yerleşik araması yavaştır, yazım hatalarını kaçırır ve büyük kataloglarda zorlanır — arama yapıp eli boş dönen müşteriler de çekip gider. NitroSearch bunu, sizin değil bizim sunucularımızda çalışan hızlı, hoşgörülü, Amazon kalitesinde bir aramayla değiştirir."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Aramaları anında yanıtlar.</strong> Bir müşteri arama yaptığında bileşen, mağazanızın herkese açık ürünleriyle sınırlı, yalnızca arama yapabilen bir anahtar kullanarak motorumuzla <em>doğrudan</em> konuşur — asla WordPress sunucunuz üzerinden geçmez; yük altında bile hızlı kalmasının nedeni budur."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Kataloğunuzun bizdeki kopyasını güncel tutar.</strong> Ürünler, fiyatlar ve stok değiştikçe eklenti, güncellemeleri arka planda sessizce NitroSearch'e gönderir — güncellemeler yerel bir değişiklik kuyruğunda birleştirilir, imzalanır ve her değişiklik yerine ulaşana kadar yeniden denenir."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Dakikalar içinde kurulum</strong> — temanızın <em>mevcut</em> arama kutusunu otomatik olarak geliştirir. Kısa kod yok, şablon düzenlemesi yok, yeniden yapılandırma yok."
 
 

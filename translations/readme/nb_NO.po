@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Se hva kundene faktisk søker etter</strong> – alle betalte planer inkluderer søkeanalyse: toppsøk, hva som ble klikket på og lagt i handlekurven, og søkene som fant <em>ingenting</em> (en ferdig liste over etterspørsel du ikke fører ennå). Et sammendrag ligger rett i wp-admin; de fullstendige oversiktene finner du i NitroSearch-kontoen din. Uten informasjonskapsler, og aldri med identifikatorer for kundene."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Ærlige, enkle priser</strong> – et reelt gratisnivå, alle søkefunksjoner i alle planer (selve søket er aldri delt inn i nivåer), og priser som bare skalerer med størrelsen på katalogen. Ingen gebyrer per søk, ingen overraskelser på fakturaen."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Ingenting legges til på nettstedet ditt uten at du ber om det</strong> – den valgfrie «Levert av NitroSearch»-krediteringen er av som standard. Slår du den på, legges det til en liten lenket kreditering; lar du den være av, får butikkfronten din ingenting annet enn søket."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Hele nettstedet ditt, ikke bare butikken</strong> – indekser gjerne sidene og blogginnleggene dine også, vist i sin egen seksjon under produktene, slik at katalogen din aldri blir begravd. Fullstendig sideinnhold kopieres aldri, og privat, passordbeskyttet og <em>noindex</em>-innhold holdes alltid utenfor."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Utvidelsen har en lokal endringskø og tømmer den pålitelig i bakgrunnen – så den fortsetter å virke selv på nettsteder med lite trafikk og bak aggressiv hurtigbufring – og tilpasser tempoet slik at butikkfronten forblir rask for kundene dine. Hver oppdatering er signert og har et versjonsnummer, så endringer kan ikke lande i feil rekkefølge. Et skjermbilde med synkroniseringsstatus i sanntid viser nøyaktig hva som er indeksert. Automatisk nattlig reparasjon av avvik står på planen vår."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Ingenting før du klikker på <strong>Koble til</strong>. Etter det sendes produktkatalogen din til NitroSearch for indeksering, og oppdateringer sendes etter hvert som produktene endres. Se seksjonen <strong>Eksterne tjenester</strong> ovenfor for hele listen, pluss lenker til vilkårene og personvernerklæringen vår."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Kreves WooCommerce?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Hvordan holder den seg synkronisert med katalogen min?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Er det virkelig gratis?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Det er alt – katalogen din begynner å synkronisere, og søkefeltet i temaet ditt oppgraderes automatisk."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Vilkår for bruk av tjenesten: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nPersonvernerklæring: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Denne utvidelsen kobler seg til den <strong>skybaserte søketjenesten NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) for å indeksere katalogen din og levere søkeresultater. Dette er kjerneformålet med utvidelsen."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Installer utvidelsen, koble til butikken din, og fra det øyeblikket besvares hvert søk kundene dine skriver på <strong>rundt et tidels sekund</strong> – skrivefeil og alt – rett fra motoren vår. Ingen ombygging av temaet. Ingen søkebelastning på WordPress-serveren din. Ingen treghet i butikken din."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Kundene dine kan ikke kjøpe det de ikke finner.</strong> Det innebygde søket i WooCommerce er tregt, bommer på skrivefeil og gir etter på store kataloger – så kunder som søker og ikke finner noe, forsvinner rett og slett. NitroSearch erstatter det med raskt og tilgivende søk i Amazon-klasse som kjører på våre servere, ikke dine."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Besvarer søk, umiddelbart.</strong> Når en kunde søker, snakker widgeten <em>direkte</em> med motoren vår med en nøkkel som bare kan søke, avgrenset til butikkens offentlige produkter – aldri gjennom WordPress-serveren din, og det er derfor søket holder seg raskt under belastning."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Holder vår kopi av katalogen din oppdatert.</strong> Når produkter, priser og lagerbeholdning endres, sender utvidelsen stille og rolig oppdateringene til NitroSearch i bakgrunnen – samlet i en lokal endringskø, signert, og forsøkt på nytt til hver eneste endring er på plass."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Oppsett på minutter</strong> – forbedrer temaets <em>eksisterende</em> søkefelt automatisk. Ingen kortkoder, ingen malendringer, ingen ombygging."
 
 

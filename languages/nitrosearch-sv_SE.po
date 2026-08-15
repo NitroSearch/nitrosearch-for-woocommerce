@@ -46,7 +46,7 @@ msgid "<strong>NitroSearch now measures how your store's search performs</strong
 msgstr "<strong>NitroSearch mäter nu hur sökningen i din butik presterar</strong> — anonym räkning av sökningar och resultatklick, utan cookies och utan identifierare för kunder. Det hjälper till att förbättra rankningen av resultaten, och rapportering per butik finns på färdplanen."
 
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
 msgstr "Hantera det under %s."
 
@@ -83,7 +83,7 @@ msgid "Connect your store"
 msgstr "Anslut din butik"
 
 
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr "Anslut den här butiken till NitroSearch för att börja synkronisera din katalog och leverera omedelbar sökning som tål stavfel. Ingenting lämnar din webbplats förrän du klickar på Anslut."
 
 
@@ -103,7 +103,7 @@ msgid "Confirming control of your site…"
 msgstr "Bekräftar kontroll över din webbplats…"
 
 
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr "Vi verifierar att du har kontroll över den här butiken innan ditt sökindex byggs. I produktion sker det automatiskt; om din webbplats inte kan nås från våra servrar kan det ta en stund. Din katalog synkroniseras så snart det är bekräftat."
 
 
@@ -210,7 +210,7 @@ msgid "Next sync"
 msgstr "Nästa synkronisering"
 
 
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr "Ändringar i din katalog samlas ihop och skickas i bakgrunden — de här siffrorna visar hur snabbt de når ditt sökindex."
 
 
@@ -307,7 +307,7 @@ msgid "Big pictures"
 msgstr "Stora bilder"
 
 
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr "Större miniatyrbilder för kataloger där bilderna står i fokus."
 
 
@@ -315,7 +315,7 @@ msgid "Text only"
 msgstr "Endast text"
 
 
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr "Inga bilder — bra för reservdelar, komponenter och B2B."
 
 
@@ -347,7 +347,7 @@ msgid "Custom"
 msgstr "Anpassat"
 
 
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr "Välj egna färger för panel och text nedan."
 
 
@@ -403,15 +403,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr "Automatiskt ger produktnamnen tillräckligt med plats för att kunna läsas, även när temats sökruta är smal. Matcha min sökruta gör panelen exakt lika bred som rutan."
 
 
-msgid "Colours"
+msgid "Colors"
 msgstr "Färger"
 
 
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr "Färgschema"
 
 
-msgid "Accent colour"
+msgid "Accent color"
 msgstr "Accentfärg"
 
 
@@ -423,11 +423,11 @@ msgid "Panel background"
 msgstr "Panelbakgrund"
 
 
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr "Används bara när färgschemat är inställt på Anpassat."
 
 
-msgid "Text colour"
+msgid "Text color"
 msgstr "Textfärg"
 
 
@@ -501,7 +501,7 @@ msgstr "Blogginlägg"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr "Sidor och inlägg räknas mot samma utrymme som dina produkter, så om du stänger av dem frigörs utrymmet för din katalog. Dina produkter kommer alltid först och trängs aldrig undan av dem. Privat, lösenordsskyddat och opublicerat innehåll indexeras aldrig, och vi respekterar %s som ställts in av Yoast SEO eller Rank Math (per objekt, per innehållstyp eller för hela webbplatsen)."
 
 
@@ -525,7 +525,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Dela anonym sökanvändningsstatistik med NitroSearch"
 
 
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr "Räknar sökningar, antal resultat och resultatklick i din butiks sökning — utan cookies och anonymt, utan identifierare för kunder, utan IP-adresser och utan att något lagras i kundens webbläsare. Används för att förbättra rankningen av resultaten och för att driva din sökanalys. Avmarkera för att omedelbart sluta skicka."
 
 
@@ -538,7 +538,7 @@ msgstr "Visa ett litet ”Drivs av NitroSearch”-omnämnande som länkar till n
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr "Av som standard, och helt ditt eget val. Slår du på det läggs ett litet omnämnande till i sökrutan och en rad i webbplatsens sidfot, båda med länk till %s — en vanlig, följd länk. Ingenting läggs till på din webbplats om du inte kryssar i detta. Tack om du gör det."
 
 

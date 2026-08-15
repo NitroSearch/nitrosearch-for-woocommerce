@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Lihat apa yang sebenarnya dicari pembeli</strong> — setiap paket berbayar menyertakan analitik pencarian: kueri teratas, apa yang diklik dan ditambahkan ke keranjang, serta pencarian yang tidak menemukan <em>apa pun</em> (daftar siap pakai berisi permintaan yang belum Anda sediakan). Ringkasannya tersedia langsung di wp-admin; dasbor lengkapnya ada di akun NitroSearch Anda. Tanpa cookie, tanpa identitas pembeli — selamanya."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Harga jujur dan sederhana</strong> — paket gratis yang benar-benar gratis, semua fitur pencarian di setiap paket (pencarian itu sendiri tidak pernah dibedakan antarpaket), dan harga yang hanya bertambah mengikuti ukuran katalog. Tanpa biaya per pencarian, tanpa tagihan tak terduga."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Tidak ada yang ditambahkan ke situs Anda kecuali Anda memintanya</strong> — kredit opsional \"Didukung oleh NitroSearch\" nonaktif secara bawaan. Aktifkan, dan sebuah kredit kecil bertaut akan ditambahkan; biarkan nonaktif, dan etalase Anda tidak mendapat apa pun selain pencarian."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Seluruh situs Anda, bukan hanya toko</strong> — jika mau, indeks juga halaman dan pos blog Anda, yang ditampilkan di bagian tersendiri di bawah produk sehingga katalog Anda tidak pernah tenggelam. Isi lengkap halaman tidak pernah disalin, dan konten privat, yang dilindungi kata sandi, serta <em>noindex</em> selalu dikecualikan."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Plugin menyimpan antrean perubahan lokal dan mengalirkannya secara andal di latar belakang — sehingga tetap bekerja bahkan di situs bertrafik rendah dan di balik caching yang agresif — sambil mengatur temponya sendiri agar etalase Anda tetap responsif bagi pembeli. Setiap pembaruan ditandatangani dan membawa nomor versi, sehingga perubahan tidak dapat tiba dalam urutan yang salah. Layar status sinkronisasi waktu nyata menunjukkan persis apa yang terindeks. Perbaikan otomatis atas penyimpangan data (drift) setiap malam ada dalam rencana pengembangan kami."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Tidak ada sampai Anda mengeklik <strong>Hubungkan</strong>. Setelah itu, katalog produk Anda dikirim ke NitroSearch untuk diindeks, dan pembaruan dikirim saat produk berubah. Lihat bagian <strong>Layanan eksternal</strong> di atas untuk daftar lengkapnya, beserta tautan ke Ketentuan Layanan dan Kebijakan Privasi kami."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Apakah WooCommerce diperlukan?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Bagaimana NitroSearch tetap sinkron dengan katalog saya?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Apakah benar-benar gratis?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Selesai — katalog Anda mulai tersinkron, dan kotak pencarian tema Anda ditingkatkan secara otomatis."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Ketentuan Penggunaan Layanan: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nKebijakan Privasi: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Plugin ini terhubung ke <strong>layanan pencarian NitroSearch yang di-hosting</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) untuk mengindeks katalog Anda dan menyajikan hasil pencarian. Inilah tujuan inti plugin ini."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Pasang plugin, hubungkan toko Anda, dan sejak saat itu setiap pencarian yang diketik pelanggan dijawab dalam <strong>sekitar sepersepuluh detik</strong> — termasuk yang salah ketik — langsung dari mesin kami. Tanpa membangun ulang tema. Tanpa beban pencarian di host WordPress Anda. Tanpa memperlambat toko Anda."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Pembeli tidak bisa membeli apa yang tidak mereka temukan.</strong> Pencarian bawaan WooCommerce lambat, tidak mengenali salah ketik, dan kewalahan pada katalog besar — sehingga pelanggan yang mencari dan tidak menemukan apa-apa akan langsung pergi. NitroSearch menggantikannya dengan pencarian cepat, toleran salah ketik, dan sekelas Amazon yang berjalan di server kami, bukan server Anda."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Menjawab pencarian, seketika.</strong> Saat pembeli mencari, widget berkomunikasi <em>langsung</em> dengan mesin kami menggunakan kunci khusus-pencarian yang cakupannya terbatas pada produk publik toko Anda — tidak pernah melalui server WordPress Anda, itulah mengapa pencarian tetap cepat bahkan saat beban tinggi."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Menjaga salinan katalog Anda di tempat kami tetap segar.</strong> Saat produk, harga, dan stok berubah, plugin diam-diam mengirimkan pembaruan ke NitroSearch di latar belakang — digabungkan ke dalam antrean perubahan lokal, ditandatangani, dan dicoba ulang hingga setiap perubahan tiba."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Siap dalam hitungan menit</strong> — menyempurnakan kotak pencarian tema Anda yang <em>sudah ada</em> secara otomatis. Tanpa shortcode, tanpa menyunting templat, tanpa membangun ulang."
 
 

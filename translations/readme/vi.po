@@ -4,7 +4,7 @@
 
 # so this file imports 1:1 against the Stable Readme originals.
 
-# Source-Readme-Hash: b7b8dfdc91f5eacb151e06a4d129340aa56b6ed9
+# Source-Readme-Hash: 62cb846b8cd40ea4b711dd71dac8bfcee5ffca1b
 
 msgid ""
 msgstr ""
@@ -38,7 +38,7 @@ msgid "<strong>See what shoppers actually search for</strong> — every paid pla
 msgstr "<strong>Xem người mua thực sự tìm gì</strong> — mọi gói trả phí đều bao gồm phân tích tìm kiếm: từ khóa hàng đầu, những gì được nhấp và thêm vào giỏ hàng, và những lượt tìm kiếm không thấy <em>gì cả</em> (một danh sách sẵn có về nhu cầu mà bạn chưa có hàng). Bản tóm tắt nằm ngay trong wp-admin; bảng điều khiển đầy đủ nằm trong tài khoản NitroSearch của bạn. Không dùng cookie, không có định danh người mua — không bao giờ."
 
 
-msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalogue size. No per-search fees, no surprise bills."
+msgid "<strong>Honest, simple pricing</strong> — a genuinely free tier, every search feature on every plan (search itself is never tiered), and pricing that scales only with catalog size. No per-search fees, no surprise bills."
 msgstr "<strong>Giá minh bạch, đơn giản</strong> — một gói miễn phí đúng nghĩa, mọi tính năng tìm kiếm có trong mọi gói (bản thân tìm kiếm không bao giờ bị phân cấp), và mức giá chỉ tăng theo quy mô danh mục sản phẩm. Không phí theo lượt tìm kiếm, không hóa đơn bất ngờ."
 
 
@@ -50,7 +50,7 @@ msgid "<strong>Nothing added to your site unless you ask</strong> — the option
 msgstr "<strong>Không thêm gì vào trang của bạn trừ khi bạn yêu cầu</strong> — dòng ghi công tùy chọn \"Được cung cấp bởi NitroSearch\" tắt theo mặc định. Bật lên thì nó thêm một dòng ghi công nhỏ có liên kết; để tắt thì cửa hàng của bạn không nhận thêm gì ngoài tính năng tìm kiếm."
 
 
-msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalogue is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
+msgid "<strong>Your whole site, not just the shop</strong> — optionally index your pages and blog posts too, shown in their own section beneath the products so your catalog is never buried. Full page content is never copied, and private, password-protected and <em>noindex</em> content is always left out."
 msgstr "<strong>Toàn bộ trang của bạn, không chỉ cửa hàng</strong> — tùy chọn lập chỉ mục cả trang và bài viết, hiển thị trong khu vực riêng bên dưới sản phẩm nên danh mục sản phẩm không bao giờ bị lấn át. Toàn văn nội dung trang không bao giờ bị sao chép, và nội dung riêng tư, được bảo vệ bằng mật khẩu hoặc gắn <em>noindex</em> luôn được loại ra."
 
 
@@ -66,7 +66,7 @@ msgid "The plugin keeps a local change-queue and drains it reliably in the backg
 msgstr "Plugin duy trì một hàng đợi thay đổi cục bộ và xử lý nó ổn định trong nền — nên vẫn hoạt động tốt ngay cả trên trang ít truy cập hoặc sau lớp bộ nhớ đệm mạnh tay — đồng thời tự điều tiết để cửa hàng luôn phản hồi nhanh với người mua. Mỗi bản cập nhật đều được ký và mang số phiên bản, nên các thay đổi không thể đến sai thứ tự. Màn hình trạng thái đồng bộ trực tiếp cho biết chính xác những gì đã được lập chỉ mục. Tự động sửa lệch dữ liệu hằng đêm đang nằm trong lộ trình của chúng tôi."
 
 
-msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalogue is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
+msgid "Nothing until you click <strong>Connect</strong>. After that, your product catalog is sent to NitroSearch to be indexed, and updates are sent as products change. See the <strong>External services</strong> section above for the full list, plus links to our Terms and Privacy Policy."
 msgstr "Không có gì cho đến khi bạn nhấp <strong>Kết nối</strong>. Sau đó, danh mục sản phẩm của bạn được gửi đến NitroSearch để lập chỉ mục, và các cập nhật được gửi khi sản phẩm thay đổi. Xem mục <strong>Dịch vụ bên ngoài</strong> phía trên để biết danh sách đầy đủ, cùng liên kết đến Điều khoản và Chính sách quyền riêng tư của chúng tôi."
 
 
@@ -94,7 +94,7 @@ msgid "Is WooCommerce required?"
 msgstr "Có bắt buộc phải có WooCommerce không?"
 
 
-msgid "How does it stay in sync with my catalogue?"
+msgid "How does it stay in sync with my catalog?"
 msgstr "Plugin đồng bộ với danh mục sản phẩm của tôi như thế nào?"
 
 
@@ -118,7 +118,7 @@ msgid "Is it really free?"
 msgstr "Có thật sự miễn phí không?"
 
 
-msgid "That's it — your catalogue begins syncing, and your theme's search box is upgraded automatically."
+msgid "That's it — your catalog begins syncing, and your theme's search box is upgraded automatically."
 msgstr "Vậy là xong — danh mục sản phẩm của bạn bắt đầu đồng bộ, và ô tìm kiếm của giao diện được nâng cấp tự động."
 
 
@@ -138,7 +138,7 @@ msgid "Service Terms of Use: <a href=\"https://nitrosearch.io/legal/terms\">http
 msgstr "Điều khoản sử dụng dịch vụ: <a href=\"https://nitrosearch.io/legal/terms\">https://nitrosearch.io/legal/terms</a>\nChính sách quyền riêng tư: <a href=\"https://nitrosearch.io/legal/privacy\">https://nitrosearch.io/legal/privacy</a>"
 
 
-msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalogue and serve search results. This is the core purpose of the plugin."
+msgid "This plugin connects to the <strong>NitroSearch hosted search service</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) to index your catalog and serve search results. This is the core purpose of the plugin."
 msgstr "Plugin này kết nối đến <strong>dịch vụ tìm kiếm đám mây NitroSearch</strong> (<a href=\"https://nitrosearch.io\">nitrosearch.io</a>) để lập chỉ mục danh mục sản phẩm và trả về kết quả tìm kiếm. Đây là mục đích cốt lõi của plugin."
 
 
@@ -154,7 +154,7 @@ msgid "Install the plugin, connect your store, and from that moment every search
 msgstr "Cài plugin, kết nối cửa hàng, và từ thời điểm đó mọi lượt tìm kiếm khách hàng gõ vào đều được trả lời trong <strong>khoảng một phần mười giây</strong> — kể cả khi gõ sai chính tả — trực tiếp từ công cụ của chúng tôi. Không phải xây dựng lại giao diện. Không tạo tải tìm kiếm lên máy chủ WordPress. Không làm chậm cửa hàng của bạn."
 
 
-msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogues — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
+msgid "<strong>Your shoppers can't buy what they can't find.</strong> WooCommerce's built-in search is slow, misses typos, and buckles on big catalogs — so customers who search and come up empty simply leave. NitroSearch replaces it with fast, forgiving, Amazon-quality search that runs on our servers, not yours."
 msgstr "<strong>Người mua không thể mua thứ họ không tìm thấy.</strong> Tìm kiếm mặc định của WooCommerce chậm, bỏ sót lỗi chính tả, và đuối sức với danh mục lớn — nên khách hàng tìm mà không thấy gì sẽ đơn giản là rời đi. NitroSearch thay thế nó bằng tìm kiếm nhanh, chấp nhận lỗi chính tả, chất lượng chuẩn Amazon, chạy trên máy chủ của chúng tôi chứ không phải của bạn."
 
 
@@ -182,11 +182,11 @@ msgid "<strong>Answers searches, instantly.</strong> When a shopper searches, th
 msgstr "<strong>Trả lời tìm kiếm, ngay tức thì.</strong> Khi người mua tìm kiếm, widget trao đổi <em>trực tiếp</em> với công cụ của chúng tôi bằng một khóa chỉ dùng để tìm kiếm, giới hạn trong các sản phẩm công khai của cửa hàng bạn — không bao giờ đi qua máy chủ WordPress, nên tìm kiếm luôn nhanh kể cả lúc tải cao."
 
 
-msgid "<strong>Keeps our copy of your catalogue fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
+msgid "<strong>Keeps our copy of your catalog fresh.</strong> As products, prices and stock change, the plugin quietly sends the updates to NitroSearch in the background — coalesced into a local change queue, signed, and retried until every change lands."
 msgstr "<strong>Giữ bản sao danh mục sản phẩm của bạn luôn mới.</strong> Khi sản phẩm, giá và tồn kho thay đổi, plugin lặng lẽ gửi cập nhật đến NitroSearch trong nền — được gom vào một hàng đợi thay đổi cục bộ, được ký, và thử lại cho đến khi mọi thay đổi đến nơi."
 
 
-msgid "<strong>Set-up in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
+msgid "<strong>Setup in minutes</strong> — enhances your theme's <em>existing</em> search box automatically. No shortcodes, no template edits, no rebuild."
 msgstr "<strong>Thiết lập trong vài phút</strong> — tự động nâng cấp ô tìm kiếm <em>sẵn có</em> của giao diện. Không shortcode, không sửa template, không phải xây dựng lại."
 
 

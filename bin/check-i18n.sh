@@ -15,7 +15,7 @@
 set -euo pipefail
 
 ROOT="${PREFLIGHT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
-LOCALES="es_ES fr_FR de_DE it_IT nl_NL pl_PL pt_PT pt_BR ja tr_TR sv_SE da_DK nb_NO fi cs_CZ ro_RO el id_ID vi ru_RU uk zh_CN"
+LOCALES="es_ES fr_FR de_DE it_IT nl_NL pl_PL pt_PT pt_BR ja tr_TR sv_SE da_DK nb_NO fi cs_CZ ro_RO el id_ID vi ru_RU uk zh_CN en_GB en_AU en_CA en_NZ en_ZA"
 POT="languages/nitrosearch.pot"
 
 FAILED=0
@@ -42,6 +42,31 @@ sha1() { if command -v shasum >/dev/null 2>&1; then shasum; else sha1sum; fi; }
 # invalidate the readme translations — only real listing copy does.
 readme_hash() { # $1 = readme.txt
   awk 'NR>=11 && /^== Screenshots ==/{exit} NR>=11{print}' "$1" | sha1 | awk '{print $1}'
+}
+
+# The en_* catalogs exist for exactly one reason: the source is en_US, and they
+# respell it. A "complete" en_GB catalog that simply echoes every American msgid
+# is 100% translated, compiles, matches the POT — and does nothing. Every other
+# check in this file passes over it, which was proven by mutation rather than
+# assumed. So assert the work itself: each en_* catalog must actually carry the
+# British form of the spellings its own locale is supposed to fix.
+#
+# Keyed on the source spelling, so the check is derived from what the source
+# says rather than from a second hand-maintained list that could drift from it.
+en_expected() { # $1 = locale -> "msgid_substring|expected_msgstr_substring" per line
+  printf '%s\n' 'Colors|Colours' 'Accent color|Accent colour' 'catalog|catalogue' 'we honor|we honour'
+  [ "$1" = "en_CA" ] || printf '%s\n' 'Unauthorized.|Unauthorised.' 'Uncheck to stop|Untick to stop'
+  [ "$1" = "en_GB" ] && printf '%s\n' 'Add to cart|Add to basket'
+  return 0
+}
+
+# Does $2 appear as a msgstr for a msgid containing $1, in catalog $3?
+en_pair_present() {
+  awk -v want_id="$1" -v want_str="$2" '
+    /^msgid /   { inid = index($0, want_id) > 0 }
+    /^msgstr/   { if (inid && index($0, want_str) > 0) { found = 1 } }
+    END         { exit found ? 0 : 1 }
+  ' "$3"
 }
 
 # msgfmt --statistics wording: "N translated messages[, N fuzzy translations][, N untranslated messages]."
@@ -160,6 +185,22 @@ else
         fail "$L catalog does not cover the POT (new or changed strings untranslated)"
       fi
     fi
+    case "$L" in
+      en_*)
+        MISSED=""
+        while IFS='|' read -r want_id want_str; do
+          [ -n "$want_id" ] || continue
+          en_pair_present "$want_id" "$want_str" "$PO" || MISSED="$MISSED '$want_str'"
+        done <<EOF
+$(en_expected "$L")
+EOF
+        if [ -n "$MISSED" ]; then
+          fail "$L echoes the en_US source instead of respelling it — missing:$MISSED"
+        else
+          pass "$L actually respells the source"
+        fi
+        ;;
+    esac
     MO="languages/nitrosearch-$L.mo"
     TMPMO="$(mktemp "${TMPDIR:-/tmp}/nitrosearch-mo.XXXXXX")"
     if ! msgfmt -o "$TMPMO" "$PO" 2>/dev/null; then

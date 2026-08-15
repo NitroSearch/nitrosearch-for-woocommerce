@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: NitroSearch for WooCommerce 1.9.0\n"
+"Project-Id-Version: NitroSearch for WooCommerce 1.13.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-01T10:00:29+00:00\n"
+"POT-Creation-Date: 2026-08-15T09:10:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: nitrosearch\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
 msgstr ""
 
-#. translators: %s: a link to the NitroSearch settings screen, labelled "NitroSearch → Appearance".
+#. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 #: src/Admin/SettingsPage.php:63
 #, php-format
 msgid "Manage it under %s."
@@ -82,7 +82,7 @@ msgid "Connect your store"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:195
-msgid "Connect this store to NitroSearch to start syncing your catalogue and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
+msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:202
@@ -102,7 +102,7 @@ msgid "Confirming control of your site…"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:218
-msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalogue syncs as soon as it’s confirmed."
+msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:224
@@ -213,7 +213,7 @@ msgid "Next sync"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:357
-msgid "Changes to your catalogue are batched and pushed in the background — these figures show how quickly they reach your search index."
+msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:362
@@ -313,7 +313,7 @@ msgid "Big pictures"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:469
-msgid "Larger thumbnails for image-led catalogues."
+msgid "Larger thumbnails for image-led catalogs."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:470
@@ -321,7 +321,7 @@ msgid "Text only"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:470
-msgid "No pictures — good for spares, parts and B2B."
+msgid "No pictures — good for spare parts and B2B."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:473
@@ -353,7 +353,7 @@ msgid "Custom"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:476
-msgid "Choose your own panel and text colours below."
+msgid "Choose your own panel and text colors below."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:480
@@ -410,15 +410,15 @@ msgid "Automatic gives product names enough room to read, even when your theme's
 msgstr ""
 
 #: src/Admin/SettingsPage.php:549
-msgid "Colours"
+msgid "Colors"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:552
-msgid "Colour scheme"
+msgid "Color scheme"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:565
-msgid "Accent colour"
+msgid "Accent color"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:569
@@ -431,11 +431,11 @@ msgstr ""
 
 #: src/Admin/SettingsPage.php:577
 #: src/Admin/SettingsPage.php:585
-msgid "Only used when the colour scheme is set to Custom."
+msgid "Only used when the color scheme is set to Custom."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:581
-msgid "Text colour"
+msgid "Text color"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:589
@@ -510,7 +510,7 @@ msgstr ""
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
 #: src/Admin/SettingsPage.php:650
 #, php-format
-msgid "Pages and posts count towards the same allowance as your products, so switching them off frees it up for your catalogue. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honour %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
+msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:658
@@ -534,7 +534,7 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:680
-msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:685
@@ -548,7 +548,7 @@ msgstr ""
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
 #: src/Admin/SettingsPage.php:696
 #, php-format
-msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 msgstr ""
 
 #: src/Admin/SettingsPage.php:706
@@ -606,75 +606,75 @@ msgid_plural "Syncing %s products in the background."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Admin/SettingsPage.php:813
+#: src/Admin/SettingsPage.php:817
 msgid "Verified!"
 msgstr ""
 
 #. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
-#: src/Admin/SettingsPage.php:818
+#: src/Admin/SettingsPage.php:822
 #, php-format
 msgid "%1$s search results indexed · %2$s pending."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:823
+#: src/Admin/SettingsPage.php:827
 msgid "Still confirming control of your site — please try again in a moment."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:921
+#: src/Admin/SettingsPage.php:925
 msgid "Design saved."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:938
+#: src/Admin/SettingsPage.php:942
 msgid "Saved. Removing your pages and blog posts from your index in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:942
+#: src/Admin/SettingsPage.php:946
 msgid "Saved. Removing your pages from your index in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:943
+#: src/Admin/SettingsPage.php:947
 msgid "Saved. Removing your blog posts from your index in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:947
+#: src/Admin/SettingsPage.php:951
 msgid "Saved. Indexing your pages and blog posts in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:951
+#: src/Admin/SettingsPage.php:955
 msgid "Saved. Indexing your pages in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:952
+#: src/Admin/SettingsPage.php:956
 msgid "Saved. Indexing your blog posts in the background."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:967
+#: src/Admin/SettingsPage.php:971
 msgid "Disconnected."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:987
+#: src/Admin/SettingsPage.php:991
 msgid "This store is already claimed to a NitroSearch account."
 msgstr ""
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
-#: src/Admin/SettingsPage.php:989
+#: src/Admin/SettingsPage.php:993
 msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
 msgstr ""
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
-#: src/Admin/SettingsPage.php:991
+#: src/Admin/SettingsPage.php:995
 msgid "Your site needs re-checking — click \"Refresh status\", then try again."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:992
+#: src/Admin/SettingsPage.php:996
 msgid "Too many attempts — please wait a minute and try again."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:995
+#: src/Admin/SettingsPage.php:999
 msgid "Could not create a manage link. Please try again."
 msgstr ""
 
-#: src/Admin/SettingsPage.php:1038
+#: src/Admin/SettingsPage.php:1042
 msgid "Insufficient permissions."
 msgstr ""
 
@@ -684,162 +684,162 @@ msgstr ""
 msgid "Search powered by %s"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:76
+#: src/Frontend/WidgetLoader.php:79
 msgid "Refine results"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:77
+#: src/Frontend/WidgetLoader.php:80
 msgid "Refine"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:78
+#: src/Frontend/WidgetLoader.php:81
 msgid "In stock"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:79
+#: src/Frontend/WidgetLoader.php:82
 msgid "On sale"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:80
+#: src/Frontend/WidgetLoader.php:83
 msgid "Brand"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:81
+#: src/Frontend/WidgetLoader.php:84
 msgid "Category"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:82
+#: src/Frontend/WidgetLoader.php:85
 msgid "View"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:83
+#: src/Frontend/WidgetLoader.php:86
 msgid "Add to cart"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:84
+#: src/Frontend/WidgetLoader.php:87
 msgid "Adding…"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:85
+#: src/Frontend/WidgetLoader.php:88
 msgid "Added ✓"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:86
+#: src/Frontend/WidgetLoader.php:89
 msgid "Try again"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:87
+#: src/Frontend/WidgetLoader.php:90
 msgid "Searching…"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:88
+#: src/Frontend/WidgetLoader.php:91
 msgid "Search is unavailable."
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:89
+#: src/Frontend/WidgetLoader.php:92
 msgid "Search is unavailable right now."
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:90
+#: src/Frontend/WidgetLoader.php:93
 msgid "No products found."
 msgstr ""
 
 #. translators: %s: the shopper's search term.
-#: src/Frontend/WidgetLoader.php:92
+#: src/Frontend/WidgetLoader.php:95
 #, php-format
 msgid "No products found for “%s”."
 msgstr ""
 
 #. translators: %s: the shopper's search term.
-#: src/Frontend/WidgetLoader.php:94
+#: src/Frontend/WidgetLoader.php:97
 #, php-format
 msgid "Nothing found for “%s”."
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:95
-#: src/Frontend/WidgetLoader.php:227
+#: src/Frontend/WidgetLoader.php:98
+#: src/Frontend/WidgetLoader.php:244
 msgid "Search products…"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:96
+#: src/Frontend/WidgetLoader.php:99
 msgid "Close search"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:97
+#: src/Frontend/WidgetLoader.php:100
 msgid "Product results"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:98
+#: src/Frontend/WidgetLoader.php:101
 msgid "Recent searches"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:99
+#: src/Frontend/WidgetLoader.php:102
 msgid "Clear"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:100
+#: src/Frontend/WidgetLoader.php:103
 msgid "Start typing to search products…"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:101
+#: src/Frontend/WidgetLoader.php:104
 msgid "Sale"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:102
+#: src/Frontend/WidgetLoader.php:105
 msgid "Out of stock"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:103
+#: src/Frontend/WidgetLoader.php:106
 msgid "Pages & posts"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:104
+#: src/Frontend/WidgetLoader.php:107
 msgctxt "a website page, shown on a search result"
 msgid "Page"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:105
+#: src/Frontend/WidgetLoader.php:108
 msgctxt "a blog post, shown on a search result"
 msgid "Article"
 msgstr ""
 
 #. translators: %s: the search round-trip time in milliseconds.
-#: src/Frontend/WidgetLoader.php:107
+#: src/Frontend/WidgetLoader.php:110
 #, php-format
 msgctxt "unit: milliseconds"
 msgid "%s ms"
 msgstr ""
 
 #. translators: %s: the brand name "NitroSearch".
-#: src/Frontend/WidgetLoader.php:109
+#: src/Frontend/WidgetLoader.php:112
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
 #. translators: 1: current page number, 2: total number of pages.
-#: src/Frontend/WidgetLoader.php:111
+#: src/Frontend/WidgetLoader.php:114
 #, php-format
 msgid "Page %1$s of %2$s"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:112
+#: src/Frontend/WidgetLoader.php:115
 msgid "← Prev"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:113
+#: src/Frontend/WidgetLoader.php:116
 msgid "Next →"
 msgstr ""
 
-#: src/Frontend/WidgetLoader.php:114
+#: src/Frontend/WidgetLoader.php:117
 msgctxt "button label"
 msgid "Search"
 msgstr ""
 
 #. translators: %s: number of products found (screen-reader announcement).
-#: src/Frontend/WidgetLoader.php:117
-#: src/Frontend/WidgetLoader.php:118
-#: src/Frontend/WidgetLoader.php:119
 #: src/Frontend/WidgetLoader.php:120
+#: src/Frontend/WidgetLoader.php:121
+#: src/Frontend/WidgetLoader.php:122
+#: src/Frontend/WidgetLoader.php:123
 #, php-format
 msgid "%s product found."
 msgid_plural "%s products found."
@@ -847,10 +847,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: total number of results.
-#: src/Frontend/WidgetLoader.php:124
-#: src/Frontend/WidgetLoader.php:125
-#: src/Frontend/WidgetLoader.php:126
 #: src/Frontend/WidgetLoader.php:127
+#: src/Frontend/WidgetLoader.php:128
+#: src/Frontend/WidgetLoader.php:129
+#: src/Frontend/WidgetLoader.php:130
 #, php-format
 msgid "See all %s result →"
 msgid_plural "See all %s results →"
@@ -858,10 +858,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of results, 2: the shopper's search term.
-#: src/Frontend/WidgetLoader.php:131
-#: src/Frontend/WidgetLoader.php:132
-#: src/Frontend/WidgetLoader.php:133
 #: src/Frontend/WidgetLoader.php:134
+#: src/Frontend/WidgetLoader.php:135
+#: src/Frontend/WidgetLoader.php:136
+#: src/Frontend/WidgetLoader.php:137
 #, php-format
 msgid "%1$s result for “%2$s”"
 msgid_plural "%1$s results for “%2$s”"
@@ -869,10 +869,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: number of results.
-#: src/Frontend/WidgetLoader.php:138
-#: src/Frontend/WidgetLoader.php:139
-#: src/Frontend/WidgetLoader.php:140
 #: src/Frontend/WidgetLoader.php:141
+#: src/Frontend/WidgetLoader.php:142
+#: src/Frontend/WidgetLoader.php:143
+#: src/Frontend/WidgetLoader.php:144
 #, php-format
 msgid "%s result"
 msgid_plural "%s results"
