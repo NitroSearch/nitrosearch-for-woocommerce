@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.13.0
+Stable tag: 1.14.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,11 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 
 == Changelog ==
 
+= 1.14.0 =
+* New: **NitroSearch in your own English.** The plugin is now translated into English (UK), English (Australia), English (Canada), English (New Zealand) and English (South Africa). Its own strings are American English — that is the language WordPress.org serves them in — so British, Australian, Canadian, New Zealand and South African stores get their own spelling as a translation. On a UK store the search panel now says "Add to basket", matching WooCommerce itself, instead of "Add to cart".
+* Fixed: **translations no longer fall back to English while a language pack catches up.** WordPress loads a WordPress.org language pack *instead of* the translations inside a plugin rather than on top of them, so any string the pack had not caught up on appeared in English even though the translation was sitting in your download. The plugin now supplies its own translations as a second source, so nothing falls back to English unnecessarily.
+* Fixed: this listing's changelog used British spellings while its description used American ones.
+
 = 1.13.0 =
 * Fix: **variable products showed two filters where there should be one, and the second was gibberish.** A shirt with a Color attribute gave shoppers both "Color" (Blue, Red) and a second filter called "attribute_pa_colour" (blue, red) — the same attribute twice, the duplicate written in WordPress's internal wording instead of the names you chose. Every variable product was affected. Variations now describe themselves the way the product does, so the two become the single filter a shopper expects.
 * Fix: **revenue from search was reported at the wrong scale on stores whose currency has no decimal places, or three.** A yen store's search-attributed revenue was reported at a hundred times its real value, and a Kuwaiti dinar store's at a tenth, on every order. Stores in pounds, euros, dollars and every other two-decimal currency were never affected. Product prices were already correct — this was the revenue figure only.
@@ -202,6 +207,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.14.0 =
+Adds English (UK), Australia, Canada, New Zealand and South Africa — your own English spelling, and "Add to basket" on UK stores. Also stops translations falling back to English while a language pack catches up.
 
 = 1.13.0 =
 Fixes a duplicate, oddly-named filter that appeared alongside the real one on every variable product. Also corrects search revenue reporting for currencies without two decimal places (yen, dinar) — product prices were already right. No settings to change.

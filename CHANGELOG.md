@@ -7,6 +7,8 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+## [1.14.0] — 2026-08-15
+
 ### Added
 - **English variants: en_GB, en_AU, en_CA, en_NZ and en_ZA.** The plugin's
   source strings are what wordpress.org serves to en_US, so they are now
