@@ -46,6 +46,31 @@ if (! defined('ABSPATH')) {
     define('ABSPATH', __DIR__.'/');
 }
 
+/**
+ * The ONE WordPress function the pure code reaches for, shimmed.
+ *
+ * ⚠ A SHIM IS A CLAIM, so keep it to the smallest one that is true. `Text::plain()`
+ * strips markup and then decodes entities, and the strip is WordPress's. Everything
+ * else under test here — the HMAC canonicalisation, the exponent table, the retry
+ * classification, the variant-attribute translation — touches no WordPress at all,
+ * which is exactly why it is testable from a bare PHP process.
+ *
+ * This is deliberately NOT `wp_strip_all_tags`'s real implementation: that one also
+ * removes script and style CONTENT, and pretending otherwise here would let a test
+ * pass on a string WordPress would have treated differently. It does the part these
+ * cases depend on and no more. **Anything whose correctness turns on the difference
+ * belongs on a real store, not in this file** — see the header of each case file for
+ * what it does and does not prove.
+ */
+if (! function_exists('wp_strip_all_tags')) {
+    function wp_strip_all_tags($text, $remove_breaks = false)
+    {
+        $text = strip_tags((string) $text);
+
+        return $remove_breaks ? trim(preg_replace('/[\r\n\t ]+/', ' ', $text)) : trim($text);
+    }
+}
+
 $root = dirname(__DIR__);
 
 $passed = 0;
