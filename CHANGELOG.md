@@ -7,47 +7,34 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+## [1.13.0] — 2026-08-15
+
 ### Fixed
 
-- **Variable products produced two refine filters where there should be one, and the second was
-  gibberish.** A shirt with a Colour attribute offered shoppers both "Colour" (Blue, Red) and
-  "attribute_pa_colour" (blue, red) — the second built from the variations, in WooCommerce's own
-  internal wording rather than the names you gave the attribute. Every variable product in every
-  catalogue was affected. Variations now describe themselves the same way the product does, so the
-  two merge into the single filter a shopper expects.
+- **Variable products showed two filters where there should be one, and the second was gibberish.**
+  A shirt with a Colour attribute gave shoppers both "Colour" (Blue, Red) and a second filter called
+  "attribute_pa_colour" (blue, red) — the same attribute twice, the duplicate written in WordPress's
+  internal wording instead of the names you chose. Every variable product was affected. Variations
+  now describe themselves the way the product does, so the two become the single filter a shopper
+  expects.
 
-- **Search-attributed revenue was scaled by a hundred regardless of currency.** A yen store's
-  attributed revenue was reported at **a hundred times** its real value, and a Kuwaiti dinar store at
-  a tenth, on every order since attribution shipped. The payload has always carried the currency
-  beside the amount, so the wrong number arrived correctly labelled and nothing errored — the only
-  symptom was a plausible figure that was wrong by two orders of magnitude, on the one number this
-  plugin is judged by. Catalogue prices were already correct; only the order path was missed.
-  (The ex-tax basis is unchanged and is a separate, deliberate decision.)
+- **Revenue from search was reported at the wrong scale on stores whose currency has no decimal
+  places, or three.** A yen store's search-attributed revenue was reported at a hundred times its
+  real value, and a Kuwaiti dinar store's at a tenth, on every order. Stores in pounds, euros,
+  dollars and every other two-decimal currency were never affected. Product prices were already
+  correct — this was the revenue figure only.
 
-- **A shop that UPDATED the plugin never received database changes.** WordPress does not fire the
-  activation hook on an update, and the queue table's installer was reachable from that hook and
-  nowhere else — so any column this plugin added would have reached new installs and no existing
-  ones, failing inside the write path where a merchant would see only that indexing had quietly
-  stopped. The schema is now applied on every version change.
+- **Database changes now reach stores that update the plugin**, not only new installations.
+  WordPress does not run a plugin's installation step when it is updated, so a future change to the
+  plugin's internal sync table would have quietly reached nobody who already had it.
 
-- **The order-report retry classifier disagreed with the other connectors about a transport
-  failure.** A timeout, DNS blip or refused connection is reported as status 0, and the classifier
-  treated it as FINAL — while PrestaShop and OpenCart both classify it as retryable. The plugin's
-  behaviour was correct today only because a separate branch answers transport errors before the
-  classifier is reached, so nothing was being lost; but the first caller to route a status 0 through
-  it would have had that order deleted, which is the defect of 2026-08-10 arriving by another road.
-  Found by the new suite on its first run.
+### Internal
 
-### Added
-
-- **A test suite, and a CI workflow that runs it.** This was the only connector without one — the
-  oldest, the largest fleet, and the only one on wordpress.org. The two workflows it had were a
-  secret scan and the wordpress.org deploy, neither of which reads a line of the PHP it publishes.
-  `tests/run.php` covers the pure, framework-free parts where being wrong is silent and expensive:
-  the HMAC canonicalisation, the proof-of-control hash, the currency exponent table, and the
-  order-report retry classification. 86 assertions on PHP 8.1 through 8.4, plus a lint of every
-  shipped file on every version. No Composer and no PHPUnit, so there is nothing that could reach
-  the archive a merchant downloads.
+- A test suite and a CI workflow that runs it — 115 assertions on PHP 8.1 through 8.4, covering the
+  request signing, the currency exponent table, the order-report retry rules and the variant
+  attribute translation. This was the only connector without one.
+- The order-report retry classifier now agrees with the other connectors about a transport failure.
+  Nothing was being lost: a separate branch answered timeouts before the classifier was reached.
 
 ## [1.12.0] — 2026-08-10
 
