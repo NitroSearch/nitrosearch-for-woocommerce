@@ -55,7 +55,11 @@ readme_hash() { # $1 = readme.txt
 # says rather than from a second hand-maintained list that could drift from it.
 en_expected() { # $1 = locale -> "msgid_substring|expected_msgstr_substring" per line
   printf '%s\n' 'Colors|Colours' 'Accent color|Accent colour' 'catalog|catalogue' 'we honor|we honour'
-  [ "$1" = "en_CA" ] || printf '%s\n' 'Unauthorized.|Unauthorised.' 'Uncheck to stop|Untick to stop'
+  # 'Untick'/'tick' is NOT asserted: we shipped it as the British form and the
+  # en_GB translation editor reverted it to 'Uncheck'/'check' — while keeping
+  # 'Add to basket', so they accepted the substantive change and overruled this
+  # one. A guard should encode what a native editor has agreed, not our reading.
+  [ "$1" = "en_CA" ] || printf '%s\n' 'Unauthorized.|Unauthorised.'
   [ "$1" = "en_GB" ] && printf '%s\n' 'Add to cart|Add to basket'
   return 0
 }

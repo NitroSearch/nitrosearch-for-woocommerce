@@ -1,12 +1,18 @@
 # Translation of NitroSearch for WooCommerce into Romanian (ro_RO).
 
-# This file is distributed under the same license as the plugin.
+# Strings the ro_RO translation editor has already reviewed are carried
+
+# verbatim from translate.wordpress.org — where he rewrote ours, his
+
+# wording is the one a native reviewer settled on. The remainder was
+
+# rewritten to match the register of that reviewed corpus.
 
 msgid ""
 msgstr ""
 "Project-Id-Version: NitroSearch for WooCommerce\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nitrosearch-for-woocommerce\n"
-"PO-Revision-Date: 2026-08-08 16:58+0000\n"
+"PO-Revision-Date: 2026-08-16 23:02+0000\n"
 "Last-Translator: NitroSearch Team <hello@nitrosearch.io>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
@@ -43,12 +49,12 @@ msgstr "https://webdeviant.io"
 
 
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
-msgstr "<strong>NitroSearch măsoară acum cât de bine funcționează căutarea din magazin</strong> — contorizări anonime, fără cookie-uri, ale căutărilor și ale clicurilor pe rezultate, fără identificatori ai cumpărătorilor. Ajută la îmbunătățirea ordonării rezultatelor, iar rapoartele pentru fiecare magazin sunt în planurile noastre."
+msgstr "<strong>NitroSearch măsoară acum cât de bine funcționează căutarea din magazin</strong> — contorizez căutările și clicurile pe rezultate anonim și fără cookie-uri, fără identificatori ai cumpărătorilor. Mă ajută să ordonez mai bine rezultatele, iar rapoartele pentru fiecare magazin urmează."
 
 
 #. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
-msgstr "Gestionați această opțiune din %s."
+msgstr "Gestioneaz-o din %s."
 
 
 msgid "NitroSearch → Appearance"
@@ -68,31 +74,31 @@ msgstr "Neconectat"
 
 
 msgid "Confirming control…"
-msgstr "Se confirmă controlul…"
+msgstr "Confirm controlul…"
 
 
 msgid "Connected & verified"
-msgstr "Conectat și verificat"
+msgstr "Conectat și confirmat"
 
 
 msgid "Amazon-quality search for WooCommerce"
-msgstr "Căutare de calitate Amazon pentru WooCommerce"
+msgstr "Căutare ca la Amazon pentru WooCommerce"
 
 
 msgid "Connect your store"
-msgstr "Conectați-vă magazinul"
+msgstr "Conectează-ți magazinul"
 
 
 msgid "Connect this store to NitroSearch to start syncing your catalog and serving instant, typo-tolerant search. Nothing leaves your site until you click Connect."
-msgstr "Conectați acest magazin la NitroSearch pentru a începe sincronizarea catalogului și a oferi căutare instantanee, tolerantă la greșeli de tastare. Nimic nu părăsește site-ul până când nu dați clic pe Conectează."
+msgstr "Conectează acest magazin la NitroSearch ca să încep să sincronizez catalogul și să ofer căutare instantanee, tolerantă la greșeli de tastare. Nimic nu pleacă de pe site până nu dai clic pe conectează magazinul."
 
 
 msgid "Provisioning token"
-msgstr "Token de provizionare"
+msgstr "Token de conectare"
 
 
 msgid "Optional. Only needed if you were given a token to connect this store."
-msgstr "Opțional. Necesar doar dacă ați primit un token pentru conectarea acestui magazin."
+msgstr "Opțional. Necesar numai dacă ai primit un token ca să conectezi acest magazin."
 
 
 msgid "Connect store"
@@ -100,11 +106,11 @@ msgstr "Conectează magazinul"
 
 
 msgid "Confirming control of your site…"
-msgstr "Se confirmă controlul asupra site-ului…"
+msgstr "Confirm controlul asupra site-ului…"
 
 
 msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
-msgstr "Verificăm că dețineți controlul asupra acestui magazin înainte de a construi indexul de căutare. În producție, acest pas este automat; dacă site-ul nu poate fi accesat de pe serverele noastre, poate dura puțin. Catalogul se sincronizează imediat ce controlul este confirmat."
+msgstr "Confirm că deții controlul asupra acestui magazin înainte de a construi indexul de căutare. În producție confirm automat; dacă site-ul nu poate fi accesat de pe serverele NitroSearch, poate dura puțin. Sincronizez catalogul imediat ce am confirmat."
 
 
 msgid "Check status"
@@ -116,7 +122,7 @@ msgstr "Deconectează"
 
 
 msgid "Dashboard"
-msgstr "Panou de control"
+msgstr "Panou control"
 
 
 msgid "Design"
@@ -124,20 +130,20 @@ msgstr "Design"
 
 
 msgid "You’ve reached your plan’s limit."
-msgstr "Ați atins limita planului."
+msgstr "Ai atins limita planului."
 
 
 #. translators: %s: the "Manage / Upgrade" button label, wrapped in <em>. Translate it the same way as the button.
 msgid "Your search keeps running for everything already indexed, but new items won’t be added until you upgrade. Your products always take priority, so anything held back is a page or a post. Open %s below to move to a bigger plan."
-msgstr "Căutarea funcționează în continuare pentru tot ce este deja indexat, dar elementele noi nu vor fi adăugate până când nu treceți la un plan superior. Produsele au întotdeauna prioritate, așa că tot ce rămâne în așteptare este o pagină sau un articol. Deschideți %s mai jos pentru a trece la un plan mai mare."
+msgstr "Căutarea funcționează în continuare pentru tot ce este deja indexat, dar nu mai adaug elemente noi până când nu schimbi planul. Produsele au întotdeauna prioritate, așa că tot ce rămâne în așteptare este o pagină sau un articol. Deschide %s mai jos ca să treci la un plan mai mare."
 
 
 msgid "Manage / Upgrade"
-msgstr "Gestionare / Upgrade"
+msgstr "Gestionează / Schimbă planul"
 
 
 msgid "Sync health"
-msgstr "Starea sincronizării"
+msgstr "Sănătate sincronizare"
 
 
 msgid "Search results indexed"
@@ -174,7 +180,7 @@ msgstr "Reîmprospătează starea"
 
 #. translators: %s: a human-readable time interval, e.g. "4 mins".
 msgid "%s from now"
-msgstr "peste %s"
+msgstr "%s de acum"
 
 
 msgid "On demand"
@@ -187,7 +193,7 @@ msgstr "ms"
 
 
 msgid "Sync performance"
-msgstr "Performanța sincronizării"
+msgstr "Performanță la sincronizare"
 
 
 msgid "Avg sync speed"
@@ -211,11 +217,11 @@ msgstr "Următoarea sincronizare"
 
 
 msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
-msgstr "Modificările din catalog sunt grupate în loturi și trimise în fundal — aceste cifre arată cât de repede ajung în indexul de căutare."
+msgstr "Grupez modificările din catalog în loturi și le trimit în fundal — aceste cifre arată cât de repede ajung în index."
 
 
 msgid "Search analytics"
-msgstr "Statistici de căutare"
+msgstr "Statistici căutare"
 
 
 msgid "last 30 days"
@@ -223,18 +229,18 @@ msgstr "ultimele 30 de zile"
 
 
 msgid "Couldn’t load analytics just now — it will retry automatically."
-msgstr "Nu am putut încărca statisticile acum — se va reîncerca automat."
+msgstr "Nu am putut încărca statisticile acum — încerc din nou automat."
 
 
 #. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
 msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
-msgstr "<strong>%1$s</strong> în magazin în ultimele 30 de zile. Vedeți ce au căutat cumpărătorii, pe ce au dat clic și ce au căutat fără să găsească — inclus în fiecare plan plătit, de la %2$s."
+msgstr "<strong>%1$s</strong> în magazin în ultimele 30 de zile. Vezi ce au căutat cumpărătorii, pe ce au dat clic și ce au căutat fără să găsească — inclus în orice plan plătit, de la %2$s."
 
 
 #. translators: %s: number of searches.
 msgid "%s search"
 msgid_plural "%s searches"
-msgstr[0] "%s căutare"
+msgstr[0] "O căutare"
 msgstr[1] "%s căutări"
 msgstr[2] "%s de căutări"
 
@@ -245,11 +251,11 @@ msgstr "%s/lună"
 
 
 msgid "Upgrade to unlock"
-msgstr "Treci la un plan superior pentru a debloca"
+msgstr "Schimbă planul ca să deblochezi"
 
 
 msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
-msgstr "Statisticile încep să fie colectate cu modulul 1.5.0+ activ — datele apar la câteva ore după ce cumpărătorii încep să caute."
+msgstr "Încep să colectez statistici când modulul 1.5.0+ este activ — datele apar la câteva ore după ce cumpărătorii caută."
 
 
 msgid "Searches"
@@ -257,19 +263,19 @@ msgstr "Căutări"
 
 
 msgid "Zero-result rate"
-msgstr "Rata căutărilor fără rezultate"
+msgstr "Rată căutări fără rezultate"
 
 
 msgid "Click-through"
-msgstr "Rată de clic"
+msgstr "Rată clic"
 
 
 msgid "Top searches"
-msgstr "Cele mai frecvente căutări"
+msgstr "Căutări frecvente"
 
 
 msgid "Searched, found nothing"
-msgstr "Au căutat, nu au găsit nimic"
+msgstr "Am căutat, nu au găsit nimic"
 
 
 msgid "View full analytics →"
@@ -277,15 +283,15 @@ msgstr "Vezi statisticile complete →"
 
 
 msgid "Your plan & account"
-msgstr "Planul și contul"
+msgstr "Planul și contul tău"
 
 
 msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
-msgstr "Acest magazin este revendicat de un cont NitroSearch. Gestionați planul și facturarea din panoul de control NitroSearch."
+msgstr "Acest magazin este revendicat de un cont NitroSearch. Gestionează planul și facturarea din panoul NitroSearch."
 
 
 msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
-msgstr "Sunteți pe planul <strong>Gratuit</strong>. Revendicați acest magazin într-un cont NitroSearch pentru a-l gestiona sau a trece la un plan superior — indexul și căutarea rămân exact așa cum sunt."
+msgstr "Ești pe planul <strong>Gratuit</strong>. Revendică acest magazin într-un cont NitroSearch ca să îl gestionezi sau să schimbi planul — indexul și căutarea rămân exact așa cum sunt."
 
 
 msgid "Roomy"
@@ -293,7 +299,7 @@ msgstr "Aerisit"
 
 
 msgid "Two-line names and a clear picture. The default."
-msgstr "Nume pe două rânduri și o imagine clară. Varianta implicită."
+msgstr "Nume pe două rânduri și o imagine clară. Implicit."
 
 
 msgid "Compact"
@@ -305,19 +311,19 @@ msgstr "Rânduri mai mici, ca să încapă mai multe produse înainte de derular
 
 
 msgid "Big pictures"
-msgstr "Imagini mari"
+msgstr "Fotografii mari"
 
 
 msgid "Larger thumbnails for image-led catalogs."
-msgstr "Miniaturi mai mari, pentru cataloagele bazate pe imagini."
+msgstr "Miniaturi mai mari pentru cataloage bazate pe imagini."
 
 
 msgid "Text only"
-msgstr "Doar text"
+msgstr "Numai text"
 
 
 msgid "No pictures — good for spare parts and B2B."
-msgstr "Fără imagini — potrivit pentru piese de schimb, componente și B2B."
+msgstr "Fără imagini — potrivit pentru piese de schimb și B2B."
 
 
 msgid "Light"
@@ -333,7 +339,7 @@ msgstr "Întunecat"
 
 
 msgid "A dark panel, for dark headers and themes."
-msgstr "Un panou întunecat, pentru anteturi și teme închise la culoare."
+msgstr "Un panou întunecat, pentru anteturi și teme întunecate."
 
 
 msgid "Automatic"
@@ -341,7 +347,7 @@ msgstr "Automat"
 
 
 msgid "Follows each shopper's own device setting."
-msgstr "Urmează setarea dispozitivului fiecărui cumpărător."
+msgstr "Urmează setarea de pe dispozitivul cumpărătorului."
 
 
 msgid "Custom"
@@ -349,11 +355,11 @@ msgstr "Personalizat"
 
 
 msgid "Choose your own panel and text colors below."
-msgstr "Alegeți mai jos propriile culori pentru panou și text."
+msgstr "Alege mai jos propriile culori pentru panou și text."
 
 
 msgid "Look"
-msgstr "Stil vizual"
+msgstr "Aspect"
 
 
 msgid "Layout"
@@ -377,7 +383,7 @@ msgstr "Automat (recomandat)"
 
 
 msgid "Always across the top"
-msgstr "Întotdeauna în partea de sus"
+msgstr "Mereu în partea de sus"
 
 
 msgid "Hide in the drop-down"
@@ -385,11 +391,11 @@ msgstr "Ascunde în lista derulantă"
 
 
 msgid "In stock, on sale, brand and category filters. Automatic puts them in a side column when there is room, and across the top when there is not."
-msgstr "Filtre pentru produse în stoc, la reducere, după marcă și categorie. Varianta Automat le așază într-o coloană laterală când este loc și în partea de sus când nu este."
+msgstr "Filtrele în stoc, reduceri, brand și categorie. Cu opțiunea automat, le pun într-o coloană laterală când este loc și în partea de sus când nu este."
 
 
 msgid "Drop-down width"
-msgstr "Lățimea listei derulante"
+msgstr "Lățime listă derulantă"
 
 
 msgid "Wide"
@@ -397,11 +403,11 @@ msgstr "Lată"
 
 
 msgid "Match my search box"
-msgstr "La fel ca caseta mea de căutare"
+msgstr "Potrivește caseta mea de căutare"
 
 
 msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
-msgstr "Opțiunea „Automat” lasă numelor de produse destul loc ca să poată fi citite, chiar și când caseta de căutare a temei tale este îngustă. „Cât caseta mea de căutare” păstrează lista exact la fel de lată ca și caseta."
+msgstr "Cu opțiunea automat, numele produselor au destul loc ca să fie citite, chiar dacă tema are o casetă de căutare îngustă. Cu opțiunea potrivește caseta mea de căutare, lista rămâne exact la fel de lată ca și caseta."
 
 
 msgid "Colors"
@@ -409,27 +415,27 @@ msgstr "Culori"
 
 
 msgid "Color scheme"
-msgstr "Schemă de culori"
+msgstr "Schemă culori"
 
 
 msgid "Accent color"
-msgstr "Culoare de accent"
+msgstr "Culoare accent"
 
 
 msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
-msgstr "Folosită pentru prețuri, evidențieri și filtrele selectate. Lăsați gol pentru varianta implicită. Textul de deasupra devine automat negru sau alb, oricare rămâne lizibil."
+msgstr "Folosită pentru prețuri, evidențieri și filtre selectate. Lasă gol pentru culoarea implicită. Textul de deasupra devine automat negru sau alb, ca să rămână lizibil."
 
 
 msgid "Panel background"
-msgstr "Fundalul panoului"
+msgstr "Fundal panou"
 
 
 msgid "Only used when the color scheme is set to Custom."
-msgstr "Folosit doar când schema de culori este setată la Personalizat."
+msgstr "Folosit numai când schema de culori este setată la personalizat."
 
 
 msgid "Text color"
-msgstr "Culoarea textului"
+msgstr "Culoare text"
 
 
 msgid "Corners"
@@ -437,27 +443,27 @@ msgstr "Colțuri"
 
 
 msgid "Rounded"
-msgstr "Rotunjite"
+msgstr "Rotunjit"
 
 
 msgid "Slightly rounded"
-msgstr "Ușor rotunjite"
+msgstr "Puțin rotunjit"
 
 
 msgid "Square"
-msgstr "Drepte"
+msgstr "Pătrat"
 
 
 msgid "Text style"
-msgstr "Stilul textului"
+msgstr "Stil text"
 
 
 msgid "Match my store"
-msgstr "La fel ca magazinul meu"
+msgstr "Potrivește magazinul meu"
 
 
 msgid "System default"
-msgstr "Fontul implicit al sistemului"
+msgstr "Implicit în sistem"
 
 
 msgid "Custom font"
@@ -465,20 +471,20 @@ msgstr "Font personalizat"
 
 
 msgid "Match my store borrows the font your theme already uses around the search box."
-msgstr "La fel ca magazinul meu împrumută fontul pe care tema îl folosește deja în jurul casetei de căutare."
+msgstr "Cu opțiunea potrivește magazinul meu, împrumut fontul pe care tema îl folosește deja în jurul casetei de căutare."
 
 
 msgctxt "example font stack"
 msgid "e.g. Georgia, serif"
-msgstr "de ex. Georgia, serif"
+msgstr "De exemplu: Georgia, serif"
 
 
 msgid "Only used when Custom font is selected."
-msgstr "Folosit doar când este selectat Font personalizat."
+msgstr "Folosit numai când este selectat font personalizat."
 
 
 msgid "What to search"
-msgstr "Ce se caută"
+msgstr "Ce să cauți"
 
 
 msgid "Include"
@@ -498,66 +504,66 @@ msgstr "Pagini"
 
 
 msgid "Blog posts"
-msgstr "Articole de blog"
+msgstr "Articole blog"
 
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
 msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
-msgstr "Paginile și articolele se contorizează în aceeași cotă ca produsele, așa că dezactivarea lor eliberează loc pentru catalog. Produsele sunt întotdeauna pe primul loc și nu sunt niciodată dislocate de acestea. Conținutul privat, protejat cu parolă sau nepublicat nu este indexat niciodată, iar noi respectăm %s setat prin Yoast SEO sau Rank Math (per element, per tip de conținut sau la nivelul întregului site)."
+msgstr "Paginile și articolele intră în aceeași cotă ca produsele, așa că, dacă le dezactivezi, eliberezi loc pentru catalog. Produsele sunt întotdeauna pe primul loc și nu sunt niciodată date la o parte de ele. Nu indexez niciodată conținutul privat, protejat cu parolă sau nepublicat și respect %s setat prin Yoast SEO sau Rank Math (per element, per tip de conținut sau la nivelul întregului site)."
 
 
 msgid "Search results page"
-msgstr "Pagina cu rezultatele căutării"
+msgstr "Pagină Rezultate de căutare"
 
 
 msgid "Enhance the product search results page with NitroSearch results and filters"
-msgstr "Îmbunătățește pagina cu rezultatele căutării de produse folosind rezultatele și filtrele NitroSearch"
+msgstr "Îmbunătățește pagina rezultate de căutare produse cu rezultatele și filtrele NitroSearch"
 
 
 msgid "Privacy &amp; credit"
-msgstr "Confidențialitate și mențiune"
+msgstr "Confidențialitate și mențiuni"
 
 
 msgid "Search usage data"
-msgstr "Date despre utilizarea căutării"
+msgstr "Date utilizare căutare"
 
 
 msgid "Share anonymous search usage counts with NitroSearch"
-msgstr "Trimite către NitroSearch contorizări anonime despre utilizarea căutării"
+msgstr "Trimite către NitroSearch contorizări anonime de utilizare a căutării"
 
 
 msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
-msgstr "Contorizează căutările, numărul de rezultate și clicurile pe rezultate în căutarea din magazin — fără cookie-uri și anonim, fără identificatori ai cumpărătorilor, fără adrese IP și fără nimic stocat în browserul cumpărătorului. Folosite pentru a îmbunătăți ordonarea rezultatelor și pentru statisticile de căutare. Debifați pentru a opri imediat trimiterea."
+msgstr "Contorizez căutările, numărul de rezultate și clicurile pe rezultate din magazin — fără cookie-uri și anonim, fără identificatori ai cumpărătorilor, fără adrese IP și fără nimic stocat în browserul cumpărătorului. Le folosesc ca să îmbunătățesc ordonarea rezultatelor și ca să îți arăt statisticile de căutare. Debifează ca să opresc imediat trimiterea."
 
 
 msgid "Powered-by credit"
-msgstr "Mențiunea „Propulsat de”"
+msgstr "Mențiune „Propulsat de”"
 
 
 msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
-msgstr "Afișează o mică mențiune „Propulsat de NitroSearch”, cu legătură către nitrosearch.io"
+msgstr "Afișează o mică mențiune „Propulsat de NitroSearch”, care duce la nitrosearch.io"
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
 msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
-msgstr "Dezactivată implicit — alegerea vă aparține în întregime. Activarea ei adaugă o mică mențiune în caseta de căutare și un rând în subsolul site-ului, ambele cu legătură către %s — o legătură normală, de tip follow. Nimic nu este adăugat pe site dacă nu bifați această opțiune. Vă mulțumim dacă o faceți."
+msgstr "Dezactivată implicit — alegerea îți aparține. Dacă o activezi, adaug o mică mențiune în caseta de căutare și un rând în subsolul site-ului, ambele cu legătură către %s — o legătură obișnuită, urmată de motoarele de căutare. Nu adaug nimic pe site dacă nu bifezi. Îți mulțumesc dacă o faci."
 
 
 msgid "Advanced"
-msgstr "Avansat"
+msgstr "Avansate"
 
 
 msgid "Search box selector"
-msgstr "Selectorul casetei de căutare"
+msgstr "Selector casetă de căutare"
 
 
 msgctxt "example CSS selector"
 msgid "e.g. input.my-theme-search"
-msgstr "de ex. input.my-theme-search"
+msgstr "De exemplu, input.my-theme-search"
 
 
 msgid "Optional CSS selector for your theme's search input. Leave blank to auto-detect."
-msgstr "Selector CSS opțional pentru câmpul de căutare al temei. Lăsați gol pentru detectare automată."
+msgstr "Selector CSS opțional pentru caseta de căutare a temei. Lasă gol pentru detectare automată."
 
 
 msgid "Save design"
@@ -574,27 +580,27 @@ msgstr "eroare necunoscută"
 
 
 msgid "Connected and verified."
-msgstr "Conectat și verificat."
+msgstr "Conectat și confirmat."
 
 
 msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
-msgstr "Conectat. Confirmăm controlul asupra site-ului — poate dura puțin. Folosiți „Verifică starea” mai jos dacă nu se actualizează."
+msgstr "Conectat. Confirm controlul asupra site-ului — poate dura puțin. Folosește „Verifică starea” de mai jos dacă nu se actualizează."
 
 
 #. translators: %s: number of products.
 msgid "Syncing %s product in the background, then your pages and posts."
 msgid_plural "Syncing %s products in the background, then your pages and posts."
-msgstr[0] "Se sincronizează %s produs în fundal, apoi paginile și articolele."
-msgstr[1] "Se sincronizează %s produse în fundal, apoi paginile și articolele."
-msgstr[2] "Se sincronizează %s de produse în fundal, apoi paginile și articolele."
+msgstr[0] "Sincronizez un produs în fundal, apoi paginile și articolele."
+msgstr[1] "Sincronizez %s produse în fundal, apoi paginile și articolele."
+msgstr[2] "Sincronizez %s de produse în fundal, apoi paginile și articolele."
 
 
 #. translators: %s: number of products.
 msgid "Syncing %s product in the background."
 msgid_plural "Syncing %s products in the background."
-msgstr[0] "Se sincronizează %s produs în fundal."
-msgstr[1] "Se sincronizează %s produse în fundal."
-msgstr[2] "Se sincronizează %s de produse în fundal."
+msgstr[0] "Sincronizez un produs în fundal."
+msgstr[1] "Sincronizez %s produse în fundal."
+msgstr[2] "Sincronizez %s de produse în fundal."
 
 
 msgid "Verified!"
@@ -603,39 +609,39 @@ msgstr "Verificat!"
 
 #. translators: 1: number of items in the search index, 2: number of changes waiting to sync.
 msgid "%1$s search results indexed · %2$s pending."
-msgstr "%1$s rezultate de căutare indexate · %2$s în așteptare."
+msgstr "Am indexat %1$s rezultate de căutare · %2$s sunt în așteptare."
 
 
 msgid "Still confirming control of your site — please try again in a moment."
-msgstr "Încă se confirmă controlul asupra site-ului — reîncercați într-o clipă."
+msgstr "Încă confirm controlul asupra site-ului — încearcă din nou peste o clipă."
 
 
 msgid "Design saved."
-msgstr "Design salvat."
+msgstr "Am salvat designul."
 
 
 msgid "Saved. Removing your pages and blog posts from your index in the background."
-msgstr "Salvat. Paginile și articolele de blog se elimină din index în fundal."
+msgstr "Am salvat. Elimin paginile și articolele blogului din index în fundal."
 
 
 msgid "Saved. Removing your pages from your index in the background."
-msgstr "Salvat. Paginile se elimină din index în fundal."
+msgstr "Am salvat. Elimin paginile din index în fundal."
 
 
 msgid "Saved. Removing your blog posts from your index in the background."
-msgstr "Salvat. Articolele de blog se elimină din index în fundal."
+msgstr "Am salvat. Elimin articolele blogului din index în fundal."
 
 
 msgid "Saved. Indexing your pages and blog posts in the background."
-msgstr "Salvat. Paginile și articolele de blog se indexează în fundal."
+msgstr "Am salvat. Indexez paginile și articolele blogului în fundal."
 
 
 msgid "Saved. Indexing your pages in the background."
-msgstr "Salvat. Paginile se indexează în fundal."
+msgstr "Am salvat. Indexez paginile în fundal."
 
 
 msgid "Saved. Indexing your blog posts in the background."
-msgstr "Salvat. Articolele de blog se indexează în fundal."
+msgstr "Am salvat. Indexez articolele blogului în fundal."
 
 
 msgid "Disconnected."
@@ -648,20 +654,20 @@ msgstr "Acest magazin este deja revendicat de un cont NitroSearch."
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
-msgstr "Nu am putut confirma încă controlul asupra site-ului — dați mai întâi clic pe „Reîmprospătează starea”, apoi reîncercați."
+msgstr "Nu am putut confirma încă controlul asupra site-ului — dă mai întâi clic pe „Reîmprospătează starea”, apoi încearcă din nou."
 
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "Your site needs re-checking — click \"Refresh status\", then try again."
-msgstr "Site-ul trebuie verificat din nou — dați clic pe „Reîmprospătează starea”, apoi reîncercați."
+msgstr "Trebuie să verific din nou site-ul — dă clic pe „Reîmprospătează starea”, apoi încearcă din nou."
 
 
 msgid "Too many attempts — please wait a minute and try again."
-msgstr "Prea multe încercări — așteptați un minut și reîncercați."
+msgstr "Prea multe încercări — așteaptă un minut și încearcă din nou."
 
 
 msgid "Could not create a manage link. Please try again."
-msgstr "Nu am putut crea o legătură de gestionare. Reîncercați."
+msgstr "Nu am putut crea o legătură de gestionare. Încearcă din nou."
 
 
 msgid "Insufficient permissions."
@@ -674,11 +680,11 @@ msgstr "Căutare propulsată de %s"
 
 
 msgid "Refine results"
-msgstr "Rafinează rezultatele"
+msgstr "Cizelează rezultatele"
 
 
 msgid "Refine"
-msgstr "Rafinează"
+msgstr "Cizelează"
 
 
 msgid "In stock"
@@ -686,11 +692,11 @@ msgstr "În stoc"
 
 
 msgid "On sale"
-msgstr "La reducere"
+msgstr "Reduceri"
 
 
 msgid "Brand"
-msgstr "Marcă"
+msgstr "Brand"
 
 
 msgid "Category"
@@ -706,7 +712,7 @@ msgstr "Adaugă în coș"
 
 
 msgid "Adding…"
-msgstr "Se adaugă…"
+msgstr "Adaug..."
 
 
 msgid "Added ✓"
@@ -714,11 +720,11 @@ msgstr "Adăugat ✓"
 
 
 msgid "Try again"
-msgstr "Reîncearcă"
+msgstr "Încearcă din nou"
 
 
 msgid "Searching…"
-msgstr "Se caută…"
+msgstr "Caut..."
 
 
 msgid "Search is unavailable."
@@ -726,21 +732,21 @@ msgstr "Căutarea este indisponibilă."
 
 
 msgid "Search is unavailable right now."
-msgstr "Căutarea este momentan indisponibilă."
+msgstr "Momentan căutarea este indisponibilă."
 
 
 msgid "No products found."
-msgstr "Nu s-au găsit produse."
+msgstr "Nu am găsit niciun produs."
 
 
 #. translators: %s: the shopper's search term.
 msgid "No products found for “%s”."
-msgstr "Nu s-au găsit produse pentru „%s”."
+msgstr "Nu am găsit niciun produs pentru „%s”."
 
 
 #. translators: %s: the shopper's search term.
 msgid "Nothing found for “%s”."
-msgstr "Nu s-a găsit nimic pentru „%s”."
+msgstr "Nu am găsit nimic pentru „%s”."
 
 
 msgid "Search products…"
@@ -760,15 +766,15 @@ msgstr "Căutări recente"
 
 
 msgid "Clear"
-msgstr "Golește"
+msgstr "Șterge"
 
 
 msgid "Start typing to search products…"
-msgstr "Începeți să tastați pentru a căuta produse…"
+msgstr "Începe să tastezi ca să cauți produse…"
 
 
 msgid "Sale"
-msgstr "Reducere"
+msgstr "Reduceri"
 
 
 msgid "Out of stock"
@@ -806,11 +812,11 @@ msgstr "Pagina %1$s din %2$s"
 
 
 msgid "← Prev"
-msgstr "← Înapoi"
+msgstr "← Anterior"
 
 
 msgid "Next →"
-msgstr "Înainte →"
+msgstr "Următor →"
 
 
 msgctxt "button label"
@@ -821,15 +827,15 @@ msgstr "Caută"
 #. translators: %s: number of products found (screen-reader announcement).
 msgid "%s product found."
 msgid_plural "%s products found."
-msgstr[0] "S-a găsit %s produs."
-msgstr[1] "S-au găsit %s produse."
-msgstr[2] "S-au găsit %s de produse."
+msgstr[0] "Am găsit un produs."
+msgstr[1] "Am găsit %s produse."
+msgstr[2] "Am găsit %s de produse."
 
 
 #. translators: %s: total number of results.
 msgid "See all %s result →"
 msgid_plural "See all %s results →"
-msgstr[0] "Vezi %s rezultat →"
+msgstr[0] "Vezi un rezultat →"
 msgstr[1] "Vezi toate cele %s rezultate →"
 msgstr[2] "Vezi toate cele %s de rezultate →"
 
@@ -837,7 +843,7 @@ msgstr[2] "Vezi toate cele %s de rezultate →"
 #. translators: 1: number of results, 2: the shopper's search term.
 msgid "%1$s result for “%2$s”"
 msgid_plural "%1$s results for “%2$s”"
-msgstr[0] "%1$s rezultat pentru „%2$s”"
+msgstr[0] "Un rezultat pentru „%2$s”"
 msgstr[1] "%1$s rezultate pentru „%2$s”"
 msgstr[2] "%1$s de rezultate pentru „%2$s”"
 
@@ -845,6 +851,6 @@ msgstr[2] "%1$s de rezultate pentru „%2$s”"
 #. translators: %s: number of results.
 msgid "%s result"
 msgid_plural "%s results"
-msgstr[0] "%s rezultat"
+msgstr[0] "Un rezultat"
 msgstr[1] "%s rezultate"
 msgstr[2] "%s de rezultate"

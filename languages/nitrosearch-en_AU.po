@@ -530,7 +530,7 @@ msgstr "Share anonymous search usage counts with NitroSearch"
 
 
 msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
-msgstr "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Untick to stop sending immediately."
+msgstr "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
 
 
 msgid "Powered-by credit"
@@ -543,7 +543,7 @@ msgstr "Show a small “Powered by NitroSearch” credit, linking to nitrosearch
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
 msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
-msgstr "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you tick this. Thank you if you do."
+msgstr "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
 
 
 msgid "Advanced"

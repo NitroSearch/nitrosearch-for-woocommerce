@@ -43,7 +43,8 @@ msgstr "https://webdeviant.io"
 
 
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
-msgstr "<strong>NitroSearch mäter nu hur sökningen i din butik presterar</strong> — anonym räkning av sökningar och resultatklick, utan cookies och utan identifierare för kunder. Det hjälper till att förbättra rankningen av resultaten, och rapportering per butik finns på färdplanen."
+msgstr "<strong>NitroSearch mäter nu hur sökningen i din butik presterar</strong> – anonym räkning av sökningar och resultatklick, utan cookies och utan identifierare för kunder. Det hjälper till att förbättra rankningen av resultaten, och rapportering per butik finns på färdplanen."
+
 
 
 #. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
@@ -211,7 +212,8 @@ msgstr "Nästa synkronisering"
 
 
 msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
-msgstr "Ändringar i din katalog samlas ihop och skickas i bakgrunden — de här siffrorna visar hur snabbt de når ditt sökindex."
+msgstr "Ändringar i din katalog samlas ihop och skickas i bakgrunden – de här siffrorna visar hur snabbt de når ditt sökindex."
+
 
 
 msgid "Search analytics"
@@ -223,12 +225,14 @@ msgstr "senaste 30 dagarna"
 
 
 msgid "Couldn’t load analytics just now — it will retry automatically."
-msgstr "Det gick inte att läsa in analysdata just nu — ett nytt försök görs automatiskt."
+msgstr "Det gick inte att läsa in analysdata just nu – ett nytt försök görs automatiskt."
+
 
 
 #. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
 msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
-msgstr "<strong>%1$s</strong> i din butik under de senaste 30 dagarna. Se vad kunderna sökte efter, vad de klickade på och vad de letade efter men inte hittade — ingår i alla betalda paket, från %2$s."
+msgstr "<strong>%1$s</strong> i din butik under de senaste 30 dagarna. Se vad kunderna sökte efter, vad de klickade på och vad de letade efter men inte hittade – ingår i alla betalda paket, från %2$s."
+
 
 
 #. translators: %s: number of searches.
@@ -248,7 +252,8 @@ msgstr "Uppgradera för att låsa upp"
 
 
 msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
-msgstr "Analysdata börjar samlas in när version 1.5.0+ av tillägget är aktiv — data visas inom några timmar efter att kunder har sökt."
+msgstr "Analysdata börjar samlas in när version 1.5.0 eller senare av tillägget är aktiv – data visas inom några timmar efter att kunder har sökt."
+
 
 
 msgid "Searches"
@@ -284,7 +289,8 @@ msgstr "Den här butiken är knuten till ett NitroSearch-konto. Hantera ditt pak
 
 
 msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
-msgstr "Du använder <strong>gratispaketet</strong>. Knyt den här butiken till ett NitroSearch-konto för att hantera den eller uppgradera — ditt index och din sökning förblir precis som de är."
+msgstr "Du använder <strong>gratispaketet</strong>. Knyt den här butiken till ett NitroSearch-konto för att hantera den eller uppgradera – ditt index och din sökning förblir precis som de är."
+
 
 
 msgid "Roomy"
@@ -316,7 +322,8 @@ msgstr "Endast text"
 
 
 msgid "No pictures — good for spare parts and B2B."
-msgstr "Inga bilder — bra för reservdelar, komponenter och B2B."
+msgstr "Inga bilder – bra för reservdelar, komponenter och B2B."
+
 
 
 msgid "Light"
@@ -526,20 +533,24 @@ msgstr "Dela anonym sökanvändningsstatistik med NitroSearch"
 
 
 msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
-msgstr "Räknar sökningar, antal resultat och resultatklick i din butiks sökning — utan cookies och anonymt, utan identifierare för kunder, utan IP-adresser och utan att något lagras i kundens webbläsare. Används för att förbättra rankningen av resultaten och för att driva din sökanalys. Avmarkera för att omedelbart sluta skicka."
+msgstr "Räknar sökningar, antal resultat och resultatklick i din butiks sökning – utan cookies och anonymt, utan identifierare för kunder, utan IP-adresser och utan att något lagras i kundens webbläsare. Används för att förbättra rankningen av resultaten och för att driva din sökanalys. Avmarkera för att omedelbart sluta skicka."
+
 
 
 msgid "Powered-by credit"
-msgstr "”Drivs av NitroSearch”-omnämnande"
+msgstr "”Drivs med NitroSearch”-omnämnande"
+
 
 
 msgid "Show a small “Powered by NitroSearch” credit, linking to nitrosearch.io"
-msgstr "Visa ett litet ”Drivs av NitroSearch”-omnämnande som länkar till nitrosearch.io"
+msgstr "Visa ett litet ”Drivs med NitroSearch”-omnämnande som länkar till nitrosearch.io"
+
 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
 msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
-msgstr "Av som standard, och helt ditt eget val. Slår du på det läggs ett litet omnämnande till i sökrutan och en rad i webbplatsens sidfot, båda med länk till %s — en vanlig, följd länk. Ingenting läggs till på din webbplats om du inte kryssar i detta. Tack om du gör det."
+msgstr "Av som standard, och helt ditt eget val. Slår du på det läggs ett litet omnämnande till i sökrutan och en rad i webbplatsens sidfot, båda med länk till %s – en vanlig, följd länk. Ingenting läggs till på din webbplats om du inte kryssar i detta. Tack om du gör det."
+
 
 
 msgid "Advanced"
@@ -577,7 +588,8 @@ msgstr "Ansluten och verifierad."
 
 
 msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
-msgstr "Ansluten. Bekräftar kontroll över din webbplats — det kan ta en stund. Använd ”Kontrollera status” nedan om det inte uppdateras."
+msgstr "Ansluten. Bekräftar kontroll över din webbplats – det kan ta en stund. Använd ”Kontrollera status” nedan om det inte uppdateras."
+
 
 
 #. translators: %s: number of products.
@@ -604,7 +616,8 @@ msgstr "%1$s sökresultat indexerade · %2$s väntar."
 
 
 msgid "Still confirming control of your site — please try again in a moment."
-msgstr "Bekräftar fortfarande kontrollen över din webbplats — försök igen om en liten stund."
+msgstr "Bekräftar fortfarande kontrollen över din webbplats – försök igen om en liten stund."
+
 
 
 msgid "Design saved."
@@ -645,16 +658,19 @@ msgstr "Den här butiken är redan knuten till ett NitroSearch-konto."
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
-msgstr "Vi kunde ännu inte bekräfta kontrollen över din webbplats — klicka först på ”Uppdatera status” och försök sedan igen."
+msgstr "Vi kunde ännu inte bekräfta kontrollen över din webbplats – klicka först på ”Uppdatera status” och försök sedan igen."
+
 
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "Your site needs re-checking — click \"Refresh status\", then try again."
-msgstr "Din webbplats behöver kontrolleras om — klicka på ”Uppdatera status” och försök sedan igen."
+msgstr "Din webbplats behöver kontrolleras på nytt – klicka på ”Uppdatera status” och försök sedan igen."
+
 
 
 msgid "Too many attempts — please wait a minute and try again."
-msgstr "För många försök — vänta en minut och försök igen."
+msgstr "För många försök – vänta en minut och försök igen."
+
 
 
 msgid "Could not create a manage link. Please try again."
