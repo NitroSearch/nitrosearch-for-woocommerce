@@ -24,7 +24,8 @@ msgstr "https://nitrosearch.io"
 
 #. Description of the plugin
 msgid "Blazing-fast hosted search for WooCommerce. Syncs your catalog to NitroSearch and replaces the default WordPress search with instant, typo-tolerant results."
-msgstr "Razendsnelle gehoste zoekfunctie voor WooCommerce. Synchroniseert je catalogus naar NitroSearch en vervangt de standaard WordPress-zoekfunctie door directe, typefout-tolerante resultaten."
+msgstr "Razendsnelle gehoste zoekfunctie voor WooCommerce. Synchroniseert je catalogus naar NitroSearch en vervangt de standaard WordPress zoekfunctie door directe, typefout-tolerante resultaten."
+
 
 #. Author of the plugin
 msgid "WebDeviant"
@@ -35,7 +36,8 @@ msgid "https://webdeviant.io"
 msgstr "https://webdeviant.io"
 
 msgid "<strong>NitroSearch now measures how your store's search performs</strong> — anonymous, cookieless counts of searches and result clicks, with no shopper identifiers. It helps result ranking improve, and per-store reporting is on the roadmap."
-msgstr "<strong>NitroSearch meet nu hoe de zoekfunctie van je winkel presteert</strong> — anonieme, cookieloze tellingen van zoekopdrachten en resultaatkliks, zonder identificerende gegevens van shoppers. Dit helpt de rangschikking van resultaten te verbeteren, en rapportage per winkel staat op de roadmap."
+msgstr "<strong>NitroSearch meet nu hoe de zoekfunctie van je winkel presteert</strong> — anonieme, cookieloze tellingen van zoekopdrachten en resultaatkliks, zonder identificerende gegevens van winkelaars. Dit helpt de rangschikking van resultaten te verbeteren, en rapportage per winkel staat op de roadmap."
+
 
 #. translators: %s: a link to the NitroSearch settings screen, labeled "NitroSearch → Appearance".
 msgid "Manage it under %s."
@@ -60,7 +62,8 @@ msgid "Connected & verified"
 msgstr "Verbonden en geverifieerd"
 
 msgid "Amazon-quality search for WooCommerce"
-msgstr "Zoeken van Amazon-kwaliteit voor WooCommerce"
+msgstr "Zoeken van Amazon kwaliteit voor WooCommerce"
+
 
 msgid "Connect your store"
 msgstr "Verbind je winkel"
@@ -81,7 +84,8 @@ msgid "Confirming control of your site…"
 msgstr "Eigendom van je site bevestigen…"
 
 msgid "We’re verifying that you control this store before building your search index. In production this is automatic; if your site isn’t reachable from our servers it can take a moment. Your catalog syncs as soon as it’s confirmed."
-msgstr "We controleren of jij deze winkel beheert voordat we je zoekindex opbouwen. In productie gebeurt dit automatisch; als je site niet bereikbaar is vanaf onze servers kan het even duren. Je catalogus synchroniseert zodra het bevestigd is."
+msgstr "We controleren of jij deze winkel beheert voordat we je zoekindex opbouwen. In productie gaat dit automatisch; als je site niet bereikbaar is vanaf onze servers, kan het even duren. Je catalogus synchroniseert zodra dit is bevestigd."
+
 
 msgid "Check status"
 msgstr "Status controleren"
@@ -93,7 +97,8 @@ msgid "Dashboard"
 msgstr "Dashboard"
 
 msgid "Design"
-msgstr "Design"
+msgstr "Ontwerp"
+
 
 msgid "You’ve reached your plan’s limit."
 msgstr "Je hebt de limiet van je abonnement bereikt."
@@ -130,7 +135,8 @@ msgid "Sync all products"
 msgstr "Alle producten synchroniseren"
 
 msgid "Refresh status"
-msgstr "Status vernieuwen"
+msgstr "Status verversen"
+
 
 #. translators: %s: a human-readable time interval, e.g. "4 mins".
 msgid "%s from now"
@@ -175,7 +181,8 @@ msgstr "De statistieken konden zojuist niet worden geladen — er wordt automati
 
 #. translators: 1: "N searches" (already localized), shown in bold. 2: the entry price of the cheapest paid plan (always billed in US dollars).
 msgid "<strong>%1$s</strong> on your store in the last 30 days. See what shoppers searched for, what they clicked, and what they looked for and didn’t find — included on every paid plan, from %2$s."
-msgstr "<strong>%1$s</strong> in je winkel in de afgelopen 30 dagen. Zie waar shoppers naar zochten, waarop ze klikten en wat ze zochten maar niet vonden — inbegrepen bij elk betaald abonnement, vanaf %2$s."
+msgstr "<strong>%1$s</strong> in je winkel in de afgelopen 30 dagen. Zie waar winkelaarss naar zochten, waarop ze klikten en wat ze zochten maar niet vonden — inbegrepen bij elk betaald abonnement, vanaf %2$s."
+
 
 #. translators: %s: number of searches.
 msgid "%s search"
@@ -191,7 +198,8 @@ msgid "Upgrade to unlock"
 msgstr "Upgrade om te ontgrendelen"
 
 msgid "Analytics starts collecting with plugin 1.5.0+ active — data appears within a few hours of shoppers searching."
-msgstr "Statistieken worden verzameld zodra plugin 1.5.0+ actief is — gegevens verschijnen binnen een paar uur nadat shoppers zoeken."
+msgstr "Statistieken worden verzameld zodra plugin 1.5.0+ actief is — gegevens verschijnen binnen een paar uur nadat winkelaars zoeken."
+
 
 msgid "Searches"
 msgstr "Zoekopdrachten"
@@ -218,7 +226,8 @@ msgid "This store is claimed to a NitroSearch account. Manage your plan and bill
 msgstr "Deze winkel is gekoppeld aan een NitroSearch-account. Beheer je abonnement en facturering vanuit je NitroSearch-dashboard."
 
 msgid "You're on the <strong>Free</strong> plan. Claim this store to a NitroSearch account to manage it or upgrade — your index and search stay exactly as they are."
-msgstr "Je zit op het <strong>Gratis</strong> abonnement. Koppel deze winkel aan een NitroSearch-account om hem te beheren of te upgraden — je index en zoekfunctie blijven precies zoals ze zijn."
+msgstr "Je zit op het <strong>Gratis</strong> abonnement. Koppel deze winkel aan een NitroSearch account om hem te beheren of te upgraden — je index en zoekfunctie blijven precies zoals ze zijn."
+
 
 msgid "Roomy"
 msgstr "Ruim"
@@ -236,13 +245,15 @@ msgid "Big pictures"
 msgstr "Grote afbeeldingen"
 
 msgid "Larger thumbnails for image-led catalogs."
-msgstr "Grotere miniaturen voor catalogi waarin afbeeldingen de hoofdrol spelen."
+msgstr "Grotere thumbnails voor catalogi met afbeeldingen."
+
 
 msgid "Text only"
 msgstr "Alleen tekst"
 
 msgid "No pictures — good for spare parts and B2B."
-msgstr "Geen afbeeldingen — handig voor onderdelen, reserveonderdelen en B2B."
+msgstr "Geen afbeeldingen — handig voor reserveonderdelen en B2B."
+
 
 msgid "Light"
 msgstr "Licht"
@@ -260,7 +271,8 @@ msgid "Automatic"
 msgstr "Automatisch"
 
 msgid "Follows each shopper's own device setting."
-msgstr "Volgt de eigen apparaatinstelling van elke shopper."
+msgstr "Volgt de eigen apparaatinstelling van elke winkelaar."
+
 
 msgid "Custom"
 msgstr "Aangepast"
@@ -278,7 +290,8 @@ msgid "Products shown"
 msgstr "Getoonde producten"
 
 msgid "How many products appear in the drop-down as your shopper types."
-msgstr "Hoeveel producten er in de dropdown verschijnen terwijl je shopper typt."
+msgstr "Hoeveel producten er in de dropdown verschijnen terwijl je winkelaar typt."
+
 
 msgid "Filters"
 msgstr "Filters"
@@ -302,10 +315,12 @@ msgid "Wide"
 msgstr "Breed"
 
 msgid "Match my search box"
-msgstr "Gelijk aan mijn zoekveld"
+msgstr "Mijn zoekvak laten overeenkomen"
+
 
 msgid "Automatic gives product names enough room to read, even when your theme's search box is narrow. Match my search box keeps it exactly as wide as the box."
-msgstr "Automatisch geeft productnamen genoeg ruimte om leesbaar te zijn, ook wanneer het zoekveld van je thema smal is. Gelijk aan mijn zoekveld houdt de dropdown precies even breed als het veld."
+msgstr "Automatisch geeft productnamen genoeg ruimte om leesbaar te zijn, ook wanneer het zoekvak van je thema smal is. Gelijk aan mijn zoekvak houdt het precies even breed als het veld."
+
 
 msgid "Colors"
 msgstr "Kleuren"
@@ -353,7 +368,8 @@ msgid "Custom font"
 msgstr "Aangepast lettertype"
 
 msgid "Match my store borrows the font your theme already uses around the search box."
-msgstr "Passend bij mijn winkel neemt het lettertype over dat je thema al rond het zoekveld gebruikt."
+msgstr "Passend bij mijn winkel leent het lettertype dat je thema al gebruikt rond het zoekvak."
+
 
 msgctxt "example font stack"
 msgid "e.g. Georgia, serif"
@@ -382,13 +398,15 @@ msgstr "Blogberichten"
 
 #. translators: %s: the technical term "noindex", wrapped in <em>. Do not translate it.
 msgid "Pages and posts count toward the same allowance as your products, so switching them off frees it up for your catalog. Your products always come first and are never displaced by them. Private, password-protected and unpublished content is never indexed, and we honor %s set by Yoast SEO or Rank Math (per item, per content type, or site-wide)."
-msgstr "Pagina's en berichten tellen mee voor dezelfde limiet als je producten; schakel je ze uit, dan komt die ruimte vrij voor je catalogus. Je producten gaan altijd voor en worden er nooit door verdrongen. Privé, met een wachtwoord beveiligde en niet-gepubliceerde content wordt nooit geïndexeerd, en we respecteren %s zoals ingesteld via Yoast SEO of Rank Math (per item, per contenttype of voor de hele site)."
+msgstr "Pagina's en berichten tellen mee voor dezelfde limiet als je producten, dus als je ze uitschakelt, komt die vrij voor je catalogus. Je producten komen altijd op de eerste plaats en worden nooit door hen verdrongen. Privé, met wachtwoord beveiligde en ongepubliceerde content wordt nooit geïndexeerd, en we respecteren %s ingesteld door Yoast SEO of Rank Math (per item, per contenttype of sitebreed)."
+
 
 msgid "Search results page"
 msgstr "Zoekresultatenpagina"
 
 msgid "Enhance the product search results page with NitroSearch results and filters"
-msgstr "Verbeter de zoekresultatenpagina voor producten met NitroSearch-resultaten en -filters"
+msgstr "Verbeter de zoekresultatenpagina voor producten met NitroSearch resultaten en filters"
+
 
 msgid "Privacy &amp; credit"
 msgstr "Privacy &amp; vermelding"
@@ -400,7 +418,8 @@ msgid "Share anonymous search usage counts with NitroSearch"
 msgstr "Deel anonieme tellingen van zoekgebruik met NitroSearch"
 
 msgid "Counts searches, result totals and result clicks on your store's search — cookieless and anonymous, with no shopper identifiers, no IP addresses and nothing stored in the shopper's browser. Used to improve result ranking and to power your search analytics. Uncheck to stop sending immediately."
-msgstr "Telt zoekopdrachten, resultaataantallen en kliks op resultaten in de zoekfunctie van je winkel — cookieloos en anoniem, zonder identificerende gegevens van shoppers, zonder IP-adressen en zonder iets in de browser van de shopper op te slaan. Wordt gebruikt om de rangschikking van resultaten te verbeteren en om je zoekstatistieken te voeden. Vink dit uit om het versturen direct te stoppen."
+msgstr "Telt zoekopdrachten, resultaataantallen en klikken op resultaten in de zoekfunctie van je winkel — cookieloos en anoniem, zonder identificerende gegevens van winkelaars, zonder IP-adressen en zonder iets in de browser van de winkelaar op te slaan. Wordt gebruikt om de rangschikking van resultaten te verbeteren en om je zoekstatistieken te voeden. Vink dit uit om het versturen direct te stoppen."
+
 
 msgid "Powered-by credit"
 msgstr "Naamsvermelding"
@@ -410,13 +429,15 @@ msgstr "Toon een kleine vermelding ‘Mogelijk gemaakt door NitroSearch’, met 
 
 #. translators: %s: the URL https://nitrosearch.io, wrapped in <code>.
 msgid "Off by default, and entirely your choice. Turning it on adds a small credit in the search box and one line in your site footer, both linking to %s — a normal, followed link. Nothing is added to your site unless you check this. Thank you if you do."
-msgstr "Staat standaard uit, en de keuze is helemaal aan jou. Zet je dit aan, dan komt er een kleine vermelding in het zoekveld en één regel in de footer van je site, beide met een link naar %s — een normale, gevolgde link. Er wordt niets aan je site toegevoegd tenzij je dit aanvinkt. Alvast bedankt als je dat doet."
+msgstr "Standaard uit en helemaal de keuze van jezelf. Het inschakelen voegt een kleine credit toe in het zoekvak en één regel in je site footer, allebei met een link naar %s — een normale, gevolgde link. Er wordt niets aan je site toegevoegd tenzij je dit aanvinkt. Bedankt als je dat doet."
+
 
 msgid "Advanced"
 msgstr "Geavanceerd"
 
 msgid "Search box selector"
-msgstr "Zoekveldselector"
+msgstr "Selector voor zoekvak"
+
 
 msgctxt "example CSS selector"
 msgid "e.g. input.my-theme-search"
@@ -426,7 +447,8 @@ msgid "Optional CSS selector for your theme's search input. Leave blank to auto-
 msgstr "Optionele CSS-selector voor het zoekveld van je thema. Laat leeg voor automatische detectie."
 
 msgid "Save design"
-msgstr "Design opslaan"
+msgstr "Ontwerp opslaan"
+
 
 #. translators: %s: the error detail returned by the server.
 msgid "Connect failed: %s"
@@ -439,7 +461,8 @@ msgid "Connected and verified."
 msgstr "Verbonden en geverifieerd."
 
 msgid "Connected. Confirming control of your site — this can take a moment. Use “Check status” below if it doesn’t update."
-msgstr "Verbonden. Het eigendom van je site wordt bevestigd — dit kan even duren. Gebruik ‘Status controleren’ hieronder als het niet wordt bijgewerkt."
+msgstr "Verbonden. Controle van je site wordt bevestigd — dit kan even duren. Gebruik hieronder “Status controleren” als het niet updatet."
+
 
 #. translators: %s: number of products.
 msgid "Syncing %s product in the background, then your pages and posts."
@@ -464,7 +487,8 @@ msgid "Still confirming control of your site — please try again in a moment."
 msgstr "Het eigendom van je site wordt nog bevestigd — probeer het zo weer."
 
 msgid "Design saved."
-msgstr "Design opgeslagen."
+msgstr "Ontwerp opgeslagen."
+
 
 msgid "Saved. Removing your pages and blog posts from your index in the background."
 msgstr "Opgeslagen. Je pagina's en blogberichten worden op de achtergrond uit je index verwijderd."
@@ -492,7 +516,8 @@ msgstr "Deze winkel is al aan een NitroSearch-account gekoppeld."
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "We couldn’t confirm control of your site yet — click \"Refresh status\" first, then try again."
-msgstr "We konden het eigendom van je site nog niet bevestigen — klik eerst op ‘Status vernieuwen’ en probeer het daarna opnieuw."
+msgstr "We konden nog niet bevestigen dat je site onder controle is — klik eerst op \"Status verversen\", en probeer het daarna opnieuw."
+
 
 #. translators: "Refresh status" is the button of that name on this screen — translate it the same way.
 msgid "Your site needs re-checking — click \"Refresh status\", then try again."
@@ -521,7 +546,8 @@ msgid "In stock"
 msgstr "Op voorraad"
 
 msgid "On sale"
-msgstr "In de aanbieding"
+msgstr "In de uitverkoop"
+
 
 msgid "Brand"
 msgstr "Merk"
@@ -536,7 +562,8 @@ msgid "Add to cart"
 msgstr "Toevoegen aan winkelwagen"
 
 msgid "Adding…"
-msgstr "Toevoegen…"
+msgstr "Aan het toevoegen…"
+
 
 msgid "Added ✓"
 msgstr "Toegevoegd ✓"
@@ -545,7 +572,8 @@ msgid "Try again"
 msgstr "Opnieuw proberen"
 
 msgid "Searching…"
-msgstr "Zoeken…"
+msgstr "Aan het zoeken..."
+
 
 msgid "Search is unavailable."
 msgstr "Zoeken is niet beschikbaar."
@@ -583,7 +611,8 @@ msgid "Start typing to search products…"
 msgstr "Begin met typen om producten te zoeken…"
 
 msgid "Sale"
-msgstr "Aanbieding"
+msgstr "Uitverkoop"
+
 
 msgid "Out of stock"
 msgstr "Uitverkocht"
