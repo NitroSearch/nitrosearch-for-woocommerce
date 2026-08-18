@@ -69,7 +69,18 @@ function po_msgstrs(string $block): array
     return array_map('po_unquote', $m[1]);
 }
 
-/** Replace a block's msgstr values in place, preserving everything around them. */
+/**
+ * Replace a block's msgstr values in place, preserving everything around them.
+ *
+ * ⚠ THE TRAILING WHITESPACE IS PART OF "EVERYTHING AROUND THEM". A catalog is
+ * split on blank lines, so every block but the last ends at its final character
+ * with no newline of its own. Emitting one unconditionally — which this did
+ * until 2026-08-18 — gives the file an extra blank line per adopted string,
+ * every time the tool is run, and 29 of them are still sitting in the nl_NL
+ * catalog from the first pull. Nothing breaks: msgfmt ignores blank lines and
+ * the compiled .mo is identical. What degrades is the diff, which is the only
+ * reason this splices instead of calling msgcat.
+ */
 function po_replace_msgstrs(string $block, array $values): string
 {
     $i = 0;
@@ -81,8 +92,11 @@ function po_replace_msgstrs(string $block, array $values): string
             $i++;
             $v = $values[$idx] ?? '';
             $escaped = str_replace(['\\', '"', "\n"], ['\\\\', '\\"', '\\n'], $v);
+            // Whatever followed the last quote — a newline before the next line
+            // of the block, or nothing at all at the end of one.
+            $tail = preg_match('/"(\s*)\z/', $m[3], $t) ? $t[1] : '';
 
-            return $m[1].'"'.$escaped.'"'."\n";
+            return $m[1].'"'.$escaped.'"'.$tail;
         },
         $block
     );

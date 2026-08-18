@@ -7,6 +7,27 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+## [1.15.0] — 2026-08-18
+
+### Changed
+- **The translations now read the way each language's own editor writes it.**
+  Every language on WordPress.org has volunteer translation editors, and on
+  their language they have the last word — so where one of them has rewritten
+  our wording, theirs is what the plugin now carries. Romanian, Dutch,
+  Swedish, German, Polish, English (UK) and English (Australia) between them
+  carry **116 corrections by native reviewers**, and Romanian has been rebuilt
+  throughout to the conventions its editor uses: the software speaks in the
+  first person, the merchant is addressed informally, and field labels drop
+  the genitive.
+
+  The corrections ship inside the download, so a store reads them the moment
+  it updates — it does not have to wait for its language pack to catch up.
+
+- **The same word can be right in one English and wrong in another.** English
+  (Australia) says "Untick", English (UK) says "Uncheck", and each is that
+  locale's own editor's decision rather than ours. Both are now carried as
+  they were reviewed.
+
 ## [1.14.0] — 2026-08-15
 
 ### Added

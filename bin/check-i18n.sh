@@ -9,8 +9,9 @@
 #   bin/check-i18n.sh              # check the working tree (used by preflight §8)
 #   bin/check-i18n.sh --update-pot # regenerate languages/nitrosearch.pot (the
 #                                  # one canonical command — same flags as the check)
-#   bin/check-i18n.sh --selftest   # prove the completeness check still catches
-#                                  # an untranslated entry (fixture-based)
+#   bin/check-i18n.sh --selftest   # prove the checks still catch what they are
+#                                  # for — an untranslated entry, and a PHP
+#                                  # catalog left behind by its .po (fixtures)
 #
 set -euo pipefail
 
@@ -86,6 +87,24 @@ po_incomplete() { # $1 = .po file -> prints the offending line, empty when compl
   printf '%s\n' "$out" | grep -E 'fuzzy|untranslated' || true
 }
 
+# Prints nothing when the shipped catalog carries exactly the .po's messages,
+# and a short description of the first divergence when it does not.
+php_catalog_drift() { # $1 = shipped .l10n.php, $2 = freshly generated one
+  php -r '
+    $a = @include $argv[1]; $b = @include $argv[2];
+    if (! is_array($a) || ! is_array($b)) { echo "not a readable catalog"; exit; }
+    $am = $a["messages"] ?? null; $bm = $b["messages"] ?? null;
+    if (! is_array($am) || ! is_array($bm)) { echo "no messages array"; exit; }
+    if ($am === $bm) { exit; }
+    $n = 0; $first = "";
+    foreach ($bm as $k => $v) {
+      if (! array_key_exists($k, $am) || $am[$k] !== $v) { $n++; if ($first === "") { $first = $k; } }
+    }
+    foreach ($am as $k => $v) { if (! array_key_exists($k, $bm)) { $n++; if ($first === "") { $first = $k; } } }
+    printf("%d message(s) differ, first: %.60s", $n, str_replace("\n", " ", $first));
+  ' "$1" "$2"
+}
+
 if [ "${1:-}" = "--selftest" ]; then
   TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
   printf 'msgid ""\nmsgstr ""\n"Content-Type: text/plain; charset=UTF-8\\n"\n\nmsgid "Alpha"\nmsgstr "A"\n\nmsgid "Beta"\nmsgstr ""\n' > "$TMP/bad.po"
@@ -96,7 +115,22 @@ if [ "${1:-}" = "--selftest" ]; then
   if [ -n "$(po_incomplete "$TMP/good.po")" ]; then
     echo "selftest FAILED: a complete catalog was reported incomplete"; exit 1
   fi
-  echo "selftest ok: the completeness check catches an untranslated entry"
+
+  # The .l10n.php drift check, proven the same way. Its predecessor compared
+  # PO-Revision-Date, which bin/merge-translations.php does not touch — so a
+  # catalog rebuilt around an editor's new wording, with the PHP file left as it
+  # was, passed. That is the mutation below: same header, one changed message.
+  printf '<?php\nreturn ["language"=>"de_DE","pot-creation-date"=>"A","messages"=>["Add to cart"=>"In den Warenkorb"]];\n' > "$TMP/shipped.l10n.php"
+  printf '<?php\nreturn ["language"=>"de_DE","pot-creation-date"=>"B","messages"=>["Add to cart"=>"In den Warenkorb"]];\n' > "$TMP/same.l10n.php"
+  printf '<?php\nreturn ["language"=>"de_DE","pot-creation-date"=>"A","messages"=>["Add to cart"=>"In den Einkaufswagen"]];\n' > "$TMP/drifted.l10n.php"
+  if [ -z "$(php_catalog_drift "$TMP/shipped.l10n.php" "$TMP/drifted.l10n.php")" ]; then
+    echo "selftest FAILED: a stale PHP catalog went undetected"; exit 1
+  fi
+  if [ -n "$(php_catalog_drift "$TMP/shipped.l10n.php" "$TMP/same.l10n.php")" ]; then
+    echo "selftest FAILED: a current PHP catalog was reported stale (the generation stamp is not drift)"; exit 1
+  fi
+
+  echo "selftest ok: an untranslated entry and a stale PHP catalog are both caught"
   exit 0
 fi
 
@@ -168,6 +202,29 @@ grep -qE '^SHIP=.*languages' bin/build-plugin.sh \
   && pass "languages/ is in the build allowlist" \
   || fail "bin/build-plugin.sh SHIP allowlist lost 'languages' — translations would silently drop from the zip"
 
+# --- The PHP catalogs, rebuilt once so each can be compared to its .po --------
+#
+# ⚠ THIS REPLACED A CHECK THAT COULD NOT SEE THE THING IT WAS FOR. The tie
+# between a .po and its .l10n.php used to be the PO-Revision-Date value: if the
+# date appeared in the PHP file, the PHP file was "current". But
+# bin/merge-translations.php adopts an editor's wording WITHOUT touching that
+# header — it changes msgstr values only — so a pull that forgot to recompile
+# left every store on that locale reading the previous wording while the guard
+# said the catalog was current. It was live on this branch for exactly one run.
+#
+# So compare the translations themselves. One make-php over a copy of the whole
+# languages/ directory, then a per-locale comparison of the message maps —
+# headers excluded, because make-php stamps pot-creation-date with the time it
+# ran and that byte would otherwise report every catalog as drifted.
+REGEN=""
+if command -v wp >/dev/null 2>&1 && command -v php >/dev/null 2>&1; then
+  REGEN_SRC="$(mktemp -d "${TMPDIR:-/tmp}/nitrosearch-po.XXXXXX")"
+  REGEN="$(mktemp -d "${TMPDIR:-/tmp}/nitrosearch-l10n.XXXXXX")"
+  trap 'rm -rf "$REGEN_SRC" "$REGEN"' EXIT
+  cp languages/*.po "$REGEN_SRC"/ 2>/dev/null || true
+  wp i18n make-php "$REGEN_SRC" "$REGEN" >/dev/null 2>&1 || REGEN=""
+fi
+
 # --- Every locale: complete, compiled, current --------------------------------
 if ! command -v msgfmt >/dev/null 2>&1; then
   note "gettext (msgfmt) not available — per-locale checks not run here (CI runs them)"
@@ -221,16 +278,17 @@ EOF
     fi
     rm -f "$TMPMO"
     PHP_CAT="languages/nitrosearch-$L.l10n.php"
-    # The tie between .po and .l10n.php is the revision date VALUE — make-php
-    # rewrites the header key as lowercase 'po-revision-date', so match the
-    # value alone, not the .po header line.
-    REV="$(grep -m1 -oE 'PO-Revision-Date: [^\\"]*' "$PO" | head -1 | sed 's/^PO-Revision-Date: //' || true)"
     if [ ! -f "$PHP_CAT" ]; then
       fail "$PHP_CAT missing — run: wp i18n make-php languages"
-    elif [ -n "$REV" ] && ! grep -qF "$REV" "$PHP_CAT"; then
-      fail "$PHP_CAT was not generated from the current .po — run: wp i18n make-php languages"
+    elif [ -z "$REGEN" ] || [ ! -f "$REGEN/nitrosearch-$L.l10n.php" ]; then
+      note "$L .l10n.php not verified here (wp-cli unavailable) — CI verifies it"
     else
-      pass "$L .l10n.php current"
+      DRIFT="$(php_catalog_drift "$PHP_CAT" "$REGEN/nitrosearch-$L.l10n.php")"
+      if [ -n "$DRIFT" ]; then
+        fail "$L .l10n.php does not carry the .po's translations ($DRIFT) — run: wp i18n make-php languages"
+      else
+        pass "$L .l10n.php current"
+      fi
     fi
   done
 fi
