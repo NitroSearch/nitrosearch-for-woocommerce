@@ -56,16 +56,45 @@ done
 
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 BASE="https://translate.wordpress.org/projects/wp-plugins/nitrosearch-for-woocommerce/stable"
-CHANGED_ANY=0
+CHANGED=""
+UNREAD=""
+mkdir -p "$TMP/regen"
+
+# ⚠ A RATE LIMIT IS NOT AN ANSWER. translate.wordpress.org returns 429 to a run
+# that asks for 27 exports in quick succession, and until 2026-08-18 that landed
+# in the same "export unavailable, skipped" line as a locale with nothing to
+# say. A run that was refused eleven times therefore looked exactly like a run
+# that found eleven locales untouched — and the conclusion drawn from it, "we
+# are up to date with every editor", was about strings nobody had fetched.
+#
+# So: classify the failure, back off, and remember which locales were never
+# read. The run's exit status is what carries that; the per-locale lines scroll.
+fetch_export() { # $1 = wordpress.org slug, $2 = destination -> 0 read it, 1 did not
+  local attempt code
+  for attempt in 1 2 3; do
+    code="$(curl -sS --max-time 60 -o "$2" -w '%{http_code}' \
+      "$BASE/$1/default/export-translations/?format=po" 2>/dev/null || echo 000)"
+    [ "$code" = "200" ] && return 0
+    case "$code" in
+      429|5??) sleep $((attempt * 20)) ;;
+      *) printf '%s' "HTTP $code"; return 1 ;;
+    esac
+  done
+  printf '%s' "HTTP $code after 3 attempts"
+  return 1
+}
 
 for L in ${*:-$LOCALES}; do
   PO="languages/nitrosearch-$L.po"
   [ -f "$PO" ] || { echo "  --   $L: no catalog in this tree, skipped"; continue; }
   SLUG="$(slug_for "$L")" || { echo "  --   $L: no wordpress.org slug mapped, skipped"; continue; }
 
-  curl -sS --fail --max-time 60 -o "$TMP/live.po" \
-    "$BASE/$SLUG/default/export-translations/?format=po" \
-    || { echo "  --   $L: export unavailable, skipped"; continue; }
+  if ! WHY="$(fetch_export "$SLUG" "$TMP/live.po")"; then
+    echo "  ??   $L: NOT READ — $WHY"
+    UNREAD="$UNREAD $L"
+    continue
+  fi
+  sleep 1   # 27 exports back to back is what trips the limit in the first place
 
   # An export with nothing in it means no editor has been here yet. msgcat
   # would be a no-op, but say so rather than printing a silent "unchanged".
@@ -93,12 +122,37 @@ for L in ${*:-$LOCALES}; do
     exit 1
   fi
   echo "  ok   $L: adopted $ADOPTED translation(s) from the locale's editor"
-  CHANGED_ANY=1
+  CHANGED="$CHANGED $L"
 done
 
-if [ "$CHANGED_ANY" -eq 1 ] && command -v wp >/dev/null 2>&1; then
-  wp i18n make-php languages >/dev/null
+# Only the locales that moved. `wp i18n make-php languages` rewrites all 27,
+# and it stamps pot-creation-date with the moment it ran — so regenerating the
+# whole directory turns a two-locale adoption into a 27-file diff whose other
+# 25 entries differ by a timestamp and nothing else. The instruction attached to
+# this script is "read what you are adopting"; 25 files of noise is how that
+# stops happening.
+if [ -n "$CHANGED" ]; then
+  if command -v wp >/dev/null 2>&1; then
+    for L in $CHANGED; do cp "languages/nitrosearch-$L.po" "$TMP/regen/"; done
+    wp i18n make-php "$TMP/regen" languages >/dev/null
+    echo
+    echo "Recompiled:$CHANGED. Review the diff before committing — you are adopting"
+    echo "someone else's wording, and it should be read, not merged blind."
+  else
+    echo
+    echo "⚠ wp-cli is missing, so the .l10n.php catalogs were NOT regenerated and"
+    echo "  every store on$CHANGED would keep reading the previous wording."
+    echo "  Install wp-cli and run: wp i18n make-php languages"
+    exit 1
+  fi
+fi
+
+if [ -n "$UNREAD" ]; then
   echo
-  echo "Recompiled. Review the diff before committing — you are adopting someone"
-  echo "else's wording, and it should be read, not merged blind."
+  echo "⚠ NOT READ:$UNREAD"
+  echo "  These locales were never fetched, so nothing here says whether their"
+  echo "  editors have changed anything. Re-run for them once the rate limit"
+  echo "  clears — this run is NOT a clean sweep:"
+  echo "    bin/pull-translations.sh$UNREAD"
+  exit 1
 fi

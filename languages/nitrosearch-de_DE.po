@@ -57,10 +57,10 @@ msgid "Confirming control…"
 msgstr "Kontrolle wird bestätigt …"
 
 msgid "Connected & verified"
-msgstr "Verbunden & verifiziert"
+msgstr "Verbunden und verifiziert"
 
 msgid "Amazon-quality search for WooCommerce"
-msgstr "Suche auf Amazon-Niveau für WooCommerce"
+msgstr "Suche in Amazon-Qualität für WooCommerce"
 
 msgid "Connect your store"
 msgstr "Verbinde deinen Shop"
@@ -162,7 +162,7 @@ msgid "Next sync"
 msgstr "Nächste Synchronisierung"
 
 msgid "Changes to your catalog are batched and pushed in the background — these figures show how quickly they reach your search index."
-msgstr "Änderungen an deinem Katalog werden gebündelt und im Hintergrund übertragen – diese Zahlen zeigen, wie schnell sie deinen Suchindex erreichen."
+msgstr "Änderungen an deinem Katalog werden gebündelt und im Hintergrund übertragen – diese Zahlen zeigen, wie schnell sie deinen Suchindex erreichen."
 
 msgid "Search analytics"
 msgstr "Suchanalyse"
@@ -209,10 +209,10 @@ msgid "Searched, found nothing"
 msgstr "Gesucht, nichts gefunden"
 
 msgid "View full analytics →"
-msgstr "Vollständige Analyse ansehen →"
+msgstr "Vollständige Analyse anzeigen →"
 
 msgid "Your plan & account"
-msgstr "Dein Tarif & Konto"
+msgstr "Dein Tarif und Konto"
 
 msgid "This store is claimed to a NitroSearch account. Manage your plan and billing from your NitroSearch dashboard."
 msgstr "Dieser Shop ist einem NitroSearch-Konto zugeordnet. Deinen Tarif und deine Abrechnung verwaltest du über dein NitroSearch-Dashboard."
@@ -236,13 +236,13 @@ msgid "Big pictures"
 msgstr "Große Bilder"
 
 msgid "Larger thumbnails for image-led catalogs."
-msgstr "Größere Vorschaubilder für bildstarke Kataloge."
+msgstr "Größere Vorschaubilder für bildorientierte Kataloge."
 
 msgid "Text only"
 msgstr "Nur Text"
 
 msgid "No pictures — good for spare parts and B2B."
-msgstr "Keine Bilder – gut für Ersatzteile, Bauteile und B2B."
+msgstr "Keine Bilder – gut für Ersatzteile und B2B."
 
 msgid "Light"
 msgstr "Hell"
@@ -266,7 +266,7 @@ msgid "Custom"
 msgstr "Individuell"
 
 msgid "Choose your own panel and text colors below."
-msgstr "Wähle unten eigene Farben für Panel und Text."
+msgstr "Wähle unten deine eigenen Farben für die Bedienfelder und den Text aus."
 
 msgid "Look"
 msgstr "Aussehen"
@@ -350,7 +350,7 @@ msgid "System default"
 msgstr "Systemstandard"
 
 msgid "Custom font"
-msgstr "Eigene Schriftart"
+msgstr "Individuelle Schrift"
 
 msgid "Match my store borrows the font your theme already uses around the search box."
 msgstr "„An meinen Shop anpassen“ übernimmt die Schrift, die dein Theme rund um das Suchfeld ohnehin schon verwendet."
@@ -530,7 +530,7 @@ msgid "Category"
 msgstr "Kategorie"
 
 msgid "View"
-msgstr "Ansehen"
+msgstr "Anzeigen"
 
 msgid "Add to cart"
 msgstr "In den Warenkorb"
@@ -589,7 +589,7 @@ msgid "Out of stock"
 msgstr "Nicht vorrätig"
 
 msgid "Pages & posts"
-msgstr "Seiten & Beiträge"
+msgstr "Seiten und Beiträge"
 
 msgctxt "a website page, shown on a search result"
 msgid "Page"
@@ -606,7 +606,7 @@ msgstr "%s ms"
 
 #. translators: %s: the brand name "NitroSearch".
 msgid "Powered by %s"
-msgstr "Powered by %s"
+msgstr "Präsentiert von %s"
 
 #. translators: 1: current page number, 2: total number of pages.
 msgid "Page %1$s of %2$s"

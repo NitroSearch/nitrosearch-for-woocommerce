@@ -207,7 +207,7 @@ msgid "Top searches"
 msgstr "Najczęstsze wyszukiwania"
 
 msgid "Searched, found nothing"
-msgstr "Szukano — bez wyników"
+msgstr "Brak wyników wyszukiwania"
 
 msgid "View full analytics →"
 msgstr "Zobacz pełne statystyki →"
@@ -315,7 +315,7 @@ msgid "Color scheme"
 msgstr "Schemat kolorów"
 
 msgid "Accent color"
-msgstr "Kolor akcentu"
+msgstr "Akcent kolorystyczny"
 
 msgid "Used for prices, highlights and selected filters. Leave blank for the default. Text on top of it is set to black or white automatically, whichever stays readable."
 msgstr "Używany dla cen, wyróżnień i wybranych filtrów. Pozostaw puste, aby użyć koloru domyślnego. Tekst na tym tle jest automatycznie czarny lub biały — zawsze ten, który pozostaje czytelny."
@@ -508,7 +508,7 @@ msgid "Could not create a manage link. Please try again."
 msgstr "Nie udało się utworzyć odnośnika do zarządzania. Spróbuj ponownie."
 
 msgid "Insufficient permissions."
-msgstr "Niewystarczające uprawnienia."
+msgstr "Brak uprawnień."
 
 #. translators: %s: the linked brand name "NitroSearch".
 msgid "Search powered by %s"
