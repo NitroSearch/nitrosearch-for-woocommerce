@@ -190,8 +190,17 @@ fi
 # string without its translations, a stale compiled catalog, or a readme edit
 # that left the translated listings behind would all publish silently —
 # merchants would just see mixed-language screens. Delegated to
-# bin/check-i18n.sh (which also has the canonical --update-pot command and a
-# --selftest).
+# bin/check-i18n.sh (which also has the canonical --update-pot command).
+#
+# ⚠ ITS --selftest RUNS FIRST, and until 2026-08-18 it ran NOWHERE. The script
+# has carried a fixture-based proof that its own checks still fail on the thing
+# they exist for since 1.9.0, and nothing in this repo or in CI ever invoked it —
+# so the one guard-on-the-guard was a command a human had to remember to type.
+# That is the same shape as the defect it was written for. It costs milliseconds
+# and it runs on the release path now, where the tooling it needs is installed.
+if ! "$SELF_DIR/check-i18n.sh" --selftest | sed 's/^/  /'; then
+  fail "the translation guards no longer catch what they are for — see --selftest above"
+fi
 if "$SELF_DIR/check-i18n.sh" | sed 's/^/  /'; then
   pass "translation guards (see above)"
 else
