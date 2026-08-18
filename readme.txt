@@ -4,7 +4,7 @@ Tags: woocommerce search, product search, instant search, autocomplete, faceted 
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.14.0
+Stable tag: 1.15.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -105,6 +105,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 3. The full search results page — a fast product grid with faceted filtering and pagination.
 
 == Changelog ==
+
+= 1.15.0 =
+* Improved: **the translations now read the way each language's own editor writes it.** Every language on WordPress.org has volunteer translation editors, and on their language they have the last word — so where one of them has rewritten our wording, theirs is what the plugin now carries. Romanian, Dutch, Swedish, German, Polish, English (UK) and English (Australia) between them carry 116 corrections by native reviewers, and Romanian has been rebuilt throughout to the conventions its editor uses. The corrections are inside the download, so a store reads them as soon as it updates, whether or not its language pack has caught up. Nothing to change.
 
 = 1.14.0 =
 * New: **NitroSearch in your own English.** The plugin is now translated into English (UK), English (Australia), English (Canada), English (New Zealand) and English (South Africa). Its own strings are American English — that is the language WordPress.org serves them in — so British, Australian, Canadian, New Zealand and South African stores get their own spelling as a translation. On a UK store the search panel now says "Add to basket", matching WooCommerce itself, instead of "Add to cart".
@@ -207,6 +210,9 @@ Your store falls back to its normal WooCommerce search. Your data on NitroSearch
 * Sync status screen so you can see exactly what is indexed.
 
 == Upgrade Notice ==
+
+= 1.15.0 =
+Romanian, Dutch, Swedish, German, Polish, English (UK) and English (Australia) now use the wording their own WordPress.org translation editors chose — 116 corrections by native reviewers, with Romanian rebuilt throughout. Stores in American English are unchanged, and there is nothing to set.
 
 = 1.14.0 =
 Adds English (UK), Australia, Canada, New Zealand and South Africa — your own English spelling, and "Add to basket" on UK stores. Also stops translations falling back to English while a language pack catches up.
