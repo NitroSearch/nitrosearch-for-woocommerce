@@ -7,6 +7,16 @@ Public releases are published to wordpress.org at `X.Y.0` milestones.
 
 ## [Unreleased]
 
+### Changed
+- **Tested up to WordPress 7.1 and WooCommerce 11.2.** Checked on WordPress
+  7.1.3 with WooCommerce 11.2.1 using the published 1.15.0 package: connect,
+  full and incremental sync, search, add to cart from the results, checkout,
+  and order reporting, with no PHP notices. The plugin now also declares the
+  WooCommerce version it was tested with (`WC tested up to`).
+- **"Tested up to" can now be moved on the published release without a new
+  version.** `bin/bump-tested-up-to.sh`, run by the "Update Tested up to"
+  workflow, edits only that line of the readme in trunk and in the stable tag.
+
 ## [1.15.0] — 2026-08-18
 
 ### Changed
