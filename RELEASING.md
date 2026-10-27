@@ -99,6 +99,22 @@ the compiled translation catalogs in `languages/`. The readme translations in
 Screenshot captions in `readme.txt` are matched to `screenshot-N.png` by number,
 so the two must stay in step — the guards check the counts agree.
 
+## Moving "Tested up to" without a release
+
+When a new WordPress version ships and the plugin works on it, the directory
+can say so without a new version. Change `Tested up to:` in `readme.txt` on
+`main` first, then run the **Update "Tested up to" on WordPress.org** workflow
+with the new `MAJOR.MINOR`. It is a rehearsal by default: read the diff it
+prints, then run it again with *dry_run* unchecked.
+
+It edits `readme.txt` in SVN trunk and in the stable tag, and refuses anything
+else: a value `main` does not carry, a value newer than the current WordPress
+release, or a diff that touches any other line. Test on the new version first.
+The line is a claim to every store that installs the plugin.
+
+`WC tested up to` lives in `nitrosearch.php`, which WooCommerce reads from the
+installed plugin, so it only moves with a release.
+
 ## Publishing by hand
 
 Only needed if the workflow is unavailable. Use the manual trigger first

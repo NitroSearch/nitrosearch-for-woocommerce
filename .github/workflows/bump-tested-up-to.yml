@@ -1,0 +1,59 @@
+name: Update "Tested up to" on WordPress.org
+
+# Moves the "Tested up to:" line of the release that is already published,
+# without cutting a new version. Edits readme.txt in SVN trunk and in the stable
+# tag, and nothing else; bin/bump-tested-up-to.sh refuses any other change.
+#
+# Manual only, and a rehearsal unless dry_run is unchecked. Change readme.txt on
+# the default branch FIRST: the script refuses a value the branch does not carry.
+#
+# Requires the same secret as the release workflow: WPORG_SVN_PASSWORD.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tested:
+        description: 'WordPress version tested up to, MAJOR.MINOR (e.g. 7.1)'
+        required: true
+        type: string
+      dry_run:
+        description: 'Rehearse only — show the diff, commit nothing'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# Shares the release workflow's group, so this can never race a publish.
+concurrency:
+  group: wordpress-org-deploy
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    name: Update the published readme
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Install Subversion
+        run: |
+          set -euo pipefail
+          if ! command -v svn >/dev/null 2>&1; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq subversion
+          fi
+          svn --version --quiet
+
+      - name: Update (or rehearse)
+        env:
+          # Via env, never inlined into the script: the input is untrusted.
+          TESTED: ${{ inputs.tested }}
+          PUBLISH: ${{ inputs.dry_run == false && '1' || '0' }}
+          SVN_USER: nitrosearch
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+        run: bin/bump-tested-up-to.sh "$TESTED"

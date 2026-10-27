@@ -15,6 +15,7 @@
  * Domain Path:       /languages
  *
  * WC requires at least: 9.0
+ * WC tested up to:     11.2
  *
  * @package NitroSearch
  */
